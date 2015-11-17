@@ -54,17 +54,20 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="jPanelTopf2" alignment="0" max="32767" attributes="0"/>
-                          <Component id="jPanelGenetik2" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                              <Component id="jPanelTopf" alignment="0" max="32767" attributes="0"/>
+                              <Component id="jPanelGenetik" alignment="0" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButton1" min="-2" pref="113" max="-2" attributes="0"/>
+                          <Component id="jButtonSpeichern" min="-2" pref="113" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jButton2" min="-2" pref="111" max="-2" attributes="0"/>
+                          <Component id="jButtonVerlassen" max="32767" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -72,13 +75,13 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jPanelGenetik2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanelGenetik" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jPanelTopf2" min="-2" max="-2" attributes="0"/>
+                  <Component id="jPanelTopf" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButton2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonSpeichern" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonVerlassen" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -86,16 +89,16 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="de.ostbot.sensi.view.PflanzeAnlegen.JPanelGenetik" name="jPanelGenetik2">
+        <Component class="de.ostbot.sensi.view.PflanzeAnlegen.JPanelGenetik" name="jPanelGenetik">
         </Component>
-        <Component class="de.ostbot.sensi.view.PflanzeAnlegen.JPanelTopf" name="jPanelTopf2">
+        <Component class="de.ostbot.sensi.view.PflanzeAnlegen.JPanelTopf" name="jPanelTopf">
         </Component>
-        <Component class="javax.swing.JButton" name="jButton1">
+        <Component class="javax.swing.JButton" name="jButtonSpeichern">
           <Properties>
             <Property name="text" type="java.lang.String" value="Speichern"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="jButton2">
+        <Component class="javax.swing.JButton" name="jButtonVerlassen">
           <Properties>
             <Property name="text" type="java.lang.String" value="Verlassen"/>
           </Properties>

@@ -23,7 +23,7 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="jPanelHintergrund" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
@@ -32,14 +32,14 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="jPanelHintergrund" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="jPanelHintergrund">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -47,33 +47,33 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelDuenger" min="-2" max="-2" attributes="0"/>
                       <Group type="102" attributes="0">
-                          <Component id="jComboBox1" min="-2" pref="104" max="-2" attributes="0"/>
+                          <Component id="jComboBoxDuenger" min="-2" pref="104" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jSpinner1" min="-2" pref="43" max="-2" attributes="0"/>
+                          <Component id="jSpinnerDuenger" min="-2" pref="43" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelDuengerMilliliter" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jCheckBox1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxMontag" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox2" min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxDienstag" min="-2" pref="41" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox3" min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxMittwoch" min="-2" pref="41" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jCheckBox4" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxDonnerstag" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox5" min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxFreitag" min="-2" pref="41" max="-2" attributes="0"/>
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                                  <Component id="jCheckBox6" min="-2" pref="41" max="-2" attributes="0"/>
+                                  <Component id="jCheckBoxSamstag" min="-2" pref="41" max="-2" attributes="0"/>
                               </Group>
                           </Group>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jCheckBox7" min="-2" pref="41" max="-2" attributes="0"/>
+                          <Component id="jCheckBoxSonntag" min="-2" pref="41" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace pref="10" max="32767" attributes="0"/>
@@ -84,25 +84,25 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelDuenger" min="-2" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jComboBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jSpinner1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBoxDuenger" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerDuenger" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelDuengerMilliliter" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jCheckBox1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBoxMontag" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBoxDienstag" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBoxMittwoch" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jCheckBox4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox6" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jCheckBox7" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBoxDonnerstag" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBoxFreitag" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBoxSamstag" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jCheckBoxSonntag" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -110,12 +110,12 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabel1">
+        <Component class="javax.swing.JLabel" name="jLabelDuenger">
           <Properties>
             <Property name="text" type="java.lang.String" value="D&#xfc;nger:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBox1">
+        <Component class="javax.swing.JComboBox" name="jComboBoxDuenger">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="4">
@@ -130,44 +130,44 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox1">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxMontag">
           <Properties>
             <Property name="text" type="java.lang.String" value="MO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox4">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxDonnerstag">
           <Properties>
             <Property name="text" type="java.lang.String" value="DO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox5">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxFreitag">
           <Properties>
             <Property name="text" type="java.lang.String" value="FR"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox2">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxDienstag">
           <Properties>
             <Property name="text" type="java.lang.String" value="DI"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox3">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxMittwoch">
           <Properties>
             <Property name="text" type="java.lang.String" value="MI"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox6">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxSamstag">
           <Properties>
             <Property name="text" type="java.lang.String" value="SA"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBox7">
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxSonntag">
           <Properties>
             <Property name="text" type="java.lang.String" value="SO"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinner1">
+        <Component class="javax.swing.JSpinner" name="jSpinnerDuenger">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabel2">
+        <Component class="javax.swing.JLabel" name="jLabelDuengerMilliliter">
           <Properties>
             <Property name="text" type="java.lang.String" value="ml"/>
           </Properties>

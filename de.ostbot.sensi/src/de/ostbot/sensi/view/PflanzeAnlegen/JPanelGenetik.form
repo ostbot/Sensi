@@ -23,9 +23,9 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel1" min="-2" max="-2" attributes="0"/>
+              <Component id="jPanelHintergrund" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="jPanel2" max="32767" attributes="0"/>
+              <Component id="jPanelFenster" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
@@ -35,8 +35,8 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="jPanel1" max="32767" attributes="0"/>
-                  <Component id="jPanel2" max="32767" attributes="0"/>
+                  <Component id="jPanelHintergrund" max="32767" attributes="0"/>
+                  <Component id="jPanelFenster" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -44,7 +44,7 @@
     </DimensionLayout>
   </Layout>
   <SubComponents>
-    <Container class="javax.swing.JPanel" name="jPanel1">
+    <Container class="javax.swing.JPanel" name="jPanelHintergrund">
 
       <Layout>
         <DimensionLayout dim="0">
@@ -60,7 +60,7 @@
                           <Group type="102" alignment="1" attributes="0">
                               <Component id="jLabelSativa" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="jSpinnerIndica1" min="-2" pref="48" max="-2" attributes="0"/>
+                              <Component id="jSpinnerSativa" min="-2" pref="48" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Component id="jLabelIndicaProzent" min="-2" max="-2" attributes="0"/>
@@ -102,7 +102,7 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelSativa" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelSativaProzent" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jSpinnerIndica1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerSativa" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jLabelHerkunftsland" min="-2" max="-2" attributes="0"/>
@@ -138,12 +138,12 @@
             <Property name="text" type="java.lang.String" value="Herkunftsland:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinnerIndica">
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabelIndica">
           <Properties>
             <Property name="text" type="java.lang.String" value="Indica:"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="jSpinnerIndica">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelSativa">
           <Properties>
@@ -170,7 +170,7 @@
             <Property name="text" type="java.lang.String" value="Verlassen"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinnerIndica1">
+        <Component class="javax.swing.JSpinner" name="jSpinnerSativa">
         </Component>
         <Component class="javax.swing.JTextField" name="jTextFieldSorte">
         </Component>
@@ -181,7 +181,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="javax.swing.JPanel" name="jPanel2">
+    <Container class="javax.swing.JPanel" name="jPanelFenster">
 
       <Layout>
         <DimensionLayout dim="0">

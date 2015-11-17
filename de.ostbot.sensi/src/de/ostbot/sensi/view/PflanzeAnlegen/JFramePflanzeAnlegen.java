@@ -11,18 +11,18 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jPanelGenetik2 = new de.ostbot.sensi.view.PflanzeAnlegen.JPanelGenetik();
-        jPanelTopf2 = new de.ostbot.sensi.view.PflanzeAnlegen.JPanelTopf();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        jPanelGenetik = new de.ostbot.sensi.view.PflanzeAnlegen.JPanelGenetik();
+        jPanelTopf = new de.ostbot.sensi.view.PflanzeAnlegen.JPanelTopf();
+        jButtonSpeichern = new javax.swing.JButton();
+        jButtonVerlassen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanelHintergrund.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButton1.setText("Speichern");
+        jButtonSpeichern.setText("Speichern");
 
-        jButton2.setText("Verlassen");
+        jButtonVerlassen.setText("Verlassen");
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);
@@ -31,26 +31,28 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jPanelTopf2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jPanelGenetik2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jPanelTopf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanelGenetik, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                        .addComponent(jButtonSpeichern, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jButtonVerlassen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanelHintergrundLayout.setVerticalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelGenetik2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelGenetik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanelTopf2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                    .addComponent(jButtonSpeichern)
+                    .addComponent(jButtonVerlassen))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -106,10 +108,10 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private de.ostbot.sensi.view.PflanzeAnlegen.JPanelGenetik jPanelGenetik2;
+    private javax.swing.JButton jButtonSpeichern;
+    private javax.swing.JButton jButtonVerlassen;
+    private de.ostbot.sensi.view.PflanzeAnlegen.JPanelGenetik jPanelGenetik;
     private javax.swing.JPanel jPanelHintergrund;
-    private de.ostbot.sensi.view.PflanzeAnlegen.JPanelTopf jPanelTopf2;
+    private de.ostbot.sensi.view.PflanzeAnlegen.JPanelTopf jPanelTopf;
     // End of variables declaration//GEN-END:variables
 }
