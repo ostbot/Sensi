@@ -55,18 +55,22 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jPanelPflanzeMitTopf" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelPflanzeMitTopf1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jPanelKlima1" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jPanelBelichtung1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jPanelZyklus1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jPanelDuenger" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jPanelWasser" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelDuenger1" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <Component id="jPanelWasser1" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jPanelBelichtung1" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="11" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -74,35 +78,37 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="jPanelZyklus1" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jPanelWasser" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jPanelPflanzeMitTopf" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jPanelDuenger" min="-2" max="-2" attributes="0"/>
-                      </Group>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanelKlima1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanelPflanzeMitTopf1" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="jPanelBelichtung1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanelBelichtung1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanelZyklus1" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanelWasser1" min="-2" pref="136" max="-2" attributes="0"/>
+                      <Component id="jPanelDuenger1" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace pref="448" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelPflanzeMitTopf" name="jPanelPflanzeMitTopf">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelPflanzeMitTopf" name="jPanelPflanzeMitTopf1">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelDuenger" name="jPanelDuenger">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelKlima" name="jPanelKlima1">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelWasser" name="jPanelWasser">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung" name="jPanelBelichtung1">
         </Component>
         <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelZyklus" name="jPanelZyklus1">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung" name="jPanelBelichtung1">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelWasser" name="jPanelWasser1">
+        </Component>
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelDuenger" name="jPanelDuenger1">
         </Component>
       </SubComponents>
     </Container>

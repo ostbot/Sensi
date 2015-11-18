@@ -30,25 +30,18 @@ public class JPanelBelichtung extends javax.swing.JPanel {
         jPanelHintergrund = new javax.swing.JPanel();
         jLabelLeistung = new javax.swing.JLabel();
         jSpinnerLeistung = new javax.swing.JSpinner();
-        jLabelTageslaenge = new javax.swing.JLabel();
-        jSpinnerTageslaenge = new javax.swing.JSpinner();
         jLabelQuadratmeter = new javax.swing.JLabel();
         jSpinnerFlaeche = new javax.swing.JSpinner();
         jLabelWatt = new javax.swing.JLabel();
-        jLabelStunden = new javax.swing.JLabel();
         jLabelFlaeche = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 153, 153));
 
         jLabelLeistung.setText("Leistung:");
 
-        jLabelTageslaenge.setText("Tageslänge:");
-
         jLabelQuadratmeter.setText("m²");
 
         jLabelWatt.setText("Watt");
-
-        jLabelStunden.setText("Stunden");
 
         jLabelFlaeche.setText("Fläche:");
 
@@ -56,47 +49,40 @@ public class JPanelBelichtung extends javax.swing.JPanel {
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);
         jPanelHintergrundLayout.setHorizontalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHintergrundLayout.createSequentialGroup()
-                .addContainerGap(27, Short.MAX_VALUE)
+            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelLeistung)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jSpinnerLeistung, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSpinnerLeistung, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelWatt)))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jSpinnerTageslaenge, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jLabelStunden))
-                    .addComponent(jLabelTageslaenge))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jSpinnerFlaeche, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jSpinnerFlaeche, javax.swing.GroupLayout.PREFERRED_SIZE, 56, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelQuadratmeter))
                     .addComponent(jLabelFlaeche))
-                .addGap(23, 23, 23))
+                .addContainerGap(15, Short.MAX_VALUE))
         );
         jPanelHintergrundLayout.setVerticalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelLeistung)
-                    .addComponent(jLabelTageslaenge)
-                    .addComponent(jLabelFlaeche))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinnerLeistung, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelWatt)
-                    .addComponent(jSpinnerTageslaenge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelStunden)
-                    .addComponent(jSpinnerFlaeche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelQuadratmeter))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelHintergrundLayout.createSequentialGroup()
+                        .addComponent(jLabelFlaeche)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanelHintergrundLayout.createSequentialGroup()
+                        .addComponent(jLabelLeistung)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jSpinnerLeistung, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelWatt)
+                            .addComponent(jSpinnerFlaeche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelQuadratmeter))
+                        .addGap(0, 17, Short.MAX_VALUE))))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -112,8 +98,8 @@ public class JPanelBelichtung extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelHintergrund, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanelHintergrund, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
 
@@ -122,12 +108,9 @@ public class JPanelBelichtung extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelFlaeche;
     private javax.swing.JLabel jLabelLeistung;
     private javax.swing.JLabel jLabelQuadratmeter;
-    private javax.swing.JLabel jLabelStunden;
-    private javax.swing.JLabel jLabelTageslaenge;
     private javax.swing.JLabel jLabelWatt;
     private javax.swing.JPanel jPanelHintergrund;
     private javax.swing.JSpinner jSpinnerFlaeche;
     private javax.swing.JSpinner jSpinnerLeistung;
-    private javax.swing.JSpinner jSpinnerTageslaenge;
     // End of variables declaration//GEN-END:variables
 }
