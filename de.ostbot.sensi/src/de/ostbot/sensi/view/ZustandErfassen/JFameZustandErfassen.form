@@ -51,7 +51,7 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -68,6 +68,13 @@
                           <Component id="jPanelDuenger" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="jPanelWasser" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Component id="jButtonSpeichern" min="-2" pref="100" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="jButtonDefiziteDefinieren" min="-2" pref="212" max="-2" attributes="0"/>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Component id="jButtonVerlassen" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -92,6 +99,12 @@
                       <Component id="jPanelWasser" min="-2" pref="136" max="-2" attributes="0"/>
                       <Component id="jPanelDuenger" min="-2" max="-2" attributes="0"/>
                   </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jButtonSpeichern" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonDefiziteDefinieren" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonVerlassen" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
@@ -109,6 +122,21 @@
         <Component class="de.ostbot.sensi.view.ZustandErfassen.JPanelWasser" name="jPanelWasser">
         </Component>
         <Component class="de.ostbot.sensi.view.ZustandErfassen.JPanelKlima" name="jPanelKlima">
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonSpeichern">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Speichern"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonDefiziteDefinieren">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Defizite definieren"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonVerlassen">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Verlassen"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>
