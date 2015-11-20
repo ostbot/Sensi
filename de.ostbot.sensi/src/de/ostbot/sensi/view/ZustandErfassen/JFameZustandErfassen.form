@@ -57,7 +57,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jPanelPflanzeMitTopf" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jPanelKlima1" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelKlima" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jPanelBelichtung" min="-2" max="-2" attributes="0"/>
@@ -80,7 +80,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
                       <Component id="jPanelPflanzeMitTopf" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanelKlima1" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanelKlima" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -98,17 +98,17 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelPflanzeMitTopf" name="jPanelPflanzeMitTopf">
+        <Component class="de.ostbot.sensi.view.ZustandErfassen.JPanelPflanzeMitTopf" name="jPanelPflanzeMitTopf">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung" name="jPanelBelichtung">
+        <Component class="de.ostbot.sensi.view.ZustandErfassen.JPanelBelichtung" name="jPanelBelichtung">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelZyklus" name="jPanelZyklus">
+        <Component class="de.ostbot.sensi.view.ZustandErfassen.JPanelZyklus" name="jPanelZyklus">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelDuenger" name="jPanelDuenger">
+        <Component class="de.ostbot.sensi.view.ZustandErfassen.JPanelDuenger" name="jPanelDuenger">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelWasser" name="jPanelWasser">
+        <Component class="de.ostbot.sensi.view.ZustandErfassen.JPanelWasser" name="jPanelWasser">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelKlima" name="jPanelKlima1">
+        <Component class="de.ostbot.sensi.view.ZustandErfassen.JPanelKlima" name="jPanelKlima">
         </Component>
       </SubComponents>
     </Container>

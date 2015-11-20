@@ -1,8 +1,8 @@
-package de.ostbot.sensi.view.GrowAnlegen;
+package de.ostbot.sensi.view.ZustandErfassen;
 
-public class JFameGrowAnlegen extends javax.swing.JFrame {
+public class JFameZustandErfassen extends javax.swing.JFrame {
 
-    public JFameGrowAnlegen() {
+    public JFameZustandErfassen() {
         initComponents();
     }
 
@@ -11,12 +11,12 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jPanelPflanzeMitTopf = new de.ostbot.sensi.view.GrowAnlegen.JPanelPflanzeMitTopf();
-        jPanelBelichtung = new de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung();
-        jPanelZyklus = new de.ostbot.sensi.view.GrowAnlegen.JPanelZyklus();
-        jPanelDuenger = new de.ostbot.sensi.view.GrowAnlegen.JPanelDuenger();
-        jPanelWasser = new de.ostbot.sensi.view.GrowAnlegen.JPanelWasser();
-        jPanelKlima1 = new de.ostbot.sensi.view.GrowAnlegen.JPanelKlima();
+        jPanelPflanzeMitTopf = new de.ostbot.sensi.view.ZustandErfassen.JPanelPflanzeMitTopf();
+        jPanelBelichtung = new de.ostbot.sensi.view.ZustandErfassen.JPanelBelichtung();
+        jPanelZyklus = new de.ostbot.sensi.view.ZustandErfassen.JPanelZyklus();
+        jPanelDuenger = new de.ostbot.sensi.view.ZustandErfassen.JPanelDuenger();
+        jPanelWasser = new de.ostbot.sensi.view.ZustandErfassen.JPanelWasser();
+        jPanelKlima = new de.ostbot.sensi.view.ZustandErfassen.JPanelKlima();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -32,7 +32,7 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                         .addComponent(jPanelPflanzeMitTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanelKlima1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanelKlima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                         .addComponent(jPanelBelichtung, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -49,7 +49,7 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanelPflanzeMitTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelKlima1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanelKlima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelBelichtung, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -95,30 +95,32 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameZustandErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameZustandErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameZustandErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameZustandErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new JFameGrowAnlegen().setVisible(true);
+            new JFameZustandErfassen().setVisible(true);
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung jPanelBelichtung;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelDuenger jPanelDuenger;
+    private de.ostbot.sensi.view.ZustandErfassen.JPanelBelichtung jPanelBelichtung;
+    private de.ostbot.sensi.view.ZustandErfassen.JPanelDuenger jPanelDuenger;
     private javax.swing.JPanel jPanelHintergrund;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelKlima jPanelKlima1;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelPflanzeMitTopf jPanelPflanzeMitTopf;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelWasser jPanelWasser;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelZyklus jPanelZyklus;
+    private de.ostbot.sensi.view.ZustandErfassen.JPanelKlima jPanelKlima;
+    private de.ostbot.sensi.view.ZustandErfassen.JPanelPflanzeMitTopf jPanelPflanzeMitTopf;
+    private de.ostbot.sensi.view.ZustandErfassen.JPanelWasser jPanelWasser;
+    private de.ostbot.sensi.view.ZustandErfassen.JPanelZyklus jPanelZyklus;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,4 +1,4 @@
-package de.ostbot.sensi.view.GrowAnlegen;
+package de.ostbot.sensi.view.ZustandErfassen;
 
 public class JPanelDuenger extends javax.swing.JPanel {
 
