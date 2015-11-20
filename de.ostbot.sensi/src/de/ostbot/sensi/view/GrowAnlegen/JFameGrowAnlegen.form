@@ -57,7 +57,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jPanelPflanzeMitTopf" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jPanelKlima" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelKlima1" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jPanelBelichtung" min="-2" max="-2" attributes="0"/>
@@ -70,9 +70,7 @@
                           <Component id="jPanelWasser" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace pref="13" max="32767" attributes="0"/>
-                  <Component id="jPanelSpurenelemente" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -80,34 +78,27 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jPanelSpurenelemente" max="32767" attributes="0"/>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanelKlima" min="-2" max="-2" attributes="0"/>
-                              <Component id="jPanelPflanzeMitTopf" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanelBelichtung" min="-2" max="-2" attributes="0"/>
-                              <Component id="jPanelZyklus" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jPanelWasser" min="-2" pref="136" max="-2" attributes="0"/>
-                              <Component id="jPanelDuenger" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jPanelPflanzeMitTopf" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanelKlima1" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="131" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanelBelichtung" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanelZyklus" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jPanelWasser" min="-2" pref="136" max="-2" attributes="0"/>
+                      <Component id="jPanelDuenger" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
         <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelPflanzeMitTopf" name="jPanelPflanzeMitTopf">
-        </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelKlima" name="jPanelKlima">
         </Component>
         <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung" name="jPanelBelichtung">
         </Component>
@@ -117,7 +108,7 @@
         </Component>
         <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelWasser" name="jPanelWasser">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelSpurenelemente" name="jPanelSpurenelemente">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelKlima" name="jPanelKlima1">
         </Component>
       </SubComponents>
     </Container>

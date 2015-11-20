@@ -44,26 +44,38 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabelTemperaturAmTag" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <Component id="jSpinnerTemperaturAmTag" min="-2" pref="41" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Component id="jLabelTemperaturInDerNacht" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jSpinnerTemperaturInDerNacht" max="32767" attributes="0"/>
+                      </Group>
+                  </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jLabelTemperatur" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jSpinnerTemperatur" min="-2" pref="55" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelCelsius" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
-                          <Component id="jSpinnerLuftfeuchtigkeit" min="-2" pref="55" max="-2" attributes="0"/>
+                          <Component id="jLabelCelsiusAmTag" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jSpinnerLuftfeuchtigkeitInDerNacht1" min="-2" pref="40" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelProzent" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabelProzentAmTag" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jLabelLuftfeuchtigkeit" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jLabelCelsiusInDerNacht" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jSpinnerLuftfeuchtigkeitInDerNacht" min="-2" pref="40" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="jLabelProzentInDerNacht" min="-2" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace pref="16" max="32767" attributes="0"/>
+                  <EmptySpace pref="17" max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -71,52 +83,61 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jSpinnerLuftfeuchtigkeit" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelProzent" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jLabelTemperatur" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelLuftfeuchtigkeit" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="3" attributes="0">
-                              <Component id="jSpinnerTemperatur" alignment="3" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelCelsius" alignment="3" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jSpinnerTemperaturAmTag" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelCelsiusAmTag" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelTemperaturAmTag" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerLuftfeuchtigkeitInDerNacht1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelProzentAmTag" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="17" max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jLabelTemperaturInDerNacht" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerTemperaturInDerNacht" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelCelsiusInDerNacht" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jSpinnerLuftfeuchtigkeitInDerNacht" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelProzentInDerNacht" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabelTemperatur">
+        <Component class="javax.swing.JLabel" name="jLabelTemperaturAmTag">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Temperatur:"/>
+            <Property name="text" type="java.lang.String" value="@ Tag"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinnerTemperatur">
+        <Component class="javax.swing.JSpinner" name="jSpinnerTemperaturAmTag">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelCelsius">
+        <Component class="javax.swing.JLabel" name="jLabelCelsiusAmTag">
           <Properties>
             <Property name="text" type="java.lang.String" value="&#xb0;C"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelLuftfeuchtigkeit">
+        <Component class="javax.swing.JSpinner" name="jSpinnerLuftfeuchtigkeitInDerNacht1">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelProzentAmTag">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Luftfeuchtigkeit:"/>
+            <Property name="text" type="java.lang.String" value="%"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinnerLuftfeuchtigkeit">
+        <Component class="javax.swing.JLabel" name="jLabelTemperaturInDerNacht">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="@ Nacht"/>
+          </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelProzent">
+        <Component class="javax.swing.JSpinner" name="jSpinnerTemperaturInDerNacht">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelCelsiusInDerNacht">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="&#xb0;C"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="jSpinnerLuftfeuchtigkeitInDerNacht">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelProzentInDerNacht">
           <Properties>
             <Property name="text" type="java.lang.String" value="%"/>
           </Properties>
