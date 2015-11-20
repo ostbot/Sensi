@@ -126,19 +126,16 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
+        <Component class="javax.swing.JSpinner" name="jSpinnerDuenger">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelDuengerMilliliter">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="ml"/>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBoxMontag">
           <Properties>
             <Property name="text" type="java.lang.String" value="MO"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBoxDonnerstag">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="DO"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JCheckBox" name="jCheckBoxFreitag">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="FR"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBoxDienstag">
@@ -151,6 +148,16 @@
             <Property name="text" type="java.lang.String" value="MI"/>
           </Properties>
         </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxDonnerstag">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="DO"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JCheckBox" name="jCheckBoxFreitag">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="FR"/>
+          </Properties>
+        </Component>
         <Component class="javax.swing.JCheckBox" name="jCheckBoxSamstag">
           <Properties>
             <Property name="text" type="java.lang.String" value="SA"/>
@@ -159,13 +166,6 @@
         <Component class="javax.swing.JCheckBox" name="jCheckBoxSonntag">
           <Properties>
             <Property name="text" type="java.lang.String" value="SO"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinnerDuenger">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelDuengerMilliliter">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="ml"/>
           </Properties>
         </Component>
       </SubComponents>

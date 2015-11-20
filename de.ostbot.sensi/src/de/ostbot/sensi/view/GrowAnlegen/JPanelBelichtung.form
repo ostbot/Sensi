@@ -100,13 +100,6 @@
         </Component>
         <Component class="javax.swing.JSpinner" name="jSpinnerLeistung">
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelQuadratmeter">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="m&#xb2;"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinnerFlaeche">
-        </Component>
         <Component class="javax.swing.JLabel" name="jLabelWatt">
           <Properties>
             <Property name="text" type="java.lang.String" value="Watt"/>
@@ -115,6 +108,13 @@
         <Component class="javax.swing.JLabel" name="jLabelFlaeche">
           <Properties>
             <Property name="text" type="java.lang.String" value="Fl&#xe4;che:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSpinner" name="jSpinnerFlaeche">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelQuadratmeter">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="m&#xb2;"/>
           </Properties>
         </Component>
       </SubComponents>

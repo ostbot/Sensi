@@ -13,15 +13,15 @@ public class JPanelDuenger extends javax.swing.JPanel {
         jPanelHintergrund = new javax.swing.JPanel();
         jLabelDuenger = new javax.swing.JLabel();
         jComboBoxDuenger = new javax.swing.JComboBox<>();
-        jCheckBoxMontag = new javax.swing.JCheckBox();
-        jCheckBoxDonnerstag = new javax.swing.JCheckBox();
-        jCheckBoxFreitag = new javax.swing.JCheckBox();
-        jCheckBoxDienstag = new javax.swing.JCheckBox();
-        jCheckBoxMittwoch = new javax.swing.JCheckBox();
-        jCheckBoxSamstag = new javax.swing.JCheckBox();
-        jCheckBoxSonntag = new javax.swing.JCheckBox();
         jSpinnerDuenger = new javax.swing.JSpinner();
         jLabelDuengerMilliliter = new javax.swing.JLabel();
+        jCheckBoxMontag = new javax.swing.JCheckBox();
+        jCheckBoxDienstag = new javax.swing.JCheckBox();
+        jCheckBoxMittwoch = new javax.swing.JCheckBox();
+        jCheckBoxDonnerstag = new javax.swing.JCheckBox();
+        jCheckBoxFreitag = new javax.swing.JCheckBox();
+        jCheckBoxSamstag = new javax.swing.JCheckBox();
+        jCheckBoxSonntag = new javax.swing.JCheckBox();
 
         setBackground(new java.awt.Color(153, 153, 153));
 
@@ -29,21 +29,21 @@ public class JPanelDuenger extends javax.swing.JPanel {
 
         jComboBoxDuenger.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
+        jLabelDuengerMilliliter.setText("ml");
+
         jCheckBoxMontag.setText("MO");
-
-        jCheckBoxDonnerstag.setText("DO");
-
-        jCheckBoxFreitag.setText("FR");
 
         jCheckBoxDienstag.setText("DI");
 
         jCheckBoxMittwoch.setText("MI");
 
+        jCheckBoxDonnerstag.setText("DO");
+
+        jCheckBoxFreitag.setText("FR");
+
         jCheckBoxSamstag.setText("SA");
 
         jCheckBoxSonntag.setText("SO");
-
-        jLabelDuengerMilliliter.setText("ml");
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);

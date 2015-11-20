@@ -30,20 +30,20 @@ public class JPanelBelichtung extends javax.swing.JPanel {
         jPanelHintergrund = new javax.swing.JPanel();
         jLabelLeistung = new javax.swing.JLabel();
         jSpinnerLeistung = new javax.swing.JSpinner();
-        jLabelQuadratmeter = new javax.swing.JLabel();
-        jSpinnerFlaeche = new javax.swing.JSpinner();
         jLabelWatt = new javax.swing.JLabel();
         jLabelFlaeche = new javax.swing.JLabel();
+        jSpinnerFlaeche = new javax.swing.JSpinner();
+        jLabelQuadratmeter = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(153, 153, 153));
 
         jLabelLeistung.setText("Leistung:");
 
-        jLabelQuadratmeter.setText("m²");
-
         jLabelWatt.setText("Watt");
 
         jLabelFlaeche.setText("Fläche:");
+
+        jLabelQuadratmeter.setText("m²");
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);

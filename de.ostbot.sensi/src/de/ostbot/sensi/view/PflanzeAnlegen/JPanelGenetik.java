@@ -11,39 +11,39 @@ public class JPanelGenetik extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jComboBoxHerkunftsland = new javax.swing.JComboBox<>();
-        jLabelHerkunftsland = new javax.swing.JLabel();
+        jLabelSorte = new javax.swing.JLabel();
+        jTextFieldSorte = new javax.swing.JTextField();
         jLabelIndica = new javax.swing.JLabel();
         jSpinnerIndica = new javax.swing.JSpinner();
-        jLabelSativa = new javax.swing.JLabel();
         jLabelIndicaProzent = new javax.swing.JLabel();
+        jLabelSativa = new javax.swing.JLabel();
+        jSpinnerSativa = new javax.swing.JSpinner();
         jLabelSativaProzent = new javax.swing.JLabel();
+        jLabelHerkunftsland = new javax.swing.JLabel();
+        jComboBoxHerkunftsland = new javax.swing.JComboBox<>();
         jButtonSpeichern = new javax.swing.JButton();
         jButtonVerlassen = new javax.swing.JButton();
-        jSpinnerSativa = new javax.swing.JSpinner();
-        jTextFieldSorte = new javax.swing.JTextField();
-        jLabelSorte = new javax.swing.JLabel();
         jPanelFenster = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(153, 153, 153));
 
-        jComboBoxHerkunftsland.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jLabelHerkunftsland.setText("Herkunftsland:");
+        jLabelSorte.setText("Sorte:");
 
         jLabelIndica.setText("Indica:");
 
-        jLabelSativa.setText("Sativa:");
-
         jLabelIndicaProzent.setText("%");
 
+        jLabelSativa.setText("Sativa:");
+
         jLabelSativaProzent.setText("%");
+
+        jLabelHerkunftsland.setText("Herkunftsland:");
+
+        jComboBoxHerkunftsland.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jButtonSpeichern.setText("Speichern");
 
         jButtonVerlassen.setText("Verlassen");
-
-        jLabelSorte.setText("Sorte:");
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);
