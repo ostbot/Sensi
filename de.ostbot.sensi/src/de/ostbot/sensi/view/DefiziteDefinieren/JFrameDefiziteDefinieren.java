@@ -125,5 +125,4 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
     private de.ostbot.sensi.view.DefiziteDefinieren.JPanelMakroelemente jPanelMakroelemente2;
     private de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente jPanelMikroelemente2;
     private de.ostbot.sensi.view.DefiziteDefinieren.JPanelUmgebung jPanelUmgebung1;
-    // End of variables declaration//GEN-END:variables
 }

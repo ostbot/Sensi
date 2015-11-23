@@ -6,14 +6,14 @@ public class JPanelTopf extends javax.swing.JPanel {
         initComponents();
     }
 
-    //Getter-Substrat
+    //Getter-ComboBox-Substrat
     public String getSubstrat() {
         String rueckgabe;
         rueckgabe = (String)jComboBoxSubstrat.getSelectedItem();
         return rueckgabe;
     }
 
-    //Getter-Topfgroesse
+    //Getter-TextField-Topfgroesse
     public double getTopfgroesse() {
         double rueckgabe;
         rueckgabe = Double.parseDouble(jTextFieldTopfgroesse.getText());
@@ -49,9 +49,11 @@ public class JPanelTopf extends javax.swing.JPanel {
                     .addComponent(jTextFieldTopfgroesse, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBoxSubstrat, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSubstratArt))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                        .addComponent(jLabelSubstratArt)
+                        .addGap(0, 54, Short.MAX_VALUE))
+                    .addComponent(jComboBoxSubstrat, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanelHintergrundLayout.setVerticalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

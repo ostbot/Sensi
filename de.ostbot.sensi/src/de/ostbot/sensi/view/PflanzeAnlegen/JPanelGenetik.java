@@ -6,28 +6,28 @@ public class JPanelGenetik extends javax.swing.JPanel {
         initComponents();
     }
 
-    //Getter-Herkunftsland
+    //Getter-Combobox-Herkunftsland
     public String getHerkunftsland() {
         String rueckgabe;
         rueckgabe = (String)jComboBoxHerkunftsland.getSelectedItem();
         return rueckgabe;
     }
 
-    //Getter-Indica
+    //Getter-Spinner-Indica
     public int getIndica() {
         Integer rueckgabe;
         rueckgabe = (Integer)jSpinnerIndica.getValue();
         return rueckgabe;
     }
 
-    //Getter-Sativa
+    //Getter-Spinner-Sativa
     public int getSativa() {
         Integer rueckgabe;
         rueckgabe = (Integer)jSpinnerSativa.getValue();
         return rueckgabe;
     }
 
-    //Getter-Sorte
+    //Getter-TextField-Sorte
     public String getSorte() {
         return jTextFieldSorte.getText();
     }
