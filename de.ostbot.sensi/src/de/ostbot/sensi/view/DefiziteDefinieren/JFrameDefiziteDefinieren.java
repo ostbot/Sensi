@@ -110,14 +110,12 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new JFrameDefiziteDefinieren().setVisible(true);
-            }
+        java.awt.EventQueue.invokeLater(() -> {
+            new JFrameDefiziteDefinieren().setVisible(true);
         });
     }
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // Variables declaration - do not modify                                                              
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
@@ -125,4 +123,5 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
     private de.ostbot.sensi.view.DefiziteDefinieren.JPanelMakroelemente jPanelMakroelemente2;
     private de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente jPanelMikroelemente2;
     private de.ostbot.sensi.view.DefiziteDefinieren.JPanelUmgebung jPanelUmgebung1;
+    // End of variables declaration
 }
