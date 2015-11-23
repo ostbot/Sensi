@@ -60,8 +60,6 @@ public class JPanelPflanzeMitTopf extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBoxPflanze;
     private javax.swing.JLabel jLabelPflanzeMitTopfAuswaehlen;

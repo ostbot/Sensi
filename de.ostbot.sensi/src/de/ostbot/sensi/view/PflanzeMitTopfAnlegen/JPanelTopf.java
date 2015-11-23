@@ -1,10 +1,6 @@
-package de.ostbot.sensi.view.PflanzeAnlegen;
+package de.ostbot.sensi.view.PflanzeMitTopfAnlegen;
 
 public class JPanelTopf extends javax.swing.JPanel {
-
-    public JPanelTopf() {
-        initComponents();
-    }
 
     //Getter-ComboBox-Substrat
     public String getSubstrat() {
@@ -15,11 +11,14 @@ public class JPanelTopf extends javax.swing.JPanel {
 
     //Getter-TextField-Topfgroesse
     public double getTopfgroesse() {
-        double rueckgabe;
-        rueckgabe = Double.parseDouble(jTextFieldTopfgroesse.getText());
-        return rueckgabe;
+        String rueckgabe;
+        rueckgabe = jTextFieldTopfgroesse.getText();
+        return Double.parseDouble(rueckgabe.replace(",", "."));
     }
     
+    public JPanelTopf() {
+        initComponents();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

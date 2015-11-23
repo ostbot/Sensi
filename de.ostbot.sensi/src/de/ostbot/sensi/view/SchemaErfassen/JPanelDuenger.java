@@ -116,7 +116,6 @@ public class JPanelDuenger extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JCheckBox jCheckBoxDienstag;
     private javax.swing.JCheckBox jCheckBoxDonnerstag;

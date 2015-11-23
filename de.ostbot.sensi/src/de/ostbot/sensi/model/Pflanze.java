@@ -1,32 +1,32 @@
 package de.ostbot.sensi.model;
 
-public class PflanzeAnlegen {
-    
+public class Pflanze {
+
     String sorte, herkunftsland, substrat;
     int indica, sativa;
     double topfgroesse;
 
-    //Setter-Sorte
+    //Getter-Sorte
     public String getSorte() {
         return sorte;
     }
 
-    //Setter-Herkunftsland
+    //Getter-Herkunftsland
     public String getHerkunftsland() {
         return herkunftsland;
     }
-    
-    //Setter-Substrat
+
+    //Getter-Substrat
     public String getSubstrat() {
         return substrat;
     }
 
-    //Setter-Indica
+    //Getter-Indica
     public int getIndica() {
         return indica;
     }
 
-    //Setter-Sativa
+    //Getter-Sativa
     public int getSativa() {
         return sativa;
     }
@@ -36,38 +36,38 @@ public class PflanzeAnlegen {
         return topfgroesse;
     }
 
-    //Getter-Sorte
+    //Setter-Sorte
     public void setSorte(String sorte) {
         this.sorte = sorte;
     }
 
-    //Getter-Herkunftsland
+    //Setter-Herkunftsland
     public void setHerkunftsland(String herkunftsland) {
         this.herkunftsland = herkunftsland;
     }
 
-    //Getter-Substrat
+    //Setter-Substrat
     public void setSubstrat(String substrat) {
         this.substrat = substrat;
     }
 
-    //Getter-Indica
+    //Setter-Indica
     public void setIndica(int indica) {
         this.indica = indica;
     }
 
-    //Getter-Sativa
+    //Setter-Sativa
     public void setSativa(int sativa) {
         this.sativa = sativa;
     }
 
-    //Getter-Topfgroesse
+    //Setter-Topfgroesse
     public void setTopfgroesse(double topfgroesse) {
         this.topfgroesse = topfgroesse;
     }
 
-    //Konstruktor-PflanzeAnlegen
-    public PflanzeAnlegen(String sorte, String herkunftsland, String substrat, int indica, int sativa, double topfgroesse) {
+    //Konstruktor-Pflanze
+    public Pflanze(String sorte, String herkunftsland, int indica, int sativa, String substrat, double topfgroesse) {
         this.sorte = sorte;
         this.herkunftsland = herkunftsland;
         this.substrat = substrat;

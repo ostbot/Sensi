@@ -1,22 +1,22 @@
-package de.ostbot.sensi.view.PflanzeAnlegen;
+package de.ostbot.sensi.view.PflanzeMitTopfAnlegen;
 
-import de.ostbot.sensi.model.PflanzeAnlegen;
+import de.ostbot.sensi.control.Datenbankoperationen;
+import de.ostbot.sensi.model.Pflanze;
 
-public class JFramePflanzeAnlegen extends javax.swing.JFrame {
+public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
 
-    public JFramePflanzeAnlegen() {
+    public JFramePflanzeMitTopfAnlegen() {
         initComponents();
     }
-    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jPanelGenetik = new de.ostbot.sensi.view.PflanzeAnlegen.JPanelGenetik();
         jButtonSpeichern = new javax.swing.JButton();
         jButtonVerlassen = new javax.swing.JButton();
-        jPanelTopf = new de.ostbot.sensi.view.PflanzeAnlegen.JPanelTopf();
+        jPanelGenetik = new de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelGenetik();
+        jPanelTopf = new de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelTopf();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -38,16 +38,14 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jButtonSpeichern, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonVerlassen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanelGenetik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jPanelTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(0, 3, Short.MAX_VALUE)))
-                .addContainerGap())
+                    .addComponent(jPanelGenetik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                            .addComponent(jButtonSpeichern, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButtonVerlassen, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanelTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanelHintergrundLayout.setVerticalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -56,7 +54,7 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
                 .addComponent(jPanelGenetik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanelTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(12, 12, 12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSpeichern)
                     .addComponent(jButtonVerlassen))
@@ -82,21 +80,31 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
     private void jButtonSpeichernMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSpeichernMouseClicked
-        
+
         String sorte, herkunftsland, substrat;
         int indica, sativa;
         double topfgroesse;
-        
+        Pflanze pflanze; //Objekt vom Typ 'Pflanze' erstellen
+        Datenbankoperationen DatenbankoperationenObject;
+
         sorte = jPanelGenetik.getSorte();
         herkunftsland = jPanelGenetik.getHerkunftsland();
-        indica = jPanelGenetik.getIndica();
-        sativa = jPanelGenetik.getSativa();
-        substrat = jPanelTopf.getSubstrat();
-        topfgroesse = jPanelTopf.getTopfgroesse();
-        PflanzeAnlegen pflanze;
-        pflanze = new PflanzeAnlegen(sorte, herkunftsland, substrat, indica, sativa, topfgroesse);
+        if ((jPanelGenetik.getIndica() + jPanelGenetik.getSativa()) != 100) {
+            System.err.println("Falsches Gewicht in der Genetik");
+            if (jPanelTopf.getTopfgroesse() != 999.999) {
+                System.err.println("Falsches Gewicht in der Genetik");
+            }
+        } else {
+            indica = jPanelGenetik.getIndica();
+            sativa = jPanelGenetik.getSativa();
+            substrat = jPanelTopf.getSubstrat();
+            topfgroesse = jPanelTopf.getTopfgroesse();
+            pflanze = new Pflanze(sorte, herkunftsland, indica, sativa, substrat, topfgroesse);
+
+            DatenbankoperationenObject = new Datenbankoperationen();
+            DatenbankoperationenObject.pflanzeMitTopfInDatenbankAnlegen(pflanze);
+        }
     }//GEN-LAST:event_jButtonSpeichernMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -112,27 +120,29 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFramePflanzeAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFramePflanzeMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFramePflanzeAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFramePflanzeMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFramePflanzeAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFramePflanzeMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFramePflanzeAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFramePflanzeMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new JFramePflanzeAnlegen().setVisible(true);
+            new JFramePflanzeMitTopfAnlegen().setVisible(true);
         });
-    }   
+    }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonSpeichern;
     private javax.swing.JButton jButtonVerlassen;
-    private de.ostbot.sensi.view.PflanzeAnlegen.JPanelGenetik jPanelGenetik;
+    private de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelGenetik jPanelGenetik;
     private javax.swing.JPanel jPanelHintergrund;
-    private de.ostbot.sensi.view.PflanzeAnlegen.JPanelTopf jPanelTopf;
+    private de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelTopf jPanelTopf;
     // End of variables declaration//GEN-END:variables
 }

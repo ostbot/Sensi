@@ -1,10 +1,6 @@
-package de.ostbot.sensi.view.PflanzeAnlegen;
+package de.ostbot.sensi.view.PflanzeMitTopfAnlegen;
 
 public class JPanelGenetik extends javax.swing.JPanel {
-
-    public JPanelGenetik() {
-        initComponents();
-    }
 
     //Getter-Combobox-Herkunftsland
     public String getHerkunftsland() {
@@ -32,6 +28,9 @@ public class JPanelGenetik extends javax.swing.JPanel {
         return jTextFieldSorte.getText();
     }
     
+    public JPanelGenetik() {
+        initComponents();
+    }
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -47,8 +46,7 @@ public class JPanelGenetik extends javax.swing.JPanel {
         jLabelSativaProzent = new javax.swing.JLabel();
         jLabelHerkunftsland = new javax.swing.JLabel();
         jComboBoxHerkunftsland = new javax.swing.JComboBox<>();
-        jButtonSpeichern = new javax.swing.JButton();
-        jButtonVerlassen = new javax.swing.JButton();
+        jPanelFlagge = new javax.swing.JPanel();
         jPanelFenster = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(153, 153, 153));
@@ -67,9 +65,18 @@ public class JPanelGenetik extends javax.swing.JPanel {
 
         jComboBoxHerkunftsland.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jButtonSpeichern.setText("Speichern");
+        jPanelFlagge.setBackground(new java.awt.Color(153, 255, 255));
 
-        jButtonVerlassen.setText("Verlassen");
+        javax.swing.GroupLayout jPanelFlaggeLayout = new javax.swing.GroupLayout(jPanelFlagge);
+        jPanelFlagge.setLayout(jPanelFlaggeLayout);
+        jPanelFlaggeLayout.setHorizontalGroup(
+            jPanelFlaggeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelFlaggeLayout.setVerticalGroup(
+            jPanelFlaggeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 27, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);
@@ -78,59 +85,58 @@ public class JPanelGenetik extends javax.swing.JPanel {
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addContainerGap()
                         .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelHerkunftsland)
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabelSativaProzent)
-                                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jButtonVerlassen, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
-                                    .addComponent(jButtonSpeichern, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jComboBoxHerkunftsland, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabelIndicaProzent)))))
-                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHintergrundLayout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabelSativa))
                             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                                 .addGap(12, 12, 12)
-                                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabelIndica)
-                                    .addComponent(jLabelSorte))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jLabelSorte))
+                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                                .addContainerGap()
+                                .addComponent(jLabelIndica)))
+                        .addGap(12, 12, 12)
                         .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jSpinnerSativa, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jSpinnerIndica, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jTextFieldSorte, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                                .addComponent(jSpinnerIndica, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelSativaProzent))
+                            .addComponent(jTextFieldSorte, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jLabelHerkunftsland)
+                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                                .addComponent(jLabelSativa)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jSpinnerSativa, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabelIndicaProzent))
+                            .addComponent(jComboBoxHerkunftsland, 0, 115, Short.MAX_VALUE)
+                            .addComponent(jPanelFlagge, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                .addContainerGap(11, Short.MAX_VALUE))
         );
         jPanelHintergrundLayout.setVerticalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(18, 18, 18)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextFieldSorte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelSorte))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelIndica)
                     .addComponent(jSpinnerIndica, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelIndicaProzent))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jSpinnerSativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSativa)
+                    .addComponent(jLabelIndica)
                     .addComponent(jLabelSativaProzent))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(18, 18, 18)
+                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelSativa)
+                    .addComponent(jSpinnerSativa, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelIndicaProzent))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabelHerkunftsland)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jComboBoxHerkunftsland, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonSpeichern)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButtonVerlassen)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jPanelFlagge, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanelFensterLayout = new javax.swing.GroupLayout(jPanelFenster);
@@ -150,10 +156,10 @@ public class JPanelGenetik extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelHintergrund, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelHintergrund, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanelFenster, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -166,8 +172,6 @@ public class JPanelGenetik extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonSpeichern;
-    private javax.swing.JButton jButtonVerlassen;
     private javax.swing.JComboBox<String> jComboBoxHerkunftsland;
     private javax.swing.JLabel jLabelHerkunftsland;
     private javax.swing.JLabel jLabelIndica;
@@ -176,6 +180,7 @@ public class JPanelGenetik extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelSativaProzent;
     private javax.swing.JLabel jLabelSorte;
     private javax.swing.JPanel jPanelFenster;
+    private javax.swing.JPanel jPanelFlagge;
     private javax.swing.JPanel jPanelHintergrund;
     private javax.swing.JSpinner jSpinnerIndica;
     private javax.swing.JSpinner jSpinnerSativa;

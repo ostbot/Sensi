@@ -75,7 +75,6 @@ public class JPanelWasser extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelLiterProTag;
     private javax.swing.JLabel jLabelPHWert;
