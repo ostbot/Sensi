@@ -6,6 +6,20 @@ public class JPanelTopf extends javax.swing.JPanel {
         initComponents();
     }
 
+    //Getter-Substrat
+    public String getSubstrat() {
+        String rueckgabe;
+        rueckgabe = (String)jComboBoxSubstrat.getSelectedItem();
+        return rueckgabe;
+    }
+
+    //Getter-Topfgroesse
+    public double getTopfgroesse() {
+        double rueckgabe;
+        rueckgabe = Double.parseDouble(jTextFieldTopfgroesse.getText());
+        return rueckgabe;
+    }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -70,7 +84,6 @@ public class JPanelTopf extends javax.swing.JPanel {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBoxSubstrat;
     private javax.swing.JLabel jLabelSubstratArt;

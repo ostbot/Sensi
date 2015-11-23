@@ -1,11 +1,13 @@
 package de.ostbot.sensi.view.PflanzeAnlegen;
 
+import de.ostbot.sensi.model.PflanzeAnlegen;
+
 public class JFramePflanzeAnlegen extends javax.swing.JFrame {
 
     public JFramePflanzeAnlegen() {
         initComponents();
     }
-
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -21,6 +23,11 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
         jPanelHintergrund.setBackground(new java.awt.Color(204, 204, 204));
 
         jButtonSpeichern.setText("Speichern");
+        jButtonSpeichern.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonSpeichernMouseClicked(evt);
+            }
+        });
 
         jButtonVerlassen.setText("Verlassen");
 
@@ -32,14 +39,14 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jPanelTopf, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanelGenetik, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                         .addComponent(jButtonSpeichern, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButtonVerlassen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jButtonVerlassen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanelTopf, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanelGenetik, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanelHintergrundLayout.setVerticalGroup(
@@ -76,6 +83,21 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButtonSpeichernMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSpeichernMouseClicked
+        
+        String sorte, herkunftsland, substrat;
+        int indica, sativa;
+        double topfgroesse;
+        
+        sorte = jPanelGenetik.getSorte();
+        herkunftsland = jPanelGenetik.getHerkunftsland();
+        indica = jPanelGenetik.getIndica();
+        sativa = jPanelGenetik.getSativa();
+        substrat = jPanelTopf.getSubstrat();
+        topfgroesse = jPanelTopf.getTopfgroesse();
+        PflanzeAnlegen pflanze;
+        pflanze = new PflanzeAnlegen(sorte, herkunftsland, substrat, indica, sativa, topfgroesse);
+    }//GEN-LAST:event_jButtonSpeichernMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -105,8 +127,7 @@ public class JFramePflanzeAnlegen extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(() -> {
             new JFramePflanzeAnlegen().setVisible(true);
         });
-    }
-
+    }   
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonSpeichern;
     private javax.swing.JButton jButtonVerlassen;

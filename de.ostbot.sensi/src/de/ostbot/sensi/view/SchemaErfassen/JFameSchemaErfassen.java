@@ -1,8 +1,8 @@
-package de.ostbot.sensi.view.ZustandErfassen;
+package de.ostbot.sensi.view.SchemaErfassen;
 
-public class JFameZustandErfassen extends javax.swing.JFrame {
+public class JFameSchemaErfassen extends javax.swing.JFrame {
 
-    public JFameZustandErfassen() {
+    public JFameSchemaErfassen() {
         initComponents();
     }
 
@@ -11,12 +11,12 @@ public class JFameZustandErfassen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jPanelPflanzeMitTopf = new de.ostbot.sensi.view.ZustandErfassen.JPanelPflanzeMitTopf();
-        jPanelBelichtung = new de.ostbot.sensi.view.ZustandErfassen.JPanelBelichtung();
-        jPanelZyklus = new de.ostbot.sensi.view.ZustandErfassen.JPanelZyklus();
-        jPanelDuenger = new de.ostbot.sensi.view.ZustandErfassen.JPanelDuenger();
-        jPanelWasser = new de.ostbot.sensi.view.ZustandErfassen.JPanelWasser();
-        jPanelKlima = new de.ostbot.sensi.view.ZustandErfassen.JPanelKlima();
+        jPanelPflanzeMitTopf = new de.ostbot.sensi.view.SchemaErfassen.JPanelPflanzeMitTopf();
+        jPanelBelichtung = new de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung();
+        jPanelZyklus = new de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus();
+        jPanelDuenger = new de.ostbot.sensi.view.SchemaErfassen.JPanelDuenger();
+        jPanelWasser = new de.ostbot.sensi.view.SchemaErfassen.JPanelWasser();
+        jPanelKlima = new de.ostbot.sensi.view.SchemaErfassen.JPanelKlima();
         jButtonSpeichern = new javax.swing.JButton();
         jButtonDefiziteDefinieren = new javax.swing.JButton();
         jButtonVerlassen = new javax.swing.JButton();
@@ -115,14 +115,18 @@ public class JFameZustandErfassen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFameZustandErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFameZustandErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFameZustandErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFameZustandErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -130,7 +134,7 @@ public class JFameZustandErfassen extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new JFameZustandErfassen().setVisible(true);
+            new JFameSchemaErfassen().setVisible(true);
         });
     }
 
@@ -138,12 +142,12 @@ public class JFameZustandErfassen extends javax.swing.JFrame {
     private javax.swing.JButton jButtonDefiziteDefinieren;
     private javax.swing.JButton jButtonSpeichern;
     private javax.swing.JButton jButtonVerlassen;
-    private de.ostbot.sensi.view.ZustandErfassen.JPanelBelichtung jPanelBelichtung;
-    private de.ostbot.sensi.view.ZustandErfassen.JPanelDuenger jPanelDuenger;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung jPanelBelichtung;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelDuenger jPanelDuenger;
     private javax.swing.JPanel jPanelHintergrund;
-    private de.ostbot.sensi.view.ZustandErfassen.JPanelKlima jPanelKlima;
-    private de.ostbot.sensi.view.ZustandErfassen.JPanelPflanzeMitTopf jPanelPflanzeMitTopf;
-    private de.ostbot.sensi.view.ZustandErfassen.JPanelWasser jPanelWasser;
-    private de.ostbot.sensi.view.ZustandErfassen.JPanelZyklus jPanelZyklus;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelKlima jPanelKlima;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelPflanzeMitTopf jPanelPflanzeMitTopf;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelWasser jPanelWasser;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus jPanelZyklus;
     // End of variables declaration//GEN-END:variables
 }

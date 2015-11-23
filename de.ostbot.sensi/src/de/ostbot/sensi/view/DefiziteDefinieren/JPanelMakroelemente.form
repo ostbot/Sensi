@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <Properties>
+    <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+      <Color blue="99" green="99" red="99" type="rgb"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="1"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+  </AuxValues>
+
+  <Layout>
+    <DimensionLayout dim="0">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanelHintergrund" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+    <DimensionLayout dim="1">
+      <Group type="103" groupAlignment="0" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jPanelHintergrund" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+          </Group>
+      </Group>
+    </DimensionLayout>
+  </Layout>
+  <SubComponents>
+    <Container class="javax.swing.JPanel" name="jPanelHintergrund">
+
+      <Layout>
+        <DimensionLayout dim="0">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="0" attributes="0">
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelMakroelemente" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelKalium" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelSchwefel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelKalzium" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelPhosphor" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelStickstoff" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jSliderStickstoff" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabelStickstoffAnzeige" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jSliderPhosphor" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabelPhosphorAnzeige" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jSliderKalzium" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabelKalziumAnzeige" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jSliderSchwefel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabelSchwefelAnzeige" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" alignment="0" attributes="0">
+                                  <Component id="jSliderKalium" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabelKaliumAnzeige" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+        <DimensionLayout dim="1">
+          <Group type="103" groupAlignment="0" attributes="0">
+              <Group type="102" alignment="1" attributes="0">
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelMakroelemente" min="-2" pref="14" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jSliderStickstoff" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelStickstoff" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jLabelStickstoffAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelPhosphor" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelPhosphorAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSliderKalium" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelKalium" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelKaliumAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSliderSchwefel" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelSchwefel" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelSchwefelAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSliderKalzium" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelKalzium" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelKalziumAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jSliderPhosphor" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="32767" attributes="0"/>
+              </Group>
+          </Group>
+        </DimensionLayout>
+      </Layout>
+      <SubComponents>
+        <Component class="javax.swing.JLabel" name="jLabelMakroelemente">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Makroelemente:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelStickstoff">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Stickstoff:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSlider" name="jSliderStickstoff">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelStickstoffAnzeige">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelPhosphor">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Phosphor:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSlider" name="jSliderPhosphor">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelPhosphorAnzeige">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelKalium">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kalium:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSlider" name="jSliderKalium">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelKaliumAnzeige">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelSchwefel">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Schwefel:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSlider" name="jSliderSchwefel">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelSchwefelAnzeige">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelKalzium">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Kalzium:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSlider" name="jSliderKalzium">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelKalziumAnzeige">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

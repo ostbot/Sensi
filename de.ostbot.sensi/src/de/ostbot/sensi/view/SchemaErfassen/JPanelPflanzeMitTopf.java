@@ -1,4 +1,4 @@
-package de.ostbot.sensi.view.ZustandErfassen;
+package de.ostbot.sensi.view.SchemaErfassen;
 
 public class JPanelPflanzeMitTopf extends javax.swing.JPanel {
 

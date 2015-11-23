@@ -50,16 +50,11 @@
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabelBor" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelEisen" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelKupfer" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelMangan" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelMolybdaen" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelSchwefel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelSelen" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelSilizium" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelZink" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="97" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
                                   <Component id="jSliderSilizium" min="-2" max="-2" attributes="0"/>
@@ -76,10 +71,28 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabelSelenAnzeige" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jSliderSchwefel" min="-2" max="-2" attributes="0"/>
+                              <Group type="102" attributes="0">
+                                  <Component id="jSliderBor" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabelSchwefelAnzeige" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelBorAnzeige" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                      <Component id="jLabelMikroelemente" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelEisen" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelKupfer" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelMangan" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelMolybdaen" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelChlor" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jSliderChlor" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabelChlorAnzeige" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jSliderMolybdaen" min="-2" max="-2" attributes="0"/>
@@ -101,16 +114,10 @@
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabelEisenAnzeige" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Group type="102" attributes="0">
-                                  <Component id="jSliderBor" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="jLabelBorAnzeige" min="-2" max="-2" attributes="0"/>
-                              </Group>
                           </Group>
                       </Group>
-                      <Component id="jLabelSpurenelemente" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="66" max="32767" attributes="0"/>
+                  <EmptySpace max="32767" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -118,7 +125,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="1" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelSpurenelemente" min="-2" pref="14" max="-2" attributes="0"/>
+                  <Component id="jLabelMikroelemente" min="-2" pref="14" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jSliderBor" min="-2" max="-2" attributes="0"/>
@@ -127,51 +134,59 @@
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jSliderEisen" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelEisen" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jLabelEisenAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Group type="102" alignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelChlor" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelChlorAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSliderEisen" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelEisen" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelEisenAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSliderKupfer" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelKupfer" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelKupferAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSliderMangan" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelMangan" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelManganAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSliderMolybdaen" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelMolybdaen" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelMolybdaenAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Component id="jSliderChlor" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jSliderKupfer" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelKupfer" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jLabelKupferAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jSliderMangan" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelMangan" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jLabelManganAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jSliderMolybdaen" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelMolybdaen" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jLabelMolybdaenAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jSliderSchwefel" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelSchwefel" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jLabelSchwefelAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabelSelen" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelSelenAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSliderSilizium" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelSilizium" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelSiliziumAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jSliderZink" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelZink" min="-2" pref="26" max="-2" attributes="0"/>
+                              <Component id="jLabelZinkAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
                       <Component id="jSliderSelen" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelSelen" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jLabelSelenAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jSliderSilizium" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelSilizium" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jLabelSiliziumAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jSliderZink" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelZink" min="-2" pref="26" max="-2" attributes="0"/>
-                      <Component id="jLabelZinkAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -179,9 +194,9 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabelSpurenelemente">
+        <Component class="javax.swing.JLabel" name="jLabelMikroelemente">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Spurenelemente:"/>
+            <Property name="text" type="java.lang.String" value="Mikroelemente:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelBor">
@@ -192,6 +207,18 @@
         <Component class="javax.swing.JSlider" name="jSliderBor">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelBorAnzeige">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelChlor">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Chlor"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSlider" name="jSliderChlor">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelChlorAnzeige">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
@@ -240,18 +267,6 @@
         <Component class="javax.swing.JSlider" name="jSliderMolybdaen">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelMolybdaenAnzeige">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelSchwefel">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Schwefel"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSlider" name="jSliderSchwefel">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelSchwefelAnzeige">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>

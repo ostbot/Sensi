@@ -3,20 +3,18 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.ostbot.sensi.view.DefiziteDefinieren.Spurenelemente;
-
-import de.ostbot.sensi.view.ZustandErfassen.*;
+package de.ostbot.sensi.view.DefiziteDefinieren;
 
 /**
  *
  * @author Ostlord_UBA
  */
-public class JPanelSpurenelemente extends javax.swing.JPanel {
+public class JPanelMikroelemente extends javax.swing.JPanel {
 
     /**
      * Creates new form JPanelSpurenelemente
      */
-    public JPanelSpurenelemente() {
+    public JPanelMikroelemente() {
         initComponents();
     }
 
@@ -30,10 +28,13 @@ public class JPanelSpurenelemente extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jLabelSpurenelemente = new javax.swing.JLabel();
+        jLabelMikroelemente = new javax.swing.JLabel();
         jLabelBor = new javax.swing.JLabel();
         jSliderBor = new javax.swing.JSlider();
         jLabelBorAnzeige = new javax.swing.JLabel();
+        jLabelChlor = new javax.swing.JLabel();
+        jSliderChlor = new javax.swing.JSlider();
+        jLabelChlorAnzeige = new javax.swing.JLabel();
         jLabelEisen = new javax.swing.JLabel();
         jSliderEisen = new javax.swing.JSlider();
         jLabelEisenAnzeige = new javax.swing.JLabel();
@@ -46,9 +47,6 @@ public class JPanelSpurenelemente extends javax.swing.JPanel {
         jLabelMolybdaen = new javax.swing.JLabel();
         jSliderMolybdaen = new javax.swing.JSlider();
         jLabelMolybdaenAnzeige = new javax.swing.JLabel();
-        jLabelSchwefel = new javax.swing.JLabel();
-        jSliderSchwefel = new javax.swing.JSlider();
-        jLabelSchwefelAnzeige = new javax.swing.JLabel();
         jLabelSelen = new javax.swing.JLabel();
         jSliderSelen = new javax.swing.JSlider();
         jLabelSelenAnzeige = new javax.swing.JLabel();
@@ -61,11 +59,15 @@ public class JPanelSpurenelemente extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabelSpurenelemente.setText("Spurenelemente:");
+        jLabelMikroelemente.setText("Mikroelemente:");
 
         jLabelBor.setText("Bor");
 
         jLabelBorAnzeige.setText("0");
+
+        jLabelChlor.setText("Chlor");
+
+        jLabelChlorAnzeige.setText("0");
 
         jLabelEisen.setText("Eisen");
 
@@ -82,10 +84,6 @@ public class JPanelSpurenelemente extends javax.swing.JPanel {
         jLabelMolybdaen.setText("Molybdän");
 
         jLabelMolybdaenAnzeige.setText("0");
-
-        jLabelSchwefel.setText("Schwefel");
-
-        jLabelSchwefelAnzeige.setText("0");
 
         jLabelSelen.setText("Selen");
 
@@ -109,15 +107,10 @@ public class JPanelSpurenelemente extends javax.swing.JPanel {
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                         .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabelBor)
-                            .addComponent(jLabelEisen)
-                            .addComponent(jLabelKupfer)
-                            .addComponent(jLabelMangan)
-                            .addComponent(jLabelMolybdaen)
-                            .addComponent(jLabelSchwefel)
                             .addComponent(jLabelSelen)
                             .addComponent(jLabelSilizium)
                             .addComponent(jLabelZink))
-                        .addGap(84, 84, 84)
+                        .addGap(97, 97, 97)
                         .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                                 .addComponent(jSliderSilizium, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -132,9 +125,23 @@ public class JPanelSpurenelemente extends javax.swing.JPanel {
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabelSelenAnzeige))
                             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSliderSchwefel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jSliderBor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabelSchwefelAnzeige))
+                                .addComponent(jLabelBorAnzeige))))
+                    .addComponent(jLabelMikroelemente)
+                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelEisen)
+                            .addComponent(jLabelKupfer)
+                            .addComponent(jLabelMangan)
+                            .addComponent(jLabelMolybdaen)
+                            .addComponent(jLabelChlor))
+                        .addGap(84, 84, 84)
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                                .addComponent(jSliderChlor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(jLabelChlorAnzeige))
                             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                                 .addComponent(jSliderMolybdaen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
@@ -150,19 +157,14 @@ public class JPanelSpurenelemente extends javax.swing.JPanel {
                             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                                 .addComponent(jSliderEisen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
-                                .addComponent(jLabelEisenAnzeige))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSliderBor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabelBorAnzeige))))
-                    .addComponent(jLabelSpurenelemente))
-                .addContainerGap(66, Short.MAX_VALUE))
+                                .addComponent(jLabelEisenAnzeige)))))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelHintergrundLayout.setVerticalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelSpurenelemente, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jLabelMikroelemente, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jSliderBor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -170,44 +172,48 @@ public class JPanelSpurenelemente extends javax.swing.JPanel {
                     .addComponent(jLabelBorAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSliderEisen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelEisen, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelEisenAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelChlor, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelChlorAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSliderEisen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelEisen, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelEisenAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSliderKupfer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelKupfer, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelKupferAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSliderMangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelMangan, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelManganAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSliderMolybdaen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelMolybdaen, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelMolybdaenAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jSliderChlor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSliderKupfer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelKupfer, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelKupferAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSliderMangan, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelMangan, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelManganAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSliderMolybdaen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelMolybdaen, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelMolybdaenAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSliderSchwefel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSchwefel, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSchwefelAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSliderSelen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSelen, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSelenAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSliderSilizium, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSilizium, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelSiliziumAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSliderZink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelZink, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelZinkAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelSelen, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelSelenAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSliderSilizium, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelSilizium, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelSiliziumAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSliderZink, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelZink, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelZinkAnzeige, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jSliderSelen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -233,30 +239,30 @@ public class JPanelSpurenelemente extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelBor;
     private javax.swing.JLabel jLabelBorAnzeige;
+    private javax.swing.JLabel jLabelChlor;
+    private javax.swing.JLabel jLabelChlorAnzeige;
     private javax.swing.JLabel jLabelEisen;
     private javax.swing.JLabel jLabelEisenAnzeige;
     private javax.swing.JLabel jLabelKupfer;
     private javax.swing.JLabel jLabelKupferAnzeige;
     private javax.swing.JLabel jLabelMangan;
     private javax.swing.JLabel jLabelManganAnzeige;
+    private javax.swing.JLabel jLabelMikroelemente;
     private javax.swing.JLabel jLabelMolybdaen;
     private javax.swing.JLabel jLabelMolybdaenAnzeige;
-    private javax.swing.JLabel jLabelSchwefel;
-    private javax.swing.JLabel jLabelSchwefelAnzeige;
     private javax.swing.JLabel jLabelSelen;
     private javax.swing.JLabel jLabelSelenAnzeige;
     private javax.swing.JLabel jLabelSilizium;
     private javax.swing.JLabel jLabelSiliziumAnzeige;
-    private javax.swing.JLabel jLabelSpurenelemente;
     private javax.swing.JLabel jLabelZink;
     private javax.swing.JLabel jLabelZinkAnzeige;
     private javax.swing.JPanel jPanelHintergrund;
     private javax.swing.JSlider jSliderBor;
+    private javax.swing.JSlider jSliderChlor;
     private javax.swing.JSlider jSliderEisen;
     private javax.swing.JSlider jSliderKupfer;
     private javax.swing.JSlider jSliderMangan;
     private javax.swing.JSlider jSliderMolybdaen;
-    private javax.swing.JSlider jSliderSchwefel;
     private javax.swing.JSlider jSliderSelen;
     private javax.swing.JSlider jSliderSilizium;
     private javax.swing.JSlider jSliderZink;

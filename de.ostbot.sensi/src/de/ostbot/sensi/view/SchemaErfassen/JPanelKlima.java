@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package de.ostbot.sensi.view.ZustandErfassen;
+package de.ostbot.sensi.view.SchemaErfassen;
 
 /**
  *
@@ -31,7 +31,7 @@ public class JPanelKlima extends javax.swing.JPanel {
         jLabelTemperaturAmTag = new javax.swing.JLabel();
         jSpinnerTemperaturAmTag = new javax.swing.JSpinner();
         jLabelCelsiusAmTag = new javax.swing.JLabel();
-        jSpinnerLuftfeuchtigkeitInDerNacht1 = new javax.swing.JSpinner();
+        jSpinnerLuftfeuchtigkeitAmTag = new javax.swing.JSpinner();
         jLabelProzentAmTag = new javax.swing.JLabel();
         jLabelTemperaturInDerNacht = new javax.swing.JLabel();
         jSpinnerTemperaturInDerNacht = new javax.swing.JSpinner();
@@ -73,7 +73,7 @@ public class JPanelKlima extends javax.swing.JPanel {
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                         .addComponent(jLabelCelsiusAmTag)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jSpinnerLuftfeuchtigkeitInDerNacht1, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jSpinnerLuftfeuchtigkeitAmTag, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelProzentAmTag))
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
@@ -92,7 +92,7 @@ public class JPanelKlima extends javax.swing.JPanel {
                     .addComponent(jSpinnerTemperaturAmTag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelCelsiusAmTag)
                     .addComponent(jLabelTemperaturAmTag)
-                    .addComponent(jSpinnerLuftfeuchtigkeitInDerNacht1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerLuftfeuchtigkeitAmTag, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabelProzentAmTag))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -131,8 +131,8 @@ public class JPanelKlima extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelTemperaturAmTag;
     private javax.swing.JLabel jLabelTemperaturInDerNacht;
     private javax.swing.JPanel jPanelHintergrund;
+    private javax.swing.JSpinner jSpinnerLuftfeuchtigkeitAmTag;
     private javax.swing.JSpinner jSpinnerLuftfeuchtigkeitInDerNacht;
-    private javax.swing.JSpinner jSpinnerLuftfeuchtigkeitInDerNacht1;
     private javax.swing.JSpinner jSpinnerTemperaturAmTag;
     private javax.swing.JSpinner jSpinnerTemperaturInDerNacht;
     // End of variables declaration//GEN-END:variables
