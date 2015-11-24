@@ -1,6 +1,14 @@
 package de.ostbot.sensi.view.PflanzeMitTopfAnlegen;
 
+import de.ostbot.sensi.control.Datenbankoperationen;
+import java.util.ArrayList;
+import java.util.List;
+
 public class JPanelGenetik extends javax.swing.JPanel {
+    
+    public void tekken() {
+        
+    }
 
     //Getter-Combobox-Herkunftsland
     public String getHerkunftsland() {
@@ -29,8 +37,25 @@ public class JPanelGenetik extends javax.swing.JPanel {
     }
     
     public JPanelGenetik() {
+        
         initComponents();
+        int laenge;
+        Datenbankoperationen datenbankOperationen;
+        List<String> laenderliste;
+        
+        datenbankOperationen = new Datenbankoperationen();
+        laenderliste = new ArrayList();
+        
+        laenge = datenbankOperationen.getHerkunftslaender().size();
+        laenderliste = datenbankOperationen.getHerkunftslaender();
+        
+        
+        jComboBoxHerkunftsland.removeAllItems();
+        for (int i = 0; i < laenge; i++) {
+            jComboBoxHerkunftsland.addItem(laenderliste.get(i));
+        } 
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -62,8 +87,6 @@ public class JPanelGenetik extends javax.swing.JPanel {
         jLabelSativaProzent.setText("%");
 
         jLabelHerkunftsland.setText("Herkunftsland:");
-
-        jComboBoxHerkunftsland.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jPanelFlagge.setBackground(new java.awt.Color(153, 255, 255));
 

@@ -86,7 +86,7 @@ public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
         int indica, sativa;
         double topfgroesse;
         PflanzeMitTopf pflanzeMitTopf; //Objekt vom Typ 'PflanzeMitTopf' erstellen
-        Datenbankoperationen DatenbankoperationenObject;
+        Datenbankoperationen datenbankoperationenObject;
 
         sorte = jPanelGenetik.getSorte();
         herkunftsland = jPanelGenetik.getHerkunftsland();
@@ -104,8 +104,8 @@ public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
             topfgroesse = jPanelTopf.getTopfgroesse();
             pflanzeMitTopf = new PflanzeMitTopf(sorte, herkunftsland, indica, sativa, substrat, topfgroesse);
 
-            DatenbankoperationenObject = new Datenbankoperationen();
-            DatenbankoperationenObject.pflanzeMitTopfInDatenbankAnlegen(pflanzeMitTopf);
+            datenbankoperationenObject = new Datenbankoperationen();
+            datenbankoperationenObject.pflanzeMitTopfInDatenbankAnlegen(pflanzeMitTopf);
             }
         }
     }//GEN-LAST:event_jButtonSpeichernMouseClicked
