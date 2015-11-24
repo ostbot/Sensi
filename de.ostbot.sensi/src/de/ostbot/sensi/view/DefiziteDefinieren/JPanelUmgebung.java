@@ -2,9 +2,34 @@ package de.ostbot.sensi.view.DefiziteDefinieren;
 
 public class JPanelUmgebung extends javax.swing.JPanel {
 
+    public boolean getjCheckBoxKaelteSymptome() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean)jCheckBoxKaelteSymptome.isSelected();
+        return rueckgabe;
+    }
+
+    public boolean getjCheckBoxUeberwaessert() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean)jCheckBoxKaelteSymptome.isSelected();
+        return rueckgabe;
+    }
+
+    public boolean getjCheckBoxUnterwaessert() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean)jCheckBoxUnterwaessert.isSelected();
+        return rueckgabe;
+    }
+
+    public boolean getjCheckBoxWaermeSymptome() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean)jCheckBoxWaermeSymptome.isSelected();
+        return rueckgabe;
+    }
+
     public JPanelUmgebung() {
         initComponents();
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {

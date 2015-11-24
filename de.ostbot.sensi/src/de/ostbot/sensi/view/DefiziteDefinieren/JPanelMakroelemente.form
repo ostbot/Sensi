@@ -44,20 +44,26 @@
       <Layout>
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="0" attributes="0">
+              <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabelMakroelemente" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabelKalium" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelSchwefel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelKalzium" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelPhosphor" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="jLabelStickstoff" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelMagnesium" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabelSchwefel1" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jSliderSchwefel" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                  <Component id="jLabelMagnesiumAnzeige" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <Group type="102" attributes="0">
                                   <Component id="jSliderStickstoff" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
@@ -69,12 +75,12 @@
                                   <Component id="jLabelPhosphorAnzeige" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jSliderKalzium" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSliderMagnesium" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabelKalziumAnzeige" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jSliderSchwefel" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSliderKalzium" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                   <Component id="jLabelSchwefelAnzeige" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -114,20 +120,26 @@
                               <Component id="jLabelKalium" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                               <Component id="jLabelKaliumAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jSliderSchwefel" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelSchwefel" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jLabelSchwefelAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jSliderKalzium" alignment="0" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelKalzium" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jLabelKalziumAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
-                          </Group>
                       </Group>
                       <Component id="jSliderPhosphor" alignment="0" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelSchwefelAnzeige" alignment="0" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jLabelKalzium" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jSliderKalzium" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelKalziumAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jLabelMagnesium" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jSliderMagnesium" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Component id="jLabelMagnesiumAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="jSliderSchwefel" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelSchwefel1" min="-2" pref="26" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -176,9 +188,9 @@
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelSchwefel">
+        <Component class="javax.swing.JLabel" name="jLabelMagnesium">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Schwefel:"/>
+            <Property name="text" type="java.lang.String" value="Magnesium:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSlider" name="jSliderSchwefel">
@@ -196,6 +208,18 @@
         <Component class="javax.swing.JSlider" name="jSliderKalzium">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelKalziumAnzeige">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="0"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelSchwefel1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Schwefel:"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JSlider" name="jSliderMagnesium">
+        </Component>
+        <Component class="javax.swing.JLabel" name="jLabelMagnesiumAnzeige">
           <Properties>
             <Property name="text" type="java.lang.String" value="0"/>
           </Properties>
