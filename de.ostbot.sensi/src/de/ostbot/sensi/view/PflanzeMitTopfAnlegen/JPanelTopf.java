@@ -30,8 +30,8 @@ public class JPanelTopf extends javax.swing.JPanel {
         datenbankOperationen = new Datenbankoperationen();
         substratListe = new ArrayList();
         
-        laenge = datenbankOperationen.getHerkunftslaender().size();
-        substratListe = datenbankOperationen.getHerkunftslaender();
+        laenge = datenbankOperationen.getSubstrate().size();
+        substratListe = datenbankOperationen.getSubstrate();
         
         jComboBoxSubstrat.removeAllItems();
         for (int i = 0; i < laenge; i++) {

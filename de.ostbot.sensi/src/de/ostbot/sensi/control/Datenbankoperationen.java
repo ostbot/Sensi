@@ -138,14 +138,14 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
             
-            sqlStringSubstrate = "SELECT * FROM herkunftslaender";
+            sqlStringSubstrate = "SELECT * FROM substrate";
             statement = connectionObject.prepareStatement(sqlStringSubstrate);
             
             resultSet = statement.executeQuery();
             connectionObject.commit();
             
             while(resultSet.next()) {
-                substrat = resultSet.getString("herkunftsland");
+                substrat = resultSet.getString("substrat");
                 substratListe.add(substrat);
             }
             
