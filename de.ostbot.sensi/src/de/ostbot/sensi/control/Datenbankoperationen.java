@@ -219,24 +219,27 @@ public class Datenbankoperationen {
     
     public List<String> getTopfgroessen() {
         
-        String sqlStringTopfgroessen, topfgroesse;
+        String sqlStringTopfgroessenMitSubstrat, topfgroesseMitSubstrat;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
-        List topfgroessenListe = new ArrayList();
+        List topfgroessenMtSubstratListe = new ArrayList();
         
         try {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
             
-            sqlStringTopfgroessen = "SELECT topfgroesse FROM medien";
-            statement = connectionObject.prepareStatement(sqlStringTopfgroessen);
+            sqlStringTopfgroessenMitSubstrat = "SELECT topfgroesse, substrat FROM medien";
+            statement = connectionObject.prepareStatement(sqlStringTopfgroessenMitSubstrat);
             
             resultSet = statement.executeQuery();
             connectionObject.commit();
             
             while(resultSet.next()) {
-                topfgroesse = resultSet.getString("topfgroesse");
-                topfgroessenListe.add(String.valueOf(topfgroesse));
+                topfgroesseMitSubstrat = String.valueOf(resultSet.getDouble("topfgroesse"));
+                topfgroesseMitSubstrat += " (";
+                topfgroesseMitSubstrat += resultSet.getString("substrat");
+                topfgroesseMitSubstrat += ")";
+                topfgroessenMtSubstratListe.add(topfgroesseMitSubstrat);
             }
             
         } catch (SQLException ex) {
@@ -259,6 +262,6 @@ public class Datenbankoperationen {
                 Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return topfgroessenListe;
+        return topfgroessenMtSubstratListe;
     }
 }
