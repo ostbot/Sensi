@@ -55,7 +55,7 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jPanelPflanzeMitTopf" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelSorteMitTopf" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
                           <Component id="jPanelKlima" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -86,7 +86,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="1" attributes="0">
-                      <Component id="jPanelPflanzeMitTopf" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanelSorteMitTopf" min="-2" max="-2" attributes="0"/>
                       <Component id="jPanelKlima" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -111,7 +111,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf" name="jPanelPflanzeMitTopf">
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf" name="jPanelSorteMitTopf">
         </Component>
         <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung" name="jPanelBelichtung">
         </Component>

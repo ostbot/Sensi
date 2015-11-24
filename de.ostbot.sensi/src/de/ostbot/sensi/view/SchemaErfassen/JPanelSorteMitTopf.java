@@ -8,7 +8,7 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
 
     public String getjComboBoxPflanze() {
         String rueckgabe;
-        rueckgabe = (String)jComboBoxPflanze.getSelectedItem();
+        rueckgabe = (String)jComboBoxSorte.getSelectedItem();
         return rueckgabe;
     }
     
@@ -29,11 +29,11 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
         sortenListe = datenbankOperationen.getSorten();
         topfgroessenListe = datenbankOperationen.getTopfgroessen();
         
-        jComboBoxPflanze.removeAllItems();
+        jComboBoxSorte.removeAllItems();
         jComboBoxTopf.removeAllItems();
         
         for (int i = 0; i < laengeSortenListe; i++) {
-            jComboBoxPflanze.addItem(sortenListe.get(i));
+            jComboBoxSorte.addItem(sortenListe.get(i));
         } 
         for (int i = 0; i < laengeTopfgroessenListe; i++) {
             jComboBoxTopf.addItem(topfgroessenListe.get(i));
@@ -46,12 +46,12 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
 
         jPanelHintergrund = new javax.swing.JPanel();
         jLabelPflanzeMitTopfAuswaehlen = new javax.swing.JLabel();
-        jComboBoxPflanze = new javax.swing.JComboBox<>();
+        jComboBoxSorte = new javax.swing.JComboBox<>();
         jComboBoxTopf = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabelPflanzeMitTopfAuswaehlen.setText("Pflanze mit Topf auswählen:");
+        jLabelPflanzeMitTopfAuswaehlen.setText("Sorte mit Topf auswählen:");
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);
@@ -61,7 +61,7 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jComboBoxPflanze, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jComboBoxSorte, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jComboBoxTopf, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jLabelPflanzeMitTopfAuswaehlen))
@@ -74,7 +74,7 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
                 .addComponent(jLabelPflanzeMitTopfAuswaehlen)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBoxPflanze, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jComboBoxSorte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jComboBoxTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
@@ -97,7 +97,7 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBoxPflanze;
+    private javax.swing.JComboBox<String> jComboBoxSorte;
     private javax.swing.JComboBox<String> jComboBoxTopf;
     private javax.swing.JLabel jLabelPflanzeMitTopfAuswaehlen;
     private javax.swing.JPanel jPanelHintergrund;

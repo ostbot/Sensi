@@ -10,7 +10,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jPanelPflanzeMitTopf = new de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf();
+        jPanelSorteMitTopf = new de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf();
         jPanelBelichtung = new de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung();
         jPanelZyklus = new de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus();
         jPanelDuenger = new de.ostbot.sensi.view.SchemaErfassen.JPanelDuenger();
@@ -38,7 +38,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jPanelPflanzeMitTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanelSorteMitTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanelKlima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
@@ -62,7 +62,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanelPflanzeMitTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanelSorteMitTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelKlima, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -137,7 +137,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
     private de.ostbot.sensi.view.SchemaErfassen.JPanelDuenger jPanelDuenger;
     private javax.swing.JPanel jPanelHintergrund;
     private de.ostbot.sensi.view.SchemaErfassen.JPanelKlima jPanelKlima;
-    private de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf jPanelPflanzeMitTopf;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf jPanelSorteMitTopf;
     private de.ostbot.sensi.view.SchemaErfassen.JPanelWasser jPanelWasser;
     private de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus jPanelZyklus;
     // End of variables declaration//GEN-END:variables
