@@ -5,10 +5,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JPanelGenetik extends javax.swing.JPanel {
-    
-    public void tekken() {
-        
-    }
 
     //Getter-Combobox-Herkunftsland
     public String getHerkunftsland() {
@@ -36,23 +32,23 @@ public class JPanelGenetik extends javax.swing.JPanel {
         return jTextFieldSorte.getText();
     }
     
+    //Default-Konstruktor mit Herkunftsländer-Initialisierung in die ComboBox
     public JPanelGenetik() {
         
         initComponents();
         int laenge;
         Datenbankoperationen datenbankOperationen;
-        List<String> laenderliste;
+        List<String> laenderListe;
         
         datenbankOperationen = new Datenbankoperationen();
-        laenderliste = new ArrayList();
+        laenderListe = new ArrayList();
         
         laenge = datenbankOperationen.getHerkunftslaender().size();
-        laenderliste = datenbankOperationen.getHerkunftslaender();
-        
+        laenderListe = datenbankOperationen.getHerkunftslaender();
         
         jComboBoxHerkunftsland.removeAllItems();
         for (int i = 0; i < laenge; i++) {
-            jComboBoxHerkunftsland.addItem(laenderliste.get(i));
+            jComboBoxHerkunftsland.addItem(laenderListe.get(i));
         } 
     }
     

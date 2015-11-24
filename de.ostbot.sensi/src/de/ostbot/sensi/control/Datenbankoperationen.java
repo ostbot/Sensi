@@ -86,8 +86,8 @@ public class Datenbankoperationen {
         
         String sqlStringLaender, land;
         PreparedStatement statement = null;
-        ResultSet resultset = null;
-        List laenderliste = new ArrayList();
+        ResultSet resultSet = null;
+        List laenderListe = new ArrayList();
         
         try {
             verbindenZurDB();
@@ -96,12 +96,12 @@ public class Datenbankoperationen {
             sqlStringLaender = "SELECT * FROM herkunftslaender";
             statement = connectionObject.prepareStatement(sqlStringLaender);
             
-            resultset = statement.executeQuery();
+            resultSet = statement.executeQuery();
             connectionObject.commit();
             
-            while(resultset.next()) {
-                land = resultset.getString("herkunftsland");
-                laenderliste.add(land);
+            while(resultSet.next()) {
+                land = resultSet.getString("herkunftsland");
+                laenderListe.add(land);
             }
             
         } catch (SQLException ex) {
@@ -124,6 +124,51 @@ public class Datenbankoperationen {
                 Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return laenderliste;
+        return laenderListe;
+    }
+    
+    public List<String> getSubstrate() {
+        
+        String sqlStringSubstrate, substrat;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List substratListe = new ArrayList();
+        
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            
+            sqlStringSubstrate = "SELECT * FROM herkunftslaender";
+            statement = connectionObject.prepareStatement(sqlStringSubstrate);
+            
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+            
+            while(resultSet.next()) {
+                substrat = resultSet.getString("herkunftsland");
+                substratListe.add(substrat);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return substratListe;
     }
 }

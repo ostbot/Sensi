@@ -1,5 +1,9 @@
 package de.ostbot.sensi.view.PflanzeMitTopfAnlegen;
 
+import de.ostbot.sensi.control.Datenbankoperationen;
+import java.util.ArrayList;
+import java.util.List;
+
 public class JPanelTopf extends javax.swing.JPanel {
 
     //Getter-ComboBox-Substrat
@@ -17,8 +21,24 @@ public class JPanelTopf extends javax.swing.JPanel {
     }
     
     public JPanelTopf() {
+        
         initComponents();
+        int laenge;
+        Datenbankoperationen datenbankOperationen;
+        List<String> substratListe;
+        
+        datenbankOperationen = new Datenbankoperationen();
+        substratListe = new ArrayList();
+        
+        laenge = datenbankOperationen.getHerkunftslaender().size();
+        substratListe = datenbankOperationen.getHerkunftslaender();
+        
+        jComboBoxSubstrat.removeAllItems();
+        for (int i = 0; i < laenge; i++) {
+            jComboBoxSubstrat.addItem(substratListe.get(i));
+        }
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
