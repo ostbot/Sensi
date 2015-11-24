@@ -32,6 +32,11 @@ public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
         });
 
         jButtonVerlassen.setText("Verlassen");
+        jButtonVerlassen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonVerlassenMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);
@@ -111,6 +116,9 @@ public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
             }
         }
     }//GEN-LAST:event_jButtonSpeichernMouseClicked
+    private void jButtonVerlassenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonVerlassenMouseClicked
+        JFramePflanzeMitTopfAnlegen.this.dispose();
+    }//GEN-LAST:event_jButtonVerlassenMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">

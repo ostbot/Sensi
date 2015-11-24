@@ -98,6 +98,9 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Verlassen"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonVerlassenMouseClicked"/>
+          </Events>
         </Component>
         <Component class="de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelGenetik" name="jPanelGenetik">
         </Component>

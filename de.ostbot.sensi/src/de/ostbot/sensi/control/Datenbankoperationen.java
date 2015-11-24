@@ -171,4 +171,94 @@ public class Datenbankoperationen {
         }
         return substratListe;
     }
+    
+    public List<String> getSorten() {
+        
+        String sqlStringSorten, sorte;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List sortenListe = new ArrayList();
+        
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            
+            sqlStringSorten = "SELECT sorte FROM pflanzen";
+            statement = connectionObject.prepareStatement(sqlStringSorten);
+            
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+            
+            while(resultSet.next()) {
+                sorte = resultSet.getString("sorte");
+                sortenListe.add(sorte);
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return sortenListe;
+    }
+    
+    public List<String> getTopfgroessen() {
+        
+        String sqlStringTopfgroessen, topfgroesse;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List topfgroessenListe = new ArrayList();
+        
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            
+            sqlStringTopfgroessen = "SELECT topfgroesse FROM medien";
+            statement = connectionObject.prepareStatement(sqlStringTopfgroessen);
+            
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+            
+            while(resultSet.next()) {
+                topfgroesse = resultSet.getString("topfgroesse");
+                topfgroessenListe.add(String.valueOf(topfgroesse));
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return topfgroessenListe;
+    }
 }
