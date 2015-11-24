@@ -76,9 +76,13 @@ public class JPanelGenetik extends javax.swing.JPanel {
 
         jLabelIndica.setText("Indica:");
 
+        jSpinnerIndica.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
+
         jLabelIndicaProzent.setText("%");
 
         jLabelSativa.setText("Sativa:");
+
+        jSpinnerSativa.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
 
         jLabelSativaProzent.setText("%");
 
