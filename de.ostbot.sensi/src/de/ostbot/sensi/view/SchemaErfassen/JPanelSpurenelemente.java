@@ -2,6 +2,60 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 public class JPanelSpurenelemente extends javax.swing.JPanel {
 
+    public int getjSliderBor() {
+        int rueckgabe;
+        rueckgabe = (Integer)jSliderBor.getValue();
+        return rueckgabe;
+    }
+
+    public int getjSliderEisen() {
+        int rueckgabe;
+        rueckgabe = (Integer)jSliderEisen.getValue();
+        return rueckgabe;
+    }
+
+    public int getjSliderKupfer() {
+        int rueckgabe;
+        rueckgabe = (Integer)jSliderKupfer.getValue();
+        return rueckgabe;
+    }
+
+    public int getjSliderMangan() {
+        int rueckgabe;
+        rueckgabe = (Integer)jSliderMangan.getValue();
+        return rueckgabe;
+    }
+
+    public int getjSliderMolybdaen() {
+        int rueckgabe;
+        rueckgabe = (Integer)jSliderMolybdaen.getValue();
+        return rueckgabe;
+    }
+
+    public int getjSliderSchwefel() {
+        int rueckgabe;
+        rueckgabe = (Integer)jSliderSchwefel.getValue();
+        return rueckgabe;
+    }
+
+    public int getjSliderSelen() {
+        int rueckgabe;
+        rueckgabe = (Integer)jSliderSelen.getValue();
+        return rueckgabe;
+    }
+
+    public int getjSliderSilizium() {
+        int rueckgabe;
+        rueckgabe = (Integer)jSliderSilizium.getValue();
+        return rueckgabe;
+    }
+
+    public int getjSliderZink() {
+        int rueckgabe;
+        rueckgabe = (Integer)jSliderZink.getValue();
+        return rueckgabe;
+    }
+    
     public JPanelSpurenelemente() {
         initComponents();
     }

@@ -11,14 +11,14 @@ public class JPanelGenetik extends javax.swing.JPanel {
 
     //Getter-Spinner-Indica
     public int getIndica() {
-        Integer rueckgabe;
+        int rueckgabe;
         rueckgabe = (Integer)jSpinnerIndica.getValue();
         return rueckgabe;
     }
 
     //Getter-Spinner-Sativa
     public int getSativa() {
-        Integer rueckgabe;
+        int rueckgabe;
         rueckgabe = (Integer)jSpinnerSativa.getValue();
         return rueckgabe;
     }

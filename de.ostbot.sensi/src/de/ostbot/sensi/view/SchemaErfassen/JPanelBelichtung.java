@@ -2,6 +2,20 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 public class JPanelBelichtung extends javax.swing.JPanel {
 
+    //Getter-Spinner-Fläche
+    public double getFlaeche() {
+        double rueckgabe;
+        rueckgabe = (Double) jSpinnerFlaeche.getValue();
+        return rueckgabe;
+    }
+
+    //Getter-Spinner-Leistung
+    public double getLeistung() {
+        double rueckgabe;
+        rueckgabe = (Double) jSpinnerLeistung.getValue();
+        return rueckgabe;
+    }
+
     public JPanelBelichtung() {
         initComponents();
     }

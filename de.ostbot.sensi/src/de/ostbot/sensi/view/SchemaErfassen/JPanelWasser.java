@@ -2,6 +2,18 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 public class JPanelWasser extends javax.swing.JPanel {
 
+    public int getjSliderPHWert() {
+        int rueckgabe;
+        rueckgabe = (Integer)jSliderPHWert.getValue();
+        return rueckgabe;
+    }
+
+    public double getjSpinnerLiterProTag() {
+        double rueckgabe;
+        rueckgabe = (jSliderPHWert.getValue());
+        return rueckgabe;
+    }
+
     public JPanelWasser() {
         initComponents();
     }

@@ -2,6 +2,12 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 public class JPanelPflanzeMitTopf extends javax.swing.JPanel {
 
+    public String getjComboBoxPflanze() {
+        String rueckgabe;
+        rueckgabe = (String)jComboBoxPflanze.getSelectedItem();
+        return rueckgabe;
+    }
+    
     public JPanelPflanzeMitTopf() {
         initComponents();
     }

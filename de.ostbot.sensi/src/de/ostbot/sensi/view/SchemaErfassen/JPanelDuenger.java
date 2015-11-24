@@ -2,6 +2,69 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 public class JPanelDuenger extends javax.swing.JPanel {
 
+    //Getter-CheckBox-Montag
+    public boolean getjCheckBoxMontag() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean) jCheckBoxMontag.isSelected();
+        return rueckgabe;
+    }
+
+    //Getter-CheckBox-Dienstag
+    public boolean getjCheckBoxDienstag() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean) jCheckBoxDienstag.isSelected();
+        return rueckgabe;
+    }
+
+    //Getter-CheckBox-Mittwoch
+    public boolean getjCheckBoxMittwoch() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean) jCheckBoxMittwoch.isSelected();
+        return rueckgabe;
+    }
+    
+    //Getter-CheckBox-Donnerstag
+    public boolean getjCheckBoxDonnerstag() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean) jCheckBoxDonnerstag.isSelected();
+        return rueckgabe;
+    }
+
+    //Getter-CheckBox-Freitag
+    public boolean getjCheckBoxFreitag() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean) jCheckBoxFreitag.isSelected();
+        return rueckgabe;
+    }
+
+    //Getter-CheckBox-Samstag
+    public boolean getjCheckBoxSamstag() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean) jCheckBoxSamstag.isSelected();
+        return rueckgabe;
+    }
+
+    //Getter-CheckBox-Sonntag
+    public boolean getjCheckBoxSonntag() {
+        boolean rueckgabe;
+        rueckgabe = (Boolean) jCheckBoxSonntag.isSelected();
+        return rueckgabe;
+    }
+
+    //Getter-CheckBox-Dünger
+    public String getjComboBoxDuenger() {
+        String rueckgabe;
+        rueckgabe = (String) jComboBoxDuenger.getSelectedItem();
+        return rueckgabe;
+    }
+
+    //Getter-Spinner-Dünger
+    public double getjSpinnerDuenger() {
+        double rueckgabe;
+        rueckgabe = (Double) jSpinnerDuenger.getValue();
+        return rueckgabe;
+    }
+
     public JPanelDuenger() {
         initComponents();
     }

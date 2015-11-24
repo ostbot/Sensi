@@ -2,6 +2,18 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 public class JPanelZyklus extends javax.swing.JPanel {
 
+    public String getjComboBoxAlter() {
+        String rueckgabe;
+        rueckgabe = (String)jComboBoxAlter.getSelectedItem();
+        return rueckgabe;
+    }
+
+    public String getjComboBoxPhase() {
+        String rueckgabe;
+        rueckgabe = (String)jComboBoxPhase.getSelectedItem();
+        return rueckgabe;
+    }
+
     public JPanelZyklus() {
         initComponents();
     }
