@@ -102,9 +102,9 @@
             <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonVerlassenMouseClicked"/>
           </Events>
         </Component>
-        <Component class="de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelGenetik" name="jPanelGenetik">
+        <Component class="de.ostbot.sensi.view.SorteMitTopfAnlegen.JPanelGenetik" name="jPanelGenetik">
         </Component>
-        <Component class="de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelTopf" name="jPanelTopf">
+        <Component class="de.ostbot.sensi.view.SorteMitTopfAnlegen.JPanelTopf" name="jPanelTopf">
         </Component>
       </SubComponents>
     </Container>

@@ -111,7 +111,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelPflanzeMitTopf" name="jPanelPflanzeMitTopf">
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf" name="jPanelPflanzeMitTopf">
         </Component>
         <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung" name="jPanelBelichtung">
         </Component>

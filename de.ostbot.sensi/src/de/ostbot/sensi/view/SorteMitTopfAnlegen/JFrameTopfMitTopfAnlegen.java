@@ -1,11 +1,11 @@
-package de.ostbot.sensi.view.PflanzeMitTopfAnlegen;
+package de.ostbot.sensi.view.SorteMitTopfAnlegen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
 import de.ostbot.sensi.model.PflanzeMitTopf;
 
-public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
+public class JFrameTopfMitTopfAnlegen extends javax.swing.JFrame {
 
-    public JFramePflanzeMitTopfAnlegen() {
+    public JFrameTopfMitTopfAnlegen() {
         
         initComponents();
     }
@@ -17,8 +17,8 @@ public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
         jPanelHintergrund = new javax.swing.JPanel();
         jButtonSpeichern = new javax.swing.JButton();
         jButtonVerlassen = new javax.swing.JButton();
-        jPanelGenetik = new de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelGenetik();
-        jPanelTopf = new de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelTopf();
+        jPanelGenetik = new de.ostbot.sensi.view.SorteMitTopfAnlegen.JPanelGenetik();
+        jPanelTopf = new de.ostbot.sensi.view.SorteMitTopfAnlegen.JPanelTopf();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -117,7 +117,7 @@ public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonSpeichernMouseClicked
     private void jButtonVerlassenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonVerlassenMouseClicked
-        JFramePflanzeMitTopfAnlegen.this.dispose();
+        JFrameTopfMitTopfAnlegen.this.dispose();
     }//GEN-LAST:event_jButtonVerlassenMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -133,27 +133,29 @@ public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFramePflanzeMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameTopfMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFramePflanzeMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameTopfMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFramePflanzeMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameTopfMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFramePflanzeMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameTopfMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new JFramePflanzeMitTopfAnlegen().setVisible(true);
+            new JFrameTopfMitTopfAnlegen().setVisible(true);
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonSpeichern;
     private javax.swing.JButton jButtonVerlassen;
-    private de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelGenetik jPanelGenetik;
+    private de.ostbot.sensi.view.SorteMitTopfAnlegen.JPanelGenetik jPanelGenetik;
     private javax.swing.JPanel jPanelHintergrund;
-    private de.ostbot.sensi.view.PflanzeMitTopfAnlegen.JPanelTopf jPanelTopf;
+    private de.ostbot.sensi.view.SorteMitTopfAnlegen.JPanelTopf jPanelTopf;
     // End of variables declaration//GEN-END:variables
 }

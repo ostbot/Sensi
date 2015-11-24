@@ -10,7 +10,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jPanelPflanzeMitTopf = new de.ostbot.sensi.view.SchemaErfassen.JPanelPflanzeMitTopf();
+        jPanelPflanzeMitTopf = new de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf();
         jPanelBelichtung = new de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung();
         jPanelZyklus = new de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus();
         jPanelDuenger = new de.ostbot.sensi.view.SchemaErfassen.JPanelDuenger();
@@ -137,7 +137,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
     private de.ostbot.sensi.view.SchemaErfassen.JPanelDuenger jPanelDuenger;
     private javax.swing.JPanel jPanelHintergrund;
     private de.ostbot.sensi.view.SchemaErfassen.JPanelKlima jPanelKlima;
-    private de.ostbot.sensi.view.SchemaErfassen.JPanelPflanzeMitTopf jPanelPflanzeMitTopf;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf jPanelPflanzeMitTopf;
     private de.ostbot.sensi.view.SchemaErfassen.JPanelWasser jPanelWasser;
     private de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus jPanelZyklus;
     // End of variables declaration//GEN-END:variables

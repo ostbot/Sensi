@@ -4,7 +4,7 @@ import de.ostbot.sensi.control.Datenbankoperationen;
 import java.util.ArrayList;
 import java.util.List;
 
-public class JPanelPflanzeMitTopf extends javax.swing.JPanel {
+public class JPanelSorteMitTopf extends javax.swing.JPanel {
 
     public String getjComboBoxPflanze() {
         String rueckgabe;
@@ -12,7 +12,7 @@ public class JPanelPflanzeMitTopf extends javax.swing.JPanel {
         return rueckgabe;
     }
     
-    public JPanelPflanzeMitTopf() {
+    public JPanelSorteMitTopf() {
         
         initComponents();
         int laengeSortenListe, laengeTopfgroessenListe;
@@ -52,10 +52,6 @@ public class JPanelPflanzeMitTopf extends javax.swing.JPanel {
         setBackground(new java.awt.Color(153, 153, 153));
 
         jLabelPflanzeMitTopfAuswaehlen.setText("Pflanze mit Topf auswählen:");
-
-        jComboBoxPflanze.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        jComboBoxTopf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);

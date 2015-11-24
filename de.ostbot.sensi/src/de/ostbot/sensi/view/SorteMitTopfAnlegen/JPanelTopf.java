@@ -1,4 +1,4 @@
-package de.ostbot.sensi.view.PflanzeMitTopfAnlegen;
+package de.ostbot.sensi.view.SorteMitTopfAnlegen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
 import java.util.ArrayList;
