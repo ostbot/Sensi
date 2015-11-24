@@ -6,8 +6,10 @@ import de.ostbot.sensi.model.PflanzeMitTopf;
 public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
 
     public JFramePflanzeMitTopfAnlegen() {
+        
         initComponents();
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
