@@ -1,6 +1,6 @@
 package de.ostbot.sensi.model;
 
-public class Pflanze {
+public class PflanzeMitTopf {
 
     String sorte, herkunftsland, substrat;
     int indica, sativa;
@@ -66,8 +66,8 @@ public class Pflanze {
         this.topfgroesse = topfgroesse;
     }
 
-    //Konstruktor-Pflanze
-    public Pflanze(String sorte, String herkunftsland, int indica, int sativa, String substrat, double topfgroesse) {
+    //Konstruktor-PflanzeMitTopf
+    public PflanzeMitTopf(String sorte, String herkunftsland, int indica, int sativa, String substrat, double topfgroesse) {
         this.sorte = sorte;
         this.herkunftsland = herkunftsland;
         this.substrat = substrat;

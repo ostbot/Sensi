@@ -1,6 +1,6 @@
 package de.ostbot.sensi.control;
 
-import de.ostbot.sensi.model.Pflanze;
+import de.ostbot.sensi.model.PflanzeMitTopf;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -9,24 +9,32 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class Datenbankoperationen {
+    
+    Connection connectionObject;
 
     public Datenbankoperationen() {
+        
+        this.connectionObject = null;
+        
+        try {
+            Class.forName("com.mysql.jdbc.Driver").newInstance();
+            connectionObject = DriverManager.getConnection("jdbc:mysql://localhost/sensi", "root", "");
+        } catch (ClassNotFoundException | SQLException | InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-
-    public void pflanzeMitTopfInDatenbankAnlegen(Pflanze pflanzeObject) {
+    
+    public void pflanzeMitTopfInDatenbankAnlegen(PflanzeMitTopf pflanzeObject) {
 
         String sqlStringPflanze;
         String sqlStringTopf;
-        Connection connectionObject = null;
         PreparedStatement statementPflanze = null;
         PreparedStatement statementTopf = null;
 
         try {
-            Class.forName("com.mysql.jdbc.Driver").newInstance();
-            connectionObject = DriverManager.getConnection("jdbc:mysql://localhost/sensi", "root", "");
             connectionObject.setAutoCommit(false);
 
-            sqlStringPflanze = "INSERT INTO pflanzen (sorte, herkunftsland indica, sativa) VALUES (?, ?, ?, ?)";
+            sqlStringPflanze = "INSERT INTO pflanzen (sorte, herkunftsland, indica, sativa) VALUES (?, ?, ?, ?)";
             sqlStringTopf = "INSERT INTO medien (topfgroesse, substrat) VALUES (?, ?)";
             statementPflanze = connectionObject.prepareStatement(sqlStringPflanze);
             statementTopf = connectionObject.prepareCall(sqlStringTopf);
@@ -43,7 +51,7 @@ public class Datenbankoperationen {
             statementTopf.executeUpdate();
             connectionObject.commit();
 
-        } catch (SQLException | ClassNotFoundException | InstantiationException | IllegalAccessException ex) {
+        } catch (SQLException ex) {
             Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
 
             if (connectionObject != null) {

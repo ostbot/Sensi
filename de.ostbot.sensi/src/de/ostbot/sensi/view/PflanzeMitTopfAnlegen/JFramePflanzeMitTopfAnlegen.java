@@ -1,7 +1,7 @@
 package de.ostbot.sensi.view.PflanzeMitTopfAnlegen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
-import de.ostbot.sensi.model.Pflanze;
+import de.ostbot.sensi.model.PflanzeMitTopf;
 
 public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
 
@@ -85,25 +85,28 @@ public class JFramePflanzeMitTopfAnlegen extends javax.swing.JFrame {
         String sorte, herkunftsland, substrat;
         int indica, sativa;
         double topfgroesse;
-        Pflanze pflanze; //Objekt vom Typ 'Pflanze' erstellen
+        PflanzeMitTopf pflanzeMitTopf; //Objekt vom Typ 'PflanzeMitTopf' erstellen
         Datenbankoperationen DatenbankoperationenObject;
 
         sorte = jPanelGenetik.getSorte();
         herkunftsland = jPanelGenetik.getHerkunftsland();
         if ((jPanelGenetik.getIndica() + jPanelGenetik.getSativa()) != 100) {
-            System.err.println("Falsches Gewicht in der Genetik");
-            if (jPanelTopf.getTopfgroesse() != 999.999) {
-                System.err.println("Falsches Gewicht in der Genetik");
-            }
-        } else {
+            System.err.println("Falsches Gewicht in der Genetik!");
+        } 
+        else {
+            if (jPanelTopf.getTopfgroesse() > 499.99) {
+                System.err.println("Unmögliche Topfgröße!");
+            } 
+            else {
             indica = jPanelGenetik.getIndica();
             sativa = jPanelGenetik.getSativa();
             substrat = jPanelTopf.getSubstrat();
             topfgroesse = jPanelTopf.getTopfgroesse();
-            pflanze = new Pflanze(sorte, herkunftsland, indica, sativa, substrat, topfgroesse);
+            pflanzeMitTopf = new PflanzeMitTopf(sorte, herkunftsland, indica, sativa, substrat, topfgroesse);
 
             DatenbankoperationenObject = new Datenbankoperationen();
-            DatenbankoperationenObject.pflanzeMitTopfInDatenbankAnlegen(pflanze);
+            DatenbankoperationenObject.pflanzeMitTopfInDatenbankAnlegen(pflanzeMitTopf);
+            }
         }
     }//GEN-LAST:event_jButtonSpeichernMouseClicked
     public static void main(String args[]) {
