@@ -236,7 +236,7 @@ public class Datenbankoperationen {
             
             while(resultSet.next()) {
                 topfgroesseMitSubstrat = String.valueOf(resultSet.getDouble("topfgroesse"));
-                topfgroesseMitSubstrat += " (";
+                topfgroesseMitSubstrat += "L (";
                 topfgroesseMitSubstrat += resultSet.getString("substrat");
                 topfgroesseMitSubstrat += ")";
                 topfgroessenMtSubstratListe.add(topfgroesseMitSubstrat);
