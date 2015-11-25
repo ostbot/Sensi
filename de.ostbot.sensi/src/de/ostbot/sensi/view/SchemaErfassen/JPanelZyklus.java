@@ -1,5 +1,9 @@
 package de.ostbot.sensi.view.SchemaErfassen;
 
+import de.ostbot.sensi.control.Datenbankoperationen;
+import java.util.ArrayList;
+import java.util.List;
+
 public class JPanelZyklus extends javax.swing.JPanel {
 
     public int getWoche() {
@@ -15,7 +19,22 @@ public class JPanelZyklus extends javax.swing.JPanel {
     }
 
     public JPanelZyklus() {
+        
         initComponents();
+        int laenge;
+        Datenbankoperationen datenbankOperationen;
+        List<String> phasenListe;
+        
+        datenbankOperationen = new Datenbankoperationen();
+        phasenListe = new ArrayList();
+        
+        laenge = datenbankOperationen.getPhasen().size();
+        phasenListe = datenbankOperationen.getPhasen();
+        
+        jComboBoxPhase.removeAllItems();
+        for (int i = 0; i < laenge; i++) {
+            jComboBoxPhase.addItem(phasenListe.get(i));
+        }
     }
 
     @SuppressWarnings("unchecked")
@@ -32,7 +51,7 @@ public class JPanelZyklus extends javax.swing.JPanel {
 
         jLabelWoche.setText("Woche:");
 
-        jComboBoxWoche.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", " " }));
+        jComboBoxWoche.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4", "5", "6", "7", "8", "10", "11", "12", "13", "14", "15", "16", "17", "18", "19", "20", "21", "22", "23", "24", "25", "26", "27", "28", "29", "30", " " }));
 
         jLabelPhase.setText("Phase:");
 
@@ -44,15 +63,15 @@ public class JPanelZyklus extends javax.swing.JPanel {
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBoxWoche, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelWoche))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabelWoche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBoxWoche, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                         .addComponent(jLabelPhase)
                         .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(jComboBoxPhase, 0, 95, Short.MAX_VALUE))
+                    .addComponent(jComboBoxPhase, 0, 125, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanelHintergrundLayout.setVerticalGroup(

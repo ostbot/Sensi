@@ -2,9 +2,9 @@ package de.ostbot.sensi.model;
 
 public class Schema {
     
-    String sorte, substrat, phase, duenger, milliliter;
+    String sorte, substrat, phase, duenger;
     int leistung, woche, luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht;
-    double topfgroesse, flaeche, pHWert, literProTag;
+    double topfgroesse, flaeche, pHWert, literProTag, milliliter;
     double temperaturAmTag, temperaturInderNacht;
     boolean montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag;
     
@@ -20,7 +20,7 @@ public class Schema {
     public String getDuenger() {
         return duenger;
     }
-    public String getMilliliter() {
+    public double getMilliliter() {
         return milliliter;
     }
     public int getWoche() {
@@ -87,7 +87,7 @@ public class Schema {
     public void setDuenger(String duenger) {
         this.duenger = duenger;
     }
-    public void setMilliliter(String milliliter) {
+    public void setMilliliter(double milliliter) {
         this.milliliter = milliliter;
     }
     public void setWoche(int woche) {
@@ -142,7 +142,7 @@ public class Schema {
         this.sonntag = sonntag;
     }
 
-    public Schema(String sorte, String substrat, String phase, String duenger, String milliliter, int woche, double topfgroesse, int leistung, double flaeche, double pHWert, double literProTag, double temperaturAmTag, double temperaturInderNacht, int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht, boolean montag, boolean dienstag, boolean mittwoch, boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
+    public Schema(String sorte, String substrat, String phase, String duenger, double milliliter, int woche, double topfgroesse, int leistung, double flaeche, double pHWert, double literProTag, double temperaturAmTag, double temperaturInderNacht, int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht, boolean montag, boolean dienstag, boolean mittwoch, boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
         this.sorte = sorte;
         this.substrat = substrat;
         this.phase = phase;
@@ -165,11 +165,5 @@ public class Schema {
         this.freitag = freitag;
         this.samstag = samstag;
         this.sonntag = sonntag;
-    }
-    
-    
-    
-    
-    
-    
+    } 
 }

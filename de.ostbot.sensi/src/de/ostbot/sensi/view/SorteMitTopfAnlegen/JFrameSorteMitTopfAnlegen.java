@@ -97,6 +97,7 @@ public class JFrameSorteMitTopfAnlegen extends javax.swing.JFrame {
 
         sorte = jPanelGenetik.getSorte();
         herkunftsland = jPanelGenetik.getHerkunftsland();
+        substrat = jPanelTopf.getSubstrat();
         if ((jPanelGenetik.getIndica() + jPanelGenetik.getSativa()) != 100) {
             System.err.println("Falsches Gewicht in der Genetik!");
         } 
@@ -107,7 +108,6 @@ public class JFrameSorteMitTopfAnlegen extends javax.swing.JFrame {
             else {
             indica = jPanelGenetik.getIndica();
             sativa = jPanelGenetik.getSativa();
-            substrat = jPanelTopf.getSubstrat();
             topfgroesse = jPanelTopf.getTopfgroesse();
             sorteMitTopf = new SorteMitTopf(sorte, herkunftsland, indica, sativa, substrat, topfgroesse);
 

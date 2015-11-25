@@ -111,7 +111,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
 
     private void jButtonSpeichernMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSpeichernMouseClicked
         
-        String sorte, substrat, phase, duenger, tempString;
+        String sorte, substrat, phase, duenger;
         int leistung, woche, luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht;
         double topfgroesse, flaeche, pHWert, literProTag, milliliter;
         double temperaturAmTag, temperaturInderNacht;
@@ -120,19 +120,23 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         Schema schema; //Objekt vom Typ 'schema' erstellen
         Datenbankoperationen datenbankOperationen; //Objekt vom Typ 'Datenbankoperationen' erstellen
         
-        sorte = jPanelSorteMitTopf.getjComboBoxPflanze();
-        bestandteileTopfgroesseMitSubstrat = jPanelSorteMitTopf.getjComboBoxTopfgroesseMitSubstrat().split("L");
-        topfgroesse = Double.valueOf(bestandteileTopfgroesseMitSubstrat[0]);
-        temperaturAmTag = (Double)(jPanelKlima.getjSpinnerTemperaturAmTag()/100)*100.0; //gerundet
-        temperaturInderNacht = (Double)(jPanelKlima.getjSpinnerTemperaturInDerNacht()/100)*100.0; //gerundet
+        sorte = jPanelSorteMitTopf.getPflanze();
+        bestandteileTopfgroesseMitSubstrat = jPanelSorteMitTopf.getTopfgroesseMitSubstrat().split("L"); //'xy,xyL (substrat)' wird geteilt
+        topfgroesse = Double.valueOf(bestandteileTopfgroesseMitSubstrat[0]); //nehme mir 'xy,xy'
+        substrat = bestandteileTopfgroesseMitSubstrat[1]; //nehme mir '(substrat)'
+        substrat = substrat.replace("(", ""); //entferne '('
+        substrat = substrat.replace(")", ""); //entferne ')'
+        substrat = substrat.trim(); //entferne alle Leerzeichen (' substrat' -> 'substrat')
+        temperaturAmTag = Math.round(jPanelKlima.getjSpinnerTemperaturAmTag()*100)/100.0; //gerundet
+        temperaturInderNacht = Math.round(jPanelKlima.getjSpinnerTemperaturInDerNacht()*100)/100.0; //gerundet
         luftfeuchtigkeitAmTag = jPanelKlima.getjSpinnerLuftfeuchtigkeitAmTag();
         luftfeuchtigkeitInDerNacht = jPanelKlima.getjSpinnerLuftfeuchtigkeitInDerNacht();
         leistung = jPanelBelichtung.getLeistung();
-        flaeche = (jPanelBelichtung.getFlaeche()/100)*100.0; //gerundet //no cast (kommt als double)
+        flaeche = Math.round(jPanelBelichtung.getFlaeche()*100)/100.0; //gerundet
         woche = jPanelZyklus.getWoche();
         phase = jPanelZyklus.getPhase();
-        duenger = jPanelDuenger.getDuengerName();
-        milliliter = (jPanelDuenger.getDuengerMilliliter()/100)*100.0; //gerundet //no cast (kommt als double)
+        duenger = jPanelDuenger.getDuenger();
+        milliliter = Math.round(jPanelDuenger.getDuengerMilliliter()*100)/100.0; //gerundet
         montag = jPanelDuenger.isMontag();
         dienstag = jPanelDuenger.isDienstag();
         mittwoch = jPanelDuenger.isMittwoch();
@@ -140,7 +144,14 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         freitag = jPanelDuenger.isFreitag();
         samstag = jPanelDuenger.isSamstag();
         sonntag = jPanelDuenger.isSonntag();
-
+        pHWert = jPanelWasser.getPHWert();
+        literProTag = (Double)(jPanelWasser.getLiterProTag()/100)*100.0;
+        
+        schema = new Schema(sorte, substrat, phase, duenger, milliliter, 
+                            woche, topfgroesse, leistung, flaeche, pHWert, 
+                            literProTag, temperaturAmTag, temperaturInderNacht, 
+                            luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht, 
+                            montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag);       
     }//GEN-LAST:event_jButtonSpeichernMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -1,20 +1,23 @@
 package de.ostbot.sensi.view.SchemaErfassen;
 
+import javax.swing.JSlider;
+
 public class JPanelWasser extends javax.swing.JPanel {
 
-    public int getjSliderPHWert() {
-        int rueckgabe;
-        rueckgabe = (Integer)jSliderPHWert.getValue();
+    public double getPHWert() {
+        double rueckgabe;
+        rueckgabe = Double.parseDouble(jLabelPHWertAnzeige.getText());
         return rueckgabe;
     }
 
-    public double getjSpinnerLiterProTag() {
+    public double getLiterProTag() {
         double rueckgabe;
-        rueckgabe = (jSliderPHWert.getValue());
+        rueckgabe = (Double)(jSpinnerLiterProTag.getValue());
         return rueckgabe;
     }
 
     public JPanelWasser() {
+        
         initComponents();
     }
 
@@ -33,9 +36,19 @@ public class JPanelWasser extends javax.swing.JPanel {
 
         jLabelPHWert.setText("pH-Wert:");
 
+        jSliderPHWert.setMaximum(140);
+        jSliderPHWert.setValue(70);
+        jSliderPHWert.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                jSliderPHWertStateChanged(evt);
+            }
+        });
+
         jLabelPHWertAnzeige.setText("7");
 
         jLabelLiterProTag.setText("Liter pro Tag:");
+
+        jSpinnerLiterProTag.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 99.0d, 0.1d));
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);
@@ -44,15 +57,18 @@ public class JPanelWasser extends javax.swing.JPanel {
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabelPHWert)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                         .addComponent(jSliderPHWert, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabelPHWertAnzeige))
-                    .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jSpinnerLiterProTag, javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabelLiterProTag, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addContainerGap(23, Short.MAX_VALUE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabelPHWertAnzeige, javax.swing.GroupLayout.DEFAULT_SIZE, 33, Short.MAX_VALUE))
+                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabelPHWert)
+                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jSpinnerLiterProTag, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabelLiterProTag, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
         );
         jPanelHintergrundLayout.setVerticalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -87,6 +103,11 @@ public class JPanelWasser extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jSliderPHWertStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSliderPHWertStateChanged
+        jLabelPHWertAnzeige.setText(String.valueOf((jSliderPHWert.getValue())/10.0));
+    }//GEN-LAST:event_jSliderPHWertStateChanged
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel jLabelLiterProTag;
     private javax.swing.JLabel jLabelPHWert;

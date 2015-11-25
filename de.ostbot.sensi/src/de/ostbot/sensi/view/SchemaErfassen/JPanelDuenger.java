@@ -1,5 +1,9 @@
 package de.ostbot.sensi.view.SchemaErfassen;
 
+import de.ostbot.sensi.control.Datenbankoperationen;
+import java.util.ArrayList;
+import java.util.List;
+
 public class JPanelDuenger extends javax.swing.JPanel {
 
     //Getter-CheckBox-Montag
@@ -52,7 +56,7 @@ public class JPanelDuenger extends javax.swing.JPanel {
     }
 
     //Getter-CheckBox-Dünger
-    public String getDuengerName() {
+    public String getDuenger() {
         String rueckgabe;
         rueckgabe = (String)jComboBoxDuenger.getSelectedItem();
         return rueckgabe;
@@ -66,7 +70,22 @@ public class JPanelDuenger extends javax.swing.JPanel {
     }
 
     public JPanelDuenger() {
+        
         initComponents();
+        int laenge;
+        Datenbankoperationen datenbankOperationen;
+        List<String> duengerListe;
+        
+        datenbankOperationen = new Datenbankoperationen();
+        duengerListe = new ArrayList();
+        
+        laenge = datenbankOperationen.getDuenger().size();
+        duengerListe = datenbankOperationen.getDuenger();
+        
+        jComboBoxDuenger.removeAllItems();
+        for (int i = 0; i < laenge; i++) {
+            jComboBoxDuenger.addItem(duengerListe.get(i));
+        }
     }
 
     @SuppressWarnings("unchecked")

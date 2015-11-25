@@ -6,13 +6,13 @@ import java.util.List;
 
 public class JPanelSorteMitTopf extends javax.swing.JPanel {
 
-    public String getjComboBoxPflanze() {
+    public String getPflanze() {
         String rueckgabe;
         rueckgabe = (String)jComboBoxSorte.getSelectedItem();
         return rueckgabe;
     }
     
-    public String getjComboBoxTopfgroesseMitSubstrat() {
+    public String getTopfgroesseMitSubstrat() {
         String rueckgabe;
         rueckgabe = (String)jComboBoxTopfMitSubstrat.getSelectedItem();
         return rueckgabe;

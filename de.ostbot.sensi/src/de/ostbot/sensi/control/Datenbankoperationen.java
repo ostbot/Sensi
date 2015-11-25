@@ -147,8 +147,7 @@ public class Datenbankoperationen {
             while(resultSet.next()) {
                 substrat = resultSet.getString("substrat");
                 substratListe.add(substrat);
-            }
-            
+            }    
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
             
@@ -192,8 +191,7 @@ public class Datenbankoperationen {
             while(resultSet.next()) {
                 sorte = resultSet.getString("sorte");
                 sortenListe.add(sorte);
-            }
-            
+            }   
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
             
@@ -240,8 +238,7 @@ public class Datenbankoperationen {
                 topfgroesseMitSubstrat += resultSet.getString("substrat");
                 topfgroesseMitSubstrat += ")";
                 topfgroessenMtSubstratListe.add(topfgroesseMitSubstrat);
-            }
-            
+            }    
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
             
@@ -263,5 +260,93 @@ public class Datenbankoperationen {
             }
         }
         return topfgroessenMtSubstratListe;
+    }
+    
+    public List<String> getPhasen() {
+        
+        String sqlStringPhasen, phase;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List phasenListe = new ArrayList();
+        
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            
+            sqlStringPhasen = "SELECT phase FROM phasen";
+            statement = connectionObject.prepareStatement(sqlStringPhasen);
+            
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+            
+            while(resultSet.next()) {
+                phase = resultSet.getString("phase");
+                phasenListe.add(phase);
+            }            
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return phasenListe;
+    }
+    
+    public List<String> getDuenger() {
+        
+        String sqlStringDuenger, duenger;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List duengerListe = new ArrayList();
+        
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            
+            sqlStringDuenger = "SELECT duenger FROM duenger";
+            statement = connectionObject.prepareStatement(sqlStringDuenger);
+            
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+            
+            while(resultSet.next()) {
+                duenger = resultSet.getString("duenger");
+                duengerListe.add(duenger);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return duengerListe;
     }
 }
