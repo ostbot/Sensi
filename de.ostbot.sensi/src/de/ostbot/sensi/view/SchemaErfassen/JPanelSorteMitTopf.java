@@ -12,6 +12,12 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
         return rueckgabe;
     }
     
+    public String getjComboBoxTopfgroesseMitSubstrat() {
+        String rueckgabe;
+        rueckgabe = (String)jComboBoxTopfMitSubstrat.getSelectedItem();
+        return rueckgabe;
+    }
+    
     public JPanelSorteMitTopf() {
         
         initComponents();
@@ -30,13 +36,13 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
         topfgroessenListe = datenbankOperationen.getTopfgroessen();
         
         jComboBoxSorte.removeAllItems();
-        jComboBoxTopf.removeAllItems();
+        jComboBoxTopfMitSubstrat.removeAllItems();
         
         for (int i = 0; i < laengeSortenListe; i++) {
             jComboBoxSorte.addItem(sortenListe.get(i));
         } 
         for (int i = 0; i < laengeTopfgroessenListe; i++) {
-            jComboBoxTopf.addItem(topfgroessenListe.get(i));
+            jComboBoxTopfMitSubstrat.addItem(topfgroessenListe.get(i));
         }
     }
 
@@ -45,13 +51,13 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jLabelPflanzeMitTopfAuswaehlen = new javax.swing.JLabel();
+        jLabelSorteMitTopfAuswaehlen = new javax.swing.JLabel();
         jComboBoxSorte = new javax.swing.JComboBox<>();
-        jComboBoxTopf = new javax.swing.JComboBox<>();
+        jComboBoxTopfMitSubstrat = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabelPflanzeMitTopfAuswaehlen.setText("Sorte mit Topf auswählen:");
+        jLabelSorteMitTopfAuswaehlen.setText("Sorte mit Topf auswählen:");
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);
@@ -63,19 +69,19 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                         .addComponent(jComboBoxSorte, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jComboBoxTopf, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jLabelPflanzeMitTopfAuswaehlen))
+                        .addComponent(jComboBoxTopfMitSubstrat, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabelSorteMitTopfAuswaehlen))
                 .addContainerGap())
         );
         jPanelHintergrundLayout.setVerticalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabelPflanzeMitTopfAuswaehlen)
+                .addComponent(jLabelSorteMitTopfAuswaehlen)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jComboBoxSorte, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxTopf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxTopfMitSubstrat, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -98,8 +104,8 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JComboBox<String> jComboBoxSorte;
-    private javax.swing.JComboBox<String> jComboBoxTopf;
-    private javax.swing.JLabel jLabelPflanzeMitTopfAuswaehlen;
+    private javax.swing.JComboBox<String> jComboBoxTopfMitSubstrat;
+    private javax.swing.JLabel jLabelSorteMitTopfAuswaehlen;
     private javax.swing.JPanel jPanelHintergrund;
     // End of variables declaration//GEN-END:variables
 }

@@ -1,6 +1,6 @@
 package de.ostbot.sensi.control;
 
-import de.ostbot.sensi.model.PflanzeMitTopf;
+import de.ostbot.sensi.model.SorteMitTopf;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -31,7 +31,7 @@ public class Datenbankoperationen {
         }
     }
     
-    public void pflanzeMitTopfInDatenbankAnlegen(PflanzeMitTopf pflanzeObject) {
+    public void pflanzeMitTopfInDatenbankAnlegen(SorteMitTopf pflanzeObject) {
 
         String sqlStringPflanze;
         String sqlStringTopf;

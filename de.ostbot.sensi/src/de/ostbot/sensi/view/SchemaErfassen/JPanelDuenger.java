@@ -3,65 +3,65 @@ package de.ostbot.sensi.view.SchemaErfassen;
 public class JPanelDuenger extends javax.swing.JPanel {
 
     //Getter-CheckBox-Montag
-    public boolean getjCheckBoxMontag() {
+    public boolean isMontag() {
         boolean rueckgabe;
         rueckgabe = (Boolean) jCheckBoxMontag.isSelected();
         return rueckgabe;
     }
 
     //Getter-CheckBox-Dienstag
-    public boolean getjCheckBoxDienstag() {
+    public boolean isDienstag() {
         boolean rueckgabe;
         rueckgabe = (Boolean) jCheckBoxDienstag.isSelected();
         return rueckgabe;
     }
 
     //Getter-CheckBox-Mittwoch
-    public boolean getjCheckBoxMittwoch() {
+    public boolean isMittwoch() {
         boolean rueckgabe;
         rueckgabe = (Boolean) jCheckBoxMittwoch.isSelected();
         return rueckgabe;
     }
     
     //Getter-CheckBox-Donnerstag
-    public boolean getjCheckBoxDonnerstag() {
+    public boolean isDonnerstag() {
         boolean rueckgabe;
         rueckgabe = (Boolean) jCheckBoxDonnerstag.isSelected();
         return rueckgabe;
     }
 
     //Getter-CheckBox-Freitag
-    public boolean getjCheckBoxFreitag() {
+    public boolean isFreitag() {
         boolean rueckgabe;
         rueckgabe = (Boolean) jCheckBoxFreitag.isSelected();
         return rueckgabe;
     }
 
     //Getter-CheckBox-Samstag
-    public boolean getjCheckBoxSamstag() {
+    public boolean isSamstag() {
         boolean rueckgabe;
         rueckgabe = (Boolean) jCheckBoxSamstag.isSelected();
         return rueckgabe;
     }
 
     //Getter-CheckBox-Sonntag
-    public boolean getjCheckBoxSonntag() {
+    public boolean isSonntag() {
         boolean rueckgabe;
         rueckgabe = (Boolean) jCheckBoxSonntag.isSelected();
         return rueckgabe;
     }
 
     //Getter-CheckBox-Dünger
-    public String getjComboBoxDuenger() {
+    public String getDuengerName() {
         String rueckgabe;
-        rueckgabe = (String) jComboBoxDuenger.getSelectedItem();
+        rueckgabe = (String)jComboBoxDuenger.getSelectedItem();
         return rueckgabe;
     }
 
     //Getter-Spinner-Dünger
-    public double getjSpinnerDuenger() {
+    public double getDuengerMilliliter() {
         double rueckgabe;
-        rueckgabe = (Double) jSpinnerDuenger.getValue();
+        rueckgabe = (Double)jSpinnerDuenger.getValue();
         return rueckgabe;
     }
 
@@ -91,6 +91,8 @@ public class JPanelDuenger extends javax.swing.JPanel {
         jLabelDuenger.setText("Dünger:");
 
         jComboBoxDuenger.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
+        jSpinnerDuenger.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
         jLabelDuengerMilliliter.setText("ml");
 

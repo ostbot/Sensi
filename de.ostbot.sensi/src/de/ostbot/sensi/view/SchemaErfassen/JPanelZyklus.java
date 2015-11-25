@@ -2,13 +2,13 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 public class JPanelZyklus extends javax.swing.JPanel {
 
-    public String getjComboBoxAlter() {
-        String rueckgabe;
-        rueckgabe = (String)jComboBoxAlter.getSelectedItem();
+    public int getWoche() {
+        int rueckgabe;
+        rueckgabe = Integer.valueOf((String)jComboBoxWoche.getSelectedItem());
         return rueckgabe;
     }
 
-    public String getjComboBoxPhase() {
+    public String getPhase() {
         String rueckgabe;
         rueckgabe = (String)jComboBoxPhase.getSelectedItem();
         return rueckgabe;
@@ -23,16 +23,16 @@ public class JPanelZyklus extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jLabelAlter = new javax.swing.JLabel();
-        jComboBoxAlter = new javax.swing.JComboBox<>();
+        jLabelWoche = new javax.swing.JLabel();
+        jComboBoxWoche = new javax.swing.JComboBox<>();
         jLabelPhase = new javax.swing.JLabel();
         jComboBoxPhase = new javax.swing.JComboBox<>();
 
         setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabelAlter.setText("Alter:");
+        jLabelWoche.setText("Woche:");
 
-        jComboBoxAlter.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        jComboBoxWoche.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", " " }));
 
         jLabelPhase.setText("Phase:");
 
@@ -45,8 +45,8 @@ public class JPanelZyklus extends javax.swing.JPanel {
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jComboBoxAlter, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabelAlter))
+                    .addComponent(jComboBoxWoche, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelWoche))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
@@ -61,11 +61,11 @@ public class JPanelZyklus extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabelPhase, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabelAlter))
+                    .addComponent(jLabelWoche))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jComboBoxPhase, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jComboBoxAlter, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jComboBoxWoche, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -87,10 +87,10 @@ public class JPanelZyklus extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBoxAlter;
     private javax.swing.JComboBox<String> jComboBoxPhase;
-    private javax.swing.JLabel jLabelAlter;
+    private javax.swing.JComboBox<String> jComboBoxWoche;
     private javax.swing.JLabel jLabelPhase;
+    private javax.swing.JLabel jLabelWoche;
     private javax.swing.JPanel jPanelHintergrund;
     // End of variables declaration//GEN-END:variables
 }

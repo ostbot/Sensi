@@ -10,9 +10,9 @@ public class JPanelBelichtung extends javax.swing.JPanel {
     }
 
     //Getter-Spinner-Leistung
-    public double getLeistung() {
-        double rueckgabe;
-        rueckgabe = (Double) jSpinnerLeistung.getValue();
+    public int getLeistung() {
+        int rueckgabe;
+        rueckgabe = (Integer) jSpinnerLeistung.getValue();
         return rueckgabe;
     }
 
@@ -36,9 +36,13 @@ public class JPanelBelichtung extends javax.swing.JPanel {
 
         jLabelLeistung.setText("Leistung:");
 
+        jSpinnerLeistung.setModel(new javax.swing.SpinnerNumberModel(0, 0, 9999, 1));
+
         jLabelWatt.setText("Watt");
 
         jLabelFlaeche.setText("Fläche:");
+
+        jSpinnerFlaeche.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.01d));
 
         jLabelQuadratmeter.setText("m²");
 

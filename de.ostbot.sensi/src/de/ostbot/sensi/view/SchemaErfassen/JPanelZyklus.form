@@ -47,8 +47,8 @@
               <Group type="102" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jComboBoxAlter" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
-                      <Component id="jLabelAlter" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBoxWoche" alignment="0" min="-2" pref="75" max="-2" attributes="0"/>
+                      <Component id="jLabelWoche" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
@@ -68,12 +68,12 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jLabelPhase" alignment="1" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelAlter" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelWoche" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jComboBoxPhase" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBoxAlter" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBoxWoche" alignment="0" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="17" max="32767" attributes="0"/>
               </Group>
@@ -81,19 +81,17 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabelAlter">
+        <Component class="javax.swing.JLabel" name="jLabelWoche">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Alter:"/>
+            <Property name="text" type="java.lang.String" value="Woche:"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBoxAlter">
+        <Component class="javax.swing.JComboBox" name="jComboBoxWoche">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
-                <StringItem index="0" value="Item 1"/>
-                <StringItem index="1" value="Item 2"/>
-                <StringItem index="2" value="Item 3"/>
-                <StringItem index="3" value="Item 4"/>
+              <StringArray count="2">
+                <StringItem index="0" value="1"/>
+                <StringItem index="1" value=" "/>
               </StringArray>
             </Property>
           </Properties>

@@ -1,11 +1,11 @@
 package de.ostbot.sensi.view.SorteMitTopfAnlegen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
-import de.ostbot.sensi.model.PflanzeMitTopf;
+import de.ostbot.sensi.model.SorteMitTopf;
 
-public class JFrameTopfMitTopfAnlegen extends javax.swing.JFrame {
+public class JFrameSorteMitTopfAnlegen extends javax.swing.JFrame {
 
-    public JFrameTopfMitTopfAnlegen() {
+    public JFrameSorteMitTopfAnlegen() {
         
         initComponents();
     }
@@ -92,8 +92,8 @@ public class JFrameTopfMitTopfAnlegen extends javax.swing.JFrame {
         String sorte, herkunftsland, substrat;
         int indica, sativa;
         double topfgroesse;
-        PflanzeMitTopf pflanzeMitTopf; //Objekt vom Typ 'PflanzeMitTopf' erstellen
-        Datenbankoperationen datenbankoperationenObject;
+        SorteMitTopf sorteMitTopf; //Objekt vom Typ 'SorteMitTopf' erstellen
+        Datenbankoperationen datenbankoperationen; //Objekt vom Typ 'Datenbankoperationen' erstellen
 
         sorte = jPanelGenetik.getSorte();
         herkunftsland = jPanelGenetik.getHerkunftsland();
@@ -109,15 +109,15 @@ public class JFrameTopfMitTopfAnlegen extends javax.swing.JFrame {
             sativa = jPanelGenetik.getSativa();
             substrat = jPanelTopf.getSubstrat();
             topfgroesse = jPanelTopf.getTopfgroesse();
-            pflanzeMitTopf = new PflanzeMitTopf(sorte, herkunftsland, indica, sativa, substrat, topfgroesse);
+            sorteMitTopf = new SorteMitTopf(sorte, herkunftsland, indica, sativa, substrat, topfgroesse);
 
-            datenbankoperationenObject = new Datenbankoperationen();
-            datenbankoperationenObject.pflanzeMitTopfInDatenbankAnlegen(pflanzeMitTopf);
+            datenbankoperationen = new Datenbankoperationen();
+            datenbankoperationen.pflanzeMitTopfInDatenbankAnlegen(sorteMitTopf);
             }
         }
     }//GEN-LAST:event_jButtonSpeichernMouseClicked
     private void jButtonVerlassenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonVerlassenMouseClicked
-        JFrameTopfMitTopfAnlegen.this.dispose();
+        JFrameSorteMitTopfAnlegen.this.dispose();
     }//GEN-LAST:event_jButtonVerlassenMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -133,22 +133,20 @@ public class JFrameTopfMitTopfAnlegen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFrameTopfMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameSorteMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFrameTopfMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameSorteMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFrameTopfMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameSorteMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFrameTopfMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFrameSorteMitTopfAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new JFrameTopfMitTopfAnlegen().setVisible(true);
+            new JFrameSorteMitTopfAnlegen().setVisible(true);
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables

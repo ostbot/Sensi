@@ -50,9 +50,9 @@
                       <Group type="102" attributes="0">
                           <Component id="jComboBoxSorte" min="-2" pref="80" max="-2" attributes="0"/>
                           <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jComboBoxTopf" min="-2" pref="90" max="-2" attributes="0"/>
+                          <Component id="jComboBoxTopfMitSubstrat" min="-2" pref="90" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jLabelPflanzeMitTopfAuswaehlen" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelSorteMitTopfAuswaehlen" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
               </Group>
@@ -62,11 +62,11 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="jLabelPflanzeMitTopfAuswaehlen" min="-2" max="-2" attributes="0"/>
+                  <Component id="jLabelSorteMitTopfAuswaehlen" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jComboBoxSorte" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jComboBoxTopf" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jComboBoxTopfMitSubstrat" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="17" max="32767" attributes="0"/>
               </Group>
@@ -74,7 +74,7 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabelPflanzeMitTopfAuswaehlen">
+        <Component class="javax.swing.JLabel" name="jLabelSorteMitTopfAuswaehlen">
           <Properties>
             <Property name="text" type="java.lang.String" value="Sorte mit Topf ausw&#xe4;hlen:"/>
           </Properties>
@@ -89,7 +89,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JComboBox" name="jComboBoxTopf">
+        <Component class="javax.swing.JComboBox" name="jComboBoxTopfMitSubstrat">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
               <StringArray count="0"/>

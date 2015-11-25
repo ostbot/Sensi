@@ -1,10 +1,14 @@
 package de.ostbot.sensi.view.SchemaErfassen;
 
+import de.ostbot.sensi.control.Datenbankoperationen;
+import de.ostbot.sensi.model.Schema;
+
 public class JFameSchemaErfassen extends javax.swing.JFrame {
 
     public JFameSchemaErfassen() {
         initComponents();
     }
+    
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -25,6 +29,11 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         jPanelHintergrund.setBackground(new java.awt.Color(204, 204, 204));
 
         jButtonSpeichern.setText("Speichern");
+        jButtonSpeichern.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonSpeichernMouseClicked(evt);
+            }
+        });
 
         jButtonDefiziteDefinieren.setText("Defizite definieren");
 
@@ -99,6 +108,40 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonSpeichernMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSpeichernMouseClicked
+        
+        String sorte, substrat, phase, duenger, tempString;
+        int leistung, woche, luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht;
+        double topfgroesse, flaeche, pHWert, literProTag, milliliter;
+        double temperaturAmTag, temperaturInderNacht;
+        boolean montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag;
+        String[] bestandteileTopfgroesseMitSubstrat;
+        Schema schema; //Objekt vom Typ 'schema' erstellen
+        Datenbankoperationen datenbankOperationen; //Objekt vom Typ 'Datenbankoperationen' erstellen
+        
+        sorte = jPanelSorteMitTopf.getjComboBoxPflanze();
+        bestandteileTopfgroesseMitSubstrat = jPanelSorteMitTopf.getjComboBoxTopfgroesseMitSubstrat().split("L");
+        topfgroesse = Double.valueOf(bestandteileTopfgroesseMitSubstrat[0]);
+        temperaturAmTag = (Double)(jPanelKlima.getjSpinnerTemperaturAmTag()/100)*100.0; //gerundet
+        temperaturInderNacht = (Double)(jPanelKlima.getjSpinnerTemperaturInDerNacht()/100)*100.0; //gerundet
+        luftfeuchtigkeitAmTag = jPanelKlima.getjSpinnerLuftfeuchtigkeitAmTag();
+        luftfeuchtigkeitInDerNacht = jPanelKlima.getjSpinnerLuftfeuchtigkeitInDerNacht();
+        leistung = jPanelBelichtung.getLeistung();
+        flaeche = (jPanelBelichtung.getFlaeche()/100)*100.0; //gerundet //no cast (kommt als double)
+        woche = jPanelZyklus.getWoche();
+        phase = jPanelZyklus.getPhase();
+        duenger = jPanelDuenger.getDuengerName();
+        milliliter = (jPanelDuenger.getDuengerMilliliter()/100)*100.0; //gerundet //no cast (kommt als double)
+        montag = jPanelDuenger.isMontag();
+        dienstag = jPanelDuenger.isDienstag();
+        mittwoch = jPanelDuenger.isMittwoch();
+        donnerstag = jPanelDuenger.isDonnerstag();
+        freitag = jPanelDuenger.isFreitag();
+        samstag = jPanelDuenger.isSamstag();
+        sonntag = jPanelDuenger.isSonntag();
+
+    }//GEN-LAST:event_jButtonSpeichernMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
