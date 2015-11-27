@@ -147,7 +147,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         samstag = jPanelDuenger.isSamstag();
         sonntag = jPanelDuenger.isSonntag();
         pHWert = jPanelWasser.getPHWert();
-        literProTag = (Double)(jPanelWasser.getLiterProTag()/100)*100.0;
+        literProTag = Math.round(jPanelWasser.getLiterProTag()*100)/100.0;
         
         schema = new Schema(sorte, substrat, phase, duenger, milliliter, 
                             woche, topfgroesse, leistung, flaeche, pHWert, 

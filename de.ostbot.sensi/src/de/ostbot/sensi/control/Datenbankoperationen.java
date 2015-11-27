@@ -32,6 +32,7 @@ public class Datenbankoperationen {
         }
     }
     
+    //VORGANG ZUM ERSTELLEN DES STATUS BEGINNT
     //Pflanze und Topf werden aus der Combobox gezogen (die Werte wurden in einem anderen Frame definiert)
     //und werden dann übergeben an die unten folgende Funktion
     public void pflanzeMitTopfInDatenbankAnlegen(SorteMitTopf pflanzeObject) {
@@ -268,10 +269,6 @@ public class Datenbankoperationen {
             }
         }
     }
-    //Umgebung für Grow anlegen da T.Grow die ID von der T.Umgebung erwartet
-    public void umgebungInDatenbankAnlegen(Schema schemaObject) {
-        
-    }
     //Status für Grow anlegen da T.Grow die ID von der T.Status erwartet
     public void statusInDatenbankAnlegen(Schema schemaObject) {
         String sqlStringStatusInDatenbankAnlegen = "";
@@ -336,6 +333,12 @@ public class Datenbankoperationen {
                 Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
+    }
+    //VORGANG ZUM ERSTELLEN DES STATUS ABGESCHLOSSEN
+    //VORGANG ZUM ERSTELLEN DER UMGEBUNG BEGINNT
+    //Umgebung für Grow anlegen da T.Grow die ID von der T.Umgebung erwartet
+    public void umgebungInDatenbankAnlegen(Schema schemaObject) {
+        
     }
     
     //Getter für pk_medium_id
