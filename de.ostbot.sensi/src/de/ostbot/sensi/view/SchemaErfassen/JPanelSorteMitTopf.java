@@ -31,9 +31,9 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
         topfgroessenListe = new ArrayList();
         
         laengeSortenListe = datenbankOperationen.getSorten().size();
-        laengeTopfgroessenListe = datenbankOperationen.getTopfgroessen().size();
+        laengeTopfgroessenListe = datenbankOperationen.getTopfgroessenMitSubstrat().size();
         sortenListe = datenbankOperationen.getSorten();
-        topfgroessenListe = datenbankOperationen.getTopfgroessen();
+        topfgroessenListe = datenbankOperationen.getTopfgroessenMitSubstrat();
         
         jComboBoxSorte.removeAllItems();
         jComboBoxTopfMitSubstrat.removeAllItems();

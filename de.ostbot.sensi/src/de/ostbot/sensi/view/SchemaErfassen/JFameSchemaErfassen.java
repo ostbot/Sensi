@@ -2,6 +2,8 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
 import de.ostbot.sensi.model.Schema;
+import java.math.BigDecimal;
+import java.text.DecimalFormat;
 
 public class JFameSchemaErfassen extends javax.swing.JFrame {
 
@@ -117,7 +119,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         double temperaturAmTag, temperaturInderNacht;
         boolean montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag;
         String[] bestandteileTopfgroesseMitSubstrat;
-        Schema schema; //Objekt vom Typ 'schema' erstellen
+        Schema schema = null; //Objekt vom Typ 'schema' erstellen
         Datenbankoperationen datenbankOperationen; //Objekt vom Typ 'Datenbankoperationen' erstellen
         
         sorte = jPanelSorteMitTopf.getPflanze();
@@ -151,7 +153,10 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
                             woche, topfgroesse, leistung, flaeche, pHWert, 
                             literProTag, temperaturAmTag, temperaturInderNacht, 
                             luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht, 
-                            montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag);       
+                            montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag);   
+        
+        datenbankOperationen = new Datenbankoperationen();
+        datenbankOperationen.statusInDatenbankAnlegen(schema);
     }//GEN-LAST:event_jButtonSpeichernMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

@@ -1,5 +1,7 @@
 package de.ostbot.sensi.model;
 
+import java.math.BigDecimal;
+
 public class Schema {
     
     String sorte, substrat, phase, duenger;
