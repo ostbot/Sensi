@@ -37,7 +37,7 @@ public class Datenbankoperationen {
     //und werden dann übergeben an die unten folgende Funktion
     public void pflanzeMitTopfInDatenbankAnlegen(SorteMitTopf pflanzeObject) {
 
-        String sqlStringPflanze = "", sqlStringTopf ="";
+        String sqlStringPflanze, sqlStringTopf;
         PreparedStatement statementPflanze = null, statementTopf = null;
         
         try {
@@ -89,7 +89,7 @@ public class Datenbankoperationen {
     //in der Methode wird aber die Methode 'getPhaseID' aufgerufen
     //welche den 'String phase' entgegen nimmt und die passende phaseID zurück gibt
     public void zyklusInDatenbankAnlegen(int woche, String phase) {
-        String sqlStringZyklusInDatenbankAnlegen = "";
+        String sqlStringZyklusInDatenbankAnlegen;
         int phaseID = getPhaseID(phase);
         PreparedStatement statement = null;
        
@@ -134,7 +134,7 @@ public class Datenbankoperationen {
     //welche den 'String duenger' entgegen nimmt und die passende duengerID zurück gibt
     //Duenger ist eine statische Tabelle die nicht vom Benutzer verändert werden kann
     public void duengerschemaInDatenbankAnlegen(String duenger, double milliliter, boolean montag, boolean dienstag, boolean mittwoch, boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
-        String sqlStringDuengerschemaInDatenbankAnlegen = "";
+        String sqlStringDuengerschemaInDatenbankAnlegen;
         PreparedStatement statement = null;
         int duengerID = getDuengerID(duenger);
        
@@ -184,7 +184,7 @@ public class Datenbankoperationen {
     //Wasser in Datenbank anlegen aus pH-Wert und den Litern pro Tag
     //(Werte werden aus dem Slider und dem Spinner gezogen)
     public void wasserInDatenbankAnlegen(double pHWert, double literProTag) {
-        String sqlStringWasserInDatenbankAnlegen = "";
+        String sqlStringWasserInDatenbankAnlegen;
         PreparedStatement statement = null;
        
         try {
@@ -229,7 +229,7 @@ public class Datenbankoperationen {
     //Danach übernimmt die Tabelle 'Status' die nahrungID
     //Dies geschieht alles in einem Zug wie man der Methode 'statusInDatenbankAnlegen' entnehmen kann
     public void nahrungInDatenbankAnlegen(int wasserID, int duengerschemaID) {
-        String sqlStringNahrungInDatenbankAnlegen = "";
+        String sqlStringNahrungInDatenbankAnlegen;
         PreparedStatement statement = null;
                
         try {
@@ -270,7 +270,7 @@ public class Datenbankoperationen {
     }
     //Status für Grow anlegen da T.Grow die ID von der T.Status erwartet
     public void statusInDatenbankAnlegen(Schema schemaObject) {
-        String sqlStringStatusInDatenbankAnlegen = "";
+        String sqlStringStatusInDatenbankAnlegen;
         PreparedStatement statement = null;
         //Setzen und holen der Variablen die für das Anlegen des Status erforderlich sind
         int pflanzeID = getPflanzeID(schemaObject.getSorte());
@@ -326,7 +326,7 @@ public class Datenbankoperationen {
     //VORGANG ZUM ERSTELLEN DES STATUS ABGESCHLOSSEN
     //VORGANG ZUM ERSTELLEN DER UMGEBUNG BEGINNT
     public void temperaturInDatenbankAnlegen(double temperaturAmTag, double temperaturInDerNacht) {
-        String sqlStringTemperaturInDatenbankAnlegen = "";
+        String sqlStringTemperaturInDatenbankAnlegen;
         PreparedStatement statement = null;
        
         try {
@@ -366,7 +366,7 @@ public class Datenbankoperationen {
         }
     }
     public void luftfeuchtigkeitInDatenbankAnlegen(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
-        String sqlStringLuftfeuchtigkeitInDatenbankAnlegen = "";
+        String sqlStringLuftfeuchtigkeitInDatenbankAnlegen;
         PreparedStatement statement = null;
        
         try {
@@ -406,7 +406,7 @@ public class Datenbankoperationen {
         }
     }
     public void klimaInDatenbankAnlegen(double temperaturID, double luftfeuchtigkeitID) {
-        String sqlStringKlimaInDatenbankAnlegen = "";
+        String sqlStringKlimaInDatenbankAnlegen;
         PreparedStatement statement = null;
                
         try {
@@ -447,7 +447,7 @@ public class Datenbankoperationen {
     }
     //Umgebung für Grow anlegen da T.Grow die ID von der T.Umgebung erwartet
     public void umgebungInDatenbankAnlegen(Schema schemaObject) {
-        String sqlStringStatusInDatenbankAnlegen = "";
+        String sqlStringStatusInDatenbankAnlegen;
         PreparedStatement statement = null;
         double beleuchtungsflaeche = schemaObject.getBeleuchtungsflaeche();
         int leistung = schemaObject.getLeistung();
@@ -500,7 +500,7 @@ public class Datenbankoperationen {
     
     //Getter für pk_medium_id
     public int getMediumID(double topfgroesse, String substrat) {
-        String sqlStringMediumID = "";
+        String sqlStringMediumID;
         int mediumID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -545,7 +545,7 @@ public class Datenbankoperationen {
     }
     //Getter für pk_phase_id
     public int getPhaseID(String phase) {
-        String sqlStringPhaseID = "";
+        String sqlStringPhaseID;
         int phaseID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -589,7 +589,7 @@ public class Datenbankoperationen {
     }
     //Getter für pk_zyklus_id
     public int getZyklusID(int woche, String phase) {
-        String sqlStringZyklusID = "";
+        String sqlStringZyklusID;
         int zyklusID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -636,7 +636,7 @@ public class Datenbankoperationen {
     }
     //Getter für pk_wasser_id
     public int getWasserID(double pHWert, double literProTag) {
-        String sqlStringWasserID = "";
+        String sqlStringWasserID;
         int wasserID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -681,7 +681,7 @@ public class Datenbankoperationen {
     }
     //Getter für pk_duenger_id
     public int getDuengerID(String duenger) {
-        String sqlStringDuengerID = "";
+        String sqlStringDuengerID;
         int duengerID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -725,7 +725,7 @@ public class Datenbankoperationen {
     }
     //Getter für pk_duengerschema_id
     public int getDuengerschemaID(String duenger, double milliliter, boolean montag, boolean dienstag, boolean mittwoch, boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
-        String sqlStringDuengerschemaID = "";
+        String sqlStringDuengerschemaID;
         int duengerschemaID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -781,7 +781,7 @@ public class Datenbankoperationen {
     }
     //Getter für pk_nahrung_id
     public int getNahrungID(int wasserID, int duengerschemaID) {
-        String sqlStringNahrungID = "";
+        String sqlStringNahrungID;
         int nahrungID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -826,7 +826,7 @@ public class Datenbankoperationen {
     }
     //Getter für pk_pflanze_id
     public int getPflanzeID(String sorte) {
-        String sqlStringPflanzeID = "";
+        String sqlStringPflanzeID;
         int pflanzeID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -877,7 +877,7 @@ public class Datenbankoperationen {
     //Getter für pk_grow_id
     //Getter für pk_klima_id
     public int getKlimaID(int temperaturID, int luftfeuchtigkeitID) {
-        String sqlStringKlimaID = "";
+        String sqlStringKlimaID;
         int klimaID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -922,7 +922,7 @@ public class Datenbankoperationen {
     }
     //Getter für pk_luftfeuchtigkeit_id
     public int getLuftfeuchtigkeitID(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
-        String sqlStringLuftfeuchtigkeitID = "";
+        String sqlStringLuftfeuchtigkeitID;
         int luftfeuchtigkeitID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -970,10 +970,10 @@ public class Datenbankoperationen {
     //Getter für pk_status_id
     //Getter für pk_temperatur_id
     public int getTemperaturID(double temperaturAmTag, double temperaturInDerNacht) {
-        String sqlStringTemperaturID = "";
+        String sqlStringTemperaturID;
         int temperaturID = 0;
         PreparedStatement statement = null;
-        ResultSet resultSet = null;
+        ResultSet resultSet;
         
         try {
             verbindenZurDB();
@@ -1018,7 +1018,7 @@ public class Datenbankoperationen {
     //Anzeiger für ComboBox
     public List<String> getHerkunftslaender() {
         
-        String sqlStringLaender = "", land = "";
+        String sqlStringLaender, land;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List laenderListe = new ArrayList();
@@ -1063,7 +1063,7 @@ public class Datenbankoperationen {
     //Anzeiger für ComboBox
     public List<String> getSubstrate() {
         
-        String sqlStringSubstrate = "", substrat = "";
+        String sqlStringSubstrate, substrat;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List substratListe = new ArrayList();
@@ -1107,7 +1107,7 @@ public class Datenbankoperationen {
     //Anzeiger für ComboBox
     public List<String> getSorten() {
         
-        String sqlStringSorten = "", sorte = "";
+        String sqlStringSorten, sorte;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List sortenListe = new ArrayList();
@@ -1151,7 +1151,7 @@ public class Datenbankoperationen {
     //Anzeiger für ComboBox
     public List<String> getTopfgroessenMitSubstrat() {
         
-        String sqlStringTopfgroessenMitSubstrat = "", topfgroesseMitSubstrat = "";
+        String sqlStringTopfgroessenMitSubstrat, topfgroesseMitSubstrat;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List topfgroessenMtSubstratListe = new ArrayList();
@@ -1198,7 +1198,7 @@ public class Datenbankoperationen {
     //Anzeiger für ComboBox
     public List<String> getPhasen() {
         
-        String sqlStringPhasen = "", phase = "";
+        String sqlStringPhasen, phase;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List phasenListe = new ArrayList();
@@ -1242,7 +1242,7 @@ public class Datenbankoperationen {
     //Anzeiger für ComboBox
     public List<String> getDuenger() {
         
-        String sqlStringDuenger = "", duenger = "";
+        String sqlStringDuenger, duenger;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List duengerListe = new ArrayList();
