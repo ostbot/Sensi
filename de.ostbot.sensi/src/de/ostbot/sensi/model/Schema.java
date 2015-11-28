@@ -1,12 +1,10 @@
 package de.ostbot.sensi.model;
 
-import java.math.BigDecimal;
-
 public class Schema {
     
     String sorte, substrat, phase, duenger;
     int leistung, woche, luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht;
-    double topfgroesse, flaeche, pHWert, literProTag, milliliter;
+    double topfgroesse, beleuchtungsflaeche, pHWert, literProTag, milliliter;
     double temperaturAmTag, temperaturInderNacht;
     boolean montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag;
     
@@ -34,8 +32,8 @@ public class Schema {
     public int getLeistung() {
         return leistung;
     }
-    public double getFlaeche() {
-        return flaeche;
+    public double getBeleuchtungsflaeche() {
+        return beleuchtungsflaeche;
     }
     public double getpHWert() {
         return pHWert;
@@ -101,8 +99,8 @@ public class Schema {
     public void setLeistung(int leistung) {
         this.leistung = leistung;
     }
-    public void setFlaeche(double flaeche) {
-        this.flaeche = flaeche;
+    public void setFlaeche(double beleuchtungsflaeche) {
+        this.beleuchtungsflaeche = beleuchtungsflaeche;
     }
     public void setpHWert(double pHWert) {
         this.pHWert = pHWert;
@@ -144,7 +142,7 @@ public class Schema {
         this.sonntag = sonntag;
     }
 
-    public Schema(String sorte, String substrat, String phase, String duenger, double milliliter, int woche, double topfgroesse, int leistung, double flaeche, double pHWert, double literProTag, double temperaturAmTag, double temperaturInderNacht, int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht, boolean montag, boolean dienstag, boolean mittwoch, boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
+    public Schema(String sorte, String substrat, String phase, String duenger, double milliliter, int woche, double topfgroesse, int leistung, double beleuchtungsflaeche, double pHWert, double literProTag, double temperaturAmTag, double temperaturInderNacht, int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht, boolean montag, boolean dienstag, boolean mittwoch, boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
         this.sorte = sorte;
         this.substrat = substrat;
         this.phase = phase;
@@ -153,7 +151,7 @@ public class Schema {
         this.woche = woche;
         this.topfgroesse = topfgroesse;
         this.leistung = leistung;
-        this.flaeche = flaeche;
+        this.beleuchtungsflaeche = beleuchtungsflaeche;
         this.pHWert = pHWert;
         this.literProTag = literProTag;
         this.temperaturAmTag = temperaturAmTag;

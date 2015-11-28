@@ -157,6 +157,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         
         datenbankOperationen = new Datenbankoperationen();
         datenbankOperationen.statusInDatenbankAnlegen(schema);
+        datenbankOperationen.umgebungInDatenbankAnlegen(schema);
     }//GEN-LAST:event_jButtonSpeichernMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

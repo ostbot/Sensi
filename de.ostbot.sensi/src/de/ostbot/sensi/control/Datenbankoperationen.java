@@ -32,7 +32,7 @@ public class Datenbankoperationen {
         }
     }
     
-    //VORGANG ZUM ERSTELLEN DES STATUS BEGINNT
+    //Diese Methode schreibt die Daten aus dem Frame 'SorteMitTopf' in die Datenbank
     //Pflanze und Topf werden aus der Combobox gezogen (die Werte wurden in einem anderen Frame definiert)
     //und werden dann übergeben an die unten folgende Funktion
     public void pflanzeMitTopfInDatenbankAnlegen(SorteMitTopf pflanzeObject) {
@@ -83,6 +83,7 @@ public class Datenbankoperationen {
             }
         }
     }
+    //VORGANG ZUM ERSTELLEN DES STATUS BEGINNT
     //Zyklus wird aus Woche und Phase angelegt
     //Im DB-Modell erwartet er keine 'String phase' sondern dessen ID
     //in der Methode wird aber die Methode 'getPhaseID' aufgerufen
@@ -102,9 +103,7 @@ public class Datenbankoperationen {
             statement = connectionObject.prepareStatement(sqlStringZyklusInDatenbankAnlegen);
             
             statement.setInt(1, phaseID);
-                System.out.println("phaseID in 'zyklusInDatenbankAnlegen()'");
             statement.setInt(2, woche);
-                System.out.println("woche in 'zyklusInDatenbankAnlegen()'");
                 
             statement.executeUpdate();
             connectionObject.commit();
@@ -273,29 +272,19 @@ public class Datenbankoperationen {
     public void statusInDatenbankAnlegen(Schema schemaObject) {
         String sqlStringStatusInDatenbankAnlegen = "";
         PreparedStatement statement = null;
-        //ID stammt aus dem 'schemaObject' und dessen Daten stammen aus dem jPanel
-            //Wird für die SQLQuery benötigt
-            int pflanzeID = getPflanzeID(schemaObject.getSorte());
-            //ID stammt aus dem 'schemaObject' und dessen Daten stammen aus dem jPanel
-            //Wird für die SQLQuery benötigt
-            int mediumID = getMediumID(schemaObject.getTopfgroesse(), schemaObject.getSubstrat());
-            //Bevor die zyklusID in der T.Status gesetzt werden kann muss sie erst erzeugt,
-            //weil sie vorher nicht gesetzt wird, sondern in dem Ausführen des Button 'Speichern'
-            zyklusInDatenbankAnlegen(schemaObject.getWoche(), schemaObject.getPhase());
-                //Nachdem anlegen wird die zyklusID sofort in die Variable geschrieben
-                //Wird für die SQLQuery benötigt
-                int zyklusID = getZyklusID(schemaObject.getWoche(), schemaObject.getPhase());
-            //Bevor die nahrungID gesetzt werden kann muss ich mir die wasserID und die DuengerschemaID holen
-            //Auch die nahrungID wird für die unten folgende SQLQuery benötigt
-            wasserInDatenbankAnlegen(schemaObject.getpHWert(), schemaObject.getLiterProTag());
-                //Wird benötigt für die nahrungID
-                int wasserID = getWasserID(schemaObject.getpHWert(), schemaObject.getLiterProTag());
-            duengerschemaInDatenbankAnlegen(schemaObject.getDuenger(), schemaObject.getMilliliter(), schemaObject.isMontag(), schemaObject.isDienstag(), schemaObject.isMittwoch(), schemaObject.isDonnerstag(), schemaObject.isFreitag(), schemaObject.isSamstag(), schemaObject.isSonntag());
-                //Wird benötigt für die nahrungID
-                int duengerschemaID = getDuengerschemaID(schemaObject.getDuenger(), schemaObject.getMilliliter(), schemaObject.isMontag(), schemaObject.isDienstag(), schemaObject.isMittwoch(), schemaObject.isDonnerstag(), schemaObject.isFreitag(), schemaObject.isSamstag(), schemaObject.isSonntag());
-            nahrungInDatenbankAnlegen(wasserID, duengerschemaID);
-                 int nahrungID = getNahrungID(wasserID, duengerschemaID);
+        //Setzen und holen der Variablen die für das Anlegen des Status erforderlich sind
+        int pflanzeID = getPflanzeID(schemaObject.getSorte());
+        int mediumID = getMediumID(schemaObject.getTopfgroesse(), schemaObject.getSubstrat());
+        zyklusInDatenbankAnlegen(schemaObject.getWoche(), schemaObject.getPhase());
+        wasserInDatenbankAnlegen(schemaObject.getpHWert(), schemaObject.getLiterProTag());
+        duengerschemaInDatenbankAnlegen(schemaObject.getDuenger(), schemaObject.getMilliliter(), schemaObject.isMontag(), schemaObject.isDienstag(), schemaObject.isMittwoch(), schemaObject.isDonnerstag(), schemaObject.isFreitag(), schemaObject.isSamstag(), schemaObject.isSonntag());
+        int zyklusID = getZyklusID(schemaObject.getWoche(), schemaObject.getPhase());
+        int wasserID = getWasserID(schemaObject.getpHWert(), schemaObject.getLiterProTag());
+        int duengerschemaID = getDuengerschemaID(schemaObject.getDuenger(), schemaObject.getMilliliter(), schemaObject.isMontag(), schemaObject.isDienstag(), schemaObject.isMittwoch(), schemaObject.isDonnerstag(), schemaObject.isFreitag(), schemaObject.isSamstag(), schemaObject.isSonntag());
+        nahrungInDatenbankAnlegen(wasserID, duengerschemaID);
+        int nahrungID = getNahrungID(wasserID, duengerschemaID);
         
+        //Status wird in der Datenbank mit den oben geholten Variablen angelegt
         try {
             sqlStringStatusInDatenbankAnlegen = "INSERT INTO status"
                                                 + " (fk_medium_id, fk_zyklus_id, fk_nahrung_id, fk_pflanze_id)"
@@ -336,9 +325,177 @@ public class Datenbankoperationen {
     }
     //VORGANG ZUM ERSTELLEN DES STATUS ABGESCHLOSSEN
     //VORGANG ZUM ERSTELLEN DER UMGEBUNG BEGINNT
+    public void temperaturInDatenbankAnlegen(double temperaturAmTag, double temperaturInDerNacht) {
+        String sqlStringTemperaturInDatenbankAnlegen = "";
+        PreparedStatement statement = null;
+       
+        try {
+            sqlStringTemperaturInDatenbankAnlegen = "INSERT INTO temperatur"
+                                          + " (tag, nacht)"
+                                          + " VALUES(?,?)";
+            
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringTemperaturInDatenbankAnlegen);
+            
+            statement.setDouble(1, temperaturAmTag);
+            statement.setDouble(2, temperaturInDerNacht);
+                
+            statement.executeUpdate();
+            connectionObject.commit();
+            
+            } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    public void luftfeuchtigkeitInDatenbankAnlegen(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
+        String sqlStringLuftfeuchtigkeitInDatenbankAnlegen = "";
+        PreparedStatement statement = null;
+       
+        try {
+            sqlStringLuftfeuchtigkeitInDatenbankAnlegen = "INSERT INTO luftfeuchtigkeit"
+                                          + " (tag, nacht)"
+                                          + " VALUES(?,?)";
+            
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringLuftfeuchtigkeitInDatenbankAnlegen);
+            
+            statement.setInt(1, luftfeuchtigkeitAmTag);
+            statement.setInt(2, luftfeuchtigkeitInDerNacht);
+                
+            statement.executeUpdate();
+            connectionObject.commit();
+            
+            } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    public void klimaInDatenbankAnlegen(double temperaturID, double luftfeuchtigkeitID) {
+        String sqlStringKlimaInDatenbankAnlegen = "";
+        PreparedStatement statement = null;
+               
+        try {
+            sqlStringKlimaInDatenbankAnlegen = "INSERT INTO klima"
+                                          + " (fk_temperatur_id, fk_luftfeuchtigkeit_id)"
+                                          + " VALUES(?,?)";
+            
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringKlimaInDatenbankAnlegen);
+            
+            statement.setDouble(1, temperaturID);
+            statement.setDouble(2, luftfeuchtigkeitID);
+                
+            statement.executeUpdate();
+            connectionObject.commit();
+            
+            } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
     //Umgebung für Grow anlegen da T.Grow die ID von der T.Umgebung erwartet
     public void umgebungInDatenbankAnlegen(Schema schemaObject) {
+        String sqlStringStatusInDatenbankAnlegen = "";
+        PreparedStatement statement = null;
+        double beleuchtungsflaeche = schemaObject.getBeleuchtungsflaeche();
+        int leistung = schemaObject.getLeistung();
+        //Setzen und holen der Variablen die für das Anlegen der Umgebung erforderlich sind
+        temperaturInDatenbankAnlegen(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
+        luftfeuchtigkeitInDatenbankAnlegen(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
+        int temperaturID = getTemperaturID(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
+        int luftfeuchtigkeitID = getLuftfeuchtigkeitID(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
+        klimaInDatenbankAnlegen(temperaturID, luftfeuchtigkeitID);   
+        int klimaID = getKlimaID(temperaturID, luftfeuchtigkeitID);
         
+        //Status wird in der Datenbank mit den oben geholten Variablen angelegt
+        try {
+            sqlStringStatusInDatenbankAnlegen = "INSERT INTO umgebungen"
+                                                + " (fk_klima_id, beleuchtungsflaeche, leistung)"
+                                                + " VALUES (?,?,?)";
+        
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringStatusInDatenbankAnlegen);
+           
+            statement.setInt(1, klimaID);
+            statement.setDouble(2, beleuchtungsflaeche);
+            statement.setInt(3, leistung);
+               
+            statement.executeUpdate();
+            connectionObject.commit();
+            
+            } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
     
     //Getter für pk_medium_id
@@ -717,14 +874,146 @@ public class Datenbankoperationen {
     //Getter für pk_duengerschema_id
     //Getter für pk_energiekosten_id
     //Getter für pk_ernte_id
-    //Getter für fk_grow_id
-    //Getter für fk_klima_id
-    //Getter für fk_luftfeuchtigkeit_id
-    //Getter für fk_makroelemente_id
-    //Getter für fk_mikroelemente_id
-    //Getter für fk_status_id
-    //Getter für fk_temperatur_id
-    //Getter für fk_umgebung_id
+    //Getter für pk_grow_id
+    //Getter für pk_klima_id
+    public int getKlimaID(int temperaturID, int luftfeuchtigkeitID) {
+        String sqlStringKlimaID = "";
+        int klimaID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            
+            sqlStringKlimaID = "SELECT pk_klima_id FROM klima "
+                                + "WHERE fk_temperatur_id LIKE (?) AND fk_luftfeuchtigkeit_id LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringKlimaID);
+            statement.setInt(1, temperaturID);
+            statement.setInt(2, luftfeuchtigkeitID); 
+            
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+            
+            resultSet.next();
+            klimaID = resultSet.getInt("pk_klima_id");
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return klimaID;
+    }
+    //Getter für pk_luftfeuchtigkeit_id
+    public int getLuftfeuchtigkeitID(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
+        String sqlStringLuftfeuchtigkeitID = "";
+        int luftfeuchtigkeitID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            
+            sqlStringLuftfeuchtigkeitID = "SELECT pk_luftfeuchtigkeit_id FROM luftfeuchtigkeit "
+                                + "WHERE tag LIKE (?) AND nacht LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringLuftfeuchtigkeitID);
+            statement.setInt(1, luftfeuchtigkeitAmTag);
+            statement.setInt(2, luftfeuchtigkeitInDerNacht);
+            
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+            
+            resultSet.next();
+            luftfeuchtigkeitID = resultSet.getInt("pk_luftfeuchtigkeit_id");
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return luftfeuchtigkeitID;
+    }
+    //Getter für pk_makroelemente_id
+    //Getter für pk_mikroelemente_id
+    //Getter für pk_status_id
+    //Getter für pk_temperatur_id
+    public int getTemperaturID(double temperaturAmTag, double temperaturInDerNacht) {
+        String sqlStringTemperaturID = "";
+        int temperaturID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            
+            sqlStringTemperaturID = "SELECT pk_temperatur_id FROM temperatur "
+                                + "WHERE tag LIKE (?) AND nacht LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringTemperaturID);
+            statement.setDouble(1, temperaturAmTag);
+            statement.setDouble(2, temperaturInDerNacht);
+            
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+            
+            resultSet.next();
+            temperaturID = resultSet.getInt("pk_temperatur_id");
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return temperaturID;
+    }
+    //Getter für pk_umgebung_id
     
     //Anzeiger für ComboBox
     public List<String> getHerkunftslaender() {
