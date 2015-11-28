@@ -1,7 +1,6 @@
 package de.ostbot.sensi.view.SchemaErfassen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
-import java.util.ArrayList;
 import java.util.List;
 
 public class JPanelSorteMitTopf extends javax.swing.JPanel {
@@ -27,8 +26,6 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
         List<String> topfgroessenListe;
         
         datenbankOperationen = new Datenbankoperationen();
-        sortenListe = new ArrayList();
-        topfgroessenListe = new ArrayList();
         
         laengeSortenListe = datenbankOperationen.getSorten().size();
         laengeTopfgroessenListe = datenbankOperationen.getTopfgroessenMitSubstrat().size();
