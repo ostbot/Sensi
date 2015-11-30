@@ -65,7 +65,7 @@
                           <Component id="jPanelZyklus" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jPanelDuenger" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelDuengerschema" min="-2" max="-2" attributes="0"/>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="jPanelWasser" min="-2" max="-2" attributes="0"/>
                       </Group>
@@ -97,7 +97,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanelWasser" min="-2" pref="136" max="-2" attributes="0"/>
-                      <Component id="jPanelDuenger" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanelDuengerschema" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -117,7 +117,7 @@
         </Component>
         <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus" name="jPanelZyklus">
         </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelDuenger" name="jPanelDuenger">
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema" name="jPanelDuengerschema">
         </Component>
         <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelWasser" name="jPanelWasser">
         </Component>

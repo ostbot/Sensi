@@ -17,7 +17,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         jPanelSorteMitTopf = new de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf();
         jPanelBelichtung = new de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung();
         jPanelZyklus = new de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus();
-        jPanelDuenger = new de.ostbot.sensi.view.SchemaErfassen.JPanelDuenger();
+        jPanelDuengerschema = new de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema();
         jPanelWasser = new de.ostbot.sensi.view.SchemaErfassen.JPanelWasser();
         jPanelKlima = new de.ostbot.sensi.view.SchemaErfassen.JPanelKlima();
         jButtonSpeichern = new javax.swing.JButton();
@@ -55,7 +55,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanelZyklus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jPanelDuenger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanelDuengerschema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(10, 10, 10)
                         .addComponent(jPanelWasser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
@@ -80,7 +80,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanelWasser, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanelDuenger, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanelDuengerschema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButtonSpeichern)
@@ -111,10 +111,13 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
 
     private void jButtonSpeichernMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSpeichernMouseClicked
         
-        String sorte, substrat, phase, duenger;
+        String sorte, substrat, phase;
         int leistung, woche, luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht;
-        double topfgroesse, flaeche, pHWert, literProTag, milliliter;
-        double temperaturAmTag, temperaturInderNacht;
+        double topfgroesse, flaeche, pHWert, literProTag, temperaturAmTag, temperaturInderNacht;
+        double terraVega_ml_woche, terra_flores_ml_woche, mono_tracemix_ml_woche, mono_stickstoff_ml_woche,
+               mono_phosphor_ml_woche, mono_kalium_ml_woche, mono_magnesium_ml_woche, mono_kalizum_ml_woche,
+               mono_eisen_ml_woche, start_ml_woche, flush_ml_woche, accelerator_ml_woche, pk_ml_woche,
+               rhizotonic_ml_woche, cannazym_ml_woche;
         boolean montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag;
         String[] bestandteileTopfgroesseMitSubstrat;
         Schema schemaObject; //Objekt vom Typ 'schema' erstellen
@@ -127,31 +130,49 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         substrat = substrat.replace("(", ""); //entferne '('
         substrat = substrat.replace(")", ""); //entferne ')'
         substrat = substrat.trim(); //entferne alle Leerzeichen (' substrat' -> 'substrat')
-        temperaturAmTag = Math.round(jPanelKlima.getjSpinnerTemperaturAmTag()*100)/100.0; //gerundet
-        temperaturInderNacht = Math.round(jPanelKlima.getjSpinnerTemperaturInDerNacht()*100)/100.0; //gerundet
-        luftfeuchtigkeitAmTag = jPanelKlima.getjSpinnerLuftfeuchtigkeitAmTag();
-        luftfeuchtigkeitInDerNacht = jPanelKlima.getjSpinnerLuftfeuchtigkeitInDerNacht();
+        temperaturAmTag = Math.round(jPanelKlima.getTemperaturAmTag()*100)/100.0; //gerundet
+        temperaturInderNacht = Math.round(jPanelKlima.getTemperaturInDerNacht()*100)/100.0; //gerundet
+        luftfeuchtigkeitAmTag = jPanelKlima.getLuftfeuchtigkeitAmTag();
+        luftfeuchtigkeitInDerNacht = jPanelKlima.getLuftfeuchtigkeitInDerNacht();
         leistung = jPanelBelichtung.getLeistung();
         flaeche = Math.round(jPanelBelichtung.getFlaeche()*100)/100.0; //gerundet
         woche = jPanelZyklus.getWoche();
         phase = jPanelZyklus.getPhase();
-        duenger = jPanelDuenger.getDuenger();
-        milliliter = Math.round(jPanelDuenger.getDuengerMilliliter()*100)/100.0; //gerundet
-        montag = jPanelDuenger.isMontag();
-        dienstag = jPanelDuenger.isDienstag();
-        mittwoch = jPanelDuenger.isMittwoch();
-        donnerstag = jPanelDuenger.isDonnerstag();
-        freitag = jPanelDuenger.isFreitag();
-        samstag = jPanelDuenger.isSamstag();
-        sonntag = jPanelDuenger.isSonntag();
+        
+        montag = jPanelDuengerschema.isMontag();
+        dienstag = jPanelDuengerschema.isDienstag();
+        mittwoch = jPanelDuengerschema.isMittwoch();
+        donnerstag = jPanelDuengerschema.isDonnerstag();
+        freitag = jPanelDuengerschema.isFreitag();
+        samstag = jPanelDuengerschema.isSamstag();
+        sonntag = jPanelDuengerschema.isSonntag();
         pHWert = jPanelWasser.getPHWert();
         literProTag = Math.round(jPanelWasser.getLiterProTag()*100)/100.0;
+        terraVega_ml_woche = Math.round(jPanelDuengerschema.getTerraVega())/100.0;
+        terra_flores_ml_woche = Math.round(jPanelDuengerschema.getTerraFlores())/100.0;
+        mono_tracemix_ml_woche = Math.round(jPanelDuengerschema.getTraceMix())/100.0; 
+        mono_stickstoff_ml_woche = Math.round(jPanelDuengerschema.getStickstoff())/100.0;
+        mono_phosphor_ml_woche = Math.round(jPanelDuengerschema.getPhosphor())/100.0;
+        mono_kalium_ml_woche = Math.round(jPanelDuengerschema.getKalium())/100.0;
+        mono_magnesium_ml_woche = Math.round(jPanelDuengerschema.getMagnesium())/100.0; 
+        mono_kalizum_ml_woche = Math.round(jPanelDuengerschema.getKalzium())/100.0;
+        mono_eisen_ml_woche = Math.round(jPanelDuengerschema.getEisen())/100.0;
+        start_ml_woche = Math.round(jPanelDuengerschema.getStart())/100.0;
+        flush_ml_woche = Math.round(jPanelDuengerschema.getFlush())/100.0;
+        accelerator_ml_woche = Math.round(jPanelDuengerschema.getAccelerator())/100.0; 
+        pk_ml_woche = Math.round(jPanelDuengerschema.getPK())/100.0;
+        rhizotonic_ml_woche = Math.round(jPanelDuengerschema.getRhizotonic())/100.0;
+        cannazym_ml_woche = Math.round(jPanelDuengerschema.getCannazym())/100.0;
         
-        schemaObject = new Schema(sorte, substrat, phase, duenger, milliliter, 
-                            woche, topfgroesse, leistung, flaeche, pHWert, 
-                            literProTag, temperaturAmTag, temperaturInderNacht, 
-                            luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht, 
-                            montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag);   
+        schemaObject  = new Schema(sorte, substrat, phase, leistung, woche, luftfeuchtigkeitAmTag, 
+                                   luftfeuchtigkeitInDerNacht, topfgroesse, flaeche, pHWert, literProTag, 
+                                   terraVega_ml_woche, terra_flores_ml_woche, mono_tracemix_ml_woche, 
+                                   mono_stickstoff_ml_woche, mono_phosphor_ml_woche, mono_kalium_ml_woche, 
+                                   mono_magnesium_ml_woche, mono_kalizum_ml_woche, mono_eisen_ml_woche, 
+                                   start_ml_woche, flush_ml_woche, accelerator_ml_woche, pk_ml_woche, 
+                                   rhizotonic_ml_woche, cannazym_ml_woche, temperaturAmTag, 
+                                   temperaturInderNacht, montag, dienstag, mittwoch, donnerstag, 
+                                   freitag, samstag, sonntag);
         
         datenbankOperationen = new Datenbankoperationen();
         datenbankOperationen.statusInDatenbankAnlegen(schemaObject);
@@ -192,7 +213,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
     private javax.swing.JButton jButtonSpeichern;
     private javax.swing.JButton jButtonVerlassen;
     private de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung jPanelBelichtung;
-    private de.ostbot.sensi.view.SchemaErfassen.JPanelDuenger jPanelDuenger;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema jPanelDuengerschema;
     private javax.swing.JPanel jPanelHintergrund;
     private de.ostbot.sensi.view.SchemaErfassen.JPanelKlima jPanelKlima;
     private de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf jPanelSorteMitTopf;

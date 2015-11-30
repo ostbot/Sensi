@@ -2,22 +2,22 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 public class JPanelKlima extends javax.swing.JPanel {
 
-    public int getjSpinnerLuftfeuchtigkeitAmTag() {
+    public int getLuftfeuchtigkeitAmTag() {
         int rueckgabe;
         rueckgabe = (Integer)jSpinnerLuftfeuchtigkeitAmTag.getValue();
         return rueckgabe;
     }
-    public int getjSpinnerLuftfeuchtigkeitInDerNacht() {
+    public int getLuftfeuchtigkeitInDerNacht() {
         int rueckgabe;
         rueckgabe = (Integer)jSpinnerLuftfeuchtigkeitInDerNacht.getValue();
         return rueckgabe;
     }
-    public double getjSpinnerTemperaturAmTag() {
+    public double getTemperaturAmTag() {
         double rueckgabe;
         rueckgabe = (Double)jSpinnerTemperaturAmTag.getValue();
         return rueckgabe;
     }
-    public double getjSpinnerTemperaturInDerNacht() {
+    public double getTemperaturInDerNacht() {
         double rueckgabe;
         rueckgabe = (Double)jSpinnerTemperaturInDerNacht.getValue();
         return rueckgabe;
