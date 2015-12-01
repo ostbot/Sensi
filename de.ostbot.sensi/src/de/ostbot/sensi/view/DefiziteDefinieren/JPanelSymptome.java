@@ -1,6 +1,6 @@
 package de.ostbot.sensi.view.DefiziteDefinieren;
 
-public class JPanelUmgebung extends javax.swing.JPanel {
+public class JPanelSymptome extends javax.swing.JPanel {
 
     public boolean getjCheckBoxKaelteSymptome() {
         boolean rueckgabe;
@@ -26,7 +26,7 @@ public class JPanelUmgebung extends javax.swing.JPanel {
         return rueckgabe;
     }
 
-    public JPanelUmgebung() {
+    public JPanelSymptome() {
         initComponents();
     }
     

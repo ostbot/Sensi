@@ -1,7 +1,5 @@
 package de.ostbot.sensi.view.SchemaErfassen;
 
-import javax.swing.JSlider;
-
 public class JPanelWasser extends javax.swing.JPanel {
 
     public double getPHWert() {
@@ -9,7 +7,6 @@ public class JPanelWasser extends javax.swing.JPanel {
         rueckgabe = Double.parseDouble(jLabelPHWertAnzeige.getText());
         return rueckgabe;
     }
-
     public double getLiterProTag() {
         double rueckgabe;
         rueckgabe = (Double)(jSpinnerLiterProTag.getValue());

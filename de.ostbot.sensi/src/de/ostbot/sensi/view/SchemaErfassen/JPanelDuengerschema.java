@@ -1,7 +1,5 @@
 package de.ostbot.sensi.view.SchemaErfassen;
 
-import javax.swing.JSpinner;
-
 public class JPanelDuengerschema extends javax.swing.JPanel {
 
     public boolean isMontag() {
@@ -64,9 +62,9 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
         rueckgabe = (Double)(jSpinnerMagnesium.getValue());
         return rueckgabe;
     }
-    public double getPK() {
+    public double getPk() {
         double rueckgabe;
-        rueckgabe = (Double)(jSpinnerPK.getValue());
+        rueckgabe = (Double)(jSpinnerPk.getValue());
         return rueckgabe;
     }
     public double getPhosphor() {
@@ -114,6 +112,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
         rueckgabe = (Double)(jSpinnerTraceMix.getValue());
         return rueckgabe;
     }
+    
     public JPanelDuengerschema() {
         
         initComponents();
@@ -132,8 +131,8 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
         jLabelTerraVegaMilliliter = new javax.swing.JLabel();
         jSpinnerTerraFlores = new javax.swing.JSpinner();
         jLabelTerraFloresMilliliter = new javax.swing.JLabel();
-        jSpinnerPK = new javax.swing.JSpinner();
-        jLabelPKMilliliter = new javax.swing.JLabel();
+        jSpinnerPk = new javax.swing.JSpinner();
+        jLabelPkMilliliter = new javax.swing.JLabel();
         jSpinnerKalzium = new javax.swing.JSpinner();
         jLabelKalziumMilliliter = new javax.swing.JLabel();
         jLabelEisenMilliliter = new javax.swing.JLabel();
@@ -195,9 +194,9 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
 
         jLabelTerraFloresMilliliter.setText("ml");
 
-        jSpinnerPK.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+        jSpinnerPk.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
-        jLabelPKMilliliter.setText("ml");
+        jLabelPkMilliliter.setText("ml");
 
         jSpinnerKalzium.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
@@ -322,9 +321,9 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jLabelTerraFloresMilliliter))
                             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerPK, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jSpinnerPk, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelPKMilliliter))
+                                .addComponent(jLabelPkMilliliter))
                             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                                 .addComponent(jSpinnerAccelerator, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -462,8 +461,8 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
                                 .addComponent(jLabelPhosphor))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerPK, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelPKMilliliter)
+                                .addComponent(jSpinnerPk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jLabelPkMilliliter)
                                 .addComponent(jLabelPK))
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -528,9 +527,9 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
     private javax.swing.JLabel jLabelMagnesium;
     private javax.swing.JLabel jLabelMagnesiumMilliliter;
     private javax.swing.JLabel jLabelPK;
-    private javax.swing.JLabel jLabelPKMilliliter;
     private javax.swing.JLabel jLabelPhosphor;
     private javax.swing.JLabel jLabelPhosphorMilliliter;
+    private javax.swing.JLabel jLabelPkMilliliter;
     private javax.swing.JLabel jLabelRhizotonic;
     private javax.swing.JLabel jLabelRhizotonicMilliliter;
     private javax.swing.JLabel jLabelStart;
@@ -551,8 +550,8 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
     private javax.swing.JSpinner jSpinnerKalium;
     private javax.swing.JSpinner jSpinnerKalzium;
     private javax.swing.JSpinner jSpinnerMagnesium;
-    private javax.swing.JSpinner jSpinnerPK;
     private javax.swing.JSpinner jSpinnerPhosphor;
+    private javax.swing.JSpinner jSpinnerPk;
     private javax.swing.JSpinner jSpinnerRhizotonic;
     private javax.swing.JSpinner jSpinnerStart;
     private javax.swing.JSpinner jSpinnerStickstoff;

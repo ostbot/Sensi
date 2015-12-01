@@ -83,9 +83,9 @@
                                   <Component id="jLabelTerraFloresMilliliter" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jSpinnerPK" min="-2" pref="43" max="-2" attributes="0"/>
+                                  <Component id="jSpinnerPk" min="-2" pref="43" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabelPKMilliliter" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelPkMilliliter" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Group type="102" alignment="0" attributes="0">
                                   <Component id="jSpinnerAccelerator" min="-2" pref="43" max="-2" attributes="0"/>
@@ -260,8 +260,8 @@
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="3" attributes="0">
-                                  <Component id="jSpinnerPK" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  <Component id="jLabelPKMilliliter" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jSpinnerPk" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelPkMilliliter" alignment="3" min="-2" max="-2" attributes="0"/>
                                   <Component id="jLabelPK" alignment="3" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
@@ -343,14 +343,14 @@
             <Property name="text" type="java.lang.String" value="ml"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JSpinner" name="jSpinnerPK">
+        <Component class="javax.swing.JSpinner" name="jSpinnerPk">
           <Properties>
             <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
               <SpinnerModel initial="0.0" maximum="1000.0" minimum="0.0" numberType="java.lang.Double" stepSize="0.1" type="number"/>
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JLabel" name="jLabelPKMilliliter">
+        <Component class="javax.swing.JLabel" name="jLabelPkMilliliter">
           <Properties>
             <Property name="text" type="java.lang.String" value="ml"/>
           </Properties>

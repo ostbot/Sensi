@@ -1,7 +1,6 @@
 package de.ostbot.sensi.view.SchemaErfassen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
-import java.util.ArrayList;
 import java.util.List;
 
 public class JPanelZyklus extends javax.swing.JPanel {
@@ -11,7 +10,6 @@ public class JPanelZyklus extends javax.swing.JPanel {
         rueckgabe = Integer.valueOf((String)jComboBoxWoche.getSelectedItem());
         return rueckgabe;
     }
-
     public String getPhase() {
         String rueckgabe;
         rueckgabe = (String)jComboBoxPhase.getSelectedItem();
@@ -21,18 +19,13 @@ public class JPanelZyklus extends javax.swing.JPanel {
     public JPanelZyklus() {
         
         initComponents();
-        int laenge;
-        Datenbankoperationen datenbankOperationen;
-        List<String> phasenListe;
-        
-        datenbankOperationen = new Datenbankoperationen();
-        phasenListe = new ArrayList();
-        
-        laenge = datenbankOperationen.getPhasen().size();
-        phasenListe = datenbankOperationen.getPhasen();
-        
+        Datenbankoperationen datenbankOperationen = new Datenbankoperationen();
+        List<String> phasenListe = datenbankOperationen.getPhasen();
+        int laengePhasenListe = phasenListe.size();
+
         jComboBoxPhase.removeAllItems();
-        for (int i = 0; i < laenge; i++) {
+        
+        for (int i = 0; i < laengePhasenListe; i++) {
             jComboBoxPhase.addItem(phasenListe.get(i));
         }
     }

@@ -160,7 +160,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         start_ml_woche = Math.round(jPanelDuengerschema.getStart())/100.0;
         flush_ml_woche = Math.round(jPanelDuengerschema.getFlush())/100.0;
         accelerator_ml_woche = Math.round(jPanelDuengerschema.getAccelerator())/100.0; 
-        pk_ml_woche = Math.round(jPanelDuengerschema.getPK())/100.0;
+        pk_ml_woche = Math.round(jPanelDuengerschema.getPk())/100.0;
         rhizotonic_ml_woche = Math.round(jPanelDuengerschema.getRhizotonic())/100.0;
         cannazym_ml_woche = Math.round(jPanelDuengerschema.getCannazym())/100.0;
         

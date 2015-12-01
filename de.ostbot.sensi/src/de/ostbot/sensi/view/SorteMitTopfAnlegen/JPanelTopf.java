@@ -1,19 +1,15 @@
 package de.ostbot.sensi.view.SorteMitTopfAnlegen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
-import java.util.ArrayList;
 import java.util.List;
 
 public class JPanelTopf extends javax.swing.JPanel {
 
-    //Getter-ComboBox-Substrat
     public String getSubstrat() {
         String rueckgabe;
         rueckgabe = (String)jComboBoxSubstrat.getSelectedItem();
         return rueckgabe;
     }
-
-    //Getter-TextField-Topfgroesse
     public double getTopfgroesse() {
         String rueckgabe;
         rueckgabe = jTextFieldTopfgroesse.getText();
@@ -23,18 +19,12 @@ public class JPanelTopf extends javax.swing.JPanel {
     public JPanelTopf() {
         
         initComponents();
-        int laenge;
-        Datenbankoperationen datenbankOperationen;
-        List<String> substratListe;
-        
-        datenbankOperationen = new Datenbankoperationen();
-        substratListe = new ArrayList();
-        
-        laenge = datenbankOperationen.getSubstrate().size();
-        substratListe = datenbankOperationen.getSubstrate();
+        Datenbankoperationen datenbankOperationen = new Datenbankoperationen();
+        List<String> substratListe = datenbankOperationen.getSubstrate();
+        int laengeSubstraListe = substratListe.size();
         
         jComboBoxSubstrat.removeAllItems();
-        for (int i = 0; i < laenge; i++) {
+        for (int i = 0; i < laengeSubstraListe; i++) {
             jComboBoxSubstrat.addItem(substratListe.get(i));
         }
     }

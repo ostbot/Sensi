@@ -44,7 +44,9 @@ public class SorteMitTopf {
         this.topfgroesse = topfgroesse;
     }
     
-    public SorteMitTopf(String sorte, String herkunftsland, int indica, int sativa, String substrat, double topfgroesse) {
+    public SorteMitTopf(String sorte, String herkunftsland, String substrat,
+                        int indica, int sativa,
+                        double topfgroesse) {
         this.sorte = sorte;
         this.herkunftsland = herkunftsland;
         this.substrat = substrat;

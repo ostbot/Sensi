@@ -4,13 +4,59 @@ public class Schema {
     
     String sorte, substrat, phase;
     int leistung, woche, luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht;
-    double topfgroesse, beleuchtungsflaeche, pHWert, literProTag;
-    double terraVega_ml_woche, terra_flores_ml_woche, mono_tracemix_ml_woche, mono_stickstoff_ml_woche,
-           mono_phosphor_ml_woche, mono_kalium_ml_woche, mono_magnesium_ml_woche, mono_kalizum_ml_woche,
-           mono_eisen_ml_woche, start_ml_woche, flush_ml_woche, accelerator_ml_woche, pk_ml_woche,
-           rhizotonic_ml_woche, cannazym_ml_woche;
-    double temperaturAmTag, temperaturInderNacht;
+    double topfgroesse, beleuchtungsflaeche, pHWert, literProTag, temperaturAmTag, temperaturInderNacht,
+           terraVegaMilliliter, terraFloresMilliliter, monoTracemixMilliliter, monoStickstoffMilliliter,
+           monoPhosphorMilliliter, monoKaliumMilliliter, monoMagnesiumMilliliter, monoKalizumMilliliter,
+           monoEisenMilliliter, startMilliliter, flushMilliliter, acceleratorMilliliter, pkMilliliter,
+           rhizotonicMilliliter, cannazymMilliliter;
     boolean montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag;
+    
+    public Schema(String sorte, String substrat, String phase, 
+                  int leistung, int woche, int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht, 
+                  double topfgroesse, double beleuchtungsflaeche, double pHWert, double literProTag,
+                  double terraVegaMilliliter, double terraFloresMilliliter, double monoTracemixMilliliter, 
+                  double monoStickstoffMilliliter, double monoPhosphorMilliliter, double monoKaliumMilliliter, 
+                  double monoMagnesiumMilliliter, double monoKalizumMilliliter, double monoEisenMilliliter, 
+                  double startMilliliter, double flushMilliliter, double acceleratorMilliliter, double pkMilliliter, 
+                  double rhizotonicMilliliter, double cannazymMilliliter, double temperaturAmTag, 
+                  double temperaturInderNacht, boolean montag, boolean dienstag, boolean mittwoch, 
+                  boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
+        this.sorte = sorte;
+        this.substrat = substrat;
+        this.phase = phase;
+        this.leistung = leistung;
+        this.woche = woche;
+        this.luftfeuchtigkeitAmTag = luftfeuchtigkeitAmTag;
+        this.luftfeuchtigkeitInDerNacht = luftfeuchtigkeitInDerNacht;
+        this.topfgroesse = topfgroesse;
+        this.beleuchtungsflaeche = beleuchtungsflaeche;
+        this.pHWert = pHWert;
+        this.literProTag = literProTag;
+        this.terraVegaMilliliter = terraVegaMilliliter;
+        this.terraFloresMilliliter = terraFloresMilliliter;
+        this.monoTracemixMilliliter = monoTracemixMilliliter;
+        this.monoStickstoffMilliliter = monoStickstoffMilliliter;
+        this.monoPhosphorMilliliter = monoPhosphorMilliliter;
+        this.monoKaliumMilliliter = monoKaliumMilliliter;
+        this.monoMagnesiumMilliliter = monoMagnesiumMilliliter;
+        this.monoKalizumMilliliter = monoKalizumMilliliter;
+        this.monoEisenMilliliter = monoEisenMilliliter;
+        this.startMilliliter = startMilliliter;
+        this.flushMilliliter = flushMilliliter;
+        this.acceleratorMilliliter = acceleratorMilliliter;
+        this.pkMilliliter = pkMilliliter;
+        this.rhizotonicMilliliter = rhizotonicMilliliter;
+        this.cannazymMilliliter = cannazymMilliliter;
+        this.temperaturAmTag = temperaturAmTag;
+        this.temperaturInderNacht = temperaturInderNacht;
+        this.montag = montag;
+        this.dienstag = dienstag;
+        this.mittwoch = mittwoch;
+        this.donnerstag = donnerstag;
+        this.freitag = freitag;
+        this.samstag = samstag;
+        this.sonntag = sonntag;
+    }
     
     public String getSorte() {
         return sorte;
@@ -21,50 +67,50 @@ public class Schema {
     public String getPhase() {
         return phase;
     }
-    public double getTerraVega_ml_woche() {
-        return terraVega_ml_woche;
+    public double getTerraVegaMilliliter() {
+        return terraVegaMilliliter;
     }
-    public double getTerra_flores_ml_woche() {
-        return terra_flores_ml_woche;
+    public double getTerraFloresMilliliter() {
+        return terraFloresMilliliter;
     }
-    public double getMono_tracemix_ml_woche() {
-        return mono_tracemix_ml_woche;
+    public double getMonoTracemixMilliliter() {
+        return monoTracemixMilliliter;
     }
-    public double getMono_stickstoff_ml_woche() {
-        return mono_stickstoff_ml_woche;
+    public double getMonoStickstoffMilliliter() {
+        return monoStickstoffMilliliter;
     }
-    public double getMono_phosphor_ml_woche() {
-        return mono_phosphor_ml_woche;
+    public double getMonoPhosphorMilliliter() {
+        return monoPhosphorMilliliter;
     }
-    public double getMono_kalium_ml_woche() {
-        return mono_kalium_ml_woche;
+    public double getMonoKaliumMilliliter() {
+        return monoKaliumMilliliter;
     }
-    public double getMono_magnesium_ml_woche() {
-        return mono_magnesium_ml_woche;
+    public double getMonoMagnesiumMilliliter() {
+        return monoMagnesiumMilliliter;
     }
-    public double getMono_kalizum_ml_woche() {
-        return mono_kalizum_ml_woche;
+    public double getMonoKalizumMilliliter() {
+        return monoKalizumMilliliter;
     }
-    public double getMono_eisen_ml_woche() {
-        return mono_eisen_ml_woche;
+    public double getMonoEisenMilliliter() {
+        return monoEisenMilliliter;
     }
-    public double getStart_ml_woche() {
-        return start_ml_woche;
+    public double getStartMilliliter() {
+        return startMilliliter;
     }
-    public double getFlush_ml_woche() {
-        return flush_ml_woche;
+    public double getFlushMilliliter() {
+        return flushMilliliter;
     }
-    public double getAccelerator_ml_woche() {
-        return accelerator_ml_woche;
+    public double getAcceleratorMilliliter() {
+        return acceleratorMilliliter;
     }
-    public double getPk_ml_woche() {
-        return pk_ml_woche;
+    public double getPkMilliliter() {
+        return pkMilliliter;
     }
-    public double getRhizotonic_ml_woche() {
-        return rhizotonic_ml_woche;
+    public double getRhizotonicMilliliter() {
+        return rhizotonicMilliliter;
     }
-    public double getCannazym_ml_woche() {
-        return cannazym_ml_woche;
+    public double getCannazymMilliliter() {
+        return cannazymMilliliter;
     }
     public int getWoche() {
         return woche;
@@ -160,50 +206,50 @@ public class Schema {
     public void setBeleuchtungsflaeche(double beleuchtungsflaeche) {
         this.beleuchtungsflaeche = beleuchtungsflaeche;
     }
-    public void setTerraVega_ml_woche(double terraVega_ml_woche) {
-        this.terraVega_ml_woche = terraVega_ml_woche;
+    public void setTerraVegaMilliliter(double terraVegaMilliliter) {
+        this.terraVegaMilliliter = terraVegaMilliliter;
     }
-    public void setTerra_flores_ml_woche(double terra_flores_ml_woche) {
-        this.terra_flores_ml_woche = terra_flores_ml_woche;
+    public void setTerraFloresMilliliter(double terraFloresMilliliter) {
+        this.terraFloresMilliliter = terraFloresMilliliter;
     }
-    public void setMono_tracemix_ml_woche(double mono_tracemix_ml_woche) {
-        this.mono_tracemix_ml_woche = mono_tracemix_ml_woche;
+    public void setMonoTracemixMilliliter(double monoTracemixMilliliter) {
+        this.monoTracemixMilliliter = monoTracemixMilliliter;
     }
-    public void setMono_stickstoff_ml_woche(double mono_stickstoff_ml_woche) {
-        this.mono_stickstoff_ml_woche = mono_stickstoff_ml_woche;
+    public void setMonoStickstoffMilliliter(double monoStickstoffMilliliter) {
+        this.monoStickstoffMilliliter = monoStickstoffMilliliter;
     }
-    public void setMono_phosphor_ml_woche(double mono_phosphor_ml_woche) {
-        this.mono_phosphor_ml_woche = mono_phosphor_ml_woche;
+    public void setMonoPhosphorMilliliter(double monoPhosphorMilliliter) {
+        this.monoPhosphorMilliliter = monoPhosphorMilliliter;
     }
-    public void setMono_kalium_ml_woche(double mono_kalium_ml_woche) {
-        this.mono_kalium_ml_woche = mono_kalium_ml_woche;
+    public void setMonoKaliumMilliliter(double monoKaliumMilliliter) {
+        this.monoKaliumMilliliter = monoKaliumMilliliter;
     }
-    public void setMono_magnesium_ml_woche(double mono_magnesium_ml_woche) {
-        this.mono_magnesium_ml_woche = mono_magnesium_ml_woche;
+    public void setMonoMagnesiumMilliliter(double monoMagnesiumMilliliter) {
+        this.monoMagnesiumMilliliter = monoMagnesiumMilliliter;
     }
-    public void setMono_kalizum_ml_woche(double mono_kalizum_ml_woche) {
-        this.mono_kalizum_ml_woche = mono_kalizum_ml_woche;
+    public void setMonoKalizumMilliliter(double monoKalizumMilliliter) {
+        this.monoKalizumMilliliter = monoKalizumMilliliter;
     }
-    public void setMono_eisen_ml_woche(double mono_eisen_ml_woche) {
-        this.mono_eisen_ml_woche = mono_eisen_ml_woche;
+    public void setMonoEisenMilliliter(double monoEisenMilliliter) {
+        this.monoEisenMilliliter = monoEisenMilliliter;
     }
-    public void setStart_ml_woche(double start_ml_woche) {
-        this.start_ml_woche = start_ml_woche;
+    public void setStartMilliliter(double startMilliliter) {
+        this.startMilliliter = startMilliliter;
     }
-    public void setFlush_ml_woche(double flush_ml_woche) {
-        this.flush_ml_woche = flush_ml_woche;
+    public void setFlushMilliliter(double flushMilliliter) {
+        this.flushMilliliter = flushMilliliter;
     }
-    public void setAccelerator_ml_woche(double accelerator_ml_woche) {
-        this.accelerator_ml_woche = accelerator_ml_woche;
+    public void setAcceleratorMilliliter(double acceleratorMilliliter) {
+        this.acceleratorMilliliter = acceleratorMilliliter;
     }
-    public void setPk_ml_woche(double pk_ml_woche) {
-        this.pk_ml_woche = pk_ml_woche;
+    public void setPkMilliliter(double pkMilliliter) {
+        this.pkMilliliter = pkMilliliter;
     }
-    public void setRhizotonic_ml_woche(double rhizotonic_ml_woche) {
-        this.rhizotonic_ml_woche = rhizotonic_ml_woche;
+    public void setRhizotonicMilliliter(double rhizotonicMilliliter) {
+        this.rhizotonicMilliliter = rhizotonicMilliliter;
     }
-    public void setCannazym_ml_woche(double cannazym_ml_woche) {
-        this.cannazym_ml_woche = cannazym_ml_woche;
+    public void setCannazymMilliliter(double cannazymMilliliter) {
+        this.cannazymMilliliter = cannazymMilliliter;
     }
     public void setMontag(boolean montag) {
         this.montag = montag;
@@ -224,53 +270,6 @@ public class Schema {
         this.samstag = samstag;
     }
     public void setSonntag(boolean sonntag) {
-        this.sonntag = sonntag;
-    }
-
-    public Schema(String sorte, String substrat, String phase, 
-                  int leistung, int woche, int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht, 
-                  double topfgroesse, double beleuchtungsflaeche, double pHWert, double literProTag,
-                  double terraVega_ml_woche, double terra_flores_ml_woche, double mono_tracemix_ml_woche, 
-                  double mono_stickstoff_ml_woche, double mono_phosphor_ml_woche, double mono_kalium_ml_woche, 
-                  double mono_magnesium_ml_woche, double mono_kalizum_ml_woche, double mono_eisen_ml_woche, 
-                  double start_ml_woche, double flush_ml_woche, double accelerator_ml_woche, double pk_ml_woche, 
-                  double rhizotonic_ml_woche, double cannazym_ml_woche, double temperaturAmTag, 
-                  double temperaturInderNacht, boolean montag, boolean dienstag, boolean mittwoch, 
-                  boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
-        this.sorte = sorte;
-        this.substrat = substrat;
-        this.phase = phase;
-        this.leistung = leistung;
-        this.woche = woche;
-        this.luftfeuchtigkeitAmTag = luftfeuchtigkeitAmTag;
-        this.luftfeuchtigkeitInDerNacht = luftfeuchtigkeitInDerNacht;
-        this.topfgroesse = topfgroesse;
-        this.beleuchtungsflaeche = beleuchtungsflaeche;
-        this.pHWert = pHWert;
-        this.literProTag = literProTag;
-        this.terraVega_ml_woche = terraVega_ml_woche;
-        this.terra_flores_ml_woche = terra_flores_ml_woche;
-        this.mono_tracemix_ml_woche = mono_tracemix_ml_woche;
-        this.mono_stickstoff_ml_woche = mono_stickstoff_ml_woche;
-        this.mono_phosphor_ml_woche = mono_phosphor_ml_woche;
-        this.mono_kalium_ml_woche = mono_kalium_ml_woche;
-        this.mono_magnesium_ml_woche = mono_magnesium_ml_woche;
-        this.mono_kalizum_ml_woche = mono_kalizum_ml_woche;
-        this.mono_eisen_ml_woche = mono_eisen_ml_woche;
-        this.start_ml_woche = start_ml_woche;
-        this.flush_ml_woche = flush_ml_woche;
-        this.accelerator_ml_woche = accelerator_ml_woche;
-        this.pk_ml_woche = pk_ml_woche;
-        this.rhizotonic_ml_woche = rhizotonic_ml_woche;
-        this.cannazym_ml_woche = cannazym_ml_woche;
-        this.temperaturAmTag = temperaturAmTag;
-        this.temperaturInderNacht = temperaturInderNacht;
-        this.montag = montag;
-        this.dienstag = dienstag;
-        this.mittwoch = mittwoch;
-        this.donnerstag = donnerstag;
-        this.freitag = freitag;
-        this.samstag = samstag;
         this.sonntag = sonntag;
     }
 }

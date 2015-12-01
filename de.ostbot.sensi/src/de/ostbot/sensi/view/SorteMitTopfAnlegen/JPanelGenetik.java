@@ -1,55 +1,40 @@
 package de.ostbot.sensi.view.SorteMitTopfAnlegen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
-import java.util.ArrayList;
 import java.util.List;
 
 public class JPanelGenetik extends javax.swing.JPanel {
 
-    //Getter-Combobox-Herkunftsland
     public String getHerkunftsland() {
         String rueckgabe;
         rueckgabe = (String)jComboBoxHerkunftsland.getSelectedItem();
         return rueckgabe;
     }
-
-    //Getter-Spinner-Indica
     public int getIndica() {
         int rueckgabe;
         rueckgabe = (Integer)jSpinnerIndica.getValue();
         return rueckgabe;
     }
-
-    //Getter-Spinner-Sativa
     public int getSativa() {
         int rueckgabe;
         rueckgabe = (Integer)jSpinnerSativa.getValue();
         return rueckgabe;
     }
-
-    //Getter-TextField-Sorte
     public String getSorte() {
         return jTextFieldSorte.getText();
     }
     
-    //Default-Konstruktor mit Herkunftsländer-Initialisierung in die ComboBox
     public JPanelGenetik() {
         
         initComponents();
-        int laenge;
-        Datenbankoperationen datenbankOperationen;
-        List<String> laenderListe;
-        
-        datenbankOperationen = new Datenbankoperationen();
-        laenderListe = new ArrayList();
-        
-        laenge = datenbankOperationen.getHerkunftslaender().size();
-        laenderListe = datenbankOperationen.getHerkunftslaender();
+        Datenbankoperationen datenbankOperationen = new Datenbankoperationen();
+        List<String> laenderListe = datenbankOperationen.getHerkunftslaender();
+        int laengeLaenderListe = laenderListe.size();
         
         jComboBoxHerkunftsland.removeAllItems();
-        for (int i = 0; i < laenge; i++) {
+        for (int i = 0; i < laengeLaenderListe; i++) {
             jComboBoxHerkunftsland.addItem(laenderListe.get(i));
-        } 
+        }
     }
     
     @SuppressWarnings("unchecked")

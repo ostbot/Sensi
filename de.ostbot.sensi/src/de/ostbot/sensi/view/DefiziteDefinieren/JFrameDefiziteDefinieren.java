@@ -12,7 +12,7 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
         jPanelHintergrund = new javax.swing.JPanel();
         jPanelMakroelemente = new de.ostbot.sensi.view.DefiziteDefinieren.JPanelMakroelemente();
         jPanelMikroelemente = new de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente();
-        jPanelUmgebung = new de.ostbot.sensi.view.DefiziteDefinieren.JPanelUmgebung();
+        jPanelUmgebung = new de.ostbot.sensi.view.DefiziteDefinieren.JPanelSymptome();
         jButtonSpeichern = new javax.swing.JButton();
         jButtonVerlassen = new javax.swing.JButton();
         jButtonZuruecksetzen = new javax.swing.JButton();
@@ -119,6 +119,6 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
     private javax.swing.JPanel jPanelHintergrund;
     private de.ostbot.sensi.view.DefiziteDefinieren.JPanelMakroelemente jPanelMakroelemente;
     private de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente jPanelMikroelemente;
-    private de.ostbot.sensi.view.DefiziteDefinieren.JPanelUmgebung jPanelUmgebung;
+    private de.ostbot.sensi.view.DefiziteDefinieren.JPanelSymptome jPanelUmgebung;
     // End of variables declaration//GEN-END:variables
 }

@@ -98,7 +98,7 @@
         </Component>
         <Component class="de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente" name="jPanelMikroelemente">
         </Component>
-        <Component class="de.ostbot.sensi.view.DefiziteDefinieren.JPanelUmgebung" name="jPanelUmgebung">
+        <Component class="de.ostbot.sensi.view.DefiziteDefinieren.JPanelSymptome" name="jPanelUmgebung">
         </Component>
         <Component class="javax.swing.JButton" name="jButtonSpeichern">
           <Properties>

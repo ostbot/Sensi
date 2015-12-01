@@ -8,6 +8,7 @@ public class JFrameSorteMitTopfAnlegen extends javax.swing.JFrame {
     public JFrameSorteMitTopfAnlegen() {
         
         initComponents();
+        
     }
     
     @SuppressWarnings("unchecked")
@@ -89,15 +90,11 @@ public class JFrameSorteMitTopfAnlegen extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     private void jButtonSpeichernMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSpeichernMouseClicked
 
-        String sorte, herkunftsland, substrat;
-        int indica, sativa;
-        double topfgroesse;
-        SorteMitTopf sorteMitTopf; //Objekt vom Typ 'SorteMitTopf' erstellen
-        Datenbankoperationen datenbankoperationen; //Objekt vom Typ 'Datenbankoperationen' erstellen
-
-        sorte = jPanelGenetik.getSorte();
-        herkunftsland = jPanelGenetik.getHerkunftsland();
-        substrat = jPanelTopf.getSubstrat();
+        Datenbankoperationen datenbankoperationen = new Datenbankoperationen();
+        String sorte = jPanelGenetik.getSorte(),
+               herkunftsland = jPanelGenetik.getHerkunftsland(),
+               substrat = jPanelTopf.getSubstrat();
+        
         if ((jPanelGenetik.getIndica() + jPanelGenetik.getSativa()) != 100) {
             System.err.println("Falsches Gewicht in der Genetik!");
         } 
@@ -106,13 +103,11 @@ public class JFrameSorteMitTopfAnlegen extends javax.swing.JFrame {
                 System.err.println("Unmögliche Topfgröße!");
             } 
             else {
-            indica = jPanelGenetik.getIndica();
-            sativa = jPanelGenetik.getSativa();
-            topfgroesse = jPanelTopf.getTopfgroesse();
-            sorteMitTopf = new SorteMitTopf(sorte, herkunftsland, indica, sativa, substrat, topfgroesse);
-
-            datenbankoperationen = new Datenbankoperationen();
-            datenbankoperationen.pflanzeMitTopfInDatenbankAnlegen(sorteMitTopf);
+                int indica = jPanelGenetik.getIndica();
+                int sativa = jPanelGenetik.getSativa();
+                double topfgroesse = jPanelTopf.getTopfgroesse();
+                SorteMitTopf sorteMitTopfObject = new SorteMitTopf(sorte, herkunftsland, substrat, indica, sativa, topfgroesse);
+                datenbankoperationen.pflanzeMitTopfInDatenbankAnlegen(sorteMitTopfObject);
             }
         }
     }//GEN-LAST:event_jButtonSpeichernMouseClicked

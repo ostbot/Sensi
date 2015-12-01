@@ -2,13 +2,16 @@ package de.ostbot.sensi.control;
 
 import de.ostbot.sensi.model.Schema;
 import de.ostbot.sensi.model.SorteMitTopf;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -31,11 +34,100 @@ public class Datenbankoperationen {
             Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    //Anzeiger für ComboBoxen in 'JFrameSorteMitTopfAnlegen'
+    public List<String> getHerkunftslaender() {
 
-    //Diese Methode schreibt die Daten aus dem Frame 'SorteMitTopf' in die Datenbank
-    //Pflanze und Topf werden aus der Combobox gezogen (die Werte wurden in einem anderen Frame definiert)
-    //und werden dann übergeben an die unten folgende Funktion
-    public void pflanzeMitTopfInDatenbankAnlegen(SorteMitTopf pflanzeObject) {
+        List<String> laenderListe = new ArrayList<>();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        String land;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringLaender = "SELECT * FROM herkunftslaender";
+            statement = connectionObject.prepareStatement(sqlStringLaender);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            while (resultSet.next()) {
+                land = resultSet.getString("herkunftsland");
+                laenderListe.add(land);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                resultSet.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return laenderListe;
+    }
+    public List<String> getSubstrate() {
+
+        List<String> substratListe = new ArrayList<>();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        String substrat;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringSubstrate = "SELECT * FROM substrate";
+            statement = connectionObject.prepareStatement(sqlStringSubstrate);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            while (resultSet.next()) {
+                substrat = resultSet.getString("substrat");
+                substratListe.add(substrat);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                resultSet.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
+        return substratListe;
+    }
+    //Diese Methode schreibt die Daten aus 'JFrameSorteMitTopfAnlegen' in die Datenbank
+    //und legt eine Pflanze und Topf für das Schema an
+    public void pflanzeMitTopfInDatenbankAnlegen(SorteMitTopf sorteMitTopfObject) {
 
         String sqlStringPflanze, sqlStringTopf;
         PreparedStatement statementPflanze = null, statementTopf = null;
@@ -49,13 +141,13 @@ public class Datenbankoperationen {
             statementPflanze = connectionObject.prepareStatement(sqlStringPflanze);
             statementTopf = connectionObject.prepareCall(sqlStringTopf);
 
-            statementPflanze.setString(1, pflanzeObject.getSorte());
-            statementPflanze.setString(2, pflanzeObject.getHerkunftsland());
-            statementPflanze.setInt(3, pflanzeObject.getIndica());
-            statementPflanze.setInt(4, pflanzeObject.getSativa());
+            statementPflanze.setString(1, sorteMitTopfObject.getSorte());
+            statementPflanze.setString(2, sorteMitTopfObject.getHerkunftsland());
+            statementPflanze.setInt(3, sorteMitTopfObject.getIndica());
+            statementPflanze.setInt(4, sorteMitTopfObject.getSativa());
             /**/
-            statementTopf.setDouble(1, pflanzeObject.getTopfgroesse());
-            statementTopf.setString(2, pflanzeObject.getSubstrat());
+            statementTopf.setDouble(1, sorteMitTopfObject.getTopfgroesse());
+            statementTopf.setString(2, sorteMitTopfObject.getSubstrat());
 
             statementPflanze.executeUpdate();
             statementTopf.executeUpdate();
@@ -83,28 +175,226 @@ public class Datenbankoperationen {
             }
         }
     }
+    //Anzeiger für ComboBox in 'JFrameSchemaErfassen'
+    public List<String> getPhasen() {
+
+        List<String> phasenListe = new ArrayList<>();
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        String phase;
+        
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringPhasen = "SELECT phase FROM phasen";
+            statement = connectionObject.prepareStatement(sqlStringPhasen);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            while (resultSet.next()) {
+                phase = resultSet.getString("phase");
+                phasenListe.add(phase);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                resultSet.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return phasenListe;
+    }
+    //getSorten() und getTopfgroessenMitSubstrat() (getrennte Variante)
+    public List<String> getSorten() {
+
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List<String> sortenListe = new ArrayList<>();
+        String sorte;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringSorten = "SELECT sorte FROM pflanzen";
+            statement = connectionObject.prepareStatement(sqlStringSorten);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            while (resultSet.next()) {
+                sorte = resultSet.getString("sorte");
+                sortenListe.add(sorte);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                resultSet.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return sortenListe;
+    }
+    public List<String> getTopfgroessenMitSubstrat() {
+
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+        List<String> topfgroessenMitSubstratListe = new ArrayList<>();
+        String topfgroesseMitSubstrat;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringTopfgroessenMitSubstrat = "SELECT topfgroesse, substrat FROM medien";
+            statement = connectionObject.prepareStatement(sqlStringTopfgroessenMitSubstrat);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            while (resultSet.next()) {
+                topfgroesseMitSubstrat = String.valueOf(resultSet.getDouble("topfgroesse"));
+                topfgroesseMitSubstrat += "L (";
+                topfgroesseMitSubstrat += resultSet.getString("substrat");
+                topfgroesseMitSubstrat += ")";
+                topfgroessenMitSubstratListe.add(topfgroesseMitSubstrat);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                resultSet.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return topfgroessenMitSubstratListe;
+    }
+    //Anzeiger für ComboBoxen in 'JFrameSchemaErfassen' (sparsame Version)
+    public Map<String, List> getSortenUndTopfgroessenMitSubstrat() {
+
+        PreparedStatement statementSorte = null, statementTopfgroessenMitSubstrat = null;
+        ResultSet resultSetSorte = null, resultSetTopfgreossenMitSubstrat = null;
+        List<String> topfgroessenMitSubstratListe = new ArrayList<>(), sortenListe = new ArrayList<>();
+        Map<String, List> sortenUndTopfgroessenMitSubstratMap = new HashMap<>();
+        String sorte, topfgroesseMitSubstrat;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringSorte = "SELECT sorte FROM pflanzen",
+                   sqlStringTopfgroessenMitSubstrat = "SELECT topfgroesse, substrat FROM medien";
+            statementSorte = connectionObject.prepareStatement(sqlStringSorte);
+            statementTopfgroessenMitSubstrat = connectionObject.prepareStatement(sqlStringTopfgroessenMitSubstrat);
+
+            resultSetSorte = statementSorte.executeQuery();
+            resultSetTopfgreossenMitSubstrat = statementTopfgroessenMitSubstrat.executeQuery();
+            connectionObject.commit();
+
+            while (resultSetTopfgreossenMitSubstrat.next()) {
+                topfgroesseMitSubstrat = String.valueOf(resultSetTopfgreossenMitSubstrat.getDouble("topfgroesse"));
+                topfgroesseMitSubstrat += "L (";
+                topfgroesseMitSubstrat += resultSetTopfgreossenMitSubstrat.getString("substrat");
+                topfgroesseMitSubstrat += ")";
+                topfgroessenMitSubstratListe.add(topfgroesseMitSubstrat);
+            }
+            while (resultSetSorte.next()) {
+                sorte = resultSetSorte.getString("sorte");
+                sortenListe.add(sorte);
+            }
+            sortenUndTopfgroessenMitSubstratMap.put("sortenListe", sortenListe);
+            sortenUndTopfgroessenMitSubstratMap.put("topfgroessenMitSubstratListe", topfgroessenMitSubstratListe);
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statementSorte.close();
+                statementTopfgroessenMitSubstrat.close();
+                resultSetSorte.close();
+                resultSetTopfgreossenMitSubstrat.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return sortenUndTopfgroessenMitSubstratMap;
+    }
 
     //VORGANG ZUM ERSTELLEN DES STATUS BEGINNT
+    //Die folgenden Methoden werden in der Methode 'statusInDatenbankAnlegen()' benötigt
     //Zyklus wird aus Woche und Phase angelegt
-    //Im DB-Modell erwartet er keine 'String phase' sondern dessen ID
+    //Im DB-Modell erwartet er kein 'String phase' sondern dessen ID
     //in der Methode wird aber die Methode 'getPhaseID' aufgerufen
     //welche den 'String phase' entgegen nimmt und die passende phaseID zurück gibt
     public void zyklusInDatenbankAnlegen(int woche, String phase) {
         String sqlStringZyklusInDatenbankAnlegen;
-        int phaseID = getPhaseID(phase);
         PreparedStatement statement = null;
 
         try {
             sqlStringZyklusInDatenbankAnlegen = "INSERT INTO zyklen"
                     + " (fk_phase_id, woche)"
-                    + " VALUES(?,?)";
+                    + " SELECT phasen.pk_phase_id, ? FROM phasen WHERE phasen.phase LIKE ('?')";
 
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
             statement = connectionObject.prepareStatement(sqlStringZyklusInDatenbankAnlegen);
 
-            statement.setInt(1, phaseID);
-            statement.setInt(2, woche);
+            statement.setInt(1, woche);
+            statement.setString(2, phase);
 
             statement.executeUpdate();
             connectionObject.commit();
@@ -130,11 +420,6 @@ public class Datenbankoperationen {
             }
         }
     }
-
-    //Duengerschema erwartet im DB-Modell keinen 'String duenger' sondern dessen ID
-    //in der Methode wird aber die Methode 'getDunegerID' aufgerufen
-    //welche den 'String duenger' entgegen nimmt und die passende duengerID zurück gibt
-    //Duenger ist eine statische Tabelle die nicht vom Benutzer verändert werden kann
     public void duengerschemaInDatenbankAnlegen(double terra_vega_ml_woche, double terra_flores_ml_woche,
             double mono_tracemix_ml_woche, double mono_stickstoff_ml_woche, double mono_phosphor_ml_woche,
             double mono_kalium_ml_woche, double mono_magnesium_ml_woche, double mono_kalizum_ml_woche,
@@ -198,7 +483,6 @@ public class Datenbankoperationen {
             }
         }
     }
-
     //Wasser in Datenbank anlegen aus pH-Wert und den Litern pro Tag
     //(Werte werden aus dem Slider und dem Spinner gezogen)
     public void wasserInDatenbankAnlegen(double pHWert, double literProTag) {
@@ -241,7 +525,6 @@ public class Datenbankoperationen {
             }
         }
     }
-
     //Nahrung wird angelegt aus den Fremdschlüsseln von Wasser und Duengerschema
     //(Diese werden beim Speichern des Status aus ihren Tabellen gezogen (nachdem sie angelegt wurden)
     //-> und der Methode unten übergben.) 
@@ -297,26 +580,26 @@ public class Datenbankoperationen {
         int mediumID = getMediumID(schemaObject.getTopfgroesse(), schemaObject.getSubstrat());
         zyklusInDatenbankAnlegen(schemaObject.getWoche(), schemaObject.getPhase());
         wasserInDatenbankAnlegen(schemaObject.getpHWert(), schemaObject.getLiterProTag());
-        duengerschemaInDatenbankAnlegen(schemaObject.getTerraVega_ml_woche(), schemaObject.getTerra_flores_ml_woche(), 
-                schemaObject.getMono_tracemix_ml_woche(), schemaObject.getMono_stickstoff_ml_woche(),
-                schemaObject.getMono_phosphor_ml_woche(), schemaObject.getMono_kalium_ml_woche(), 
-                schemaObject.getMono_magnesium_ml_woche(), schemaObject.getMono_kalizum_ml_woche(),
-                schemaObject.getMono_eisen_ml_woche(), schemaObject.getStart_ml_woche(), 
-                schemaObject.getFlush_ml_woche(), schemaObject.getAccelerator_ml_woche(), 
-                schemaObject.getPk_ml_woche(), schemaObject.getRhizotonic_ml_woche(), 
-                schemaObject.getCannazym_ml_woche(), schemaObject.isMontag(), schemaObject.isDienstag(), 
+        duengerschemaInDatenbankAnlegen(schemaObject.getTerraVegaMilliliter(), schemaObject.getTerraFloresMilliliter(), 
+                schemaObject.getMonoTracemixMilliliter(), schemaObject.getMonoStickstoffMilliliter(),
+                schemaObject.getMonoPhosphorMilliliter(), schemaObject.getMonoKaliumMilliliter(), 
+                schemaObject.getMonoMagnesiumMilliliter(), schemaObject.getMonoKalizumMilliliter(),
+                schemaObject.getMonoEisenMilliliter(), schemaObject.getStartMilliliter(), 
+                schemaObject.getFlushMilliliter(), schemaObject.getAcceleratorMilliliter(), 
+                schemaObject.getPkMilliliter(), schemaObject.getRhizotonicMilliliter(), 
+                schemaObject.getCannazymMilliliter(), schemaObject.isMontag(), schemaObject.isDienstag(), 
                 schemaObject.isMittwoch(), schemaObject.isDonnerstag(), schemaObject.isFreitag(), 
                 schemaObject.isSamstag(), schemaObject.isSonntag());
         int zyklusID = getZyklusID(schemaObject.getWoche(), schemaObject.getPhase());
         int wasserID = getWasserID(schemaObject.getpHWert(), schemaObject.getLiterProTag());
-        int duengerschemaID = getDuengerschemaID(schemaObject.getTerraVega_ml_woche(), schemaObject.getTerra_flores_ml_woche(), 
-                schemaObject.getMono_tracemix_ml_woche(), schemaObject.getMono_stickstoff_ml_woche(),
-                schemaObject.getMono_phosphor_ml_woche(), schemaObject.getMono_kalium_ml_woche(), 
-                schemaObject.getMono_magnesium_ml_woche(), schemaObject.getMono_kalizum_ml_woche(),
-                schemaObject.getMono_eisen_ml_woche(), schemaObject.getStart_ml_woche(), 
-                schemaObject.getFlush_ml_woche(), schemaObject.getAccelerator_ml_woche(), 
-                schemaObject.getPk_ml_woche(), schemaObject.getRhizotonic_ml_woche(), 
-                schemaObject.getCannazym_ml_woche(), schemaObject.isMontag(), schemaObject.isDienstag(), 
+        int duengerschemaID = getDuengerschemaID(schemaObject.getTerraVegaMilliliter(), schemaObject.getTerraFloresMilliliter(), 
+                schemaObject.getMonoTracemixMilliliter(), schemaObject.getMonoStickstoffMilliliter(),
+                schemaObject.getMonoPhosphorMilliliter(), schemaObject.getMonoKaliumMilliliter(), 
+                schemaObject.getMonoMagnesiumMilliliter(), schemaObject.getMonoKalizumMilliliter(),
+                schemaObject.getMonoEisenMilliliter(), schemaObject.getStartMilliliter(), 
+                schemaObject.getFlushMilliliter(), schemaObject.getAcceleratorMilliliter(), 
+                schemaObject.getPkMilliliter(), schemaObject.getRhizotonicMilliliter(), 
+                schemaObject.getCannazymMilliliter(), schemaObject.isMontag(), schemaObject.isDienstag(), 
                 schemaObject.isMittwoch(), schemaObject.isDonnerstag(), schemaObject.isFreitag(), 
                 schemaObject.isSamstag(), schemaObject.isSonntag());
         nahrungInDatenbankAnlegen(wasserID, duengerschemaID);
@@ -361,7 +644,6 @@ public class Datenbankoperationen {
             }
         }
     }
-
     //VORGANG ZUM ERSTELLEN DES STATUS ABGESCHLOSSEN
     //VORGANG ZUM ERSTELLEN DER UMGEBUNG BEGINNT
     public void temperaturInDatenbankAnlegen(double temperaturAmTag, double temperaturInDerNacht) {
@@ -1082,232 +1364,8 @@ public class Datenbankoperationen {
     }
     //Getter für pk_umgebung_id
 
-    //Anzeiger für ComboBox
-    public List<String> getHerkunftslaender() {
-
-        String sqlStringLaender, land;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        List laenderListe = new ArrayList();
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringLaender = "SELECT * FROM herkunftslaender";
-            statement = connectionObject.prepareStatement(sqlStringLaender);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            while (resultSet.next()) {
-                land = resultSet.getString("herkunftsland");
-                laenderListe.add(land);
-            }
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return laenderListe;
-    }
+    
 
     //Anzeiger für ComboBox
-    public List<String> getSubstrate() {
-
-        String sqlStringSubstrate, substrat;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        List substratListe = new ArrayList();
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringSubstrate = "SELECT * FROM substrate";
-            statement = connectionObject.prepareStatement(sqlStringSubstrate);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            while (resultSet.next()) {
-                substrat = resultSet.getString("substrat");
-                substratListe.add(substrat);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return substratListe;
-    }
-
-    //Anzeiger für ComboBox
-    public List<String> getSorten() {
-
-        String sqlStringSorten, sorte;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        List sortenListe = new ArrayList();
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringSorten = "SELECT sorte FROM pflanzen";
-            statement = connectionObject.prepareStatement(sqlStringSorten);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            while (resultSet.next()) {
-                sorte = resultSet.getString("sorte");
-                sortenListe.add(sorte);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return sortenListe;
-    }
-
-    //Anzeiger für ComboBox
-    public List<String> getTopfgroessenMitSubstrat() {
-
-        String sqlStringTopfgroessenMitSubstrat, topfgroesseMitSubstrat;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        List topfgroessenMtSubstratListe = new ArrayList();
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringTopfgroessenMitSubstrat = "SELECT topfgroesse, substrat FROM medien";
-            statement = connectionObject.prepareStatement(sqlStringTopfgroessenMitSubstrat);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            while (resultSet.next()) {
-                topfgroesseMitSubstrat = String.valueOf(resultSet.getDouble("topfgroesse"));
-                topfgroesseMitSubstrat += "L (";
-                topfgroesseMitSubstrat += resultSet.getString("substrat");
-                topfgroesseMitSubstrat += ")";
-                topfgroessenMtSubstratListe.add(topfgroesseMitSubstrat);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return topfgroessenMtSubstratListe;
-    }
-
-    //Anzeiger für ComboBox
-    public List<String> getPhasen() {
-
-        String sqlStringPhasen, phase;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-        List phasenListe = new ArrayList();
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringPhasen = "SELECT phase FROM phasen";
-            statement = connectionObject.prepareStatement(sqlStringPhasen);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            while (resultSet.next()) {
-                phase = resultSet.getString("phase");
-                phasenListe.add(phase);
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return phasenListe;
-    }
+    
 }

@@ -2,6 +2,7 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
 import java.util.List;
+import java.util.Map;
 
 public class JPanelSorteMitTopf extends javax.swing.JPanel {
 
@@ -10,7 +11,6 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
         rueckgabe = (String)jComboBoxSorte.getSelectedItem();
         return rueckgabe;
     }
-    
     public String getTopfgroesseMitSubstrat() {
         String rueckgabe;
         rueckgabe = (String)jComboBoxTopfMitSubstrat.getSelectedItem();
@@ -20,21 +20,16 @@ public class JPanelSorteMitTopf extends javax.swing.JPanel {
     public JPanelSorteMitTopf() {
         
         initComponents();
-        int laengeSortenListe, laengeTopfgroessenListe;
-        Datenbankoperationen datenbankOperationen;
-        List<String> sortenListe;
-        List<String> topfgroessenListe;
-        
-        datenbankOperationen = new Datenbankoperationen();
-        
-        laengeSortenListe = datenbankOperationen.getSorten().size();
-        laengeTopfgroessenListe = datenbankOperationen.getTopfgroessenMitSubstrat().size();
-        sortenListe = datenbankOperationen.getSorten();
-        topfgroessenListe = datenbankOperationen.getTopfgroessenMitSubstrat();
+        Datenbankoperationen datenbankOperationen = new Datenbankoperationen();
+        Map<String, List> sortenUndTopfgroessenMitSubstratMap = datenbankOperationen.getSortenUndTopfgroessenMitSubstrat();
+        List<String> sortenListe = sortenUndTopfgroessenMitSubstratMap.get("sortenListe");
+        List<String> topfgroessenListe = sortenUndTopfgroessenMitSubstratMap.get("topfgroessenMitSubstratListe");
+        int laengeSortenListe = sortenListe.size(),
+            laengeTopfgroessenListe = topfgroessenListe.size();
         
         jComboBoxSorte.removeAllItems();
         jComboBoxTopfMitSubstrat.removeAllItems();
-        
+
         for (int i = 0; i < laengeSortenListe; i++) {
             jComboBoxSorte.addItem(sortenListe.get(i));
         } 
