@@ -65,16 +65,16 @@
                           <Component id="jPanelZyklus" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jPanelDuengerschema" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jButtonDefiziteDefinieren" min="-2" pref="153" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButtonVerlassen" min="-2" pref="100" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jPanelDuengerschema" min="-2" max="-2" attributes="0"/>
+                          </Group>
                           <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                           <Component id="jPanelWasser" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButtonSpeichern" min="-2" pref="100" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="jButtonDefiziteDefinieren" min="-2" pref="212" max="-2" attributes="0"/>
-                          <EmptySpace type="separate" max="-2" attributes="0"/>
-                          <Component id="jButtonVerlassen" min="-2" pref="100" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
@@ -101,7 +101,6 @@
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButtonSpeichern" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonDefiziteDefinieren" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jButtonVerlassen" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -111,30 +110,25 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelSorteMitTopf" name="jPanelSorteMitTopf">
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf" name="jPanelSorteMitTopf">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung" name="jPanelBelichtung">
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung" name="jPanelBelichtung">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelZyklus" name="jPanelZyklus">
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus" name="jPanelZyklus">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelDuengerschema" name="jPanelDuengerschema">
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema" name="jPanelDuengerschema">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelWasser" name="jPanelWasser">
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelWasser" name="jPanelWasser">
         </Component>
-        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelKlima" name="jPanelKlima">
-        </Component>
-        <Component class="javax.swing.JButton" name="jButtonSpeichern">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Speichern"/>
-          </Properties>
-          <Events>
-            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonSpeichernMouseClicked"/>
-          </Events>
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelKlima" name="jPanelKlima">
         </Component>
         <Component class="javax.swing.JButton" name="jButtonDefiziteDefinieren">
           <Properties>
             <Property name="text" type="java.lang.String" value="Defizite definieren"/>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jButtonDefiziteDefinierenMouseClicked"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="jButtonVerlassen">
           <Properties>

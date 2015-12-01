@@ -11,17 +11,22 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
 
         jPanelHintergrund = new javax.swing.JPanel();
         jPanelMakroelemente = new de.ostbot.sensi.view.DefiziteDefinieren.JPanelMakroelemente();
-        jPanelMikroelemente = new de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente();
         jPanelUmgebung = new de.ostbot.sensi.view.DefiziteDefinieren.JPanelSymptome();
-        jButtonSpeichern = new javax.swing.JButton();
+        jButtonGrowAnlegen = new javax.swing.JButton();
         jButtonVerlassen = new javax.swing.JButton();
         jButtonZuruecksetzen = new javax.swing.JButton();
+        jPanelMikroelemente1 = new de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanelHintergrund.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButtonSpeichern.setText("Speichern");
+        jButtonGrowAnlegen.setText("Grow Anlegen");
+        jButtonGrowAnlegen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButtonGrowAnlegenMouseClicked(evt);
+            }
+        });
 
         jButtonVerlassen.setText("Verlassen");
 
@@ -37,30 +42,30 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
                     .addComponent(jPanelMakroelemente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanelUmgebung, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jButtonSpeichern, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jButtonGrowAnlegen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(52, 52, 52)
                         .addComponent(jButtonZuruecksetzen, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButtonVerlassen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanelMikroelemente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanelMikroelemente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         jPanelHintergrundLayout.setVerticalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelMikroelemente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                         .addComponent(jPanelMakroelemente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanelUmgebung, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jButtonSpeichern)
-                            .addComponent(jButtonVerlassen)
-                            .addComponent(jButtonZuruecksetzen))))
+                        .addComponent(jPanelUmgebung, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanelMikroelemente1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButtonGrowAnlegen)
+                    .addComponent(jButtonVerlassen)
+                    .addComponent(jButtonZuruecksetzen))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -83,6 +88,13 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButtonGrowAnlegenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonGrowAnlegenMouseClicked
+        //datenbankOperationen.makroelementeInDatenbankAnlegen(makroelementeObject);
+        //datenbankOperationen.mikroelementeInDatenbankAnlegen(mikroelementeObject);
+        //datenbankOperationen.bodenfeuchtigkeitInDatenbankAnlegen(bodenfeuchtigkeitObject);
+        //datenbankOperationen.growInDatenbankAnlegen(growObject);
+    }//GEN-LAST:event_jButtonGrowAnlegenMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -91,7 +103,7 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
          */
         try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
+                if ("Windows".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
                     break;
                 }
@@ -113,12 +125,12 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonSpeichern;
+    private javax.swing.JButton jButtonGrowAnlegen;
     private javax.swing.JButton jButtonVerlassen;
     private javax.swing.JButton jButtonZuruecksetzen;
     private javax.swing.JPanel jPanelHintergrund;
     private de.ostbot.sensi.view.DefiziteDefinieren.JPanelMakroelemente jPanelMakroelemente;
-    private de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente jPanelMikroelemente;
+    private de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente jPanelMikroelemente1;
     private de.ostbot.sensi.view.DefiziteDefinieren.JPanelSymptome jPanelUmgebung;
     // End of variables declaration//GEN-END:variables
 }

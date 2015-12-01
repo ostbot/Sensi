@@ -1,4 +1,4 @@
-package de.ostbot.sensi.view.GrowAnlegen;
+package de.ostbot.sensi.view.SchemaErfassen;
 
 public class JPanelWasser extends javax.swing.JPanel {
 

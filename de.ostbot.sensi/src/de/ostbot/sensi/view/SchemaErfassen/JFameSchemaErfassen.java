@@ -1,11 +1,11 @@
-package de.ostbot.sensi.view.GrowAnlegen;
+package de.ostbot.sensi.view.SchemaErfassen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
 import de.ostbot.sensi.model.Schema;
 
-public class JFameGrowAnlegen extends javax.swing.JFrame {
+public class JFameSchemaErfassen extends javax.swing.JFrame {
 
-    public JFameGrowAnlegen() {
+    public JFameSchemaErfassen() {
         initComponents();
     }
     
@@ -14,13 +14,12 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jPanelSorteMitTopf = new de.ostbot.sensi.view.GrowAnlegen.JPanelSorteMitTopf();
-        jPanelBelichtung = new de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung();
-        jPanelZyklus = new de.ostbot.sensi.view.GrowAnlegen.JPanelZyklus();
-        jPanelDuengerschema = new de.ostbot.sensi.view.GrowAnlegen.JPanelDuengerschema();
-        jPanelWasser = new de.ostbot.sensi.view.GrowAnlegen.JPanelWasser();
-        jPanelKlima = new de.ostbot.sensi.view.GrowAnlegen.JPanelKlima();
-        jButtonSpeichern = new javax.swing.JButton();
+        jPanelSorteMitTopf = new de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf();
+        jPanelBelichtung = new de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung();
+        jPanelZyklus = new de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus();
+        jPanelDuengerschema = new de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema();
+        jPanelWasser = new de.ostbot.sensi.view.SchemaErfassen.JPanelWasser();
+        jPanelKlima = new de.ostbot.sensi.view.SchemaErfassen.JPanelKlima();
         jButtonDefiziteDefinieren = new javax.swing.JButton();
         jButtonVerlassen = new javax.swing.JButton();
 
@@ -28,14 +27,12 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
 
         jPanelHintergrund.setBackground(new java.awt.Color(204, 204, 204));
 
-        jButtonSpeichern.setText("Speichern");
-        jButtonSpeichern.addMouseListener(new java.awt.event.MouseAdapter() {
+        jButtonDefiziteDefinieren.setText("Defizite definieren");
+        jButtonDefiziteDefinieren.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jButtonSpeichernMouseClicked(evt);
+                jButtonDefiziteDefinierenMouseClicked(evt);
             }
         });
-
-        jButtonDefiziteDefinieren.setText("Defizite definieren");
 
         jButtonVerlassen.setText("Verlassen");
 
@@ -55,15 +52,14 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanelZyklus, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jPanelDuengerschema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+                                .addComponent(jButtonDefiziteDefinieren, javax.swing.GroupLayout.PREFERRED_SIZE, 153, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButtonVerlassen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jPanelDuengerschema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(10, 10, 10)
-                        .addComponent(jPanelWasser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jButtonSpeichern, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)
-                        .addComponent(jButtonDefiziteDefinieren, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButtonVerlassen, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(jPanelWasser, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanelHintergrundLayout.setVerticalGroup(
@@ -83,7 +79,6 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
                     .addComponent(jPanelDuengerschema, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButtonSpeichern)
                     .addComponent(jButtonDefiziteDefinieren)
                     .addComponent(jButtonVerlassen))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -109,7 +104,7 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButtonSpeichernMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonSpeichernMouseClicked
+    private void jButtonDefiziteDefinierenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonDefiziteDefinierenMouseClicked
         
         String sorte, substrat, phase;
         int leistung, woche, luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht;
@@ -181,11 +176,7 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
         datenbankOperationen = new Datenbankoperationen();
         datenbankOperationen.statusInDatenbankAnlegen(schemaObject);
         datenbankOperationen.umgebungInDatenbankAnlegen(schemaObject);
-        //datenbankOperationen.makroelementeInDatenbankAnlegen(makroelementeObject);
-        //datenbankOperationen.mikroelementeInDatenbankAnlegen(mikroelementeObject);
-        //datenbankOperationen.bodenfeuchtigkeitInDatenbankAnlegen(bodenfeuchtigkeitObject);
-        //datenbankOperationen.growInDatenbankAnlegen(growObject);
-    }//GEN-LAST:event_jButtonSpeichernMouseClicked
+    }//GEN-LAST:event_jButtonDefiziteDefinierenMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -200,14 +191,18 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -215,19 +210,18 @@ public class JFameGrowAnlegen extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new JFameGrowAnlegen().setVisible(true);
+            new JFameSchemaErfassen().setVisible(true);
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDefiziteDefinieren;
-    private javax.swing.JButton jButtonSpeichern;
     private javax.swing.JButton jButtonVerlassen;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung jPanelBelichtung;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelDuengerschema jPanelDuengerschema;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung jPanelBelichtung;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema jPanelDuengerschema;
     private javax.swing.JPanel jPanelHintergrund;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelKlima jPanelKlima;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelSorteMitTopf jPanelSorteMitTopf;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelWasser jPanelWasser;
-    private de.ostbot.sensi.view.GrowAnlegen.JPanelZyklus jPanelZyklus;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelKlima jPanelKlima;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf jPanelSorteMitTopf;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelWasser jPanelWasser;
+    private de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus jPanelZyklus;
     // End of variables declaration//GEN-END:variables
 }
