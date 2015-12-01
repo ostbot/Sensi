@@ -35,7 +35,7 @@ public class Datenbankoperationen {
         }
     }
     
-    //Anzeiger für ComboBoxen in 'JFrameSorteMitTopfAnlegen'
+    //Die folgenden Methoden werden in der Methode 'pflanzeMitTopfInDatenbankAnlegen()' benötigt
     public List<String> getHerkunftslaender() {
 
         List<String> laenderListe = new ArrayList<>();
@@ -125,8 +125,7 @@ public class Datenbankoperationen {
         }
         return substratListe;
     }
-    //Diese Methode schreibt die Daten aus 'JFrameSorteMitTopfAnlegen' in die Datenbank
-    //und legt eine Pflanze und Topf für das Schema an
+    //Pflanze und Medium wird erstellt
     public void pflanzeMitTopfInDatenbankAnlegen(SorteMitTopf sorteMitTopfObject) {
 
         String sqlStringPflanze, sqlStringTopf;
@@ -175,7 +174,389 @@ public class Datenbankoperationen {
             }
         }
     }
-    //Anzeiger für ComboBox in 'JFrameSchemaErfassen'
+    
+    
+    //Die folgenden Methoden werden in der Methode 'statusInDatenbankAnlegen()' benötigt
+    public int getDuengerschemaID(double terraVegaMilliliter, double terraFloresMilliliter, 
+                  double monoTracemixMilliliter, double monoStickstoffMilliliter, double monoPhosphorMilliliter, 
+                  double monoKaliumMilliliter, double monoMagnesiumMilliliter, double monoKalziumMilliliter, 
+                  double monoEisenMilliliter, double startMilliliter, double flushMilliliter, 
+                  double acceleratorMilliliter, double pkMilliliter, double rhizotonicMilliliter, 
+                  double cannazymMilliliter, boolean montag, boolean dienstag, boolean mittwoch, 
+                  boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
+        String sqlStringDuengerschemaID;
+        int duengerschemaID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            sqlStringDuengerschemaID = "SELECT pk_duengerschema_id FROM duengerschema"
+                    + " WHERE terra_vega_ml_woche LIKE (?) AND terra_flores_ml_woche LIKE (?)"
+                    + " AND mono_tracemix_ml_woche LIKE (?) AND mono_stickstoff_ml_woche LIKE (?)"
+                    + " AND mono_phosphor_ml_woche LIKE (?) AND mono_kalium_ml_woche LIKE (?)"
+                    + " AND mono_magnesium_ml_woche LIKE (?) AND mono_kalzium_ml_woche LIKE (?)"
+                    + " AND mono_eisen_ml_woche LIKE (?) AND start_ml_woche LIKE (?)"
+                    + " AND flush_ml_woche LIKE (?) AND accelerator_ml_woche LIKE (?)"
+                    + " AND pk_ml_woche LIKE (?) AND rhizotonic_ml_woche LIKE (?)"
+                    + " AND cannazym_ml_woche LIKE (?) AND montag LIKE (?) AND dienstag LIKE (?)"
+                    + " AND mittwoch LIKE (?) AND donnerstag LIKE (?) AND freitag LIKE (?)"
+                    + " AND samstag LIKE (?) AND sonntag LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringDuengerschemaID);
+            
+            statement.setDouble(1, terraVegaMilliliter); statement.setDouble(2, terraFloresMilliliter); 
+            statement.setDouble(3, monoTracemixMilliliter); statement.setDouble(4, monoStickstoffMilliliter); 
+            statement.setDouble(5, monoPhosphorMilliliter); statement.setDouble(6, monoKaliumMilliliter);
+            statement.setDouble(7, monoMagnesiumMilliliter); statement.setDouble(8, monoKalziumMilliliter); 
+            statement.setDouble(9, monoEisenMilliliter); statement.setDouble(10, startMilliliter); 
+            statement.setDouble(11, flushMilliliter); statement.setDouble(12, acceleratorMilliliter);
+            statement.setDouble(13, pkMilliliter); statement.setDouble(14, rhizotonicMilliliter);
+            statement.setDouble(15, cannazymMilliliter);  
+            statement.setBoolean(16, montag);
+            statement.setBoolean(17, dienstag);
+            statement.setBoolean(18, mittwoch);
+            statement.setBoolean(19, donnerstag);
+            statement.setBoolean(20, freitag);
+            statement.setBoolean(21, samstag);
+            statement.setBoolean(22, sonntag);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            duengerschemaID = resultSet.getInt("pk_duengerschema_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return duengerschemaID;
+    }
+    public int getNahrungID(int wasserID, int duengerschemaID) {
+        String sqlStringNahrungID;
+        int nahrungID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            sqlStringNahrungID = "SELECT pk_nahrung_id FROM nahrung "
+                    + "WHERE fk_wasser_id LIKE (?) AND fk_duengerschema_id LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringNahrungID);
+            statement.setInt(1, wasserID);
+            statement.setInt(2, duengerschemaID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            nahrungID = resultSet.getInt("pk_nahrung_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return nahrungID;
+    }
+    public int getPflanzeID(String sorte) {
+        String sqlStringPflanzeID;
+        int pflanzeID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            sqlStringPflanzeID = "SELECT pk_pflanze_id FROM pflanzen "
+                    + "WHERE sorte LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringPflanzeID);
+            statement.setString(1, sorte);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            pflanzeID = resultSet.getInt("pk_pflanze_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return pflanzeID;
+    }
+    public int getMediumID(double topfgroesse, String substrat) {
+        String sqlStringMediumID;
+        int mediumID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            sqlStringMediumID = "SELECT pk_medium_id FROM medien "
+                    + "WHERE topfgroesse LIKE (?) AND substrat LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringMediumID);
+            statement.setDouble(1, topfgroesse);
+            statement.setString(2, substrat);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            mediumID = resultSet.getInt("pk_medium_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return mediumID;
+    }
+    public int getPhaseID(String phase) {
+        String sqlStringPhaseID;
+        int phaseID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            sqlStringPhaseID = "SELECT pk_phase_id FROM phasen "
+                    + "WHERE phase LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringPhaseID);
+            statement.setString(1, phase);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            phaseID = resultSet.getInt("pk_phase_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return phaseID;
+    }
+    public int getZyklusID(int woche, String phase) {
+        String sqlStringZyklusID;
+        int zyklusID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            sqlStringZyklusID = "SELECT pk_zyklus_id FROM zyklen "
+                    + "WHERE fk_phase_id LIKE (?) AND woche LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringZyklusID);
+            statement.setInt(1, getPhaseID(phase));
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement.setInt(2, woche);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            zyklusID = resultSet.getInt("pk_zyklus_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return zyklusID;
+    }
+    public int getWasserID(double pHWert, double literProTag) {
+        String sqlStringWasserID;
+        int wasserID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            sqlStringWasserID = "SELECT pk_wasser_id FROM wasser "
+                    + "WHERE pH_wert LIKE (?) AND liter_pro_tag LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringWasserID);
+            statement.setDouble(1, pHWert);
+            statement.setDouble(2, literProTag);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            wasserID = resultSet.getInt("pk_wasser_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return wasserID;
+    }
+    public int getDuengerID(String duenger) {
+        String sqlStringDuengerID;
+        int duengerID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            sqlStringDuengerID = "SELECT pk_duenger_id FROM duenger "
+                    + "WHERE duenger LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringDuengerID);
+            statement.setString(1, duenger);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            duengerID = resultSet.getInt("pk_duenger_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return duengerID;
+    }
     public List<String> getPhasen() {
 
         List<String> phasenListe = new ArrayList<>();
@@ -221,7 +602,6 @@ public class Datenbankoperationen {
         }
         return phasenListe;
     }
-    //getSorten() und getTopfgroessenMitSubstrat() (getrennte Variante)
     public List<String> getSorten() {
 
         PreparedStatement statement = null;
@@ -313,7 +693,6 @@ public class Datenbankoperationen {
         }
         return topfgroessenMitSubstratListe;
     }
-    //Anzeiger für ComboBoxen in 'JFrameSchemaErfassen' (sparsame Version)
     public Map<String, List> getSortenUndTopfgroessenMitSubstrat() {
 
         PreparedStatement statementSorte = null, statementTopfgroessenMitSubstrat = null;
@@ -373,13 +752,6 @@ public class Datenbankoperationen {
         }
         return sortenUndTopfgroessenMitSubstratMap;
     }
-
-    //VORGANG ZUM ERSTELLEN DES STATUS BEGINNT
-    //Die folgenden Methoden werden in der Methode 'statusInDatenbankAnlegen()' benötigt
-    //Zyklus wird aus Woche und Phase angelegt
-    //Im DB-Modell erwartet er kein 'String phase' sondern dessen ID
-    //in der Methode wird aber die Methode 'getPhaseID' aufgerufen
-    //welche den 'String phase' entgegen nimmt und die passende phaseID zurück gibt
     public void zyklusInDatenbankAnlegen(int woche, String phase) {
         String sqlStringZyklusInDatenbankAnlegen;
         PreparedStatement statement = null;
@@ -387,7 +759,7 @@ public class Datenbankoperationen {
         try {
             sqlStringZyklusInDatenbankAnlegen = "INSERT INTO zyklen"
                     + " (fk_phase_id, woche)"
-                    + " SELECT phasen.pk_phase_id, ? FROM phasen WHERE phasen.phase LIKE ('?')";
+                    + " SELECT phasen.pk_phase_id, ? FROM phasen WHERE phasen.phase LIKE (?)";
 
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
@@ -420,71 +792,6 @@ public class Datenbankoperationen {
             }
         }
     }
-    public void duengerschemaInDatenbankAnlegen(double terra_vega_ml_woche, double terra_flores_ml_woche,
-            double mono_tracemix_ml_woche, double mono_stickstoff_ml_woche, double mono_phosphor_ml_woche,
-            double mono_kalium_ml_woche, double mono_magnesium_ml_woche, double mono_kalizum_ml_woche,
-            double mono_eisen_ml_woche, double start_ml_woche, double flush_ml_woche,
-            double accelerator_ml_woche, double pk_ml_woche, double rhizotonic_ml_woche, double cannazym_ml_woche, 
-            boolean montag, boolean dienstag, boolean mittwoch, boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
-
-        String sqlStringDuengerschemaInDatenbankAnlegen;
-        PreparedStatement statement = null;
-
-        try {
-            sqlStringDuengerschemaInDatenbankAnlegen = "INSERT INTO duengerschema "
-                    + "(terra_vega_ml_woche, terra_flores_ml_woche, mono_tracemix_ml_woche, "
-                    + "mono_stickstoff_ml_woche, mono_phosphor_ml_woche, mono_kalium_ml_woche, "
-                    + "mono_magnesium_ml_woche, mono_kalizum_ml_woche, "
-                    + "mono_eisen_ml_woche, start_ml_woche, flush_ml_woche, accelerator_ml_woche, pk_ml_woche, "
-                    + "rhizotonic_ml_woche, cannazym_ml_woche, "
-                    + "montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag) "
-                    + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
-
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-            statement = connectionObject.prepareStatement(sqlStringDuengerschemaInDatenbankAnlegen);
-
-            statement.setDouble(1, terra_vega_ml_woche); statement.setDouble(2, terra_flores_ml_woche); 
-            statement.setDouble(3, mono_tracemix_ml_woche); statement.setDouble(4, mono_stickstoff_ml_woche); 
-            statement.setDouble(5, mono_phosphor_ml_woche); statement.setDouble(6, mono_kalium_ml_woche);
-            statement.setDouble(7, mono_magnesium_ml_woche); statement.setDouble(8, mono_kalizum_ml_woche); 
-            statement.setDouble(9, mono_eisen_ml_woche); statement.setDouble(10, start_ml_woche); 
-            statement.setDouble(11, flush_ml_woche); statement.setDouble(12, accelerator_ml_woche);
-            statement.setDouble(13, pk_ml_woche); statement.setDouble(14, rhizotonic_ml_woche); statement.setDouble(15, cannazym_ml_woche);  
-            statement.setBoolean(16, montag);
-            statement.setBoolean(17, dienstag);
-            statement.setBoolean(18, mittwoch);
-            statement.setBoolean(19, donnerstag);
-            statement.setBoolean(20, freitag);
-            statement.setBoolean(21, samstag);
-            statement.setBoolean(22, sonntag);
-
-            statement.executeUpdate();
-            connectionObject.commit();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-    //Wasser in Datenbank anlegen aus pH-Wert und den Litern pro Tag
-    //(Werte werden aus dem Slider und dem Spinner gezogen)
     public void wasserInDatenbankAnlegen(double pHWert, double literProTag) {
         String sqlStringWasserInDatenbankAnlegen;
         PreparedStatement statement = null;
@@ -525,11 +832,6 @@ public class Datenbankoperationen {
             }
         }
     }
-    //Nahrung wird angelegt aus den Fremdschlüsseln von Wasser und Duengerschema
-    //(Diese werden beim Speichern des Status aus ihren Tabellen gezogen (nachdem sie angelegt wurden)
-    //-> und der Methode unten übergben.) 
-    //Danach übernimmt die Tabelle 'Status' die nahrungID
-    //Dies geschieht alles in einem Zug wie man der Methode 'statusInDatenbankAnlegen' entnehmen kann
     public void nahrungInDatenbankAnlegen(int wasserID, int duengerschemaID) {
         String sqlStringNahrungInDatenbankAnlegen;
         PreparedStatement statement = null;
@@ -570,8 +872,72 @@ public class Datenbankoperationen {
             }
         }
     }
+    public void duengerschemaInDatenbankAnlegen(double terraVegaMilliliter, double terraFloresMilliliter, 
+                  double monoTracemixMilliliter, double monoStickstoffMilliliter, double monoPhosphorMilliliter, 
+                  double monoKaliumMilliliter, double monoMagnesiumMilliliter, double monoKalziumMilliliter, 
+                  double monoEisenMilliliter, double startMilliliter, double flushMilliliter, 
+                  double acceleratorMilliliter, double pkMilliliter, double rhizotonicMilliliter, 
+                  double cannazymMilliliter, 
+            boolean montag, boolean dienstag, boolean mittwoch, boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
 
-    //Status für Grow anlegen da T.Grow die ID von der T.Status erwartet
+        String sqlStringDuengerschemaInDatenbankAnlegen;
+        PreparedStatement statement = null;
+
+        try {
+            sqlStringDuengerschemaInDatenbankAnlegen = "INSERT INTO duengerschema "
+                    + "(terra_vega_ml_woche, terra_flores_ml_woche, mono_tracemix_ml_woche, "
+                    + "mono_stickstoff_ml_woche, mono_phosphor_ml_woche, mono_kalium_ml_woche, "
+                    + "mono_magnesium_ml_woche, mono_kalzium_ml_woche, "
+                    + "mono_eisen_ml_woche, start_ml_woche, flush_ml_woche, accelerator_ml_woche, pk_ml_woche, "
+                    + "rhizotonic_ml_woche, cannazym_ml_woche, "
+                    + "montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag) "
+                    + " VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringDuengerschemaInDatenbankAnlegen);
+
+            statement.setDouble(1, terraVegaMilliliter); statement.setDouble(2, terraFloresMilliliter); 
+            statement.setDouble(3, monoTracemixMilliliter); statement.setDouble(4, monoStickstoffMilliliter); 
+            statement.setDouble(5, monoPhosphorMilliliter); statement.setDouble(6, monoKaliumMilliliter);
+            statement.setDouble(7, monoMagnesiumMilliliter); statement.setDouble(8, monoKalziumMilliliter); 
+            statement.setDouble(9, monoEisenMilliliter); statement.setDouble(10, startMilliliter); 
+            statement.setDouble(11, flushMilliliter); statement.setDouble(12, acceleratorMilliliter);
+            statement.setDouble(13, pkMilliliter); statement.setDouble(14, rhizotonicMilliliter);
+            statement.setDouble(15, cannazymMilliliter); 
+            statement.setBoolean(16, montag);
+            statement.setBoolean(17, dienstag);
+            statement.setBoolean(18, mittwoch);
+            statement.setBoolean(19, donnerstag);
+            statement.setBoolean(20, freitag);
+            statement.setBoolean(21, samstag);
+            statement.setBoolean(22, sonntag);
+
+            statement.executeUpdate();
+            connectionObject.commit();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    //Status wird erstellt
     public void statusInDatenbankAnlegen(Schema schemaObject) {
         String sqlStringStatusInDatenbankAnlegen;
         PreparedStatement statement = null;
@@ -583,7 +949,7 @@ public class Datenbankoperationen {
         duengerschemaInDatenbankAnlegen(schemaObject.getTerraVegaMilliliter(), schemaObject.getTerraFloresMilliliter(), 
                 schemaObject.getMonoTracemixMilliliter(), schemaObject.getMonoStickstoffMilliliter(),
                 schemaObject.getMonoPhosphorMilliliter(), schemaObject.getMonoKaliumMilliliter(), 
-                schemaObject.getMonoMagnesiumMilliliter(), schemaObject.getMonoKalizumMilliliter(),
+                schemaObject.getMonoMagnesiumMilliliter(), schemaObject.getMonoKalziumMilliliter(),
                 schemaObject.getMonoEisenMilliliter(), schemaObject.getStartMilliliter(), 
                 schemaObject.getFlushMilliliter(), schemaObject.getAcceleratorMilliliter(), 
                 schemaObject.getPkMilliliter(), schemaObject.getRhizotonicMilliliter(), 
@@ -595,7 +961,7 @@ public class Datenbankoperationen {
         int duengerschemaID = getDuengerschemaID(schemaObject.getTerraVegaMilliliter(), schemaObject.getTerraFloresMilliliter(), 
                 schemaObject.getMonoTracemixMilliliter(), schemaObject.getMonoStickstoffMilliliter(),
                 schemaObject.getMonoPhosphorMilliliter(), schemaObject.getMonoKaliumMilliliter(), 
-                schemaObject.getMonoMagnesiumMilliliter(), schemaObject.getMonoKalizumMilliliter(),
+                schemaObject.getMonoMagnesiumMilliliter(), schemaObject.getMonoKalziumMilliliter(),
                 schemaObject.getMonoEisenMilliliter(), schemaObject.getStartMilliliter(), 
                 schemaObject.getFlushMilliliter(), schemaObject.getAcceleratorMilliliter(), 
                 schemaObject.getPkMilliliter(), schemaObject.getRhizotonicMilliliter(), 
@@ -644,680 +1010,8 @@ public class Datenbankoperationen {
             }
         }
     }
-    //VORGANG ZUM ERSTELLEN DES STATUS ABGESCHLOSSEN
-    //VORGANG ZUM ERSTELLEN DER UMGEBUNG BEGINNT
-    public void temperaturInDatenbankAnlegen(double temperaturAmTag, double temperaturInDerNacht) {
-        String sqlStringTemperaturInDatenbankAnlegen;
-        PreparedStatement statement = null;
 
-        try {
-            sqlStringTemperaturInDatenbankAnlegen = "INSERT INTO temperatur"
-                    + " (tag, nacht)"
-                    + " VALUES(?,?)";
-
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-            statement = connectionObject.prepareStatement(sqlStringTemperaturInDatenbankAnlegen);
-
-            statement.setDouble(1, temperaturAmTag);
-            statement.setDouble(2, temperaturInDerNacht);
-
-            statement.executeUpdate();
-            connectionObject.commit();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-
-    public void luftfeuchtigkeitInDatenbankAnlegen(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
-        String sqlStringLuftfeuchtigkeitInDatenbankAnlegen;
-        PreparedStatement statement = null;
-
-        try {
-            sqlStringLuftfeuchtigkeitInDatenbankAnlegen = "INSERT INTO luftfeuchtigkeit"
-                    + " (tag, nacht)"
-                    + " VALUES(?,?)";
-
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-            statement = connectionObject.prepareStatement(sqlStringLuftfeuchtigkeitInDatenbankAnlegen);
-
-            statement.setInt(1, luftfeuchtigkeitAmTag);
-            statement.setInt(2, luftfeuchtigkeitInDerNacht);
-
-            statement.executeUpdate();
-            connectionObject.commit();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-
-    public void klimaInDatenbankAnlegen(double temperaturID, double luftfeuchtigkeitID) {
-        String sqlStringKlimaInDatenbankAnlegen;
-        PreparedStatement statement = null;
-
-        try {
-            sqlStringKlimaInDatenbankAnlegen = "INSERT INTO klima"
-                    + " (fk_temperatur_id, fk_luftfeuchtigkeit_id)"
-                    + " VALUES(?,?)";
-
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-            statement = connectionObject.prepareStatement(sqlStringKlimaInDatenbankAnlegen);
-
-            statement.setDouble(1, temperaturID);
-            statement.setDouble(2, luftfeuchtigkeitID);
-
-            statement.executeUpdate();
-            connectionObject.commit();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-
-    //Umgebung für Grow anlegen da T.Grow die ID von der T.Umgebung erwartet
-    public void umgebungInDatenbankAnlegen(Schema schemaObject) {
-        String sqlStringStatusInDatenbankAnlegen;
-        PreparedStatement statement = null;
-        double beleuchtungsflaeche = schemaObject.getBeleuchtungsflaeche();
-        int leistung = schemaObject.getLeistung();
-        //Setzen und holen der Variablen die für das Anlegen der Umgebung erforderlich sind
-        temperaturInDatenbankAnlegen(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
-        luftfeuchtigkeitInDatenbankAnlegen(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
-        int temperaturID = getTemperaturID(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
-        int luftfeuchtigkeitID = getLuftfeuchtigkeitID(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
-        klimaInDatenbankAnlegen(temperaturID, luftfeuchtigkeitID);
-        int klimaID = getKlimaID(temperaturID, luftfeuchtigkeitID);
-
-        //Status wird in der Datenbank mit den oben geholten Variablen angelegt
-        try {
-            sqlStringStatusInDatenbankAnlegen = "INSERT INTO umgebungen"
-                    + " (fk_klima_id, beleuchtungsflaeche, leistung)"
-                    + " VALUES (?,?,?)";
-
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-            statement = connectionObject.prepareStatement(sqlStringStatusInDatenbankAnlegen);
-
-            statement.setInt(1, klimaID);
-            statement.setDouble(2, beleuchtungsflaeche);
-            statement.setInt(3, leistung);
-
-            statement.executeUpdate();
-            connectionObject.commit();
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-    }
-
-    //Getter für pk_medium_id
-    public int getMediumID(double topfgroesse, String substrat) {
-        String sqlStringMediumID;
-        int mediumID = 0;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringMediumID = "SELECT pk_medium_id FROM medien "
-                    + "WHERE topfgroesse LIKE (?) AND substrat LIKE (?)";
-            statement = connectionObject.prepareStatement(sqlStringMediumID);
-            statement.setDouble(1, topfgroesse);
-            statement.setString(2, substrat);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            resultSet.next();
-            mediumID = resultSet.getInt("pk_medium_id");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return mediumID;
-    }
-
-    //Getter für pk_phase_id
-    public int getPhaseID(String phase) {
-        String sqlStringPhaseID;
-        int phaseID = 0;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringPhaseID = "SELECT pk_phase_id FROM phasen "
-                    + "WHERE phase LIKE (?)";
-            statement = connectionObject.prepareStatement(sqlStringPhaseID);
-            statement.setString(1, phase);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            resultSet.next();
-            phaseID = resultSet.getInt("pk_phase_id");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return phaseID;
-    }
-
-    //Getter für pk_zyklus_id
-    public int getZyklusID(int woche, String phase) {
-        String sqlStringZyklusID;
-        int zyklusID = 0;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringZyklusID = "SELECT pk_zyklus_id FROM zyklen "
-                    + "WHERE fk_phase_id LIKE (?) AND woche LIKE (?)";
-            statement = connectionObject.prepareStatement(sqlStringZyklusID);
-            statement.setInt(1, getPhaseID(phase));
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-            statement.setInt(2, woche);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            resultSet.next();
-            zyklusID = resultSet.getInt("pk_zyklus_id");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return zyklusID;
-    }
-
-    //Getter für pk_wasser_id
-    public int getWasserID(double pHWert, double literProTag) {
-        String sqlStringWasserID;
-        int wasserID = 0;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringWasserID = "SELECT pk_wasser_id FROM wasser "
-                    + "WHERE pH_wert LIKE (?) AND liter_pro_tag LIKE (?)";
-            statement = connectionObject.prepareStatement(sqlStringWasserID);
-            statement.setDouble(1, pHWert);
-            statement.setDouble(2, literProTag);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            resultSet.next();
-            wasserID = resultSet.getInt("pk_wasser_id");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return wasserID;
-    }
-
-    //Getter für pk_duenger_id
-    public int getDuengerID(String duenger) {
-        String sqlStringDuengerID;
-        int duengerID = 0;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringDuengerID = "SELECT pk_duenger_id FROM duenger "
-                    + "WHERE duenger LIKE (?)";
-            statement = connectionObject.prepareStatement(sqlStringDuengerID);
-            statement.setString(1, duenger);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            resultSet.next();
-            duengerID = resultSet.getInt("pk_duenger_id");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return duengerID;
-    }
-
-    //Getter für pk_duengerschema_id
-    public int getDuengerschemaID(double terraVega_ml_woche, double terra_flores_ml_woche, 
-           double mono_tracemix_ml_woche, double mono_stickstoff_ml_woche, double mono_phosphor_ml_woche, 
-           double mono_kalium_ml_woche, double mono_magnesium_ml_woche, double mono_kalizum_ml_woche, 
-           double mono_eisen_ml_woche, double start_ml_woche, double flush_ml_woche, 
-           double accelerator_ml_woche, double pk_ml_woche, double rhizotonic_ml_woche, 
-           double cannazym_ml_woche, boolean montag, boolean dienstag, boolean mittwoch, 
-           boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
-        String sqlStringDuengerschemaID;
-        int duengerschemaID = 0;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringDuengerschemaID = "SELECT pk_duengerschema_id FROM duengerschema"
-                    + " WHERE terra_vega_ml_woche LIKE (?) AND terra_flores_ml_woche LIKE (?)"
-                    + " AND mono_tracemix_ml_woche LIKE (?) AND mono_stickstoff_ml_woche LIKE (?)"
-                    + " AND mono_phosphor_ml_woche LIKE (?) AND mono_kalium_ml_woche LIKE (?)"
-                    + " AND mono_magnesium_ml_woche LIKE (?) AND mono_kalizum_ml_woche LIKE (?)"
-                    + " AND mono_eisen_ml_woche LIKE (?) AND start_ml_woche LIKE (?)"
-                    + " AND flush_ml_woche LIKE (?) AND accelerator_ml_woche LIKE (?)"
-                    + " AND pk_ml_woche LIKE (?) AND rhizotonic_ml_woche LIKE (?)"
-                    + " AND cannazym_ml_woche LIKE (?) AND montag LIKE (?) AND dienstag LIKE (?)"
-                    + " AND mittwoch LIKE (?) AND donnerstag LIKE (?) AND freitag LIKE (?)"
-                    + " AND samstag LIKE (?) AND sonntag LIKE (?)";
-            statement = connectionObject.prepareStatement(sqlStringDuengerschemaID);
-            
-            statement.setDouble(1, terraVega_ml_woche); statement.setDouble(2, terra_flores_ml_woche); 
-            statement.setDouble(3, mono_tracemix_ml_woche); statement.setDouble(4, mono_stickstoff_ml_woche); 
-            statement.setDouble(5, mono_phosphor_ml_woche); statement.setDouble(6, mono_kalium_ml_woche);
-            statement.setDouble(7, mono_magnesium_ml_woche); statement.setDouble(8, mono_kalizum_ml_woche); 
-            statement.setDouble(9, mono_eisen_ml_woche); statement.setDouble(10, start_ml_woche); 
-            statement.setDouble(11, flush_ml_woche); statement.setDouble(12, accelerator_ml_woche);
-            statement.setDouble(13, pk_ml_woche); statement.setDouble(14, rhizotonic_ml_woche); statement.setDouble(15, cannazym_ml_woche);  
-            statement.setBoolean(16, montag);
-            statement.setBoolean(17, dienstag);
-            statement.setBoolean(18, mittwoch);
-            statement.setBoolean(19, donnerstag);
-            statement.setBoolean(20, freitag);
-            statement.setBoolean(21, samstag);
-            statement.setBoolean(22, sonntag);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            resultSet.next();
-            duengerschemaID = resultSet.getInt("pk_duengerschema_id");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return duengerschemaID;
-    }
-
-    //Getter für pk_nahrung_id
-    public int getNahrungID(int wasserID, int duengerschemaID) {
-        String sqlStringNahrungID;
-        int nahrungID = 0;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringNahrungID = "SELECT pk_nahrung_id FROM nahrung "
-                    + "WHERE fk_wasser_id LIKE (?) AND fk_duengerschema_id LIKE (?)";
-            statement = connectionObject.prepareStatement(sqlStringNahrungID);
-            statement.setInt(1, wasserID);
-            statement.setInt(2, duengerschemaID);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            resultSet.next();
-            nahrungID = resultSet.getInt("pk_nahrung_id");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return nahrungID;
-    }
-
-    //Getter für pk_pflanze_id
-    public int getPflanzeID(String sorte) {
-        String sqlStringPflanzeID;
-        int pflanzeID = 0;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringPflanzeID = "SELECT pk_pflanze_id FROM pflanzen "
-                    + "WHERE sorte LIKE (?)";
-            statement = connectionObject.prepareStatement(sqlStringPflanzeID);
-            statement.setString(1, sorte);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            resultSet.next();
-            pflanzeID = resultSet.getInt("pk_pflanze_id");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return pflanzeID;
-    }
-
-    //Getter für pk_bodenfeuchtigkeit_id
-    //Getter für pk_duengerschema_id
-    //Getter für pk_energiekosten_id
-    //Getter für pk_ernte_id
-    //Getter für pk_grow_id
-    //Getter für pk_klima_id
-    public int getKlimaID(int temperaturID, int luftfeuchtigkeitID) {
-        String sqlStringKlimaID;
-        int klimaID = 0;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringKlimaID = "SELECT pk_klima_id FROM klima "
-                    + "WHERE fk_temperatur_id LIKE (?) AND fk_luftfeuchtigkeit_id LIKE (?)";
-            statement = connectionObject.prepareStatement(sqlStringKlimaID);
-            statement.setInt(1, temperaturID);
-            statement.setInt(2, luftfeuchtigkeitID);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            resultSet.next();
-            klimaID = resultSet.getInt("pk_klima_id");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return klimaID;
-    }
-
-    //Getter für pk_luftfeuchtigkeit_id
-    public int getLuftfeuchtigkeitID(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
-        String sqlStringLuftfeuchtigkeitID;
-        int luftfeuchtigkeitID = 0;
-        PreparedStatement statement = null;
-        ResultSet resultSet = null;
-
-        try {
-            verbindenZurDB();
-            connectionObject.setAutoCommit(false);
-
-            sqlStringLuftfeuchtigkeitID = "SELECT pk_luftfeuchtigkeit_id FROM luftfeuchtigkeit "
-                    + "WHERE tag LIKE (?) AND nacht LIKE (?)";
-            statement = connectionObject.prepareStatement(sqlStringLuftfeuchtigkeitID);
-            statement.setInt(1, luftfeuchtigkeitAmTag);
-            statement.setInt(2, luftfeuchtigkeitInDerNacht);
-
-            resultSet = statement.executeQuery();
-            connectionObject.commit();
-
-            resultSet.next();
-            luftfeuchtigkeitID = resultSet.getInt("pk_luftfeuchtigkeit_id");
-
-        } catch (SQLException ex) {
-            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-
-            if (connectionObject != null) {
-                try {
-                    System.err.print("Transaction is being rolled back.");
-                    connectionObject.rollback();
-                } catch (SQLException excep) {
-                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
-                }
-            }
-        } finally {
-            try {
-                statement.close();
-                connectionObject.setAutoCommit(true);
-                connectionObject.close();
-            } catch (SQLException ex) {
-                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
-            }
-        }
-        return luftfeuchtigkeitID;
-    }
-
-    //Getter für pk_makroelemente_id
-    //Getter für pk_mikroelemente_id
-    //Getter für pk_status_id
-    //Getter für pk_temperatur_id
+    //Die folgenden Methoden werden in der Methode 'umgebungInDatenbankAnlegen()' benötigt
     public int getTemperaturID(double temperaturAmTag, double temperaturInDerNacht) {
         String sqlStringTemperaturID;
         int temperaturID = 0;
@@ -1362,10 +1056,281 @@ public class Datenbankoperationen {
         }
         return temperaturID;
     }
+    public int getLuftfeuchtigkeitID(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
+        String sqlStringLuftfeuchtigkeitID;
+        int luftfeuchtigkeitID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            sqlStringLuftfeuchtigkeitID = "SELECT pk_luftfeuchtigkeit_id FROM luftfeuchtigkeit "
+                    + "WHERE tag LIKE (?) AND nacht LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringLuftfeuchtigkeitID);
+            statement.setInt(1, luftfeuchtigkeitAmTag);
+            statement.setInt(2, luftfeuchtigkeitInDerNacht);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            luftfeuchtigkeitID = resultSet.getInt("pk_luftfeuchtigkeit_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return luftfeuchtigkeitID;
+    }
+    public int getKlimaID(int temperaturID, int luftfeuchtigkeitID) {
+        String sqlStringKlimaID;
+        int klimaID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            sqlStringKlimaID = "SELECT pk_klima_id FROM klima "
+                    + "WHERE fk_temperatur_id LIKE (?) AND fk_luftfeuchtigkeit_id LIKE (?)";
+            statement = connectionObject.prepareStatement(sqlStringKlimaID);
+            statement.setInt(1, temperaturID);
+            statement.setInt(2, luftfeuchtigkeitID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            klimaID = resultSet.getInt("pk_klima_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return klimaID;
+    }
+    public void temperaturInDatenbankAnlegen(double temperaturAmTag, double temperaturInDerNacht) {
+        String sqlStringTemperaturInDatenbankAnlegen;
+        PreparedStatement statement = null;
+
+        try {
+            sqlStringTemperaturInDatenbankAnlegen = "INSERT INTO temperatur"
+                    + " (tag, nacht)"
+                    + " VALUES(?,?)";
+
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringTemperaturInDatenbankAnlegen);
+
+            statement.setDouble(1, temperaturAmTag);
+            statement.setDouble(2, temperaturInDerNacht);
+
+            statement.executeUpdate();
+            connectionObject.commit();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    public void luftfeuchtigkeitInDatenbankAnlegen(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
+        String sqlStringLuftfeuchtigkeitInDatenbankAnlegen;
+        PreparedStatement statement = null;
+
+        try {
+            sqlStringLuftfeuchtigkeitInDatenbankAnlegen = "INSERT INTO luftfeuchtigkeit"
+                    + " (tag, nacht)"
+                    + " VALUES(?,?)";
+
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringLuftfeuchtigkeitInDatenbankAnlegen);
+
+            statement.setInt(1, luftfeuchtigkeitAmTag);
+            statement.setInt(2, luftfeuchtigkeitInDerNacht);
+
+            statement.executeUpdate();
+            connectionObject.commit();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    public void klimaInDatenbankAnlegen(double temperaturID, double luftfeuchtigkeitID) {
+        String sqlStringKlimaInDatenbankAnlegen;
+        PreparedStatement statement = null;
+
+        try {
+            sqlStringKlimaInDatenbankAnlegen = "INSERT INTO klima"
+                    + " (fk_temperatur_id, fk_luftfeuchtigkeit_id)"
+                    + " VALUES(?,?)";
+
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringKlimaInDatenbankAnlegen);
+
+            statement.setDouble(1, temperaturID);
+            statement.setDouble(2, luftfeuchtigkeitID);
+
+            statement.executeUpdate();
+            connectionObject.commit();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    //Umgebung wird erstellt
+    public void umgebungInDatenbankAnlegen(Schema schemaObject) {
+        String sqlStringStatusInDatenbankAnlegen;
+        PreparedStatement statement = null;
+        
+        double beleuchtungsflaeche = schemaObject.getBeleuchtungsflaeche();
+        int leistung = schemaObject.getLeistung();
+        
+        temperaturInDatenbankAnlegen(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
+        luftfeuchtigkeitInDatenbankAnlegen(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
+        int temperaturID = getTemperaturID(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
+        int luftfeuchtigkeitID = getLuftfeuchtigkeitID(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
+        
+        klimaInDatenbankAnlegen(temperaturID, luftfeuchtigkeitID);
+        int klimaID = getKlimaID(temperaturID, luftfeuchtigkeitID);
+
+        try {
+            sqlStringStatusInDatenbankAnlegen = "INSERT INTO umgebungen"
+                    + " (fk_klima_id, beleuchtungsflaeche, leistung)"
+                    + " VALUES (?,?,?)";
+
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringStatusInDatenbankAnlegen);
+
+            statement.setInt(1, klimaID);
+            statement.setDouble(2, beleuchtungsflaeche);
+            statement.setInt(3, leistung);
+
+            statement.executeUpdate();
+            connectionObject.commit();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    
+    //Die folgenden Methoden werden in der Methode 'growInDatenbankAnlegen()' benötigt
+    //Getter für pk_bodenfeuchtigkeit_id
+    //Getter für pk_makroelemente_id
+    //Getter für pk_mikroelemente_id
+    //Getter für pk_status_id
     //Getter für pk_umgebung_id
-
+    //Setter für bodenfeuchtigkeit
+    //Setter für marko
+    //Setter für mikro
+    //Grow wird erstellt
     
-
-    //Anzeiger für ComboBox
-    
+    //Die folgenden Methoden werden in der Methode 'ernteInDatenbankAnlegen()' benötigt
+    //Getter für pk_energiekosten_id
+    //Getter für pk_grow_id
+    //Ernte wird erstellt 
 }

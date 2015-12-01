@@ -114,10 +114,11 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         String sorte, substrat, phase;
         int leistung, woche, luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht;
         double topfgroesse, flaeche, pHWert, literProTag, temperaturAmTag, temperaturInderNacht;
-        double terraVega_ml_woche, terra_flores_ml_woche, mono_tracemix_ml_woche, mono_stickstoff_ml_woche,
-               mono_phosphor_ml_woche, mono_kalium_ml_woche, mono_magnesium_ml_woche, mono_kalizum_ml_woche,
-               mono_eisen_ml_woche, start_ml_woche, flush_ml_woche, accelerator_ml_woche, pk_ml_woche,
-               rhizotonic_ml_woche, cannazym_ml_woche;
+        double terraVegaMilliliter, terraFloresMilliliter, monoTracemixMilliliter, 
+                  monoStickstoffMilliliter, monoPhosphorMilliliter, monoKaliumMilliliter, 
+                  monoMagnesiumMilliliter, monoKalizumMilliliter, monoEisenMilliliter, 
+                  startMilliliter, flushMilliliter, acceleratorMilliliter, pkMilliliter, 
+                  rhizotonicMilliliter, cannazymMilliliter;
         boolean montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag;
         String[] bestandteileTopfgroesseMitSubstrat;
         Schema schemaObject; //Objekt vom Typ 'schema' erstellen
@@ -130,12 +131,15 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         substrat = substrat.replace("(", ""); //entferne '('
         substrat = substrat.replace(")", ""); //entferne ')'
         substrat = substrat.trim(); //entferne alle Leerzeichen (' substrat' -> 'substrat')
+        
         temperaturAmTag = Math.round(jPanelKlima.getTemperaturAmTag()*100)/100.0; //gerundet
         temperaturInderNacht = Math.round(jPanelKlima.getTemperaturInDerNacht()*100)/100.0; //gerundet
         luftfeuchtigkeitAmTag = jPanelKlima.getLuftfeuchtigkeitAmTag();
         luftfeuchtigkeitInDerNacht = jPanelKlima.getLuftfeuchtigkeitInDerNacht();
+        
         leistung = jPanelBelichtung.getLeistung();
         flaeche = Math.round(jPanelBelichtung.getFlaeche()*100)/100.0; //gerundet
+        
         woche = jPanelZyklus.getWoche();
         phase = jPanelZyklus.getPhase();
         
@@ -148,29 +152,29 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         sonntag = jPanelDuengerschema.isSonntag();
         pHWert = jPanelWasser.getPHWert();
         literProTag = Math.round(jPanelWasser.getLiterProTag()*100)/100.0;
-        terraVega_ml_woche = Math.round(jPanelDuengerschema.getTerraVega())/100.0;
-        terra_flores_ml_woche = Math.round(jPanelDuengerschema.getTerraFlores())/100.0;
-        mono_tracemix_ml_woche = Math.round(jPanelDuengerschema.getTraceMix())/100.0; 
-        mono_stickstoff_ml_woche = Math.round(jPanelDuengerschema.getStickstoff())/100.0;
-        mono_phosphor_ml_woche = Math.round(jPanelDuengerschema.getPhosphor())/100.0;
-        mono_kalium_ml_woche = Math.round(jPanelDuengerschema.getKalium())/100.0;
-        mono_magnesium_ml_woche = Math.round(jPanelDuengerschema.getMagnesium())/100.0; 
-        mono_kalizum_ml_woche = Math.round(jPanelDuengerschema.getKalzium())/100.0;
-        mono_eisen_ml_woche = Math.round(jPanelDuengerschema.getEisen())/100.0;
-        start_ml_woche = Math.round(jPanelDuengerschema.getStart())/100.0;
-        flush_ml_woche = Math.round(jPanelDuengerschema.getFlush())/100.0;
-        accelerator_ml_woche = Math.round(jPanelDuengerschema.getAccelerator())/100.0; 
-        pk_ml_woche = Math.round(jPanelDuengerschema.getPk())/100.0;
-        rhizotonic_ml_woche = Math.round(jPanelDuengerschema.getRhizotonic())/100.0;
-        cannazym_ml_woche = Math.round(jPanelDuengerschema.getCannazym())/100.0;
+        terraVegaMilliliter = Math.round(jPanelDuengerschema.getTerraVega())/100.0;
+        terraFloresMilliliter = Math.round(jPanelDuengerschema.getTerraFlores())/100.0;
+        monoTracemixMilliliter = Math.round(jPanelDuengerschema.getTraceMix())/100.0; 
+        monoStickstoffMilliliter = Math.round(jPanelDuengerschema.getStickstoff())/100.0;
+        monoPhosphorMilliliter = Math.round(jPanelDuengerschema.getPhosphor())/100.0;
+        monoKaliumMilliliter = Math.round(jPanelDuengerschema.getKalium())/100.0;
+        monoMagnesiumMilliliter = Math.round(jPanelDuengerschema.getMagnesium())/100.0; 
+        monoKalizumMilliliter = Math.round(jPanelDuengerschema.getKalzium())/100.0;
+        monoEisenMilliliter = Math.round(jPanelDuengerschema.getEisen())/100.0;
+        startMilliliter = Math.round(jPanelDuengerschema.getStart())/100.0;
+        flushMilliliter = Math.round(jPanelDuengerschema.getFlush())/100.0;
+        acceleratorMilliliter = Math.round(jPanelDuengerschema.getAccelerator())/100.0; 
+        pkMilliliter = Math.round(jPanelDuengerschema.getPk())/100.0;
+        rhizotonicMilliliter = Math.round(jPanelDuengerschema.getRhizotonic())/100.0;
+        cannazymMilliliter = Math.round(jPanelDuengerschema.getCannazym())/100.0;
         
         schemaObject  = new Schema(sorte, substrat, phase, leistung, woche, luftfeuchtigkeitAmTag, 
                                    luftfeuchtigkeitInDerNacht, topfgroesse, flaeche, pHWert, literProTag, 
-                                   terraVega_ml_woche, terra_flores_ml_woche, mono_tracemix_ml_woche, 
-                                   mono_stickstoff_ml_woche, mono_phosphor_ml_woche, mono_kalium_ml_woche, 
-                                   mono_magnesium_ml_woche, mono_kalizum_ml_woche, mono_eisen_ml_woche, 
-                                   start_ml_woche, flush_ml_woche, accelerator_ml_woche, pk_ml_woche, 
-                                   rhizotonic_ml_woche, cannazym_ml_woche, temperaturAmTag, 
+                                   terraVegaMilliliter, terraFloresMilliliter, monoTracemixMilliliter, 
+                                   monoStickstoffMilliliter, monoPhosphorMilliliter, monoKaliumMilliliter, 
+                                   monoMagnesiumMilliliter, monoKalizumMilliliter, monoEisenMilliliter, 
+                                   startMilliliter, flushMilliliter, acceleratorMilliliter, pkMilliliter, 
+                                   rhizotonicMilliliter, cannazymMilliliter, temperaturAmTag, 
                                    temperaturInderNacht, montag, dienstag, mittwoch, donnerstag, 
                                    freitag, samstag, sonntag);
         

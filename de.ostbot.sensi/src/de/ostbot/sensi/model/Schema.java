@@ -6,7 +6,7 @@ public class Schema {
     int leistung, woche, luftfeuchtigkeitAmTag, luftfeuchtigkeitInDerNacht;
     double topfgroesse, beleuchtungsflaeche, pHWert, literProTag, temperaturAmTag, temperaturInderNacht,
            terraVegaMilliliter, terraFloresMilliliter, monoTracemixMilliliter, monoStickstoffMilliliter,
-           monoPhosphorMilliliter, monoKaliumMilliliter, monoMagnesiumMilliliter, monoKalizumMilliliter,
+           monoPhosphorMilliliter, monoKaliumMilliliter, monoMagnesiumMilliliter, monoKalziumMilliliter,
            monoEisenMilliliter, startMilliliter, flushMilliliter, acceleratorMilliliter, pkMilliliter,
            rhizotonicMilliliter, cannazymMilliliter;
     boolean montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag;
@@ -16,7 +16,7 @@ public class Schema {
                   double topfgroesse, double beleuchtungsflaeche, double pHWert, double literProTag,
                   double terraVegaMilliliter, double terraFloresMilliliter, double monoTracemixMilliliter, 
                   double monoStickstoffMilliliter, double monoPhosphorMilliliter, double monoKaliumMilliliter, 
-                  double monoMagnesiumMilliliter, double monoKalizumMilliliter, double monoEisenMilliliter, 
+                  double monoMagnesiumMilliliter, double monoKalziumMilliliter, double monoEisenMilliliter, 
                   double startMilliliter, double flushMilliliter, double acceleratorMilliliter, double pkMilliliter, 
                   double rhizotonicMilliliter, double cannazymMilliliter, double temperaturAmTag, 
                   double temperaturInderNacht, boolean montag, boolean dienstag, boolean mittwoch, 
@@ -39,7 +39,7 @@ public class Schema {
         this.monoPhosphorMilliliter = monoPhosphorMilliliter;
         this.monoKaliumMilliliter = monoKaliumMilliliter;
         this.monoMagnesiumMilliliter = monoMagnesiumMilliliter;
-        this.monoKalizumMilliliter = monoKalizumMilliliter;
+        this.monoKalziumMilliliter = monoKalziumMilliliter;
         this.monoEisenMilliliter = monoEisenMilliliter;
         this.startMilliliter = startMilliliter;
         this.flushMilliliter = flushMilliliter;
@@ -88,8 +88,8 @@ public class Schema {
     public double getMonoMagnesiumMilliliter() {
         return monoMagnesiumMilliliter;
     }
-    public double getMonoKalizumMilliliter() {
-        return monoKalizumMilliliter;
+    public double getMonoKalziumMilliliter() {
+        return monoKalziumMilliliter;
     }
     public double getMonoEisenMilliliter() {
         return monoEisenMilliliter;
@@ -227,8 +227,8 @@ public class Schema {
     public void setMonoMagnesiumMilliliter(double monoMagnesiumMilliliter) {
         this.monoMagnesiumMilliliter = monoMagnesiumMilliliter;
     }
-    public void setMonoKalizumMilliliter(double monoKalizumMilliliter) {
-        this.monoKalizumMilliliter = monoKalizumMilliliter;
+    public void setMonoKalziumMilliliter(double monoKalziumMilliliter) {
+        this.monoKalziumMilliliter = monoKalziumMilliliter;
     }
     public void setMonoEisenMilliliter(double monoEisenMilliliter) {
         this.monoEisenMilliliter = monoEisenMilliliter;
