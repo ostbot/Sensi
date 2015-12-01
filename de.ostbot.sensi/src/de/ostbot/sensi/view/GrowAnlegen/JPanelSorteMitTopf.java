@@ -1,4 +1,4 @@
-package de.ostbot.sensi.view.SchemaErfassen;
+package de.ostbot.sensi.view.GrowAnlegen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
 import java.util.List;

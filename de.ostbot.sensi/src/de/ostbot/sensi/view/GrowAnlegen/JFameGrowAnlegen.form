@@ -111,17 +111,17 @@
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf" name="jPanelSorteMitTopf">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelSorteMitTopf" name="jPanelSorteMitTopf">
         </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung" name="jPanelBelichtung">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung" name="jPanelBelichtung">
         </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus" name="jPanelZyklus">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelZyklus" name="jPanelZyklus">
         </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema" name="jPanelDuengerschema">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelDuengerschema" name="jPanelDuengerschema">
         </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelWasser" name="jPanelWasser">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelWasser" name="jPanelWasser">
         </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelKlima" name="jPanelKlima">
+        <Component class="de.ostbot.sensi.view.GrowAnlegen.JPanelKlima" name="jPanelKlima">
         </Component>
         <Component class="javax.swing.JButton" name="jButtonSpeichern">
           <Properties>

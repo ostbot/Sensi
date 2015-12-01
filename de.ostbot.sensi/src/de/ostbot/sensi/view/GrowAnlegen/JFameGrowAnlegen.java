@@ -1,11 +1,11 @@
-package de.ostbot.sensi.view.SchemaErfassen;
+package de.ostbot.sensi.view.GrowAnlegen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
 import de.ostbot.sensi.model.Schema;
 
-public class JFameSchemaErfassen extends javax.swing.JFrame {
+public class JFameGrowAnlegen extends javax.swing.JFrame {
 
-    public JFameSchemaErfassen() {
+    public JFameGrowAnlegen() {
         initComponents();
     }
     
@@ -14,12 +14,12 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jPanelSorteMitTopf = new de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf();
-        jPanelBelichtung = new de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung();
-        jPanelZyklus = new de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus();
-        jPanelDuengerschema = new de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema();
-        jPanelWasser = new de.ostbot.sensi.view.SchemaErfassen.JPanelWasser();
-        jPanelKlima = new de.ostbot.sensi.view.SchemaErfassen.JPanelKlima();
+        jPanelSorteMitTopf = new de.ostbot.sensi.view.GrowAnlegen.JPanelSorteMitTopf();
+        jPanelBelichtung = new de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung();
+        jPanelZyklus = new de.ostbot.sensi.view.GrowAnlegen.JPanelZyklus();
+        jPanelDuengerschema = new de.ostbot.sensi.view.GrowAnlegen.JPanelDuengerschema();
+        jPanelWasser = new de.ostbot.sensi.view.GrowAnlegen.JPanelWasser();
+        jPanelKlima = new de.ostbot.sensi.view.GrowAnlegen.JPanelKlima();
         jButtonSpeichern = new javax.swing.JButton();
         jButtonDefiziteDefinieren = new javax.swing.JButton();
         jButtonVerlassen = new javax.swing.JButton();
@@ -181,6 +181,10 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         datenbankOperationen = new Datenbankoperationen();
         datenbankOperationen.statusInDatenbankAnlegen(schemaObject);
         datenbankOperationen.umgebungInDatenbankAnlegen(schemaObject);
+        //datenbankOperationen.makroelementeInDatenbankAnlegen(makroelementeObject);
+        //datenbankOperationen.mikroelementeInDatenbankAnlegen(mikroelementeObject);
+        //datenbankOperationen.bodenfeuchtigkeitInDatenbankAnlegen(bodenfeuchtigkeitObject);
+        //datenbankOperationen.growInDatenbankAnlegen(growObject);
     }//GEN-LAST:event_jButtonSpeichernMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -196,32 +200,34 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(JFameSchemaErfassen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(JFameGrowAnlegen.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(() -> {
-            new JFameSchemaErfassen().setVisible(true);
+            new JFameGrowAnlegen().setVisible(true);
         });
     }
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonDefiziteDefinieren;
     private javax.swing.JButton jButtonSpeichern;
     private javax.swing.JButton jButtonVerlassen;
-    private de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung jPanelBelichtung;
-    private de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema jPanelDuengerschema;
+    private de.ostbot.sensi.view.GrowAnlegen.JPanelBelichtung jPanelBelichtung;
+    private de.ostbot.sensi.view.GrowAnlegen.JPanelDuengerschema jPanelDuengerschema;
     private javax.swing.JPanel jPanelHintergrund;
-    private de.ostbot.sensi.view.SchemaErfassen.JPanelKlima jPanelKlima;
-    private de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf jPanelSorteMitTopf;
-    private de.ostbot.sensi.view.SchemaErfassen.JPanelWasser jPanelWasser;
-    private de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus jPanelZyklus;
+    private de.ostbot.sensi.view.GrowAnlegen.JPanelKlima jPanelKlima;
+    private de.ostbot.sensi.view.GrowAnlegen.JPanelSorteMitTopf jPanelSorteMitTopf;
+    private de.ostbot.sensi.view.GrowAnlegen.JPanelWasser jPanelWasser;
+    private de.ostbot.sensi.view.GrowAnlegen.JPanelZyklus jPanelZyklus;
     // End of variables declaration//GEN-END:variables
 }

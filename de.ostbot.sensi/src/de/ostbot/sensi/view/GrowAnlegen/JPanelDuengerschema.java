@@ -1,4 +1,4 @@
-package de.ostbot.sensi.view.SchemaErfassen;
+package de.ostbot.sensi.view.GrowAnlegen;
 
 public class JPanelDuengerschema extends javax.swing.JPanel {
 
