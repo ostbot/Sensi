@@ -970,6 +970,7 @@ public class Datenbankoperationen {
                 schemaObject.isSamstag(), schemaObject.isSonntag());
         nahrungInDatenbankAnlegen(wasserID, duengerschemaID);
         int nahrungID = getNahrungID(wasserID, duengerschemaID);
+        
 
         //Status wird in der Datenbank mit den oben geholten Variablen angelegt
         try {

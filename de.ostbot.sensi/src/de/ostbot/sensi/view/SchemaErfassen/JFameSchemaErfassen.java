@@ -111,7 +111,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         double topfgroesse, flaeche, pHWert, literProTag, temperaturAmTag, temperaturInderNacht;
         double terraVegaMilliliter, terraFloresMilliliter, monoTracemixMilliliter, 
                   monoStickstoffMilliliter, monoPhosphorMilliliter, monoKaliumMilliliter, 
-                  monoMagnesiumMilliliter, monoKalizumMilliliter, monoEisenMilliliter, 
+                  monoMagnesiumMilliliter, monoKalziumMilliliter, monoEisenMilliliter, 
                   startMilliliter, flushMilliliter, acceleratorMilliliter, pkMilliliter, 
                   rhizotonicMilliliter, cannazymMilliliter;
         boolean montag, dienstag, mittwoch, donnerstag, freitag, samstag, sonntag;
@@ -154,7 +154,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         monoPhosphorMilliliter = Math.round(jPanelDuengerschema.getPhosphor())/100.0;
         monoKaliumMilliliter = Math.round(jPanelDuengerschema.getKalium())/100.0;
         monoMagnesiumMilliliter = Math.round(jPanelDuengerschema.getMagnesium())/100.0; 
-        monoKalizumMilliliter = Math.round(jPanelDuengerschema.getKalzium())/100.0;
+        monoKalziumMilliliter = Math.round(jPanelDuengerschema.getKalzium())/100.0;
         monoEisenMilliliter = Math.round(jPanelDuengerschema.getEisen())/100.0;
         startMilliliter = Math.round(jPanelDuengerschema.getStart())/100.0;
         flushMilliliter = Math.round(jPanelDuengerschema.getFlush())/100.0;
@@ -167,7 +167,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
                                    luftfeuchtigkeitInDerNacht, topfgroesse, flaeche, pHWert, literProTag, 
                                    terraVegaMilliliter, terraFloresMilliliter, monoTracemixMilliliter, 
                                    monoStickstoffMilliliter, monoPhosphorMilliliter, monoKaliumMilliliter, 
-                                   monoMagnesiumMilliliter, monoKalizumMilliliter, monoEisenMilliliter, 
+                                   monoMagnesiumMilliliter, monoKalziumMilliliter, monoEisenMilliliter, 
                                    startMilliliter, flushMilliliter, acceleratorMilliliter, pkMilliliter, 
                                    rhizotonicMilliliter, cannazymMilliliter, temperaturAmTag, 
                                    temperaturInderNacht, montag, dienstag, mittwoch, donnerstag, 
