@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.3" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JFrameFormInfo">
+  <NonVisualComponents>
+    <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus" name="jPanelZyklus1">
+    </Component>
+  </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
   </Properties>
@@ -52,76 +56,68 @@
         <DimensionLayout dim="0">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jPanelSorteMitTopf" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jPanelKlima" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jButtonDefiziteDefinieren" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonHandbuch" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonVerlassen" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Component id="jPanelBelichtung" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jPanelZyklus" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelSorteMitTopf" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelBelichtung" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelZyklus" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
-                          <Group type="103" groupAlignment="1" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="jButtonDefiziteDefinieren" min="-2" pref="153" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="jButtonVerlassen" min="-2" pref="100" max="-2" attributes="0"/>
-                              </Group>
-                              <Component id="jPanelDuengerschema" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelDuengerschema" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jPanelWasser" max="32767" attributes="0"/>
+                              <Component id="jPanelKlima" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                          <Component id="jPanelWasser" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="1" attributes="0">
+                      <Component id="jPanelSorteMitTopf" max="32767" attributes="0"/>
+                      <Component id="jPanelBelichtung" max="32767" attributes="0"/>
+                      <Component id="jPanelZyklus" max="32767" attributes="0"/>
+                  </Group>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanelKlima" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanelSorteMitTopf" min="-2" max="-2" attributes="0"/>
+                      <Component id="jPanelDuengerschema" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jPanelKlima" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <Component id="jPanelWasser" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanelBelichtung" min="-2" max="-2" attributes="0"/>
-                      <Component id="jPanelZyklus" alignment="0" min="-2" pref="95" max="-2" attributes="0"/>
+                      <Component id="jButton1" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jButtonHandbuch" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jButtonDefiziteDefinieren" alignment="1" max="32767" attributes="0"/>
+                      <Component id="jButtonVerlassen" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jPanelWasser" min="-2" pref="136" max="-2" attributes="0"/>
-                      <Component id="jPanelDuengerschema" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jButtonDefiziteDefinieren" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jButtonVerlassen" alignment="3" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf" name="jPanelSorteMitTopf">
-        </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung" name="jPanelBelichtung">
-        </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus" name="jPanelZyklus">
-        </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema" name="jPanelDuengerschema">
-        </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelWasser" name="jPanelWasser">
-        </Component>
-        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelKlima" name="jPanelKlima">
-        </Component>
         <Component class="javax.swing.JButton" name="jButtonDefiziteDefinieren">
           <Properties>
             <Property name="text" type="java.lang.String" value="Defizite definieren"/>
@@ -134,6 +130,28 @@
           <Properties>
             <Property name="text" type="java.lang.String" value="Verlassen"/>
           </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButtonHandbuch">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Handbuch"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Zur&#xfc;cksetzen"/>
+          </Properties>
+        </Component>
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf" name="jPanelSorteMitTopf">
+        </Component>
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung" name="jPanelBelichtung">
+        </Component>
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus" name="jPanelZyklus">
+        </Component>
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema" name="jPanelDuengerschema">
+        </Component>
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelWasser" name="jPanelWasser">
+        </Component>
+        <Component class="de.ostbot.sensi.view.SchemaErfassen.JPanelKlima" name="jPanelKlima">
         </Component>
       </SubComponents>
     </Container>

@@ -2,7 +2,6 @@ package de.ostbot.sensi.control;
 
 import de.ostbot.sensi.model.Schema;
 import de.ostbot.sensi.model.SorteMitTopf;
-import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -37,7 +36,6 @@ public class Datenbankoperationen {
     
     //Die folgenden Methoden werden in der Methode 'pflanzeMitTopfInDatenbankAnlegen()' benötigt
     public List<String> getHerkunftslaender() {
-
         List<String> laenderListe = new ArrayList<>();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -81,7 +79,6 @@ public class Datenbankoperationen {
         return laenderListe;
     }
     public List<String> getSubstrate() {
-
         List<String> substratListe = new ArrayList<>();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -127,16 +124,14 @@ public class Datenbankoperationen {
     }
     //Pflanze und Medium wird erstellt
     public void pflanzeMitTopfInDatenbankAnlegen(SorteMitTopf sorteMitTopfObject) {
-
-        String sqlStringPflanze, sqlStringTopf;
         PreparedStatement statementPflanze = null, statementTopf = null;
 
         try {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringPflanze = "INSERT INTO pflanzen (sorte, herkunftsland, indica, sativa) VALUES (?, ?, ?, ?)";
-            sqlStringTopf = "INSERT INTO medien (topfgroesse, substrat) VALUES (?, ?)";
+            String sqlStringPflanze = "INSERT INTO pflanzen (sorte, herkunftsland, indica, sativa) VALUES (?, ?, ?, ?)",
+                   sqlStringTopf = "INSERT INTO medien (topfgroesse, substrat) VALUES (?, ?)";
             statementPflanze = connectionObject.prepareStatement(sqlStringPflanze);
             statementTopf = connectionObject.prepareCall(sqlStringTopf);
 
@@ -184,7 +179,6 @@ public class Datenbankoperationen {
                   double acceleratorMilliliter, double pkMilliliter, double rhizotonicMilliliter, 
                   double cannazymMilliliter, boolean montag, boolean dienstag, boolean mittwoch, 
                   boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
-        String sqlStringDuengerschemaID;
         int duengerschemaID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -193,7 +187,7 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringDuengerschemaID = "SELECT pk_duengerschema_id FROM duengerschema"
+            String sqlStringDuengerschemaID = "SELECT pk_duengerschema_id FROM duengerschema"
                     + " WHERE terra_vega_ml_woche LIKE (?) AND terra_flores_ml_woche LIKE (?)"
                     + " AND mono_tracemix_ml_woche LIKE (?) AND mono_stickstoff_ml_woche LIKE (?)"
                     + " AND mono_phosphor_ml_woche LIKE (?) AND mono_kalium_ml_woche LIKE (?)"
@@ -251,7 +245,6 @@ public class Datenbankoperationen {
         return duengerschemaID;
     }
     public int getNahrungID(int wasserID, int duengerschemaID) {
-        String sqlStringNahrungID;
         int nahrungID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -260,7 +253,7 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringNahrungID = "SELECT pk_nahrung_id FROM nahrung "
+            String sqlStringNahrungID = "SELECT pk_nahrung_id FROM nahrung "
                     + "WHERE fk_wasser_id LIKE (?) AND fk_duengerschema_id LIKE (?)";
             statement = connectionObject.prepareStatement(sqlStringNahrungID);
             statement.setInt(1, wasserID);
@@ -295,7 +288,6 @@ public class Datenbankoperationen {
         return nahrungID;
     }
     public int getPflanzeID(String sorte) {
-        String sqlStringPflanzeID;
         int pflanzeID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -304,7 +296,7 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringPflanzeID = "SELECT pk_pflanze_id FROM pflanzen "
+            String sqlStringPflanzeID = "SELECT pk_pflanze_id FROM pflanzen "
                     + "WHERE sorte LIKE (?)";
             statement = connectionObject.prepareStatement(sqlStringPflanzeID);
             statement.setString(1, sorte);
@@ -338,7 +330,6 @@ public class Datenbankoperationen {
         return pflanzeID;
     }
     public int getMediumID(double topfgroesse, String substrat) {
-        String sqlStringMediumID;
         int mediumID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -347,7 +338,7 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringMediumID = "SELECT pk_medium_id FROM medien "
+            String sqlStringMediumID = "SELECT pk_medium_id FROM medien "
                     + "WHERE topfgroesse LIKE (?) AND substrat LIKE (?)";
             statement = connectionObject.prepareStatement(sqlStringMediumID);
             statement.setDouble(1, topfgroesse);
@@ -382,7 +373,6 @@ public class Datenbankoperationen {
         return mediumID;
     }
     public int getPhaseID(String phase) {
-        String sqlStringPhaseID;
         int phaseID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -391,7 +381,7 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringPhaseID = "SELECT pk_phase_id FROM phasen "
+            String sqlStringPhaseID = "SELECT pk_phase_id FROM phasen "
                     + "WHERE phase LIKE (?)";
             statement = connectionObject.prepareStatement(sqlStringPhaseID);
             statement.setString(1, phase);
@@ -425,7 +415,6 @@ public class Datenbankoperationen {
         return phaseID;
     }
     public int getZyklusID(int woche, String phase) {
-        String sqlStringZyklusID;
         int zyklusID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -434,7 +423,7 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringZyklusID = "SELECT pk_zyklus_id FROM zyklen "
+            String sqlStringZyklusID = "SELECT pk_zyklus_id FROM zyklen "
                     + "WHERE fk_phase_id LIKE (?) AND woche LIKE (?)";
             statement = connectionObject.prepareStatement(sqlStringZyklusID);
             statement.setInt(1, getPhaseID(phase));
@@ -471,7 +460,6 @@ public class Datenbankoperationen {
         return zyklusID;
     }
     public int getWasserID(double pHWert, double literProTag) {
-        String sqlStringWasserID;
         int wasserID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -480,7 +468,7 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringWasserID = "SELECT pk_wasser_id FROM wasser "
+            String sqlStringWasserID = "SELECT pk_wasser_id FROM wasser "
                     + "WHERE pH_wert LIKE (?) AND liter_pro_tag LIKE (?)";
             statement = connectionObject.prepareStatement(sqlStringWasserID);
             statement.setDouble(1, pHWert);
@@ -515,7 +503,6 @@ public class Datenbankoperationen {
         return wasserID;
     }
     public int getDuengerID(String duenger) {
-        String sqlStringDuengerID;
         int duengerID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -524,7 +511,7 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringDuengerID = "SELECT pk_duenger_id FROM duenger "
+            String sqlStringDuengerID = "SELECT pk_duenger_id FROM duenger "
                     + "WHERE duenger LIKE (?)";
             statement = connectionObject.prepareStatement(sqlStringDuengerID);
             statement.setString(1, duenger);
@@ -558,7 +545,6 @@ public class Datenbankoperationen {
         return duengerID;
     }
     public List<String> getPhasen() {
-
         List<String> phasenListe = new ArrayList<>();
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -603,7 +589,6 @@ public class Datenbankoperationen {
         return phasenListe;
     }
     public List<String> getSorten() {
-
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List<String> sortenListe = new ArrayList<>();
@@ -647,7 +632,6 @@ public class Datenbankoperationen {
         return sortenListe;
     }
     public List<String> getTopfgroessenMitSubstrat() {
-
         PreparedStatement statement = null;
         ResultSet resultSet = null;
         List<String> topfgroessenMitSubstratListe = new ArrayList<>();
@@ -753,11 +737,10 @@ public class Datenbankoperationen {
         return sortenUndTopfgroessenMitSubstratMap;
     }
     public void zyklusInDatenbankAnlegen(int woche, String phase) {
-        String sqlStringZyklusInDatenbankAnlegen;
         PreparedStatement statement = null;
 
         try {
-            sqlStringZyklusInDatenbankAnlegen = "INSERT INTO zyklen"
+            String sqlStringZyklusInDatenbankAnlegen = "INSERT INTO zyklen"
                     + " (fk_phase_id, woche)"
                     + " SELECT phasen.pk_phase_id, ? FROM phasen WHERE phasen.phase LIKE (?)";
 
@@ -793,11 +776,10 @@ public class Datenbankoperationen {
         }
     }
     public void wasserInDatenbankAnlegen(double pHWert, double literProTag) {
-        String sqlStringWasserInDatenbankAnlegen;
         PreparedStatement statement = null;
 
         try {
-            sqlStringWasserInDatenbankAnlegen = "INSERT INTO wasser"
+            String sqlStringWasserInDatenbankAnlegen = "INSERT INTO wasser"
                     + " (pH_wert, liter_pro_tag)"
                     + " VALUES(?,?)";
 
@@ -833,11 +815,10 @@ public class Datenbankoperationen {
         }
     }
     public void nahrungInDatenbankAnlegen(int wasserID, int duengerschemaID) {
-        String sqlStringNahrungInDatenbankAnlegen;
         PreparedStatement statement = null;
 
         try {
-            sqlStringNahrungInDatenbankAnlegen = "INSERT INTO nahrung"
+            String sqlStringNahrungInDatenbankAnlegen = "INSERT INTO nahrung"
                     + " (fk_wasser_id, fk_duengerschema_id)"
                     + " VALUES(?,?)";
 
@@ -878,13 +859,11 @@ public class Datenbankoperationen {
                   double monoEisenMilliliter, double startMilliliter, double flushMilliliter, 
                   double acceleratorMilliliter, double pkMilliliter, double rhizotonicMilliliter, 
                   double cannazymMilliliter, 
-            boolean montag, boolean dienstag, boolean mittwoch, boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
-
-        String sqlStringDuengerschemaInDatenbankAnlegen;
+                  boolean montag, boolean dienstag, boolean mittwoch, boolean donnerstag, boolean freitag, boolean samstag, boolean sonntag) {
         PreparedStatement statement = null;
 
         try {
-            sqlStringDuengerschemaInDatenbankAnlegen = "INSERT INTO duengerschema "
+            String sqlStringDuengerschemaInDatenbankAnlegen = "INSERT INTO duengerschema "
                     + "(terra_vega_ml_woche, terra_flores_ml_woche, mono_tracemix_ml_woche, "
                     + "mono_stickstoff_ml_woche, mono_phosphor_ml_woche, mono_kalium_ml_woche, "
                     + "mono_magnesium_ml_woche, mono_kalzium_ml_woche, "
@@ -939,7 +918,6 @@ public class Datenbankoperationen {
     }
     //Status wird erstellt
     public void statusInDatenbankAnlegen(Schema schemaObject) {
-        String sqlStringStatusInDatenbankAnlegen;
         PreparedStatement statement = null;
         //Setzen und holen der Variablen die für das Anlegen des Status erforderlich sind
         int pflanzeID = getPflanzeID(schemaObject.getSorte());
@@ -957,7 +935,9 @@ public class Datenbankoperationen {
                 schemaObject.isMittwoch(), schemaObject.isDonnerstag(), schemaObject.isFreitag(), 
                 schemaObject.isSamstag(), schemaObject.isSonntag());
         int zyklusID = getZyklusID(schemaObject.getWoche(), schemaObject.getPhase());
+        //Ersetzen durch lastInsertID
         int wasserID = getWasserID(schemaObject.getpHWert(), schemaObject.getLiterProTag());
+        //Ersetzen durch lastInsertID
         int duengerschemaID = getDuengerschemaID(schemaObject.getTerraVegaMilliliter(), schemaObject.getTerraFloresMilliliter(), 
                 schemaObject.getMonoTracemixMilliliter(), schemaObject.getMonoStickstoffMilliliter(),
                 schemaObject.getMonoPhosphorMilliliter(), schemaObject.getMonoKaliumMilliliter(), 
@@ -968,13 +948,15 @@ public class Datenbankoperationen {
                 schemaObject.getCannazymMilliliter(), schemaObject.isMontag(), schemaObject.isDienstag(), 
                 schemaObject.isMittwoch(), schemaObject.isDonnerstag(), schemaObject.isFreitag(), 
                 schemaObject.isSamstag(), schemaObject.isSonntag());
+        //Ersetzen durch lastInsertID
         nahrungInDatenbankAnlegen(wasserID, duengerschemaID);
+        //Ersetzen durch lastInsertID
         int nahrungID = getNahrungID(wasserID, duengerschemaID);
         
 
         //Status wird in der Datenbank mit den oben geholten Variablen angelegt
         try {
-            sqlStringStatusInDatenbankAnlegen = "INSERT INTO status"
+            String sqlStringStatusInDatenbankAnlegen = "INSERT INTO status"
                     + " (fk_medium_id, fk_zyklus_id, fk_nahrung_id, fk_pflanze_id)"
                     + " VALUES (?,?,?,?)";
 
@@ -1014,16 +996,15 @@ public class Datenbankoperationen {
 
     //Die folgenden Methoden werden in der Methode 'umgebungInDatenbankAnlegen()' benötigt
     public int getTemperaturID(double temperaturAmTag, double temperaturInDerNacht) {
-        String sqlStringTemperaturID;
         int temperaturID = 0;
         PreparedStatement statement = null;
-        ResultSet resultSet;
+        ResultSet resultSet = null;
 
         try {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringTemperaturID = "SELECT pk_temperatur_id FROM temperatur "
+            String sqlStringTemperaturID = "SELECT pk_temperatur_id FROM temperatur "
                     + "WHERE tag LIKE (?) AND nacht LIKE (?)";
             statement = connectionObject.prepareStatement(sqlStringTemperaturID);
             statement.setDouble(1, temperaturAmTag);
@@ -1058,7 +1039,6 @@ public class Datenbankoperationen {
         return temperaturID;
     }
     public int getLuftfeuchtigkeitID(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
-        String sqlStringLuftfeuchtigkeitID;
         int luftfeuchtigkeitID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -1067,7 +1047,7 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringLuftfeuchtigkeitID = "SELECT pk_luftfeuchtigkeit_id FROM luftfeuchtigkeit "
+            String sqlStringLuftfeuchtigkeitID = "SELECT pk_luftfeuchtigkeit_id FROM luftfeuchtigkeit "
                     + "WHERE tag LIKE (?) AND nacht LIKE (?)";
             statement = connectionObject.prepareStatement(sqlStringLuftfeuchtigkeitID);
             statement.setInt(1, luftfeuchtigkeitAmTag);
@@ -1102,7 +1082,6 @@ public class Datenbankoperationen {
         return luftfeuchtigkeitID;
     }
     public int getKlimaID(int temperaturID, int luftfeuchtigkeitID) {
-        String sqlStringKlimaID;
         int klimaID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
@@ -1111,7 +1090,7 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            sqlStringKlimaID = "SELECT pk_klima_id FROM klima "
+            String sqlStringKlimaID = "SELECT pk_klima_id FROM klima "
                     + "WHERE fk_temperatur_id LIKE (?) AND fk_luftfeuchtigkeit_id LIKE (?)";
             statement = connectionObject.prepareStatement(sqlStringKlimaID);
             statement.setInt(1, temperaturID);
@@ -1146,11 +1125,10 @@ public class Datenbankoperationen {
         return klimaID;
     }
     public void temperaturInDatenbankAnlegen(double temperaturAmTag, double temperaturInDerNacht) {
-        String sqlStringTemperaturInDatenbankAnlegen;
         PreparedStatement statement = null;
 
         try {
-            sqlStringTemperaturInDatenbankAnlegen = "INSERT INTO temperatur"
+            String sqlStringTemperaturInDatenbankAnlegen = "INSERT INTO temperatur"
                     + " (tag, nacht)"
                     + " VALUES(?,?)";
 
@@ -1186,11 +1164,10 @@ public class Datenbankoperationen {
         }
     }
     public void luftfeuchtigkeitInDatenbankAnlegen(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
-        String sqlStringLuftfeuchtigkeitInDatenbankAnlegen;
         PreparedStatement statement = null;
 
         try {
-            sqlStringLuftfeuchtigkeitInDatenbankAnlegen = "INSERT INTO luftfeuchtigkeit"
+            String sqlStringLuftfeuchtigkeitInDatenbankAnlegen = "INSERT INTO luftfeuchtigkeit"
                     + " (tag, nacht)"
                     + " VALUES(?,?)";
 
@@ -1226,11 +1203,10 @@ public class Datenbankoperationen {
         }
     }
     public void klimaInDatenbankAnlegen(double temperaturID, double luftfeuchtigkeitID) {
-        String sqlStringKlimaInDatenbankAnlegen;
         PreparedStatement statement = null;
 
         try {
-            sqlStringKlimaInDatenbankAnlegen = "INSERT INTO klima"
+            String sqlStringKlimaInDatenbankAnlegen = "INSERT INTO klima"
                     + " (fk_temperatur_id, fk_luftfeuchtigkeit_id)"
                     + " VALUES(?,?)";
 
@@ -1267,7 +1243,6 @@ public class Datenbankoperationen {
     }
     //Umgebung wird erstellt
     public void umgebungInDatenbankAnlegen(Schema schemaObject) {
-        String sqlStringStatusInDatenbankAnlegen;
         PreparedStatement statement = null;
         
         double beleuchtungsflaeche = schemaObject.getBeleuchtungsflaeche();
@@ -1275,14 +1250,17 @@ public class Datenbankoperationen {
         
         temperaturInDatenbankAnlegen(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
         luftfeuchtigkeitInDatenbankAnlegen(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
+        //Ersetzen durch lastInsertID
         int temperaturID = getTemperaturID(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
+        //Ersetzen durch lastInsertID
         int luftfeuchtigkeitID = getLuftfeuchtigkeitID(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
         
         klimaInDatenbankAnlegen(temperaturID, luftfeuchtigkeitID);
+        //Ersetzen durch lastInsertID
         int klimaID = getKlimaID(temperaturID, luftfeuchtigkeitID);
 
         try {
-            sqlStringStatusInDatenbankAnlegen = "INSERT INTO umgebungen"
+            String sqlStringStatusInDatenbankAnlegen = "INSERT INTO umgebungen"
                     + " (fk_klima_id, beleuchtungsflaeche, leistung)"
                     + " VALUES (?,?,?)";
 
