@@ -67,7 +67,7 @@
                               <Group type="102" attributes="0">
                                   <Component id="jSpinnerIndica" min="-2" pref="48" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabelSativaProzent" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelIndicaProzent" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jTextFieldSorte" min="-2" pref="63" max="-2" attributes="0"/>
                           </Group>
@@ -81,7 +81,7 @@
                                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                                   <Component id="jSpinnerSativa" min="-2" pref="48" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="jLabelIndicaProzent" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabelSativaProzent" min="-2" max="-2" attributes="0"/>
                               </Group>
                               <Component id="jComboBoxHerkunftsland" alignment="0" pref="115" max="32767" attributes="0"/>
                               <Component id="jPanelFlagge" alignment="0" max="32767" attributes="0"/>
@@ -104,13 +104,13 @@
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jSpinnerIndica" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabelIndica" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelSativaProzent" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelIndicaProzent" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="jLabelSativa" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jSpinnerSativa" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jLabelIndicaProzent" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelSativaProzent" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabelHerkunftsland" min="-2" max="-2" attributes="0"/>

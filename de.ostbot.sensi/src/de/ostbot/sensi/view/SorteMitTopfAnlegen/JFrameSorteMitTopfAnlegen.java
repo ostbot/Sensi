@@ -16,10 +16,10 @@ public class JFrameSorteMitTopfAnlegen extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jButtonSpeichern = new javax.swing.JButton();
-        jButtonVerlassen = new javax.swing.JButton();
         jPanelGenetik = new de.ostbot.sensi.view.SorteMitTopfAnlegen.JPanelGenetik();
         jPanelTopf = new de.ostbot.sensi.view.SorteMitTopfAnlegen.JPanelTopf();
+        jButtonSpeichern = new javax.swing.JButton();
+        jButtonVerlassen = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 

@@ -39,7 +39,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
     }
     public double getEisen() {
         double rueckgabe;
-        rueckgabe = (Double)(jSpinnerEisen.getValue());
+        rueckgabe = (Double)(jSpinnerMagnesium.getValue());
         return rueckgabe;
     }
     public double getFlush() {
@@ -59,7 +59,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
     }
     public double getMagnesium() {
         double rueckgabe;
-        rueckgabe = (Double)(jSpinnerMagnesium.getValue());
+        rueckgabe = (Double)(jSpinnerEisen.getValue());
         return rueckgabe;
     }
     public double getPk() {
@@ -123,158 +123,495 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
     private void initComponents() {
 
         jPanelHintergrund = new javax.swing.JPanel();
-        jSpinnerAccelerator = new javax.swing.JSpinner();
-        jLabelAcceleratorMilliliter = new javax.swing.JLabel();
-        jSpinnerRhizotonic = new javax.swing.JSpinner();
-        jLabelRhizotonicMilliliter = new javax.swing.JLabel();
-        jSpinnerTerraVega = new javax.swing.JSpinner();
-        jLabelTerraVegaMilliliter = new javax.swing.JLabel();
-        jSpinnerTerraFlores = new javax.swing.JSpinner();
-        jLabelTerraFloresMilliliter = new javax.swing.JLabel();
-        jSpinnerPk = new javax.swing.JSpinner();
-        jLabelPkMilliliter = new javax.swing.JLabel();
-        jSpinnerKalzium = new javax.swing.JSpinner();
-        jLabelKalziumMilliliter = new javax.swing.JLabel();
-        jLabelEisenMilliliter = new javax.swing.JLabel();
-        jSpinnerEisen = new javax.swing.JSpinner();
-        jSpinnerKalium = new javax.swing.JSpinner();
-        jLabelKaliumMilliliter = new javax.swing.JLabel();
-        jSpinnerPhosphor = new javax.swing.JSpinner();
-        jLabelPhosphorMilliliter = new javax.swing.JLabel();
-        jSpinnerStickstoff = new javax.swing.JSpinner();
-        jLabelStickstoffMilliliter = new javax.swing.JLabel();
-        jSpinnerFlush = new javax.swing.JSpinner();
-        jLabelFlushMilliliter = new javax.swing.JLabel();
-        jLabelStartMilliliter = new javax.swing.JLabel();
-        jSpinnerStart = new javax.swing.JSpinner();
-        jSpinnerCannazym = new javax.swing.JSpinner();
-        jLabelCannazymMilliliter = new javax.swing.JLabel();
-        jSpinnerTraceMix = new javax.swing.JSpinner();
-        jLabelTraceMixMilliliter = new javax.swing.JLabel();
-        jSpinnerMagnesium = new javax.swing.JSpinner();
-        jLabelMagnesiumMilliliter = new javax.swing.JLabel();
+        jPanelTerraVega = new javax.swing.JPanel();
         jLabelTerraVega = new javax.swing.JLabel();
-        jLabelTerraFlores = new javax.swing.JLabel();
-        jLabelPK = new javax.swing.JLabel();
-        jLabelAccelerator = new javax.swing.JLabel();
-        jLabelRhizotonic = new javax.swing.JLabel();
+        jSpinnerTerraVega = new javax.swing.JSpinner();
+        jPanelStickstoff = new javax.swing.JPanel();
         jLabelStickstoff = new javax.swing.JLabel();
-        jLabelPhosphor = new javax.swing.JLabel();
-        jLabelKalium = new javax.swing.JLabel();
+        jSpinnerStickstoff = new javax.swing.JSpinner();
+        jPanelEisen = new javax.swing.JPanel();
         jLabelEisen = new javax.swing.JLabel();
-        jLabelKalzium = new javax.swing.JLabel();
+        jSpinnerEisen = new javax.swing.JSpinner();
+        jPanelMagnesium = new javax.swing.JPanel();
         jLabelMagnesium = new javax.swing.JLabel();
+        jSpinnerMagnesium = new javax.swing.JSpinner();
+        jPanelRhizotonic = new javax.swing.JPanel();
+        jLabelRhizotonic = new javax.swing.JLabel();
+        jSpinnerRhizotonic = new javax.swing.JSpinner();
+        jPanelTerraFlores = new javax.swing.JPanel();
+        jLabelTerraFlores = new javax.swing.JLabel();
+        jSpinnerTerraFlores = new javax.swing.JSpinner();
+        jPanelPhosphor = new javax.swing.JPanel();
+        jLabelPhosphor = new javax.swing.JLabel();
+        jSpinnerPhosphor = new javax.swing.JSpinner();
+        jPanelKalzium = new javax.swing.JPanel();
+        jLabelKalzium = new javax.swing.JLabel();
+        jSpinnerKalzium = new javax.swing.JSpinner();
+        jPanelTraceMix = new javax.swing.JPanel();
         jLabelTraceMix = new javax.swing.JLabel();
-        jLabelCannazym = new javax.swing.JLabel();
+        jSpinnerTraceMix = new javax.swing.JSpinner();
+        jPanelStart = new javax.swing.JPanel();
         jLabelStart = new javax.swing.JLabel();
+        jSpinnerStart = new javax.swing.JSpinner();
+        jPanelPk = new javax.swing.JPanel();
+        jLabelPK = new javax.swing.JLabel();
+        jSpinnerPk = new javax.swing.JSpinner();
+        jPanelAccelerator = new javax.swing.JPanel();
+        jLabelAccelerator = new javax.swing.JLabel();
+        jSpinnerAccelerator = new javax.swing.JSpinner();
+        jPanelCannazym = new javax.swing.JPanel();
+        jLabelCannazym = new javax.swing.JLabel();
+        jSpinnerCannazym = new javax.swing.JSpinner();
+        jPanelFlush = new javax.swing.JPanel();
         jLabelFlush = new javax.swing.JLabel();
+        jSpinnerFlush = new javax.swing.JSpinner();
+        jPanelKalium = new javax.swing.JPanel();
+        jLabelKalium = new javax.swing.JLabel();
+        jSpinnerKalium = new javax.swing.JSpinner();
+        jPanelFree = new javax.swing.JPanel();
+        jPanelWochentage = new javax.swing.JPanel();
         jCheckBoxMontag = new javax.swing.JCheckBox();
         jCheckBoxDienstag = new javax.swing.JCheckBox();
-        jCheckBoxMittwoch = new javax.swing.JCheckBox();
         jCheckBoxDonnerstag = new javax.swing.JCheckBox();
+        jCheckBoxMittwoch = new javax.swing.JCheckBox();
         jCheckBoxFreitag = new javax.swing.JCheckBox();
         jCheckBoxSamstag = new javax.swing.JCheckBox();
         jCheckBoxSonntag = new javax.swing.JCheckBox();
+        jPanelPlatzhalter = new javax.swing.JPanel();
 
         setBackground(new java.awt.Color(153, 153, 153));
 
-        jSpinnerAccelerator.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelAcceleratorMilliliter.setText("ml");
-
-        jSpinnerRhizotonic.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelRhizotonicMilliliter.setText("ml");
-
-        jSpinnerTerraVega.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.10000000000000009d));
-
-        jLabelTerraVegaMilliliter.setText("ml");
-
-        jSpinnerTerraFlores.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelTerraFloresMilliliter.setText("ml");
-
-        jSpinnerPk.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelPkMilliliter.setText("ml");
-
-        jSpinnerKalzium.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelKalziumMilliliter.setText("ml");
-
-        jLabelEisenMilliliter.setText("ml");
-
-        jSpinnerEisen.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jSpinnerKalium.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelKaliumMilliliter.setText("ml");
-
-        jSpinnerPhosphor.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelPhosphorMilliliter.setText("ml");
-
-        jSpinnerStickstoff.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelStickstoffMilliliter.setText("ml");
-
-        jSpinnerFlush.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelFlushMilliliter.setText("ml");
-
-        jLabelStartMilliliter.setText("ml");
-
-        jSpinnerStart.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jSpinnerCannazym.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelCannazymMilliliter.setText("ml");
-
-        jSpinnerTraceMix.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelTraceMixMilliliter.setText("ml");
-
-        jSpinnerMagnesium.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
-        jLabelMagnesiumMilliliter.setText("ml");
+        jPanelHintergrund.setLayout(new java.awt.GridLayout(4, 5, 0, -10));
 
         jLabelTerraVega.setText("Terra Vega:");
 
-        jLabelTerraFlores.setText("Terra Flores:");
+        jSpinnerTerraVega.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.10000000000000009d));
 
-        jLabelPK.setText("PK 13/14:");
+        javax.swing.GroupLayout jPanelTerraVegaLayout = new javax.swing.GroupLayout(jPanelTerraVega);
+        jPanelTerraVega.setLayout(jPanelTerraVegaLayout);
+        jPanelTerraVegaLayout.setHorizontalGroup(
+            jPanelTerraVegaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTerraVegaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelTerraVegaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelTerraVega, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanelTerraVegaLayout.createSequentialGroup()
+                        .addComponent(jSpinnerTerraVega)
+                        .addGap(2, 2, 2)))
+                .addGap(43, 43, 43))
+        );
+        jPanelTerraVegaLayout.setVerticalGroup(
+            jPanelTerraVegaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTerraVegaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelTerraVega)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerTerraVega)
+                .addGap(30, 30, 30))
+        );
 
-        jLabelAccelerator.setText("Accelerator:");
-
-        jLabelRhizotonic.setText("Rhizotonic:");
+        jPanelHintergrund.add(jPanelTerraVega);
 
         jLabelStickstoff.setText("Stickstoff:");
 
-        jLabelPhosphor.setText("Phosphor:");
+        jSpinnerStickstoff.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
-        jLabelKalium.setText("Kalium:");
+        javax.swing.GroupLayout jPanelStickstoffLayout = new javax.swing.GroupLayout(jPanelStickstoff);
+        jPanelStickstoff.setLayout(jPanelStickstoffLayout);
+        jPanelStickstoffLayout.setHorizontalGroup(
+            jPanelStickstoffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelStickstoffLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelStickstoffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinnerStickstoff)
+                    .addComponent(jLabelStickstoff, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
+        );
+        jPanelStickstoffLayout.setVerticalGroup(
+            jPanelStickstoffLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelStickstoffLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelStickstoff)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerStickstoff)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelStickstoff);
 
         jLabelEisen.setText("Eisen:");
 
-        jLabelKalzium.setText("Kalzium:");
+        jSpinnerEisen.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelEisenLayout = new javax.swing.GroupLayout(jPanelEisen);
+        jPanelEisen.setLayout(jPanelEisenLayout);
+        jPanelEisenLayout.setHorizontalGroup(
+            jPanelEisenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEisenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelEisenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelEisen, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerEisen))
+                .addGap(45, 45, 45))
+        );
+        jPanelEisenLayout.setVerticalGroup(
+            jPanelEisenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelEisenLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelEisen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerEisen)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelEisen);
 
         jLabelMagnesium.setText("Magnesium:");
 
+        jSpinnerMagnesium.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelMagnesiumLayout = new javax.swing.GroupLayout(jPanelMagnesium);
+        jPanelMagnesium.setLayout(jPanelMagnesiumLayout);
+        jPanelMagnesiumLayout.setHorizontalGroup(
+            jPanelMagnesiumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMagnesiumLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelMagnesiumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinnerMagnesium)
+                    .addComponent(jLabelMagnesium, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45))
+        );
+        jPanelMagnesiumLayout.setVerticalGroup(
+            jPanelMagnesiumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelMagnesiumLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelMagnesium)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerMagnesium)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelMagnesium);
+
+        jLabelRhizotonic.setText("Rhizotonic:");
+
+        jSpinnerRhizotonic.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelRhizotonicLayout = new javax.swing.GroupLayout(jPanelRhizotonic);
+        jPanelRhizotonic.setLayout(jPanelRhizotonicLayout);
+        jPanelRhizotonicLayout.setHorizontalGroup(
+            jPanelRhizotonicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRhizotonicLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelRhizotonicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinnerRhizotonic)
+                    .addComponent(jLabelRhizotonic, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45))
+        );
+        jPanelRhizotonicLayout.setVerticalGroup(
+            jPanelRhizotonicLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelRhizotonicLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelRhizotonic)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerRhizotonic)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelRhizotonic);
+
+        jLabelTerraFlores.setText("Terra Flores:");
+
+        jSpinnerTerraFlores.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelTerraFloresLayout = new javax.swing.GroupLayout(jPanelTerraFlores);
+        jPanelTerraFlores.setLayout(jPanelTerraFloresLayout);
+        jPanelTerraFloresLayout.setHorizontalGroup(
+            jPanelTerraFloresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTerraFloresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelTerraFloresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinnerTerraFlores)
+                    .addComponent(jLabelTerraFlores, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
+        );
+        jPanelTerraFloresLayout.setVerticalGroup(
+            jPanelTerraFloresLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTerraFloresLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelTerraFlores)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerTerraFlores)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelTerraFlores);
+
+        jLabelPhosphor.setText("Phosphor:");
+
+        jSpinnerPhosphor.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelPhosphorLayout = new javax.swing.GroupLayout(jPanelPhosphor);
+        jPanelPhosphor.setLayout(jPanelPhosphorLayout);
+        jPanelPhosphorLayout.setHorizontalGroup(
+            jPanelPhosphorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelPhosphorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelPhosphorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinnerPhosphor)
+                    .addComponent(jLabelPhosphor, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
+        );
+        jPanelPhosphorLayout.setVerticalGroup(
+            jPanelPhosphorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelPhosphorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelPhosphor)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerPhosphor)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelPhosphor);
+
+        jLabelKalzium.setText("Kalzium:");
+
+        jSpinnerKalzium.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelKalziumLayout = new javax.swing.GroupLayout(jPanelKalzium);
+        jPanelKalzium.setLayout(jPanelKalziumLayout);
+        jPanelKalziumLayout.setHorizontalGroup(
+            jPanelKalziumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelKalziumLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelKalziumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinnerKalzium)
+                    .addComponent(jLabelKalzium, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45))
+        );
+        jPanelKalziumLayout.setVerticalGroup(
+            jPanelKalziumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelKalziumLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelKalzium)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerKalzium)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelKalzium);
+
         jLabelTraceMix.setText("Trace Mix:");
 
-        jLabelCannazym.setText("Cannazym:");
+        jSpinnerTraceMix.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelTraceMixLayout = new javax.swing.GroupLayout(jPanelTraceMix);
+        jPanelTraceMix.setLayout(jPanelTraceMixLayout);
+        jPanelTraceMixLayout.setHorizontalGroup(
+            jPanelTraceMixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTraceMixLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelTraceMixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinnerTraceMix)
+                    .addComponent(jLabelTraceMix, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45))
+        );
+        jPanelTraceMixLayout.setVerticalGroup(
+            jPanelTraceMixLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelTraceMixLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelTraceMix)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerTraceMix)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelTraceMix);
 
         jLabelStart.setText("Start:");
 
+        jSpinnerStart.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelStartLayout = new javax.swing.GroupLayout(jPanelStart);
+        jPanelStart.setLayout(jPanelStartLayout);
+        jPanelStartLayout.setHorizontalGroup(
+            jPanelStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelStartLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinnerStart)
+                    .addComponent(jLabelStart, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45))
+        );
+        jPanelStartLayout.setVerticalGroup(
+            jPanelStartLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelStartLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelStart)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerStart)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelStart);
+
+        jLabelPK.setText("PK 13/14:");
+
+        jSpinnerPk.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelPkLayout = new javax.swing.GroupLayout(jPanelPk);
+        jPanelPk.setLayout(jPanelPkLayout);
+        jPanelPkLayout.setHorizontalGroup(
+            jPanelPkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelPkLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelPkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinnerPk)
+                    .addComponent(jLabelPK, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(43, 43, 43))
+        );
+        jPanelPkLayout.setVerticalGroup(
+            jPanelPkLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelPkLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelPK)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerPk)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelPk);
+
+        jLabelAccelerator.setText("Accelerator:");
+
+        jSpinnerAccelerator.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelAcceleratorLayout = new javax.swing.GroupLayout(jPanelAccelerator);
+        jPanelAccelerator.setLayout(jPanelAcceleratorLayout);
+        jPanelAcceleratorLayout.setHorizontalGroup(
+            jPanelAcceleratorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAcceleratorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelAcceleratorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jLabelAccelerator, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerAccelerator))
+                .addGap(45, 45, 45))
+        );
+        jPanelAcceleratorLayout.setVerticalGroup(
+            jPanelAcceleratorLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelAcceleratorLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelAccelerator)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSpinnerAccelerator)
+                .addGap(30, 30, 30))
+        );
+
+        jPanelHintergrund.add(jPanelAccelerator);
+
+        jLabelCannazym.setText("Cannazym:");
+
+        jSpinnerCannazym.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelCannazymLayout = new javax.swing.GroupLayout(jPanelCannazym);
+        jPanelCannazym.setLayout(jPanelCannazymLayout);
+        jPanelCannazymLayout.setHorizontalGroup(
+            jPanelCannazymLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCannazymLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelCannazymLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSpinnerCannazym)
+                    .addComponent(jLabelCannazym, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45))
+        );
+        jPanelCannazymLayout.setVerticalGroup(
+            jPanelCannazymLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelCannazymLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelCannazym)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSpinnerCannazym)
+                .addGap(25, 25, 25))
+        );
+
+        jPanelHintergrund.add(jPanelCannazym);
+
         jLabelFlush.setText("Flush:");
+
+        jSpinnerFlush.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelFlushLayout = new javax.swing.GroupLayout(jPanelFlush);
+        jPanelFlush.setLayout(jPanelFlushLayout);
+        jPanelFlushLayout.setHorizontalGroup(
+            jPanelFlushLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFlushLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelFlushLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelFlush, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerFlush))
+                .addGap(45, 45, 45))
+        );
+        jPanelFlushLayout.setVerticalGroup(
+            jPanelFlushLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelFlushLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelFlush)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSpinnerFlush)
+                .addGap(25, 25, 25))
+        );
+
+        jPanelHintergrund.add(jPanelFlush);
+
+        jLabelKalium.setText("Kalium:");
+
+        jSpinnerKalium.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        javax.swing.GroupLayout jPanelKaliumLayout = new javax.swing.GroupLayout(jPanelKalium);
+        jPanelKalium.setLayout(jPanelKaliumLayout);
+        jPanelKaliumLayout.setHorizontalGroup(
+            jPanelKaliumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelKaliumLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanelKaliumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelKalium, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jSpinnerKalium))
+                .addGap(43, 43, 43))
+        );
+        jPanelKaliumLayout.setVerticalGroup(
+            jPanelKaliumLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelKaliumLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelKalium)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jSpinnerKalium)
+                .addGap(25, 25, 25))
+        );
+
+        jPanelHintergrund.add(jPanelKalium);
+
+        jPanelFree.setBackground(new java.awt.Color(255, 204, 0));
+
+        javax.swing.GroupLayout jPanelFreeLayout = new javax.swing.GroupLayout(jPanelFree);
+        jPanelFree.setLayout(jPanelFreeLayout);
+        jPanelFreeLayout.setHorizontalGroup(
+            jPanelFreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 118, Short.MAX_VALUE)
+        );
+        jPanelFreeLayout.setVerticalGroup(
+            jPanelFreeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 81, Short.MAX_VALUE)
+        );
+
+        jPanelHintergrund.add(jPanelFree);
 
         jCheckBoxMontag.setText("MO");
 
         jCheckBoxDienstag.setText("DI");
 
-        jCheckBoxMittwoch.setText("MI");
-
         jCheckBoxDonnerstag.setText("DO");
+
+        jCheckBoxMittwoch.setText("MI");
 
         jCheckBoxFreitag.setText("FR");
 
@@ -282,208 +619,51 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
 
         jCheckBoxSonntag.setText("SO");
 
-        javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
-        jPanelHintergrund.setLayout(jPanelHintergrundLayout);
-        jPanelHintergrundLayout.setHorizontalGroup(
-            jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+        javax.swing.GroupLayout jPanelWochentageLayout = new javax.swing.GroupLayout(jPanelWochentage);
+        jPanelWochentage.setLayout(jPanelWochentageLayout);
+        jPanelWochentageLayout.setHorizontalGroup(
+            jPanelWochentageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelWochentageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelTerraVega, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelTerraFlores, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelPK, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelAccelerator, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelRhizotonic, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerTerraVega, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelTerraVegaMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerTerraFlores, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelTerraFloresMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerPk, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelPkMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerAccelerator, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelAcceleratorMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerRhizotonic, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelRhizotonicMilliliter)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelKalium, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelStickstoff, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelPhosphor, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelEisen, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelKalzium, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerStickstoff, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelStickstoffMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerPhosphor, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelPhosphorMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerKalium, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelKaliumMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerEisen, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelEisenMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerKalzium, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelKalziumMilliliter)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabelTraceMix, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelCannazym, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelMagnesium, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelStart, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelFlush, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerMagnesium, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelMagnesiumMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerTraceMix, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelTraceMixMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerCannazym, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelCannazymMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerStart, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelStartMilliliter))
-                            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                                .addComponent(jSpinnerFlush, javax.swing.GroupLayout.PREFERRED_SIZE, 43, Short.MAX_VALUE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jLabelFlushMilliliter)))
-                        .addGap(4, 4, 4))
-                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addComponent(jCheckBoxMontag, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBoxDienstag, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBoxMittwoch, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBoxDonnerstag, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBoxFreitag, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBoxSamstag, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jCheckBoxSonntag, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)))
+                .addComponent(jCheckBoxMontag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBoxDienstag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBoxDonnerstag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBoxMittwoch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBoxFreitag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBoxSamstag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jCheckBoxSonntag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-        jPanelHintergrundLayout.setVerticalGroup(
-            jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelHintergrundLayout.createSequentialGroup()
+        jPanelWochentageLayout.setVerticalGroup(
+            jPanelWochentageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanelWochentageLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jSpinnerMagnesium, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelMagnesiumMilliliter))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jSpinnerTraceMix, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelTraceMixMilliliter))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jSpinnerCannazym, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelCannazymMilliliter)
-                            .addComponent(jLabelCannazym))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jSpinnerStart, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelStartMilliliter)
-                            .addComponent(jLabelStart))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jSpinnerFlush, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabelFlushMilliliter)
-                            .addComponent(jLabelFlush)))
-                    .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerStickstoff, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelStickstoffMilliliter)
-                                .addComponent(jLabelStickstoff)
-                                .addComponent(jLabelMagnesium))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerPhosphor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelPhosphorMilliliter)
-                                .addComponent(jLabelTraceMix))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerKalium, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelKaliumMilliliter)
-                                .addComponent(jLabelKalium))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerEisen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelEisenMilliliter)
-                                .addComponent(jLabelEisen))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerKalzium, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelKalziumMilliliter)
-                                .addComponent(jLabelKalzium)))
-                        .addGroup(jPanelHintergrundLayout.createSequentialGroup()
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerTerraVega, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelTerraVegaMilliliter)
-                                .addComponent(jLabelTerraVega))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerTerraFlores, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelTerraFloresMilliliter)
-                                .addComponent(jLabelTerraFlores)
-                                .addComponent(jLabelPhosphor))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerPk, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelPkMilliliter)
-                                .addComponent(jLabelPK))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerAccelerator, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelAcceleratorMilliliter)
-                                .addComponent(jLabelAccelerator))
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jSpinnerRhizotonic, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jLabelRhizotonicMilliliter)
-                                .addComponent(jLabelRhizotonic)))))
-                .addGap(18, 18, 18)
-                .addGroup(jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jCheckBoxMontag)
-                    .addComponent(jCheckBoxDienstag)
-                    .addComponent(jCheckBoxMittwoch)
-                    .addComponent(jCheckBoxDonnerstag)
-                    .addComponent(jCheckBoxFreitag)
-                    .addComponent(jCheckBoxSamstag)
-                    .addComponent(jCheckBoxSonntag))
-                .addContainerGap(24, Short.MAX_VALUE))
+                .addGroup(jPanelWochentageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jCheckBoxDienstag, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxMontag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+            .addComponent(jCheckBoxDonnerstag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jCheckBoxMittwoch, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jCheckBoxFreitag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jCheckBoxSamstag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jCheckBoxSonntag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout jPanelPlatzhalterLayout = new javax.swing.GroupLayout(jPanelPlatzhalter);
+        jPanelPlatzhalter.setLayout(jPanelPlatzhalterLayout);
+        jPanelPlatzhalterLayout.setHorizontalGroup(
+            jPanelPlatzhalterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        jPanelPlatzhalterLayout.setVerticalGroup(
+            jPanelPlatzhalterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 46, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -492,14 +672,21 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelHintergrund, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanelWochentage, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelHintergrund, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelPlatzhalter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanelHintergrund, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jPanelHintergrund, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanelWochentage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanelPlatzhalter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
@@ -513,36 +700,39 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
     private javax.swing.JCheckBox jCheckBoxSamstag;
     private javax.swing.JCheckBox jCheckBoxSonntag;
     private javax.swing.JLabel jLabelAccelerator;
-    private javax.swing.JLabel jLabelAcceleratorMilliliter;
     private javax.swing.JLabel jLabelCannazym;
-    private javax.swing.JLabel jLabelCannazymMilliliter;
     private javax.swing.JLabel jLabelEisen;
-    private javax.swing.JLabel jLabelEisenMilliliter;
     private javax.swing.JLabel jLabelFlush;
-    private javax.swing.JLabel jLabelFlushMilliliter;
     private javax.swing.JLabel jLabelKalium;
-    private javax.swing.JLabel jLabelKaliumMilliliter;
     private javax.swing.JLabel jLabelKalzium;
-    private javax.swing.JLabel jLabelKalziumMilliliter;
     private javax.swing.JLabel jLabelMagnesium;
-    private javax.swing.JLabel jLabelMagnesiumMilliliter;
     private javax.swing.JLabel jLabelPK;
     private javax.swing.JLabel jLabelPhosphor;
-    private javax.swing.JLabel jLabelPhosphorMilliliter;
-    private javax.swing.JLabel jLabelPkMilliliter;
     private javax.swing.JLabel jLabelRhizotonic;
-    private javax.swing.JLabel jLabelRhizotonicMilliliter;
     private javax.swing.JLabel jLabelStart;
-    private javax.swing.JLabel jLabelStartMilliliter;
     private javax.swing.JLabel jLabelStickstoff;
-    private javax.swing.JLabel jLabelStickstoffMilliliter;
     private javax.swing.JLabel jLabelTerraFlores;
-    private javax.swing.JLabel jLabelTerraFloresMilliliter;
     private javax.swing.JLabel jLabelTerraVega;
-    private javax.swing.JLabel jLabelTerraVegaMilliliter;
     private javax.swing.JLabel jLabelTraceMix;
-    private javax.swing.JLabel jLabelTraceMixMilliliter;
+    private javax.swing.JPanel jPanelAccelerator;
+    private javax.swing.JPanel jPanelCannazym;
+    private javax.swing.JPanel jPanelEisen;
+    private javax.swing.JPanel jPanelFlush;
+    private javax.swing.JPanel jPanelFree;
     private javax.swing.JPanel jPanelHintergrund;
+    private javax.swing.JPanel jPanelKalium;
+    private javax.swing.JPanel jPanelKalzium;
+    private javax.swing.JPanel jPanelMagnesium;
+    private javax.swing.JPanel jPanelPhosphor;
+    private javax.swing.JPanel jPanelPk;
+    private javax.swing.JPanel jPanelPlatzhalter;
+    private javax.swing.JPanel jPanelRhizotonic;
+    private javax.swing.JPanel jPanelStart;
+    private javax.swing.JPanel jPanelStickstoff;
+    private javax.swing.JPanel jPanelTerraFlores;
+    private javax.swing.JPanel jPanelTerraVega;
+    private javax.swing.JPanel jPanelTraceMix;
+    private javax.swing.JPanel jPanelWochentage;
     private javax.swing.JSpinner jSpinnerAccelerator;
     private javax.swing.JSpinner jSpinnerCannazym;
     private javax.swing.JSpinner jSpinnerEisen;

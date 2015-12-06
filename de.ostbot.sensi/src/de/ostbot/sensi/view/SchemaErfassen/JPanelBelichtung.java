@@ -24,8 +24,8 @@ public class JPanelBelichtung extends javax.swing.JPanel {
         jPanelHintergrund = new javax.swing.JPanel();
         jLabelLeistung = new javax.swing.JLabel();
         jLabelFlaeche = new javax.swing.JLabel();
-        jSpinnerFlaeche = new javax.swing.JSpinner();
         jSpinnerLeistung = new javax.swing.JSpinner();
+        jSpinnerFlaeche = new javax.swing.JSpinner();
 
         setBackground(new java.awt.Color(153, 153, 153));
 
@@ -33,9 +33,9 @@ public class JPanelBelichtung extends javax.swing.JPanel {
 
         jLabelFlaeche.setText("Fläche (in m²):");
 
-        jSpinnerFlaeche.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
-
         jSpinnerLeistung.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+
+        jSpinnerFlaeche.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
         javax.swing.GroupLayout jPanelHintergrundLayout = new javax.swing.GroupLayout(jPanelHintergrund);
         jPanelHintergrund.setLayout(jPanelHintergrundLayout);
