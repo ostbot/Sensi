@@ -172,6 +172,47 @@ public class Datenbankoperationen {
     
     
     //Die folgenden Methoden werden in der Methode 'statusInDatenbankAnlegen()' benötigt
+    public int getDuengerschemaIDLastInsert() {
+        int duengerschemaID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringDuengerID = "SELECT pk_duengerschema_id FROM duengerschema "
+                    + "ORDER BY pk_duengerschema_id DESC LIMIT 1";
+            statement = connectionObject.prepareStatement(sqlStringDuengerID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            duengerschemaID = resultSet.getInt("pk_duengerschema_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return duengerschemaID;
+    }
     public int getDuengerschemaID(double terraVegaMilliliter, double terraFloresMilliliter, 
                   double monoTracemixMilliliter, double monoStickstoffMilliliter, double monoPhosphorMilliliter, 
                   double monoKaliumMilliliter, double monoMagnesiumMilliliter, double monoKalziumMilliliter, 
@@ -258,6 +299,47 @@ public class Datenbankoperationen {
             statement = connectionObject.prepareStatement(sqlStringNahrungID);
             statement.setInt(1, wasserID);
             statement.setInt(2, duengerschemaID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            nahrungID = resultSet.getInt("pk_nahrung_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return nahrungID;
+    }
+    public int getNahrungIDLastInsert() {
+        int nahrungID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringDuengerID = "SELECT pk_nahrung_id FROM nahrung "
+                    + "ORDER BY pk_nahrung_id DESC LIMIT 1";
+            statement = connectionObject.prepareStatement(sqlStringDuengerID);
 
             resultSet = statement.executeQuery();
             connectionObject.commit();
@@ -459,6 +541,47 @@ public class Datenbankoperationen {
         }
         return zyklusID;
     }
+    public int getZyklusIDLastInsert() {
+        int zyklusID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringDuengerID = "SELECT pk_zyklus_id FROM zyklen "
+                    + "ORDER BY pk_zyklus_id DESC LIMIT 1";
+            statement = connectionObject.prepareStatement(sqlStringDuengerID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            zyklusID = resultSet.getInt("pk_zyklus_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return zyklusID;
+    }
     public int getWasserID(double pHWert, double literProTag) {
         int wasserID = 0;
         PreparedStatement statement = null;
@@ -502,8 +625,8 @@ public class Datenbankoperationen {
         }
         return wasserID;
     }
-    public int getDuengerID(String duenger) {
-        int duengerID = 0;
+    public int getWasserIDLastInsert() {
+        int wasserID = 0;
         PreparedStatement statement = null;
         ResultSet resultSet = null;
 
@@ -511,16 +634,15 @@ public class Datenbankoperationen {
             verbindenZurDB();
             connectionObject.setAutoCommit(false);
 
-            String sqlStringDuengerID = "SELECT pk_duenger_id FROM duenger "
-                    + "WHERE duenger LIKE (?)";
+            String sqlStringDuengerID = "SELECT pk_wasser_id FROM wasser "
+                    + "ORDER BY pk_wasser_id DESC LIMIT 1";
             statement = connectionObject.prepareStatement(sqlStringDuengerID);
-            statement.setString(1, duenger);
 
             resultSet = statement.executeQuery();
             connectionObject.commit();
 
             resultSet.next();
-            duengerID = resultSet.getInt("pk_duenger_id");
+            wasserID = resultSet.getInt("pk_wasser_id");
 
         } catch (SQLException ex) {
             Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
@@ -542,7 +664,7 @@ public class Datenbankoperationen {
                 Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        return duengerID;
+        return wasserID;
     }
     public List<String> getPhasen() {
         List<String> phasenListe = new ArrayList<>();
@@ -934,11 +1056,13 @@ public class Datenbankoperationen {
                 schemaObject.getCannazymMilliliter(), schemaObject.isMontag(), schemaObject.isDienstag(), 
                 schemaObject.isMittwoch(), schemaObject.isDonnerstag(), schemaObject.isFreitag(), 
                 schemaObject.isSamstag(), schemaObject.isSonntag());
-        int zyklusID = getZyklusID(schemaObject.getWoche(), schemaObject.getPhase());
+        //int zyklusID = getZyklusID(schemaObject.getWoche(), schemaObject.getPhase());
+        int zyklusID = getZyklusIDLastInsert();
         //Ersetzen durch lastInsertID
-        int wasserID = getWasserID(schemaObject.getpHWert(), schemaObject.getLiterProTag());
+        //int wasserID = getWasserID(schemaObject.getpHWert(), schemaObject.getLiterProTag());
+        int wasserID = getWasserIDLastInsert();
         //Ersetzen durch lastInsertID
-        int duengerschemaID = getDuengerschemaID(schemaObject.getTerraVegaMilliliter(), schemaObject.getTerraFloresMilliliter(), 
+        /*int duengerschemaID = getDuengerschemaID(schemaObject.getTerraVegaMilliliter(), schemaObject.getTerraFloresMilliliter(), 
                 schemaObject.getMonoTracemixMilliliter(), schemaObject.getMonoStickstoffMilliliter(),
                 schemaObject.getMonoPhosphorMilliliter(), schemaObject.getMonoKaliumMilliliter(), 
                 schemaObject.getMonoMagnesiumMilliliter(), schemaObject.getMonoKalziumMilliliter(),
@@ -947,11 +1071,13 @@ public class Datenbankoperationen {
                 schemaObject.getPkMilliliter(), schemaObject.getRhizotonicMilliliter(), 
                 schemaObject.getCannazymMilliliter(), schemaObject.isMontag(), schemaObject.isDienstag(), 
                 schemaObject.isMittwoch(), schemaObject.isDonnerstag(), schemaObject.isFreitag(), 
-                schemaObject.isSamstag(), schemaObject.isSonntag());
+                schemaObject.isSamstag(), schemaObject.isSonntag());*/
+        int duengerschemaID = getDuengerschemaIDLastInsert();
         //Ersetzen durch lastInsertID
         nahrungInDatenbankAnlegen(wasserID, duengerschemaID);
         //Ersetzen durch lastInsertID
-        int nahrungID = getNahrungID(wasserID, duengerschemaID);
+        //int nahrungID = getNahrungID(wasserID, duengerschemaID);
+        int nahrungID = getNahrungIDLastInsert();
         
 
         //Status wird in der Datenbank mit den oben geholten Variablen angelegt
@@ -1038,6 +1164,47 @@ public class Datenbankoperationen {
         }
         return temperaturID;
     }
+    public int getTemperaturIDLastInsert() {
+        int temperaturID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringDuengerID = "SELECT pk_temperatur_id FROM temperatur "
+                    + "ORDER BY pk_temperatur_id DESC LIMIT 1";
+            statement = connectionObject.prepareStatement(sqlStringDuengerID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            temperaturID = resultSet.getInt("pk_temperatur_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return temperaturID;
+    }
     public int getLuftfeuchtigkeitID(int luftfeuchtigkeitAmTag, int luftfeuchtigkeitInDerNacht) {
         int luftfeuchtigkeitID = 0;
         PreparedStatement statement = null;
@@ -1081,6 +1248,47 @@ public class Datenbankoperationen {
         }
         return luftfeuchtigkeitID;
     }
+    public int getLuftfeuchtigkeitIDLastInsert() {
+        int luftfeuchtigkeitID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringDuengerID = "SELECT pk_luftfeuchtigkeit_id FROM luftfeuchtigkeit "
+                    + "ORDER BY pk_luftfeuchtigkeit_id DESC LIMIT 1";
+            statement = connectionObject.prepareStatement(sqlStringDuengerID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            luftfeuchtigkeitID = resultSet.getInt("pk_luftfeuchtigkeit_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return luftfeuchtigkeitID;
+    }
     public int getKlimaID(int temperaturID, int luftfeuchtigkeitID) {
         int klimaID = 0;
         PreparedStatement statement = null;
@@ -1095,6 +1303,47 @@ public class Datenbankoperationen {
             statement = connectionObject.prepareStatement(sqlStringKlimaID);
             statement.setInt(1, temperaturID);
             statement.setInt(2, luftfeuchtigkeitID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            klimaID = resultSet.getInt("pk_klima_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return klimaID;
+    }
+    public int getKlimaIDLastInsert() {
+        int klimaID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringDuengerID = "SELECT pk_klima_id FROM klima "
+                    + "ORDER BY pk_klima_id DESC LIMIT 1";
+            statement = connectionObject.prepareStatement(sqlStringDuengerID);
 
             resultSet = statement.executeQuery();
             connectionObject.commit();
@@ -1251,13 +1500,16 @@ public class Datenbankoperationen {
         temperaturInDatenbankAnlegen(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
         luftfeuchtigkeitInDatenbankAnlegen(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
         //Ersetzen durch lastInsertID
-        int temperaturID = getTemperaturID(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
+        //int temperaturID = getTemperaturID(schemaObject.getTemperaturAmTag(), schemaObject.getTemperaturInderNacht());
+        int temperaturID = getTemperaturIDLastInsert();
         //Ersetzen durch lastInsertID
-        int luftfeuchtigkeitID = getLuftfeuchtigkeitID(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
+        //int luftfeuchtigkeitID = getLuftfeuchtigkeitID(schemaObject.getLuftfeuchtigkeitAmTag(), schemaObject.getLuftfeuchtigkeitInDerNacht());
+        int luftfeuchtigkeitID = getLuftfeuchtigkeitIDLastInsert();
         
         klimaInDatenbankAnlegen(temperaturID, luftfeuchtigkeitID);
         //Ersetzen durch lastInsertID
-        int klimaID = getKlimaID(temperaturID, luftfeuchtigkeitID);
+        //int klimaID = getKlimaID(temperaturID, luftfeuchtigkeitID);
+        int klimaID = getKlimaIDLastInsert();
 
         try {
             String sqlStringStatusInDatenbankAnlegen = "INSERT INTO umgebungen"

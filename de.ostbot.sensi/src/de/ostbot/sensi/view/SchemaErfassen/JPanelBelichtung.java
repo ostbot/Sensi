@@ -33,7 +33,7 @@ public class JPanelBelichtung extends javax.swing.JPanel {
 
         jLabelFlaeche.setText("Fläche (in m²):");
 
-        jSpinnerLeistung.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
+        jSpinnerLeistung.setModel(new javax.swing.SpinnerNumberModel(0, 0, 1000, 1));
 
         jSpinnerFlaeche.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 

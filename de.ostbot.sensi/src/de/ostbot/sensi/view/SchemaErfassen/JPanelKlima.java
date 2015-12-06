@@ -33,12 +33,12 @@ public class JPanelKlima extends javax.swing.JPanel {
 
         jPanelHintergrund = new javax.swing.JPanel();
         jPanelAmTag = new javax.swing.JPanel();
+        jSpinnerTemperaturAmTag = new javax.swing.JSpinner();
         jSpinnerLuftfeuchtigkeitAmTag = new javax.swing.JSpinner();
         jPanelTemperaturAmTag = new javax.swing.JPanel();
         jLabelTemperaturAmTag = new javax.swing.JLabel();
         jPanelLuftfeuchtigkeitAmTag = new javax.swing.JPanel();
         jLabelLuftfeuchtigkeitAmTag = new javax.swing.JLabel();
-        jSpinnerTemperaturAmTag = new javax.swing.JSpinner();
         jPanelInDerNacht = new javax.swing.JPanel();
         jSpinnerTemperaturInDerNacht = new javax.swing.JSpinner();
         jSpinnerLuftfeuchtigkeitInDerNacht = new javax.swing.JSpinner();
@@ -50,6 +50,8 @@ public class JPanelKlima extends javax.swing.JPanel {
         setBackground(new java.awt.Color(153, 153, 153));
 
         jPanelHintergrund.setLayout(new java.awt.GridLayout(2, 0));
+
+        jSpinnerTemperaturAmTag.setModel(new javax.swing.SpinnerNumberModel(20.0d, 0.0d, 40.0d, 0.1d));
 
         jSpinnerLuftfeuchtigkeitAmTag.setModel(new javax.swing.SpinnerNumberModel(60, 40, 99, 1));
 
@@ -92,8 +94,6 @@ public class JPanelKlima extends javax.swing.JPanel {
                 .addComponent(jLabelLuftfeuchtigkeitAmTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
-        jSpinnerTemperaturAmTag.setModel(new javax.swing.SpinnerNumberModel(20.0d, 0.0d, 40.0d, 0.1d));
 
         javax.swing.GroupLayout jPanelAmTagLayout = new javax.swing.GroupLayout(jPanelAmTag);
         jPanelAmTag.setLayout(jPanelAmTagLayout);
