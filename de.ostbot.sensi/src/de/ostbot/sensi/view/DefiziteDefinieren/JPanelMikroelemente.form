@@ -41,262 +41,489 @@
   <SubComponents>
     <Container class="javax.swing.JPanel" name="jPanelHintergrund">
 
-      <Layout>
-        <DimensionLayout dim="0">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" attributes="0">
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jLabelMikroelemente" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="281" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="1" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Component id="jLabelBor" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                                  <Component id="jSliderBor" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="0" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabelSelen" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabelSilizium" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabelZink" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                              </Group>
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabelEisen" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabelKupfer" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabelMangan" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabelMolybdaen" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabelChlor" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jSliderChlor" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jSliderEisen" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jSliderKupfer" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jSliderMangan" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jSliderMolybdaen" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jSliderSelen" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jSliderSilizium" max="32767" attributes="0"/>
-                                      <Component id="jSliderZink" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
-                              </Group>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jLabelKupferAnzeige" pref="29" max="32767" attributes="0"/>
-                              <Component id="jLabelEisenAnzeige" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabelChlorAnzeige" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabelManganAnzeige" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabelMolybdaenAnzeige" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabelSelenAnzeige" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabelSiliziumAnzeige" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabelZinkAnzeige" alignment="0" max="32767" attributes="0"/>
-                              <Component id="jLabelBorAnzeige" alignment="0" max="32767" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-              </Group>
-          </Group>
-        </DimensionLayout>
-        <DimensionLayout dim="1">
-          <Group type="103" groupAlignment="0" attributes="0">
-              <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Component id="jLabelMikroelemente" min="-2" pref="14" max="-2" attributes="0"/>
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelBor" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jSliderBor" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelChlor" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jSliderChlor" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jSliderEisen" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelEisen" min="-2" pref="26" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelKupfer" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jSliderKupfer" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelMangan" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jSliderMangan" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelMolybdaen" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jSliderMolybdaen" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelSelen" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jSliderSelen" alignment="0" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jSliderSilizium" min="-2" max="-2" attributes="0"/>
-                              <Component id="jLabelSilizium" min="-2" pref="26" max="-2" attributes="0"/>
-                          </Group>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" attributes="0">
-                              <Component id="jLabelZink" min="-2" pref="26" max="-2" attributes="0"/>
-                              <Component id="jSliderZink" min="-2" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jLabelBorAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelChlorAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelEisenAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelKupferAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelManganAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelMolybdaenAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelSelenAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelSiliziumAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                          <Component id="jLabelZinkAnzeige" min="-2" pref="26" max="-2" attributes="0"/>
-                      </Group>
-                  </Group>
-                  <EmptySpace max="32767" attributes="0"/>
-              </Group>
-          </Group>
-        </DimensionLayout>
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignGridLayout">
+        <Property name="columns" type="int" value="0"/>
+        <Property name="rows" type="int" value="9"/>
+        <Property name="verticalGap" type="int" value="-10"/>
       </Layout>
       <SubComponents>
-        <Component class="javax.swing.JLabel" name="jLabelMikroelemente">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mikroelemente:"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelBor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Bor"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelChlor">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Chlor"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSlider" name="jSliderChlor">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelChlorAnzeige">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelEisen">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Eisen"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSlider" name="jSliderEisen">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelEisenAnzeige">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelKupfer">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Kupfer"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSlider" name="jSliderKupfer">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelKupferAnzeige">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelMangan">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Mangan"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSlider" name="jSliderMangan">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelManganAnzeige">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelMolybdaen">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Molybd&#xe4;n"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSlider" name="jSliderMolybdaen">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelMolybdaenAnzeige">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelSelen">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Selen"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSlider" name="jSliderSelen">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelSelenAnzeige">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelSilizium">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Silizium"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSlider" name="jSliderSilizium">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelSiliziumAnzeige">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelZink">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="Zink"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSlider" name="jSliderZink">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelZinkAnzeige">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
-          </Properties>
-        </Component>
-        <Component class="javax.swing.JSlider" name="jSliderBor">
-        </Component>
-        <Component class="javax.swing.JLabel" name="jLabelBorAnzeige">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="0"/>
-          </Properties>
-        </Component>
+        <Container class="javax.swing.JPanel" name="jPanel1">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelBor" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
+                      <Component id="jSliderBor" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelBorAnzeige" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelBor" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jSliderBor" max="32767" attributes="0"/>
+                          <Component id="jLabelBorAnzeige" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabelBor">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Bor"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelBorAnzeige">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSliderBor">
+              <Properties>
+                <Property name="maximum" type="int" value="10"/>
+                <Property name="minimum" type="int" value="-10"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderBorStateChanged"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel2">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelChlor" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                      <Component id="jSliderChlor" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelChlorAnzeige" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelChlor" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jSliderChlor" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabelChlorAnzeige" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabelChlor">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Chlor"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelChlorAnzeige">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSliderChlor">
+              <Properties>
+                <Property name="maximum" type="int" value="10"/>
+                <Property name="minimum" type="int" value="-10"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderChlorStateChanged"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel3">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelEisen" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="99" max="-2" attributes="0"/>
+                      <Component id="jSliderEisen" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelEisenAnzeige" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jSliderEisen" max="32767" attributes="0"/>
+                          <Component id="jLabelEisen" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jLabelEisenAnzeige" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabelEisenAnzeige">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelEisen">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Eisen"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSliderEisen">
+              <Properties>
+                <Property name="maximum" type="int" value="10"/>
+                <Property name="minimum" type="int" value="-10"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderEisenStateChanged"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel4">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelKupfer" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="92" max="-2" attributes="0"/>
+                      <Component id="jSliderKupfer" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelKupferAnzeige" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelKupfer" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jSliderKupfer" max="32767" attributes="0"/>
+                          <Component id="jLabelKupferAnzeige" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JSlider" name="jSliderKupfer">
+              <Properties>
+                <Property name="maximum" type="int" value="10"/>
+                <Property name="minimum" type="int" value="-10"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderKupferStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelKupfer">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Kupfer"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelKupferAnzeige">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel5">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelMangan" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="86" max="-2" attributes="0"/>
+                      <Component id="jSliderMangan" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelManganAnzeige" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelMangan" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jSliderMangan" max="32767" attributes="0"/>
+                          <Component id="jLabelManganAnzeige" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabelManganAnzeige">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSliderMangan">
+              <Properties>
+                <Property name="maximum" type="int" value="10"/>
+                <Property name="minimum" type="int" value="-10"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderManganStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelMangan">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Mangan"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel6">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelMolybdaen" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="78" max="-2" attributes="0"/>
+                      <Component id="jSliderMolybdaen" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelMolybdaenAnzeige" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelMolybdaen" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jSliderMolybdaen" max="32767" attributes="0"/>
+                          <Component id="jLabelMolybdaenAnzeige" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabelMolybdaenAnzeige">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelMolybdaen">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Molybd&#xe4;n"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSliderMolybdaen">
+              <Properties>
+                <Property name="maximum" type="int" value="10"/>
+                <Property name="minimum" type="int" value="-10"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderMolybdaenStateChanged"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel7">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelSelen" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="98" max="-2" attributes="0"/>
+                      <Component id="jSliderSelen" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelSelenAnzeige" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelSelen" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jSliderSelen" alignment="0" max="32767" attributes="0"/>
+                          <Component id="jLabelSelenAnzeige" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabelSelenAnzeige">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelSelen">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Selen"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSliderSelen">
+              <Properties>
+                <Property name="maximum" type="int" value="10"/>
+                <Property name="minimum" type="int" value="-10"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderSelenStateChanged"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel8">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelSilizium" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
+                      <Component id="jSliderSilizium" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelSiliziumAnzeige" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jSliderSilizium" max="32767" attributes="0"/>
+                          <Component id="jLabelSilizium" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jLabelSiliziumAnzeige" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JLabel" name="jLabelSilizium">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Silizium"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JSlider" name="jSliderSilizium">
+              <Properties>
+                <Property name="maximum" type="int" value="10"/>
+                <Property name="minimum" type="int" value="-10"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderSiliziumStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelSiliziumAnzeige">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanel9">
+
+          <Layout>
+            <DimensionLayout dim="0">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelZink" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="105" max="-2" attributes="0"/>
+                      <Component id="jSliderZink" max="32767" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Component id="jLabelZinkAnzeige" min="-2" pref="18" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+            <DimensionLayout dim="1">
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="jLabelZink" min="-2" pref="26" max="-2" attributes="0"/>
+                          <Component id="jSliderZink" max="32767" attributes="0"/>
+                          <Component id="jLabelZinkAnzeige" alignment="0" max="32767" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" max="-2" attributes="0"/>
+                  </Group>
+              </Group>
+            </DimensionLayout>
+          </Layout>
+          <SubComponents>
+            <Component class="javax.swing.JSlider" name="jSliderZink">
+              <Properties>
+                <Property name="maximum" type="int" value="10"/>
+                <Property name="minimum" type="int" value="-10"/>
+                <Property name="value" type="int" value="0"/>
+              </Properties>
+              <Events>
+                <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="jSliderZinkStateChanged"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelZinkAnzeige">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="0"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabelZink">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Zink"/>
+              </Properties>
+            </Component>
+          </SubComponents>
+        </Container>
       </SubComponents>
     </Container>
   </SubComponents>

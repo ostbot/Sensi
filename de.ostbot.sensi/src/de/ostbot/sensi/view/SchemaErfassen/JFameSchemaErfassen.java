@@ -2,6 +2,7 @@ package de.ostbot.sensi.view.SchemaErfassen;
 
 import de.ostbot.sensi.control.Datenbankoperationen;
 import de.ostbot.sensi.model.Schema;
+import de.ostbot.sensi.view.DefiziteDefinieren.JFrameDefiziteDefinieren;
 
 public class JFameSchemaErfassen extends javax.swing.JFrame {
 
@@ -16,15 +17,15 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         jPanelZyklus1 = new de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus();
         jPanelHintergrund = new javax.swing.JPanel();
         jPanelSorteMitTopf = new de.ostbot.sensi.view.SchemaErfassen.JPanelSorteMitTopf();
-        jPanelDuengerschema = new de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema();
         jPanelBelichtung = new de.ostbot.sensi.view.SchemaErfassen.JPanelBelichtung();
         jPanelZyklus = new de.ostbot.sensi.view.SchemaErfassen.JPanelZyklus();
-        jPanelKlima = new de.ostbot.sensi.view.SchemaErfassen.JPanelKlima();
         jPanelWasser = new de.ostbot.sensi.view.SchemaErfassen.JPanelWasser();
         jButtonDefiziteDefinieren = new javax.swing.JButton();
         jButtonHandbuch = new javax.swing.JButton();
         jButtonZuruecksetzen = new javax.swing.JButton();
         jButtonVerlassen = new javax.swing.JButton();
+        jPanelKlima = new de.ostbot.sensi.view.SchemaErfassen.JPanelKlima();
+        jPanelDuengerschema = new de.ostbot.sensi.view.SchemaErfassen.JPanelDuengerschema();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -67,7 +68,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
                             .addComponent(jPanelZyklus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanelBelichtung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jPanelKlima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanelWasser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jPanelWasser, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanelHintergrundLayout.setVerticalGroup(
@@ -83,7 +84,7 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
                         .addComponent(jPanelZyklus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jPanelKlima, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(12, 12, 12)
+                        .addGap(11, 11, 11)
                         .addComponent(jPanelWasser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(jPanelDuengerschema, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -187,7 +188,12 @@ public class JFameSchemaErfassen extends javax.swing.JFrame {
         datenbankOperationen = new Datenbankoperationen();
         datenbankOperationen.statusInDatenbankAnlegen(schemaObject);
         datenbankOperationen.umgebungInDatenbankAnlegen(schemaObject);
-        //FRAME DefiiziteDefinieren soll geöffnet werden*/
+
+        JFrameDefiziteDefinieren frame = new JFrameDefiziteDefinieren();
+        this.setEnabled(false);
+        frame.setSize(500, 500);
+        frame.setVisible(true);      
+        
     }//GEN-LAST:event_jButtonDefiziteDefinierenMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

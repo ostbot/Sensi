@@ -22,13 +22,13 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="jPanelWochentage" alignment="1" max="32767" attributes="0"/>
                   <Component id="jPanelHintergrund" alignment="1" max="32767" attributes="0"/>
                   <Component id="jPanelPlatzhalter" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -38,7 +38,7 @@
               <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="jPanelHintergrund" pref="295" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
-              <Component id="jPanelWochentage" min="-2" max="-2" attributes="0"/>
+              <Component id="jPanelWochentage" max="32767" attributes="0"/>
               <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
               <Component id="jPanelPlatzhalter" max="32767" attributes="0"/>
               <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -88,7 +88,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelTerraVega">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Terra Vega:"/>
+                <Property name="text" type="java.lang.String" value="Vegetation:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="jSpinnerTerraVega">
@@ -256,7 +256,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelRhizotonic">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Rhizotonic:"/>
+                <Property name="text" type="java.lang.String" value="Wurzelsaft:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="jSpinnerRhizotonic">
@@ -298,7 +298,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelTerraFlores">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Terra Flores:"/>
+                <Property name="text" type="java.lang.String" value="Frucht:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="jSpinnerTerraFlores">
@@ -424,7 +424,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelTraceMix">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Trace Mix:"/>
+                <Property name="text" type="java.lang.String" value="ElementMix:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="jSpinnerTraceMix">
@@ -508,7 +508,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelPK">
               <Properties>
-                <Property name="text" type="java.lang.String" value="PK 13/14:"/>
+                <Property name="text" type="java.lang.String" value="P &amp; K Extra:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="jSpinnerPk">
@@ -550,7 +550,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelAccelerator">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Accelerator:"/>
+                <Property name="text" type="java.lang.String" value="Booster:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="jSpinnerAccelerator">
@@ -592,7 +592,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelCannazym">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Cannazym:"/>
+                <Property name="text" type="java.lang.String" value="Enzyme:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="jSpinnerCannazym">
@@ -634,7 +634,7 @@
           <SubComponents>
             <Component class="javax.swing.JLabel" name="jLabelFlush">
               <Properties>
-                <Property name="text" type="java.lang.String" value="Flush:"/>
+                <Property name="text" type="java.lang.String" value="Sp&#xfc;len:"/>
               </Properties>
             </Component>
             <Component class="javax.swing.JSpinner" name="jSpinnerFlush">
@@ -739,7 +739,7 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jCheckBoxDienstag" pref="45" max="32767" attributes="0"/>
+                      <Component id="jCheckBoxDienstag" pref="47" max="32767" attributes="0"/>
                       <Component id="jCheckBoxMontag" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -800,7 +800,7 @@
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
-              <EmptySpace min="0" pref="46" max="32767" attributes="0"/>
+              <EmptySpace min="0" pref="73" max="32767" attributes="0"/>
           </Group>
         </DimensionLayout>
       </Layout>

@@ -1,5 +1,7 @@
 package de.ostbot.sensi.control;
 
+import de.ostbot.sensi.model.Makroelemente;
+import de.ostbot.sensi.model.Mikroelemente;
 import de.ostbot.sensi.model.Schema;
 import de.ostbot.sensi.model.SorteMitTopf;
 import java.sql.Connection;
@@ -1549,15 +1551,117 @@ public class Datenbankoperationen {
         }
     }
     
+    
+    
+    
     //Die folgenden Methoden werden in der Methode 'growInDatenbankAnlegen()' benötigt
     //Getter für pk_bodenfeuchtigkeit_id
     //Getter für pk_makroelemente_id
     //Getter für pk_mikroelemente_id
     //Getter für pk_status_id
     //Getter für pk_umgebung_id
-    //Setter für bodenfeuchtigkeit
-    //Setter für marko
-    //Setter für mikro
+    //Bodenfeuchtigkeit wird erstellt (Setter)
+
+    //Makroelemente werden erstellt (Setter)
+    public void makroelementeInDatenbankAnlegen(Makroelemente makroelementeObject) {
+        PreparedStatement statement = null;
+        int nMangel = makroelementeObject.getNMangel(), 
+            pMangel = makroelementeObject.getPMangel(), 
+            kMangel = makroelementeObject.getKMangel(), 
+            sMangel = makroelementeObject.getSMangel(), 
+            caMangel = makroelementeObject.getCaMangel(), 
+            mgMangel = makroelementeObject.getMgMangel();
+
+        try {
+            String sqlStringMakroelementeInDatenbankAnlegen = "INSERT INTO makroelemente "
+                    + "(n_mangel, p_mangel, k_mangel, s_mangel, ca_mangel, mg_mangel) "
+                    + "VALUES(?,?,?,?,?,?)";
+
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringMakroelementeInDatenbankAnlegen);
+
+            statement.setInt(1, nMangel); statement.setInt(2, pMangel); 
+            statement.setInt(3, kMangel); statement.setInt(4, sMangel); 
+            statement.setInt(5, caMangel); statement.setInt(6, mgMangel);
+
+            statement.executeUpdate();
+            connectionObject.commit();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
+    //Mikroelemente werden erstellt (Setter)
+    public void mikroelementeInDatenbankAnlegen(Mikroelemente mikroelementeObject) {
+        PreparedStatement statement = null;
+        int borMangel = mikroelementeObject.getBorMangel(),
+            eisenMangel = mikroelementeObject.getEisenMangel(),
+            kupferMangel = mikroelementeObject.getKupferMangel(),
+            manganMangel = mikroelementeObject.getManganMangel(),
+            molybdaenMangel = mikroelementeObject.getMolybdaenMangel(),
+            chlorMangel = mikroelementeObject.getChlorMangel(),
+            selen = mikroelementeObject.getSelenMangel(),
+            silizium = mikroelementeObject.getSiliziumMangel(),
+            zink = mikroelementeObject.getZinkMangel();
+                    
+        try {
+            String sqlStringMikroelementeInDatenbankAnlegen = "INSERT INTO mikroelemente "
+                    + "(bor_mangel, eisen_mangel, kupfer_mangel, mangan_mangel, molybdaen_mangel, chlor_mangel, "
+                    + "selen_mangel, silizium_mangel, zink_mangel)"
+                    + "VALUES(?,?,?,?,?,?,?,?,?)";
+
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringMikroelementeInDatenbankAnlegen);
+
+            statement.setInt(1, borMangel); statement.setInt(2, eisenMangel); 
+            statement.setInt(3, kupferMangel); statement.setInt(4, manganMangel); 
+            statement.setInt(5, molybdaenMangel); statement.setInt(6, chlorMangel);
+            statement.setInt(7, selen); statement.setInt(8, silizium);
+            statement.setInt(9, zink);
+
+            statement.executeUpdate();
+            connectionObject.commit();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
     //Grow wird erstellt
     
     //Die folgenden Methoden werden in der Methode 'ernteInDatenbankAnlegen()' benötigt

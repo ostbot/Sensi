@@ -114,7 +114,6 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
     }
     
     public JPanelDuengerschema() {
-        
         initComponents();
     }
 
@@ -183,7 +182,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
 
         jPanelHintergrund.setLayout(new java.awt.GridLayout(4, 5, 0, -10));
 
-        jLabelTerraVega.setText("Terra Vega:");
+        jLabelTerraVega.setText("Vegetation:");
 
         jSpinnerTerraVega.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.10000000000000009d));
 
@@ -293,7 +292,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
 
         jPanelHintergrund.add(jPanelMagnesium);
 
-        jLabelRhizotonic.setText("Rhizotonic:");
+        jLabelRhizotonic.setText("Wurzelsaft:");
 
         jSpinnerRhizotonic.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
@@ -320,7 +319,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
 
         jPanelHintergrund.add(jPanelRhizotonic);
 
-        jLabelTerraFlores.setText("Terra Flores:");
+        jLabelTerraFlores.setText("Frucht:");
 
         jSpinnerTerraFlores.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
@@ -401,7 +400,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
 
         jPanelHintergrund.add(jPanelKalzium);
 
-        jLabelTraceMix.setText("Trace Mix:");
+        jLabelTraceMix.setText("ElementMix:");
 
         jSpinnerTraceMix.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
@@ -455,7 +454,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
 
         jPanelHintergrund.add(jPanelStart);
 
-        jLabelPK.setText("PK 13/14:");
+        jLabelPK.setText("P & K Extra:");
 
         jSpinnerPk.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
@@ -482,7 +481,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
 
         jPanelHintergrund.add(jPanelPk);
 
-        jLabelAccelerator.setText("Accelerator:");
+        jLabelAccelerator.setText("Booster:");
 
         jSpinnerAccelerator.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
@@ -509,7 +508,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
 
         jPanelHintergrund.add(jPanelAccelerator);
 
-        jLabelCannazym.setText("Cannazym:");
+        jLabelCannazym.setText("Enzyme:");
 
         jSpinnerCannazym.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
@@ -536,7 +535,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
 
         jPanelHintergrund.add(jPanelCannazym);
 
-        jLabelFlush.setText("Flush:");
+        jLabelFlush.setText("Spülen:");
 
         jSpinnerFlush.setModel(new javax.swing.SpinnerNumberModel(0.0d, 0.0d, 1000.0d, 0.1d));
 
@@ -645,7 +644,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
             .addGroup(jPanelWochentageLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelWochentageLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jCheckBoxDienstag, javax.swing.GroupLayout.DEFAULT_SIZE, 45, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDienstag, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
                     .addComponent(jCheckBoxMontag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
             .addComponent(jCheckBoxDonnerstag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -663,7 +662,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
         );
         jPanelPlatzhalterLayout.setVerticalGroup(
             jPanelPlatzhalterLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 46, Short.MAX_VALUE)
+            .addGap(0, 73, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -684,7 +683,7 @@ public class JPanelDuengerschema extends javax.swing.JPanel {
                 .addContainerGap()
                 .addComponent(jPanelHintergrund, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanelWochentage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jPanelWochentage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanelPlatzhalter, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())

@@ -33,9 +33,9 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
               <Component id="jPanelHintergrund" max="32767" attributes="0"/>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace min="-2" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -53,57 +53,58 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" attributes="0">
                   <EmptySpace min="-2" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jPanelMakroelemente" max="32767" attributes="0"/>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jButtonGrowAnlegen" min="-2" pref="143" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jButtonZuruecksetzen1" min="-2" pref="121" max="-2" attributes="0"/>
-                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                          <Component id="jButtonZuruecksetzen" max="32767" attributes="0"/>
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="102" attributes="0">
+                          <Component id="jButtonGrowAnlegen" pref="156" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonHandbuch" pref="138" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonZuruecksetzen" pref="154" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButtonVerlassen" pref="136" max="32767" attributes="0"/>
+                          <EmptySpace type="separate" min="-2" max="-2" attributes="0"/>
+                          <Component id="jButton1" pref="140" max="32767" attributes="0"/>
                       </Group>
-                      <Component id="jPanelUmgebung" alignment="0" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jPanelMakroelemente" max="32767" attributes="0"/>
+                              <Component id="jPanelSymptome" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jPanelMikroelemente" pref="381" max="32767" attributes="0"/>
+                      </Group>
                   </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Component id="jPanelMikroelemente1" max="32767" attributes="0"/>
-                      <Component id="jButtonVerlassen" max="32767" attributes="0"/>
-                  </Group>
-                  <EmptySpace pref="20" max="32767" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
         <DimensionLayout dim="1">
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
-                  <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                      <Group type="102" attributes="0">
-                          <Component id="jPanelMakroelemente" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jPanelUmgebung" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Component id="jPanelMikroelemente1" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="jButtonGrowAnlegen" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
-                          <Component id="jButtonVerlassen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButtonZuruecksetzen" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="jButtonZuruecksetzen1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <Component id="jPanelMakroelemente" max="32767" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="jPanelSymptome" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jPanelMikroelemente" max="32767" attributes="0"/>
                   </Group>
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="jButtonVerlassen" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButton1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonZuruecksetzen" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="jButtonHandbuch" alignment="3" max="32767" attributes="0"/>
+                      <Component id="jButtonGrowAnlegen" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
+                  <EmptySpace min="-2" max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
       </Layout>
       <SubComponents>
-        <Component class="de.ostbot.sensi.view.DefiziteDefinieren.JPanelMakroelemente" name="jPanelMakroelemente">
-        </Component>
-        <Component class="de.ostbot.sensi.view.DefiziteDefinieren.JPanelSymptome" name="jPanelUmgebung">
-        </Component>
         <Component class="javax.swing.JButton" name="jButtonGrowAnlegen">
           <Properties>
             <Property name="text" type="java.lang.String" value="Grow Anlegen"/>
@@ -122,12 +123,21 @@
             <Property name="text" type="java.lang.String" value="Zur&#xfc;cksetzen"/>
           </Properties>
         </Component>
-        <Component class="de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente" name="jPanelMikroelemente1">
-        </Component>
-        <Component class="javax.swing.JButton" name="jButtonZuruecksetzen1">
+        <Component class="javax.swing.JButton" name="jButtonHandbuch">
           <Properties>
             <Property name="text" type="java.lang.String" value="Handbuch"/>
           </Properties>
+        </Component>
+        <Component class="de.ostbot.sensi.view.DefiziteDefinieren.JPanelMakroelemente" name="jPanelMakroelemente">
+        </Component>
+        <Component class="de.ostbot.sensi.view.DefiziteDefinieren.JPanelMikroelemente" name="jPanelMikroelemente">
+        </Component>
+        <Component class="javax.swing.JButton" name="jButton1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Platzhalter"/>
+          </Properties>
+        </Component>
+        <Component class="de.ostbot.sensi.view.DefiziteDefinieren.JPanelSymptome" name="jPanelSymptome">
         </Component>
       </SubComponents>
     </Container>

@@ -55,9 +55,9 @@
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabelLeistung" max="32767" attributes="0"/>
-                          <EmptySpace type="unrelated" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabelFlaeche" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                       </Group>
                   </Group>
               </Group>
@@ -84,12 +84,12 @@
       <SubComponents>
         <Component class="javax.swing.JLabel" name="jLabelLeistung">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Leistung (in Watt):"/>
+            <Property name="text" type="java.lang.String" value="St&#xe4;rke der Sonne:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabelFlaeche">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Fl&#xe4;che (in m&#xb2;):"/>
+            <Property name="text" type="java.lang.String" value="Beetgr&#xf6;&#xdf;e:"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JSpinner" name="jSpinnerLeistung">

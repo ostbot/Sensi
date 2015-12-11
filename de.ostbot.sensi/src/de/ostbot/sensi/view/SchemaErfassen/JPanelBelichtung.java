@@ -29,9 +29,9 @@ public class JPanelBelichtung extends javax.swing.JPanel {
 
         setBackground(new java.awt.Color(153, 153, 153));
 
-        jLabelLeistung.setText("Leistung (in Watt):");
+        jLabelLeistung.setText("Stärke der Sonne:");
 
-        jLabelFlaeche.setText("Fläche (in m²):");
+        jLabelFlaeche.setText("Beetgröße:");
 
         jSpinnerLeistung.setModel(new javax.swing.SpinnerNumberModel(0, 0, 1000, 1));
 
@@ -51,9 +51,9 @@ public class JPanelBelichtung extends javax.swing.JPanel {
                         .addGap(26, 26, 26))
                     .addGroup(jPanelHintergrundLayout.createSequentialGroup()
                         .addComponent(jLabelLeistung, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabelFlaeche, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(20, 20, 20))))
+                        .addGap(24, 24, 24))))
         );
         jPanelHintergrundLayout.setVerticalGroup(
             jPanelHintergrundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)

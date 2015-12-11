@@ -26,6 +26,7 @@ public class JPanelKlima extends javax.swing.JPanel {
     public JPanelKlima() {
         initComponents();
     }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -35,17 +36,13 @@ public class JPanelKlima extends javax.swing.JPanel {
         jPanelAmTag = new javax.swing.JPanel();
         jSpinnerTemperaturAmTag = new javax.swing.JSpinner();
         jSpinnerLuftfeuchtigkeitAmTag = new javax.swing.JSpinner();
-        jPanelTemperaturAmTag = new javax.swing.JPanel();
-        jLabelTemperaturAmTag = new javax.swing.JLabel();
-        jPanelLuftfeuchtigkeitAmTag = new javax.swing.JPanel();
-        jLabelLuftfeuchtigkeitAmTag = new javax.swing.JLabel();
+        jPanelLuftfeuchtigkeitAmTag1 = new de.ostbot.sensi.view.SchemaErfassen.Bilder.JPanelLuftfeuchtigkeitAmTag();
+        jPanelTemperaturAmTag1 = new de.ostbot.sensi.view.SchemaErfassen.Bilder.JPanelTemperaturAmTag();
         jPanelInDerNacht = new javax.swing.JPanel();
         jSpinnerTemperaturInDerNacht = new javax.swing.JSpinner();
         jSpinnerLuftfeuchtigkeitInDerNacht = new javax.swing.JSpinner();
-        jPanelTemperaturInDerNacht = new javax.swing.JPanel();
-        jLabelTemperaturInDerNacht = new javax.swing.JLabel();
-        jPanelLuftfeuchtigkeitInDerNacht = new javax.swing.JPanel();
-        jLabelLuftfeuchtigkeitInDerNacht = new javax.swing.JLabel();
+        jPanelTemperaturInDerNacht1 = new de.ostbot.sensi.view.SchemaErfassen.Bilder.JPanelTemperaturInDerNacht();
+        jPanelLuftfeuchtigkeitInDerNacht2 = new de.ostbot.sensi.view.SchemaErfassen.Bilder.JPanelLuftfeuchtigkeitInDerNacht();
 
         setBackground(new java.awt.Color(153, 153, 153));
 
@@ -55,44 +52,26 @@ public class JPanelKlima extends javax.swing.JPanel {
 
         jSpinnerLuftfeuchtigkeitAmTag.setModel(new javax.swing.SpinnerNumberModel(60, 40, 99, 1));
 
-        jLabelTemperaturAmTag.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTemperaturAmTag.setText("°C tags");
-
-        javax.swing.GroupLayout jPanelTemperaturAmTagLayout = new javax.swing.GroupLayout(jPanelTemperaturAmTag);
-        jPanelTemperaturAmTag.setLayout(jPanelTemperaturAmTagLayout);
-        jPanelTemperaturAmTagLayout.setHorizontalGroup(
-            jPanelTemperaturAmTagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTemperaturAmTagLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTemperaturAmTag, javax.swing.GroupLayout.DEFAULT_SIZE, 48, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanelLuftfeuchtigkeitAmTag1Layout = new javax.swing.GroupLayout(jPanelLuftfeuchtigkeitAmTag1);
+        jPanelLuftfeuchtigkeitAmTag1.setLayout(jPanelLuftfeuchtigkeitAmTag1Layout);
+        jPanelLuftfeuchtigkeitAmTag1Layout.setHorizontalGroup(
+            jPanelLuftfeuchtigkeitAmTag1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 81, Short.MAX_VALUE)
         );
-        jPanelTemperaturAmTagLayout.setVerticalGroup(
-            jPanelTemperaturAmTagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTemperaturAmTagLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTemperaturAmTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanelLuftfeuchtigkeitAmTag1Layout.setVerticalGroup(
+            jPanelLuftfeuchtigkeitAmTag1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 51, Short.MAX_VALUE)
         );
 
-        jLabelLuftfeuchtigkeitAmTag.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelLuftfeuchtigkeitAmTag.setText("% tags");
-
-        javax.swing.GroupLayout jPanelLuftfeuchtigkeitAmTagLayout = new javax.swing.GroupLayout(jPanelLuftfeuchtigkeitAmTag);
-        jPanelLuftfeuchtigkeitAmTag.setLayout(jPanelLuftfeuchtigkeitAmTagLayout);
-        jPanelLuftfeuchtigkeitAmTagLayout.setHorizontalGroup(
-            jPanelLuftfeuchtigkeitAmTagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelLuftfeuchtigkeitAmTagLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelLuftfeuchtigkeitAmTag, javax.swing.GroupLayout.DEFAULT_SIZE, 46, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanelTemperaturAmTag1Layout = new javax.swing.GroupLayout(jPanelTemperaturAmTag1);
+        jPanelTemperaturAmTag1.setLayout(jPanelTemperaturAmTag1Layout);
+        jPanelTemperaturAmTag1Layout.setHorizontalGroup(
+            jPanelTemperaturAmTag1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 81, Short.MAX_VALUE)
         );
-        jPanelLuftfeuchtigkeitAmTagLayout.setVerticalGroup(
-            jPanelLuftfeuchtigkeitAmTagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelLuftfeuchtigkeitAmTagLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelLuftfeuchtigkeitAmTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanelTemperaturAmTag1Layout.setVerticalGroup(
+            jPanelTemperaturAmTag1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanelAmTagLayout = new javax.swing.GroupLayout(jPanelAmTag);
@@ -102,25 +81,25 @@ public class JPanelKlima extends javax.swing.JPanel {
             .addGroup(jPanelAmTagLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelAmTagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelTemperaturAmTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelTemperaturAmTag1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jSpinnerTemperaturAmTag))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelAmTagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinnerLuftfeuchtigkeitAmTag)
-                    .addComponent(jPanelLuftfeuchtigkeitAmTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelLuftfeuchtigkeitAmTag1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSpinnerLuftfeuchtigkeitAmTag))
                 .addContainerGap())
         );
         jPanelAmTagLayout.setVerticalGroup(
             jPanelAmTagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelAmTagLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelAmTagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinnerLuftfeuchtigkeitAmTag)
-                    .addComponent(jSpinnerTemperaturAmTag))
+                .addGroup(jPanelAmTagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSpinnerTemperaturAmTag)
+                    .addComponent(jSpinnerLuftfeuchtigkeitAmTag))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelAmTagLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelLuftfeuchtigkeitAmTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelTemperaturAmTag, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelLuftfeuchtigkeitAmTag1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelTemperaturAmTag1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -130,72 +109,54 @@ public class JPanelKlima extends javax.swing.JPanel {
 
         jSpinnerLuftfeuchtigkeitInDerNacht.setModel(new javax.swing.SpinnerNumberModel(60, 40, 99, 1));
 
-        jLabelTemperaturInDerNacht.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelTemperaturInDerNacht.setText("°C nachts");
-
-        javax.swing.GroupLayout jPanelTemperaturInDerNachtLayout = new javax.swing.GroupLayout(jPanelTemperaturInDerNacht);
-        jPanelTemperaturInDerNacht.setLayout(jPanelTemperaturInDerNachtLayout);
-        jPanelTemperaturInDerNachtLayout.setHorizontalGroup(
-            jPanelTemperaturInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTemperaturInDerNachtLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTemperaturInDerNacht, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanelTemperaturInDerNacht1Layout = new javax.swing.GroupLayout(jPanelTemperaturInDerNacht1);
+        jPanelTemperaturInDerNacht1.setLayout(jPanelTemperaturInDerNacht1Layout);
+        jPanelTemperaturInDerNacht1Layout.setHorizontalGroup(
+            jPanelTemperaturInDerNacht1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanelTemperaturInDerNachtLayout.setVerticalGroup(
-            jPanelTemperaturInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelTemperaturInDerNachtLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelTemperaturInDerNacht, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanelTemperaturInDerNacht1Layout.setVerticalGroup(
+            jPanelTemperaturInDerNacht1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 51, Short.MAX_VALUE)
         );
 
-        jLabelLuftfeuchtigkeitInDerNacht.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabelLuftfeuchtigkeitInDerNacht.setText("% nachts");
-
-        javax.swing.GroupLayout jPanelLuftfeuchtigkeitInDerNachtLayout = new javax.swing.GroupLayout(jPanelLuftfeuchtigkeitInDerNacht);
-        jPanelLuftfeuchtigkeitInDerNacht.setLayout(jPanelLuftfeuchtigkeitInDerNachtLayout);
-        jPanelLuftfeuchtigkeitInDerNachtLayout.setHorizontalGroup(
-            jPanelLuftfeuchtigkeitInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelLuftfeuchtigkeitInDerNachtLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelLuftfeuchtigkeitInDerNacht, javax.swing.GroupLayout.DEFAULT_SIZE, 47, Short.MAX_VALUE)
-                .addContainerGap())
+        javax.swing.GroupLayout jPanelLuftfeuchtigkeitInDerNacht2Layout = new javax.swing.GroupLayout(jPanelLuftfeuchtigkeitInDerNacht2);
+        jPanelLuftfeuchtigkeitInDerNacht2.setLayout(jPanelLuftfeuchtigkeitInDerNacht2Layout);
+        jPanelLuftfeuchtigkeitInDerNacht2Layout.setHorizontalGroup(
+            jPanelLuftfeuchtigkeitInDerNacht2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
-        jPanelLuftfeuchtigkeitInDerNachtLayout.setVerticalGroup(
-            jPanelLuftfeuchtigkeitInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelLuftfeuchtigkeitInDerNachtLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabelLuftfeuchtigkeitInDerNacht, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+        jPanelLuftfeuchtigkeitInDerNacht2Layout.setVerticalGroup(
+            jPanelLuftfeuchtigkeitInDerNacht2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
         );
 
         javax.swing.GroupLayout jPanelInDerNachtLayout = new javax.swing.GroupLayout(jPanelInDerNacht);
         jPanelInDerNacht.setLayout(jPanelInDerNachtLayout);
         jPanelInDerNachtLayout.setHorizontalGroup(
             jPanelInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanelInDerNachtLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanelInDerNachtLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanelInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinnerTemperaturInDerNacht)
-                    .addComponent(jPanelTemperaturInDerNacht, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelTemperaturInDerNacht1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jSpinnerTemperaturInDerNacht, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanelInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinnerLuftfeuchtigkeitInDerNacht)
-                    .addComponent(jPanelLuftfeuchtigkeitInDerNacht, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jSpinnerLuftfeuchtigkeitInDerNacht, javax.swing.GroupLayout.DEFAULT_SIZE, 81, Short.MAX_VALUE)
+                    .addComponent(jPanelLuftfeuchtigkeitInDerNacht2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanelInDerNachtLayout.setVerticalGroup(
             jPanelInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanelInDerNachtLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanelInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSpinnerLuftfeuchtigkeitInDerNacht)
-                    .addComponent(jSpinnerTemperaturInDerNacht))
+                .addGroup(jPanelInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jSpinnerTemperaturInDerNacht)
+                    .addComponent(jSpinnerLuftfeuchtigkeitInDerNacht))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanelInDerNachtLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanelTemperaturInDerNacht, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanelLuftfeuchtigkeitInDerNacht, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jPanelTemperaturInDerNacht1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanelLuftfeuchtigkeitInDerNacht2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -205,7 +166,7 @@ public class JPanelKlima extends javax.swing.JPanel {
         this.setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jPanelHintergrund, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -219,17 +180,13 @@ public class JPanelKlima extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabelLuftfeuchtigkeitAmTag;
-    private javax.swing.JLabel jLabelLuftfeuchtigkeitInDerNacht;
-    private javax.swing.JLabel jLabelTemperaturAmTag;
-    private javax.swing.JLabel jLabelTemperaturInDerNacht;
     private javax.swing.JPanel jPanelAmTag;
     private javax.swing.JPanel jPanelHintergrund;
     private javax.swing.JPanel jPanelInDerNacht;
-    private javax.swing.JPanel jPanelLuftfeuchtigkeitAmTag;
-    private javax.swing.JPanel jPanelLuftfeuchtigkeitInDerNacht;
-    private javax.swing.JPanel jPanelTemperaturAmTag;
-    private javax.swing.JPanel jPanelTemperaturInDerNacht;
+    private de.ostbot.sensi.view.SchemaErfassen.Bilder.JPanelLuftfeuchtigkeitAmTag jPanelLuftfeuchtigkeitAmTag1;
+    private de.ostbot.sensi.view.SchemaErfassen.Bilder.JPanelLuftfeuchtigkeitInDerNacht jPanelLuftfeuchtigkeitInDerNacht2;
+    private de.ostbot.sensi.view.SchemaErfassen.Bilder.JPanelTemperaturAmTag jPanelTemperaturAmTag1;
+    private de.ostbot.sensi.view.SchemaErfassen.Bilder.JPanelTemperaturInDerNacht jPanelTemperaturInDerNacht1;
     private javax.swing.JSpinner jSpinnerLuftfeuchtigkeitAmTag;
     private javax.swing.JSpinner jSpinnerLuftfeuchtigkeitInDerNacht;
     private javax.swing.JSpinner jSpinnerTemperaturAmTag;
