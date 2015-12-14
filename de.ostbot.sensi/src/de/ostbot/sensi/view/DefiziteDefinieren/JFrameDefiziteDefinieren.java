@@ -3,7 +3,8 @@ package de.ostbot.sensi.view.DefiziteDefinieren;
 import de.ostbot.sensi.control.Datenbankoperationen;
 import de.ostbot.sensi.model.Makroelemente;
 import de.ostbot.sensi.model.Mikroelemente;
-import de.ostbot.sensi.model.Symptome;
+import de.ostbot.sensi.model.Grow;
+import java.sql.Timestamp;
 
 public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
 
@@ -114,6 +115,7 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
         int nMangel, pMangel, kMangel, sMangel, caMangel, mgMangel;
         int borMangel, eisenMangel, kupferMangel, manganMangel, molybdaenMangel, 
             chlorMangel, selenMangel, siliziumMangel, zinkMangel;
+        int statusID, umgebungID, makroelementeID, mikroelementeID;
         boolean unterwaessert, ueberwaessert, waermeSymptome, kaelteSymptome;
         
         nMangel = jPanelMakroelemente.getStickstoff();
@@ -138,13 +140,13 @@ public class JFrameDefiziteDefinieren extends javax.swing.JFrame {
         
         Makroelemente makroelementeObject = new Makroelemente(nMangel, pMangel, kMangel, sMangel, caMangel, mgMangel);
         Mikroelemente mikroelementeObject = new Mikroelemente(borMangel, eisenMangel, kupferMangel, manganMangel, molybdaenMangel, chlorMangel, selenMangel, siliziumMangel, zinkMangel);
-        Symptome symptomeObject = new Symptome(unterwaessert, ueberwaessert, waermeSymptome, kaelteSymptome);
+        Grow growObject = new Grow(unterwaessert, ueberwaessert, waermeSymptome, kaelteSymptome, statusID, umgebungID, makroelementeID, mikroelementeID);
         
         datenbankOperationen.makroelementeInDatenbankAnlegen(makroelementeObject);
         datenbankOperationen.mikroelementeInDatenbankAnlegen(mikroelementeObject);
+        datenbankOperationen.growInDatenbankAnlegen(growObject);
+        //DB Grow weiterbazuernä
         
-        //datenbankOperationen.bodenfeuchtigkeitInDatenbankAnlegen(bodenfeuchtigkeitObject);
-        //datenbankOperationen.growInDatenbankAnlegen(growObject);
     }//GEN-LAST:event_jButtonGrowAnlegenMouseClicked
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */

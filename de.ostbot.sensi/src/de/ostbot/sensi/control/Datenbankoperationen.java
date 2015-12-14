@@ -1,5 +1,6 @@
 package de.ostbot.sensi.control;
 
+import de.ostbot.sensi.model.Grow;
 import de.ostbot.sensi.model.Makroelemente;
 import de.ostbot.sensi.model.Mikroelemente;
 import de.ostbot.sensi.model.Schema;
@@ -1555,13 +1556,170 @@ public class Datenbankoperationen {
     
     
     //Die folgenden Methoden werden in der Methode 'growInDatenbankAnlegen()' benötigt
-    //Getter für pk_bodenfeuchtigkeit_id
-    //Getter für pk_makroelemente_id
-    //Getter für pk_mikroelemente_id
-    //Getter für pk_status_id
-    //Getter für pk_umgebung_id
-    //Bodenfeuchtigkeit wird erstellt (Setter)
+    public int getMakroelementeIDLastInsert() {
+        int makroelementID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
 
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringMakroelementID = "SELECT pk_makroelement_id FROM makroelemente "
+                    + "ORDER BY pk_makroelement_id DESC LIMIT 1";
+            statement = connectionObject.prepareStatement(sqlStringMakroelementID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            makroelementID = resultSet.getInt("pk_makroelement_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return makroelementID;
+    }
+    public int getMikroelementeIDLastInsert() {
+        int mikroelementID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringMikroelementID = "SELECT pk_mikroelement_id FROM mikroelemente "
+                    + "ORDER BY pk_mikroelement_id DESC LIMIT 1";
+            statement = connectionObject.prepareStatement(sqlStringMikroelementID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            mikroelementID = resultSet.getInt("pk_mikroelement_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return mikroelementID;
+    }
+    public int getStatusIDLastInsert() {
+        int statusID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringStatusID = "SELECT pk_status_id FROM status "
+                    + "ORDER BY pk_status_id DESC LIMIT 1";
+            statement = connectionObject.prepareStatement(sqlStringStatusID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            statusID = resultSet.getInt("pk_status_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return statusID;
+    }
+    public int getUmgebungIDLastInsert() {
+        int umgebungID = 0;
+        PreparedStatement statement = null;
+        ResultSet resultSet = null;
+
+        try {
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+
+            String sqlStringMikroelementID = "SELECT pk_umgebung_id FROM umgebung "
+                    + "ORDER BY pk_umgebung_id DESC LIMIT 1";
+            statement = connectionObject.prepareStatement(sqlStringMikroelementID);
+
+            resultSet = statement.executeQuery();
+            connectionObject.commit();
+
+            resultSet.next();
+            umgebungID = resultSet.getInt("pk_umgebung_id");
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return umgebungID;
+    }
     //Makroelemente werden erstellt (Setter)
     public void makroelementeInDatenbankAnlegen(Makroelemente makroelementeObject) {
         PreparedStatement statement = null;
@@ -1663,6 +1821,62 @@ public class Datenbankoperationen {
         }
     }
     //Grow wird erstellt
+    public void growInDatenbankAnlegen(Grow growObject) {
+        PreparedStatement statement = null;
+        int borMangel = mikroelementeObject.getBorMangel(),
+            eisenMangel = mikroelementeObject.getEisenMangel(),
+            kupferMangel = mikroelementeObject.getKupferMangel(),
+            manganMangel = mikroelementeObject.getManganMangel(),
+            molybdaenMangel = mikroelementeObject.getMolybdaenMangel(),
+            chlorMangel = mikroelementeObject.getChlorMangel(),
+            selen = mikroelementeObject.getSelenMangel(),
+            silizium = mikroelementeObject.getSiliziumMangel(),
+            zink = mikroelementeObject.getZinkMangel();
+        
+        int statusID, umgebungID, makroelementeID, mikroelementeID;
+        boolean ueberwaessert, unterwaessert, waermeSymptome, kaelteSymptome;
+                
+                    
+        try {
+            String sqlStringMikroelementeInDatenbankAnlegen = "INSERT INTO mikroelemente "
+                    + "(bor_mangel, eisen_mangel, kupfer_mangel, mangan_mangel, molybdaen_mangel, chlor_mangel, "
+                    + "selen_mangel, silizium_mangel, zink_mangel)"
+                    + "VALUES(?,?,?,?,?,?,?,?,?)";
+
+            verbindenZurDB();
+            connectionObject.setAutoCommit(false);
+            statement = connectionObject.prepareStatement(sqlStringMikroelementeInDatenbankAnlegen);
+
+            statement.setInt(1, borMangel); statement.setInt(2, eisenMangel); 
+            statement.setInt(3, kupferMangel); statement.setInt(4, manganMangel); 
+            statement.setInt(5, molybdaenMangel); statement.setInt(6, chlorMangel);
+            statement.setInt(7, selen); statement.setInt(8, silizium);
+            statement.setInt(9, zink);
+
+            statement.executeUpdate();
+            connectionObject.commit();
+
+        } catch (SQLException ex) {
+            Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+
+            if (connectionObject != null) {
+                try {
+                    System.err.print("Transaction is being rolled back.");
+                    connectionObject.rollback();
+                } catch (SQLException excep) {
+                    Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, excep);
+                }
+            }
+        } finally {
+            try {
+                statement.close();
+                connectionObject.setAutoCommit(true);
+                connectionObject.close();
+            } catch (SQLException ex) {
+                Logger.getLogger(Datenbankoperationen.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
     
     //Die folgenden Methoden werden in der Methode 'ernteInDatenbankAnlegen()' benötigt
     //Getter für pk_energiekosten_id
